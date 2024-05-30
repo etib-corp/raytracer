@@ -1,0 +1,138 @@
+\doxysection{Lights\+Builder Class Reference}
+\hypertarget{classLightsBuilder}{}\label{classLightsBuilder}\index{LightsBuilder@{LightsBuilder}}
+
+
+Builder class for creating \doxylink{classLights}{Lights} objects.  
+
+
+
+
+{\ttfamily \#include $<$Lights\+Builder.\+hpp$>$}
+
+Inheritance diagram for Lights\+Builder\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLightsBuilder}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLightsBuilder}{Lights\+Builder}} \& \mbox{\hyperlink{classLightsBuilder_a5d32aa24911ab1b8dd1685353f314b60}{ambient\+Set}} (const float ambient)
+\begin{DoxyCompactList}\small\item\em Set the ambient value for the \doxylink{classLights}{Lights} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLightsBuilder}{Lights\+Builder}} \& \mbox{\hyperlink{classLightsBuilder_a0814329b3eedd4350c996153e6486a96}{diffuse\+Set}} (const float diffuse)
+\begin{DoxyCompactList}\small\item\em Set the diffuse value for the \doxylink{classLights}{Lights} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLightsBuilder}{Lights\+Builder}} \& \mbox{\hyperlink{classLightsBuilder_a4d39b67742ef5460d009d1bb1abdf28b}{add\+Point}} (const \mbox{\hyperlink{structPoint}{Point}} \&point)
+\begin{DoxyCompactList}\small\item\em Add a point light to the \doxylink{classLights}{Lights} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLightsBuilder}{Lights\+Builder}} \& \mbox{\hyperlink{classLightsBuilder_ad559ff18feb738d811a8acfddacf5bcb}{directional\+Set}} (void)
+\begin{DoxyCompactList}\small\item\em Set the \doxylink{classLights}{Lights} object as a directional light. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLights}{Lights}} \mbox{\hyperlink{classLightsBuilder_a2216eac8fa92104e19b187b8b8b30d23}{build}} ()
+\begin{DoxyCompactList}\small\item\em Build and return the final \doxylink{classLights}{Lights} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classLights}{Lights}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLights_aa476c7db6f3bc52212a7f2ee907fc9e0}{ambient\+Set}} (const float ambient)
+\begin{DoxyCompactList}\small\item\em Set the ambient light intensity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLights_a40c6e7bdc365cd75be33987a1c64b8cd}{diffuse\+Set}} (const float diffuse)
+\begin{DoxyCompactList}\small\item\em Set the diffuse light intensity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLights_a8e1cb46dc4ababe0cd9d19b7514ddb2b}{add\+Point}} (const \mbox{\hyperlink{structPoint}{Point}} \&point)
+\begin{DoxyCompactList}\small\item\em Add a point light to the collection. \end{DoxyCompactList}\item 
+void {\bfseries directional\+Set} (void)
+\begin{DoxyCompactList}\small\item\em Set the directional light. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLights_a962c87a1c8170e1d9fa41b4358942163}{points\+Set}} (std\+::vector$<$ \mbox{\hyperlink{structPoint}{Point}} $>$ points)
+\begin{DoxyCompactList}\small\item\em Set the list of point lights. \end{DoxyCompactList}\item 
+void {\bfseries print} () const
+\begin{DoxyCompactList}\small\item\em Print the lights information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Builder class for creating \doxylink{classLights}{Lights} objects. 
+
+The \doxylink{classLightsBuilder}{Lights\+Builder} class provides a convenient way to construct \doxylink{classLights}{Lights} objects with different properties and configurations. It follows the Builder design pattern and allows the user to set ambient and diffuse values, add point lights, and set the type of light (directional or not). The \doxylink{classLightsBuilder_a2216eac8fa92104e19b187b8b8b30d23}{build()} method is used to obtain the final \doxylink{classLights}{Lights} object. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLightsBuilder_a4d39b67742ef5460d009d1bb1abdf28b}\label{classLightsBuilder_a4d39b67742ef5460d009d1bb1abdf28b} 
+\index{LightsBuilder@{LightsBuilder}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!LightsBuilder@{LightsBuilder}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLightsBuilder}{Lights\+Builder}} \& Lights\+Builder\+::add\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structPoint}{Point}} \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a point light to the \doxylink{classLights}{Lights} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The \doxylink{structPoint}{Point} object representing the position of the point light. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classLightsBuilder}{Lights\+Builder} object. 
+\end{DoxyReturn}
+\Hypertarget{classLightsBuilder_a5d32aa24911ab1b8dd1685353f314b60}\label{classLightsBuilder_a5d32aa24911ab1b8dd1685353f314b60} 
+\index{LightsBuilder@{LightsBuilder}!ambientSet@{ambientSet}}
+\index{ambientSet@{ambientSet}!LightsBuilder@{LightsBuilder}}
+\doxysubsubsection{\texorpdfstring{ambientSet()}{ambientSet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLightsBuilder}{Lights\+Builder}} \& Lights\+Builder\+::ambient\+Set (\begin{DoxyParamCaption}\item[{const float}]{ambient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the ambient value for the \doxylink{classLights}{Lights} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ambient} & The ambient value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classLightsBuilder}{Lights\+Builder} object. 
+\end{DoxyReturn}
+\Hypertarget{classLightsBuilder_a2216eac8fa92104e19b187b8b8b30d23}\label{classLightsBuilder_a2216eac8fa92104e19b187b8b8b30d23} 
+\index{LightsBuilder@{LightsBuilder}!build@{build}}
+\index{build@{build}!LightsBuilder@{LightsBuilder}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLights}{Lights}} Lights\+Builder\+::build (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Build and return the final \doxylink{classLights}{Lights} object. 
+
+\begin{DoxyReturn}{Returns}
+The constructed \doxylink{classLights}{Lights} object. 
+\end{DoxyReturn}
+\Hypertarget{classLightsBuilder_a0814329b3eedd4350c996153e6486a96}\label{classLightsBuilder_a0814329b3eedd4350c996153e6486a96} 
+\index{LightsBuilder@{LightsBuilder}!diffuseSet@{diffuseSet}}
+\index{diffuseSet@{diffuseSet}!LightsBuilder@{LightsBuilder}}
+\doxysubsubsection{\texorpdfstring{diffuseSet()}{diffuseSet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLightsBuilder}{Lights\+Builder}} \& Lights\+Builder\+::diffuse\+Set (\begin{DoxyParamCaption}\item[{const float}]{diffuse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the diffuse value for the \doxylink{classLights}{Lights} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em diffuse} & The diffuse value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classLightsBuilder}{Lights\+Builder} object. 
+\end{DoxyReturn}
+\Hypertarget{classLightsBuilder_ad559ff18feb738d811a8acfddacf5bcb}\label{classLightsBuilder_ad559ff18feb738d811a8acfddacf5bcb} 
+\index{LightsBuilder@{LightsBuilder}!directionalSet@{directionalSet}}
+\index{directionalSet@{directionalSet}!LightsBuilder@{LightsBuilder}}
+\doxysubsubsection{\texorpdfstring{directionalSet()}{directionalSet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classLightsBuilder}{Lights\+Builder}} \& Lights\+Builder\+::directional\+Set (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the \doxylink{classLights}{Lights} object as a directional light. 
+
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classLightsBuilder}{Lights\+Builder} object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Parser/Lights\+Builder.\+hpp\end{DoxyCompactItemize}

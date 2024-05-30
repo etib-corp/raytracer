@@ -1,0 +1,142 @@
+\doxysection{Primitives\+Builder Class Reference}
+\hypertarget{classPrimitivesBuilder}{}\label{classPrimitivesBuilder}\index{PrimitivesBuilder@{PrimitivesBuilder}}
+
+
+A class for building primitives in a raytracer scene.  
+
+
+
+
+{\ttfamily \#include $<$Primitives\+Builder.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPrimitivesBuilder}{Primitives\+Builder}} \& \mbox{\hyperlink{classPrimitivesBuilder_aa5b153a912f7a94fb5adc3b83ac457fa}{add\+Sphere}} (const \mbox{\hyperlink{structPosition}{Position}} \&position, d64 radius, const \mbox{\hyperlink{classColor}{Color}} \&color, const \mbox{\hyperlink{structRotation}{Rotation}} \&rotation, const \mbox{\hyperlink{structTranslation}{Translation}} \&translation, const \mbox{\hyperlink{classPMaterial}{PMaterial}} \&material)
+\begin{DoxyCompactList}\small\item\em Adds a sphere primitive to the scene. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPrimitivesBuilder}{Primitives\+Builder}} \& \mbox{\hyperlink{classPrimitivesBuilder_ac2daee1753784c2dbdc7ec7f783f002d}{add\+Plane}} (const char axis, i32 position, const \mbox{\hyperlink{classColor}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Adds a plane primitive to the builder. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPrimitivesBuilder}{Primitives\+Builder}} \& \mbox{\hyperlink{classPrimitivesBuilder_aa823230e1ca298914198543839c6eb6b}{add\+Cylindre}} (const \mbox{\hyperlink{structPosition}{Position}} \&position, const d64 \&radius, const d64 \&depth, const \mbox{\hyperlink{classPMaterial}{PMaterial}} \&material)
+\begin{DoxyCompactList}\small\item\em Adds a cylinder primitive to the builder. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classObjectsList}{Objects\+List}} \&\& \mbox{\hyperlink{classPrimitivesBuilder_af1c3017d37f2fb223b70c549e29d4ce9}{build}} (void)
+\begin{DoxyCompactList}\small\item\em Builds and returns the list of objects. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPrimitivesBuilder_a94d054b44a8a5b7608633cf4a9fc4831}{print}} (void) const
+\begin{DoxyCompactList}\small\item\em Prints the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for building primitives in a raytracer scene. 
+
+The \doxylink{classPrimitivesBuilder}{Primitives\+Builder} class provides methods for adding spheres, planes, and cylinders to a scene. It also provides a method for building the final list of objects in the scene. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPrimitivesBuilder_aa823230e1ca298914198543839c6eb6b}\label{classPrimitivesBuilder_aa823230e1ca298914198543839c6eb6b} 
+\index{PrimitivesBuilder@{PrimitivesBuilder}!addCylindre@{addCylindre}}
+\index{addCylindre@{addCylindre}!PrimitivesBuilder@{PrimitivesBuilder}}
+\doxysubsubsection{\texorpdfstring{addCylindre()}{addCylindre()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPrimitivesBuilder}{Primitives\+Builder}} \& Primitives\+Builder\+::add\+Cylindre (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structPosition}{Position}} \&}]{position,  }\item[{const d64 \&}]{radius,  }\item[{const d64 \&}]{depth,  }\item[{const \mbox{\hyperlink{classPMaterial}{PMaterial}} \&}]{material }\end{DoxyParamCaption})}
+
+
+
+Adds a cylinder primitive to the builder. 
+
+This function adds a cylinder primitive to the builder with the specified position, radius, depth, and material.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the cylinder. \\
+\hline
+{\em radius} & The radius of the cylinder. \\
+\hline
+{\em depth} & The depth of the cylinder. \\
+\hline
+{\em material} & The material of the cylinder. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classPrimitivesBuilder}{Primitives\+Builder} object. 
+\end{DoxyReturn}
+\Hypertarget{classPrimitivesBuilder_ac2daee1753784c2dbdc7ec7f783f002d}\label{classPrimitivesBuilder_ac2daee1753784c2dbdc7ec7f783f002d} 
+\index{PrimitivesBuilder@{PrimitivesBuilder}!addPlane@{addPlane}}
+\index{addPlane@{addPlane}!PrimitivesBuilder@{PrimitivesBuilder}}
+\doxysubsubsection{\texorpdfstring{addPlane()}{addPlane()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPrimitivesBuilder}{Primitives\+Builder}} \& Primitives\+Builder\+::add\+Plane (\begin{DoxyParamCaption}\item[{const char}]{axis,  }\item[{i32}]{position,  }\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Adds a plane primitive to the builder. 
+
+This function adds a plane primitive to the builder with the specified axis, position, and color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em axis} & The axis along which the plane is positioned (\textquotesingle{}x\textquotesingle{}, \textquotesingle{}y\textquotesingle{}, or \textquotesingle{}z\textquotesingle{}). \\
+\hline
+{\em position} & The position of the plane along the specified axis. \\
+\hline
+{\em color} & The color of the plane. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the {\ttfamily \doxylink{classPrimitivesBuilder}{Primitives\+Builder}} object for method chaining. 
+\end{DoxyReturn}
+\Hypertarget{classPrimitivesBuilder_aa5b153a912f7a94fb5adc3b83ac457fa}\label{classPrimitivesBuilder_aa5b153a912f7a94fb5adc3b83ac457fa} 
+\index{PrimitivesBuilder@{PrimitivesBuilder}!addSphere@{addSphere}}
+\index{addSphere@{addSphere}!PrimitivesBuilder@{PrimitivesBuilder}}
+\doxysubsubsection{\texorpdfstring{addSphere()}{addSphere()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPrimitivesBuilder}{Primitives\+Builder}} \& Primitives\+Builder\+::add\+Sphere (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structPosition}{Position}} \&}]{position,  }\item[{d64}]{radius,  }\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{color,  }\item[{const \mbox{\hyperlink{structRotation}{Rotation}} \&}]{rotation,  }\item[{const \mbox{\hyperlink{structTranslation}{Translation}} \&}]{translation,  }\item[{const \mbox{\hyperlink{classPMaterial}{PMaterial}} \&}]{material }\end{DoxyParamCaption})}
+
+
+
+Adds a sphere primitive to the scene. 
+
+This function creates a sphere with the specified position, radius, color, rotation, translation, and material, and adds it to the scene being built by the {\ttfamily \doxylink{classPrimitivesBuilder}{Primitives\+Builder}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the sphere in 3D space. \\
+\hline
+{\em radius} & The radius of the sphere. \\
+\hline
+{\em color} & The color of the sphere. \\
+\hline
+{\em rotation} & The rotation of the sphere. \\
+\hline
+{\em translation} & The translation of the sphere. \\
+\hline
+{\em material} & The material of the sphere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the {\ttfamily \doxylink{classPrimitivesBuilder}{Primitives\+Builder}} object, allowing for method chaining. 
+\end{DoxyReturn}
+\Hypertarget{classPrimitivesBuilder_af1c3017d37f2fb223b70c549e29d4ce9}\label{classPrimitivesBuilder_af1c3017d37f2fb223b70c549e29d4ce9} 
+\index{PrimitivesBuilder@{PrimitivesBuilder}!build@{build}}
+\index{build@{build}!PrimitivesBuilder@{PrimitivesBuilder}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classObjectsList}{Objects\+List}} \&\& Primitives\+Builder\+::build (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Builds and returns the list of objects. 
+
+This function builds and returns the list of objects that have been parsed and constructed. The list is moved using std\+::move to avoid unnecessary copying.
+
+\begin{DoxyReturn}{Returns}
+The list of objects. 
+\end{DoxyReturn}
+\Hypertarget{classPrimitivesBuilder_a94d054b44a8a5b7608633cf4a9fc4831}\label{classPrimitivesBuilder_a94d054b44a8a5b7608633cf4a9fc4831} 
+\index{PrimitivesBuilder@{PrimitivesBuilder}!print@{print}}
+\index{print@{print}!PrimitivesBuilder@{PrimitivesBuilder}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Primitives\+Builder\+::print (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Prints the object. 
+
+This function prints the object to the standard output. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Parser/Primitives\+Builder.\+hpp\end{DoxyCompactItemize}

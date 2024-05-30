@@ -1,0 +1,52 @@
+\doxysection{Disk.\+hpp}
+\hypertarget{Disk_8hpp_source}{}\label{Disk_8hpp_source}\index{include/Primitive/Disk.hpp@{include/Primitive/Disk.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Disk}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}raytracer.hpp"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Vector.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Ray.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}APrimitive.hpp"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDisk}{Disk}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classAPrimitive}{APrimitive}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDisk}{Disk}}();}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDisk}{Disk}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ center,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \&normal,\ \textcolor{keywordtype}{double}\ radius,\ std::shared\_ptr<IMaterial>\ material\ =\ \textcolor{keyword}{nullptr});}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDisk}{\string~Disk}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classDisk_afc1458ed0f349b3011cc8c65a02a23eb}{hit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRay}{Ray}}\ \&ray,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classInterval}{Interval}}\ \&ray\_t,\ \mbox{\hyperlink{classHitRecord}{HitRecord}}\ \&record)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ getDiskUV(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\&\ p,\ \textcolor{keywordtype}{double}\&\ u,\ \textcolor{keywordtype}{double}\&\ v)}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ phi\ =\ atan2(p[0],\ p[2]);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ r\ =\ sqrt(p[0]\ *\ p[0]\ +\ p[2]\ *\ p[2]);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ u\ =\ (phi\ +\ M\_PI)\ /\ (2\ *\ M\_PI);}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ r;}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ getCenter()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ getRadius()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\_radius;}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setRadius(\textcolor{keywordtype}{double}\ radius)\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\_radius\ =\ radius;}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \_center;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \_normal;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_radius;}
+\DoxyCodeLine{00046\ \};}
+
+\end{DoxyCode}

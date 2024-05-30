@@ -1,0 +1,59 @@
+\doxysection{Lights\+Builder.\+hpp}
+\hypertarget{LightsBuilder_8hpp_source}{}\label{LightsBuilder_8hpp_source}\index{include/Parser/LightsBuilder.hpp@{include/Parser/LightsBuilder.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ LightsBuilder}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ LIGHTSBUILDER\_HPP\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ LIGHTSBUILDER\_HPP\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Lights.hpp"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLightsBuilder}{LightsBuilder}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classLights}{Lights}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLightsBuilder}{LightsBuilder}}\&\ \mbox{\hyperlink{classLightsBuilder_a5d32aa24911ab1b8dd1685353f314b60}{ambientSet}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ ambient)}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \_lights.\mbox{\hyperlink{classLights_aa476c7db6f3bc52212a7f2ee907fc9e0}{ambientSet}}(ambient);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLightsBuilder}{LightsBuilder}}\&\ \mbox{\hyperlink{classLightsBuilder_a0814329b3eedd4350c996153e6486a96}{diffuseSet}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ diffuse)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \_lights.\mbox{\hyperlink{classLights_a40c6e7bdc365cd75be33987a1c64b8cd}{diffuseSet}}(diffuse);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLightsBuilder}{LightsBuilder}}\&\ \mbox{\hyperlink{classLightsBuilder_a4d39b67742ef5460d009d1bb1abdf28b}{addPoint}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structPoint}{Point}}\&\ point)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \_points.push\_back(point);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLightsBuilder}{LightsBuilder}}\&\ \mbox{\hyperlink{classLightsBuilder_ad559ff18feb738d811a8acfddacf5bcb}{directionalSet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \_lights.\mbox{\hyperlink{classLights_a864e205a012c648f43901d8981cb300e}{directionalSet}}();}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLights}{Lights}}\ \mbox{\hyperlink{classLightsBuilder_a2216eac8fa92104e19b187b8b8b30d23}{build}}()}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \_lights.\mbox{\hyperlink{classLights_a962c87a1c8170e1d9fa41b4358942163}{pointsSet}}(\_points);}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_lights;}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLights}{Lights}}\ \_lights;\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ std::vector<Point>\ \_points;\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00084\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00085\ \};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !LIGHTSBUILDER\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

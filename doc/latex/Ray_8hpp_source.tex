@@ -1,0 +1,42 @@
+\doxysection{Ray.\+hpp}
+\hypertarget{Ray_8hpp_source}{}\label{Ray_8hpp_source}\index{include/Ray.hpp@{include/Ray.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ Visual\ Studio\ Live\ Share\ (Workspace)}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Ray}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}raytracer.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Vector.hpp"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classRay}{Ray}}\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRay_a2e3d2c29f2df4ab3da10da79d4acb852}{Ray}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRay_a26bee1c5a79a5e49dc27143a810f01cb}{Ray}}(\mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ point,\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ direction);}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classRay_af6c537b442c79b6831e607aa384c2089}{\string~Ray}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classRay_a3d7051384c670b2c179da61fe9996307}{getPoint}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classRay_aafc5bd0c9b0f6a5a78518b10044d5555}{getDirection}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRay_a389cfee85dcaab09d2b74e07478c9a1a}{setPoint}}(\mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ point);}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classRay_a15fe31b7098a4b110d58350cd4bba19a}{setDirection}}(\mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ direction);}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classRay_a28be1a92d69b1779c91c3be3cf08b374}{at}}(\textcolor{keywordtype}{double}\ t)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classRay_a4016bb3444acda57ec38a94d211a75c2}{\_point}};\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classRay_a6efd7507661d10ae5306f8e4ab723d25}{\_direction}};\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00076\ \};}
+\DoxyCodeLine{00077\ }
+
+\end{DoxyCode}

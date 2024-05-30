@@ -1,0 +1,202 @@
+\doxysection{GUI\+::AEdit\+Double3 Class Reference}
+\hypertarget{classGUI_1_1AEditDouble3}{}\label{classGUI_1_1AEditDouble3}\index{GUI::AEditDouble3@{GUI::AEditDouble3}}
+
+
+\doxylink{classGUI_1_1AEditDouble3}{AEdit\+Double3} class for editing 3D coordinates.  
+
+
+
+
+{\ttfamily \#include $<$AEdit\+Double3.\+hpp$>$}
+
+Inheritance diagram for GUI\+::AEdit\+Double3\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.000000cm]{classGUI_1_1AEditDouble3}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGUI_1_1AEditDouble3_aa4b51cd59b61025a9dac4e12eb268611}\label{classGUI_1_1AEditDouble3_aa4b51cd59b61025a9dac4e12eb268611} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+AEdit\+Double3} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classGUI_1_1AEditDouble3_ac3e034ff09545042d4e1643bfbd4d774}{getX}} () const
+\begin{DoxyCompactList}\small\item\em Get the x coordinate. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classGUI_1_1AEditDouble3_a04773628fbad1a47544a762648b7043d}{getY}} () const
+\begin{DoxyCompactList}\small\item\em Get the y coordinate. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classGUI_1_1AEditDouble3_a82fef43f3d37d9620d9cf4c26a083c1b}{getZ}} () const
+\begin{DoxyCompactList}\small\item\em Get the z coordinate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AEditDouble3_a9b153894234b021bf8aa1a740aef88e9}{setX}} (float value)
+\begin{DoxyCompactList}\small\item\em Set the x coordinate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AEditDouble3_a1dc96295b0597b640ce2169cb0ba78c2}{setY}} (float value)
+\begin{DoxyCompactList}\small\item\em Set the y coordinate. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AEditDouble3_a3453f930dd6bcc3c6ee45867899340fb}{setZ}} (float value)
+\begin{DoxyCompactList}\small\item\em Set the z coordinate. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1AInput}{GUI\+::\+AInput}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGUI_1_1AInput_a2526d8b1cc03c04c8118135ce39cadfc}{\texorpdfstring{$\sim$}{\string~}\+AInput}} ()=default
+\begin{DoxyCompactList}\small\item\em The \doxylink{classGUI_1_1AInput}{AInput} class\textquotesingle{}s destructor is a virtual function that allows derived classes to override it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1AInteractive}{GUI\+::\+AInteractive}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGUI_1_1AInteractive_a42fc5a64ea67cb0734071ff15970d7ac}{\texorpdfstring{$\sim$}{\string~}\+AInteractive}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classGUI_1_1AInteractive}{AInteractive}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGUI_1_1AInteractive_a35d969327a1f0cf3898cd6189cff4923}{display}} ()=0
+\begin{DoxyCompactList}\small\item\em Virtual method to display the interactive element. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classGUI_1_1AInteractive_a511eb004e29b9ddc38c2bbce538d45d4}{get\+Title}} () const
+\begin{DoxyCompactList}\small\item\em Get the title of the interactive element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AInteractive_a59f2acad8c1fe6fd0c21d8a0bcc68b10}{set\+Title}} (const std\+::string title)
+\begin{DoxyCompactList}\small\item\em Sets the title of the interactive element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1AGUI}{GUI\+::\+AGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGUI_1_1AGUI_a391f1bf6b6db1ae0fed4293c7e94a16e}{\texorpdfstring{$\sim$}{\string~}\+AGUI}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classGUI_1_1AGUI}{AGUI} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AGUI_a379e08a1dc1b4751c388c20816d7926e}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the GUI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AGUI_a9e180aa601d7f7e0492cd315b122d8b2}{init}} (sf\+::\+Render\+Window \&window, sf\+::\+Clock \&clock, \mbox{\hyperlink{classObjectsList}{Objects\+List}} \&world)
+\begin{DoxyCompactList}\small\item\em Initializes the GUI. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGUI_1_1AGUI_ae6dc84b25ff036308f7c4757adb11205}{has\+To\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the GUI should be displayed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AGUI_a99b90f4cffacf82946ae08659a19c35b}{set\+Display}} (bool \mbox{\hyperlink{classGUI_1_1AGUI_afa7a3534aa4e47edea79c3e8bcfb2115}{display}})
+\begin{DoxyCompactList}\small\item\em Sets whether the GUI should be displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1IGUI}{GUI\+::\+IGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGUI_1_1IGUI_a6da7dffd12006282fe449229e0dd7f0b}{\texorpdfstring{$\sim$}{\string~}\+IGUI}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGUI_1_1AEditDouble3_a2c3124b0a232af5e9a2b047ebf720c6e}\label{classGUI_1_1AEditDouble3_a2c3124b0a232af5e9a2b047ebf720c6e} 
+float {\bfseries \+\_\+x}
+\item 
+\Hypertarget{classGUI_1_1AEditDouble3_a4028ad93d4485f3d94f82ff41dda03cf}\label{classGUI_1_1AEditDouble3_a4028ad93d4485f3d94f82ff41dda03cf} 
+float {\bfseries \+\_\+y}
+\item 
+\Hypertarget{classGUI_1_1AEditDouble3_a47559bb9c5b587258c6ba93097fb5180}\label{classGUI_1_1AEditDouble3_a47559bb9c5b587258c6ba93097fb5180} 
+float {\bfseries \+\_\+z}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGUI_1_1AInteractive}{GUI\+::\+AInteractive}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classGUI_1_1AInteractive_aefa21c4fee53cb0017fa929fbab407cb}{\+\_\+title}}
+\begin{DoxyCompactList}\small\item\em Protected member variable to store the title of the interactive element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGUI_1_1AGUI}{GUI\+::\+AGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classGUI_1_1AGUI_ab87e6df8e4b3079e8ba8b039cc730138}{\+\_\+display}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the GUI should be displayed. \end{DoxyCompactList}\item 
+sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGUI_1_1AGUI_adc6c12e2e09870719ecfd580bae605e8}{\+\_\+window}}
+\begin{DoxyCompactList}\small\item\em Pointer to the window on which the GUI will be displayed. \end{DoxyCompactList}\item 
+sf\+::\+Clock \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGUI_1_1AGUI_a84fd5365623b5830fd80677000f779e0}{\+\_\+clock}}
+\begin{DoxyCompactList}\small\item\em Pointer to the clock used to track time for animations and updates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classObjectsList}{Objects\+List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGUI_1_1AGUI_af365422bad4d8f84316e362a77425544}{\+\_\+world}}
+\begin{DoxyCompactList}\small\item\em Pointer to the world object containing all the objects in the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classGUI_1_1AEditDouble3}{AEdit\+Double3} class for editing 3D coordinates. 
+
+This class is used to edit 3D coordinates (x, y, z) in a graphical user interface.
+
+\begin{DoxyAuthor}{Author}
+Julien Ferdinand 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGUI_1_1AEditDouble3_ac3e034ff09545042d4e1643bfbd4d774}\label{classGUI_1_1AEditDouble3_ac3e034ff09545042d4e1643bfbd4d774} 
+\index{GUI::AEditDouble3@{GUI::AEditDouble3}!getX@{getX}}
+\index{getX@{getX}!GUI::AEditDouble3@{GUI::AEditDouble3}}
+\doxysubsubsection{\texorpdfstring{getX()}{getX()}}
+{\footnotesize\ttfamily float GUI\+::\+AEdit\+Double3\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the x coordinate. 
+
+\begin{DoxyReturn}{Returns}
+The x coordinate. 
+\end{DoxyReturn}
+\Hypertarget{classGUI_1_1AEditDouble3_a04773628fbad1a47544a762648b7043d}\label{classGUI_1_1AEditDouble3_a04773628fbad1a47544a762648b7043d} 
+\index{GUI::AEditDouble3@{GUI::AEditDouble3}!getY@{getY}}
+\index{getY@{getY}!GUI::AEditDouble3@{GUI::AEditDouble3}}
+\doxysubsubsection{\texorpdfstring{getY()}{getY()}}
+{\footnotesize\ttfamily float GUI\+::\+AEdit\+Double3\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the y coordinate. 
+
+\begin{DoxyReturn}{Returns}
+The y coordinate. 
+\end{DoxyReturn}
+\Hypertarget{classGUI_1_1AEditDouble3_a82fef43f3d37d9620d9cf4c26a083c1b}\label{classGUI_1_1AEditDouble3_a82fef43f3d37d9620d9cf4c26a083c1b} 
+\index{GUI::AEditDouble3@{GUI::AEditDouble3}!getZ@{getZ}}
+\index{getZ@{getZ}!GUI::AEditDouble3@{GUI::AEditDouble3}}
+\doxysubsubsection{\texorpdfstring{getZ()}{getZ()}}
+{\footnotesize\ttfamily float GUI\+::\+AEdit\+Double3\+::getZ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the z coordinate. 
+
+\begin{DoxyReturn}{Returns}
+The z coordinate. 
+\end{DoxyReturn}
+\Hypertarget{classGUI_1_1AEditDouble3_a9b153894234b021bf8aa1a740aef88e9}\label{classGUI_1_1AEditDouble3_a9b153894234b021bf8aa1a740aef88e9} 
+\index{GUI::AEditDouble3@{GUI::AEditDouble3}!setX@{setX}}
+\index{setX@{setX}!GUI::AEditDouble3@{GUI::AEditDouble3}}
+\doxysubsubsection{\texorpdfstring{setX()}{setX()}}
+{\footnotesize\ttfamily void GUI\+::\+AEdit\+Double3\+::setX (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the x coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The new x coordinate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGUI_1_1AEditDouble3_a1dc96295b0597b640ce2169cb0ba78c2}\label{classGUI_1_1AEditDouble3_a1dc96295b0597b640ce2169cb0ba78c2} 
+\index{GUI::AEditDouble3@{GUI::AEditDouble3}!setY@{setY}}
+\index{setY@{setY}!GUI::AEditDouble3@{GUI::AEditDouble3}}
+\doxysubsubsection{\texorpdfstring{setY()}{setY()}}
+{\footnotesize\ttfamily void GUI\+::\+AEdit\+Double3\+::setY (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the y coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The new y coordinate. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classGUI_1_1AEditDouble3_a3453f930dd6bcc3c6ee45867899340fb}\label{classGUI_1_1AEditDouble3_a3453f930dd6bcc3c6ee45867899340fb} 
+\index{GUI::AEditDouble3@{GUI::AEditDouble3}!setZ@{setZ}}
+\index{setZ@{setZ}!GUI::AEditDouble3@{GUI::AEditDouble3}}
+\doxysubsubsection{\texorpdfstring{setZ()}{setZ()}}
+{\footnotesize\ttfamily void GUI\+::\+AEdit\+Double3\+::setZ (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
+
+
+
+Set the z coordinate. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The new z coordinate. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+GUI/AEdit\+Double3.\+hpp\end{DoxyCompactItemize}

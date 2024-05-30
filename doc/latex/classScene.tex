@@ -1,0 +1,44 @@
+\doxysection{Scene Class Reference}
+\hypertarget{classScene}{}\label{classScene}\index{Scene@{Scene}}
+
+
+The \doxylink{classScene}{Scene} class represents a scene in a game or simulation.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classScene_ad10176d75a9cc0da56626f682d083507}\label{classScene_ad10176d75a9cc0da56626f682d083507} 
+{\bfseries Scene} ()
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classScene}{Scene} class. \end{DoxyCompactList}\item 
+\Hypertarget{classScene_a3b8cec2e32546713915f8c6303c951f1}\label{classScene_a3b8cec2e32546713915f8c6303c951f1} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Scene} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classScene}{Scene} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classIObject}{IObject}} $>$ $>$ \mbox{\hyperlink{classScene_a7c76384170490bad1742245651e053eb}{\+\_\+objects}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classScene}{Scene} class represents a scene in a game or simulation. 
+
+It contains a collection of \doxylink{classIObject}{IObject} pointers, which represent the objects in the scene. 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classScene_a7c76384170490bad1742245651e053eb}\label{classScene_a7c76384170490bad1742245651e053eb} 
+\index{Scene@{Scene}!\_objects@{\_objects}}
+\index{\_objects@{\_objects}!Scene@{Scene}}
+\doxysubsubsection{\texorpdfstring{\_objects}{\_objects}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classIObject}{IObject}}$>$ $>$ Scene\+::\+\_\+objects\hspace{0.3cm}{\ttfamily [protected]}}
+
+A vector of unique\+\_\+ptr to \doxylink{classIObject}{IObject}, which represents the objects in the scene. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Scene.\+hpp\end{DoxyCompactItemize}

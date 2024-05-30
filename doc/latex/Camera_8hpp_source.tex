@@ -1,0 +1,241 @@
+\doxysection{Camera.\+hpp}
+\hypertarget{Camera_8hpp_source}{}\label{Camera_8hpp_source}\index{include/Camera.hpp@{include/Camera.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ Visual\ Studio\ Live\ Share\ (Workspace)}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Camera}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}raytracer.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Rectangle_8hpp}{Rectangle.hpp}}"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Color.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Ray.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}AObject.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}APrimitive.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Primitive/ObjectsList.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Primitive/Sphere.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Material/Lambertian.hpp"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}Texture/Checker.hpp"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}imgui.h"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}imgui-\/SFML.h"{}}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#include\ "{}RaytracerAth/RaytracerAth.hpp"{}}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#include\ <SFML/Window.hpp>}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <SFML/Graphics.hpp>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <SFML/System.hpp>}}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ <thread>}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ ASPECT\_RATIO\ (16.0\ /\ 9.0)}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ WIDTH\ 128\ }\textcolor{comment}{//\ 128\ for\ real\ time\ rendering}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ RENDER\_WIDTH\ 400}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ HEIGHT\ static\_cast<int>(WIDTH\ /\ ASPECT\_RATIO)}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ RENDER\_HEIGHT\ static\_cast<int>(RENDER\_WIDTH\ /\ ASPECT\_RATIO)}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ VIEWPORT\_HEIGHT\ 2.0}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ VIEWPORT\_WIDTH\ (VIEWPORT\_HEIGHT\ *\ (double(WIDTH)\ /\ double(HEIGHT)))}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ NB\_THREADS\ 512}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCamera}{Camera}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classAObject}{AObject}}\ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCamera}{Camera}}();}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCamera_a47c0f0e7cb74ea13fd4707193057eb76}{Camera}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<2>}}\&\ imageDimension);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCamera_ad1897942d0ccf91052386388a497349f}{\string~Camera}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ init();}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setCamera(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRay}{Ray}}\ \mbox{\hyperlink{classCamera_a1330ff539b4aaab5fb6d84e832046448}{ray}}(\textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ std::chrono::\_V2::system\_clock::time\_point\ \mbox{\hyperlink{classCamera_a59bb36ab34d5612ede03c705e1980208}{render}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classAPrimitive}{APrimitive}}\&\ world);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_a943ecfdfccc9a1a0464d39f878656793}{renderSFML}}(\mbox{\hyperlink{classObjectsList}{ObjectsList}}\&\ world);}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ checkMove(sf::Event\ event);}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Rectangle}{Math::Rectangle}}\ \mbox{\hyperlink{classCamera_a43807d687f4806bb3653a0c89e27ab3e}{getViewport}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<2>}}\ \mbox{\hyperlink{classCamera_a177717a98b6084b93bdc32d5a14e3229}{getImageDimension}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classCamera_a530f6f42e40c9456d3082a4aca2c17e5}{getBackgroundColor}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_a2445a72a871ff79ebae83fe98136cba7}{setBackgroundColor}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&\ color);}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classCamera_ac3f615fd674977d065592c1635fc40bc}{getFov}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00130\ }
+\DoxyCodeLine{00136\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classCamera_a2885c98c404c8a2975d67c609ac948e3}{getFocalLength}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classCamera_ae6cd893d54202367559fb7e6a94afa29}{getViewportWidth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classCamera_a6e266fb00fe2bc41884532bc1e0aea2c}{getViewportHeight}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_af9c41ed33da45d94becf4bda1738a0f2}{getHorizontalPixelDelta}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_a1cb3ec0e9e1d84d3cdf5868001b1ce85}{getVerticalPixelDelta}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00165\ }
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_afe5df72f256d2b424fd5dd1f7e65bf4d}{getViewportUpperLeft}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_ab6c9097526e64ea7b6a661e24d65f385}{getFirstPixelPosition}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCamera_a496a779dcb6fa8c3f6590a0d0b0c2cf8}{getSamplesPerPixel}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classCamera_ace9682b5d64cd29292b16628842c7694}{getPixelSampleScale}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_a7c856c350861ec81ee28c7267bdd3b85}{setSamplesPerPixel}}(\textcolor{keywordtype}{int}\ samples);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_a81a0d3d697591ccc414f95cf90b4d365}{setMaxDepth}}(\textcolor{keywordtype}{int}\ depth);}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setImageDimension(\mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<2>}}\ dimension)}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCamera_a3bb37794182727f15cb059a3d5c27a7f}{\_imageDimension}}\ =\ dimension;}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCamera_a4ef4eba728d5b51dc66345be01dc78c1}{getMaxDepth}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classCamera_a7eb085087a9270566190e4d23c3aff06}{getVfov}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_a33e62658cfe1ab2ee38e002d925eb32f}{setVfov}}(\textcolor{keywordtype}{double}\ vfov);}
+\DoxyCodeLine{00233\ }
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_a841dc9ae6bd14e9dec2e0537ba96b985}{getLookFrom}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_a0f17ca835818e0f3054e779671b402f1}{setLookFrom}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\&\ lookfrom);}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_ae7deeecff1d5e24b8f767d9b76f206b5}{getLookAt}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00254\ }
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_afd8abf611cb961d255f5527e96637338}{setLookAt}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\&\ lookat);}
+\DoxyCodeLine{00261\ }
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_abaf5bcc87b42a30f95d8473734198965}{getVup}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_a7b3b266d4ef9067f2f02e1f4d826b990}{setVup}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\&\ vup);}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_a2051e262ecaa0eaf0e43cb58bba40715}{getU}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_a65a44a5f6bb6ed8f8b7992235e69a114}{setU}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\&\ u);}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_a7fc7ba77c40e24da5a2c2b1b2cc64eaa}{getV}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_ae70b76a44cd209583d31464c01f0289c}{setV}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\&\ v);}
+\DoxyCodeLine{00303\ }
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_aca97f7b7890c054ffdc99c32adfcdc40}{getW}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_ad8ccb28c6f62efe89d8c3ab9a14d79e2}{setW}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\&\ w);}
+\DoxyCodeLine{00317\ }
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ getDefocusAngle()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setDefocusAngle(\textcolor{keywordtype}{double}\ defocusAngle);}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ getFocusDist()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00323\ }
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setFocusDist(\textcolor{keywordtype}{double}\ focusDist);}
+\DoxyCodeLine{00325\ }
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ defocusDiskSample()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCamera_a85723b7fbb292739576fe0cbac6402ba}{setFilter}}(std::function<\mbox{\hyperlink{classColor}{Color}}(\mbox{\hyperlink{classColor}{Color}})>\ filter);}
+\DoxyCodeLine{00334\ }
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classCamera_ac371af764a0908d4b9c96b4ca3d6e861}{rayColor}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRay}{Ray}}\&\ \mbox{\hyperlink{classCamera_a1330ff539b4aaab5fb6d84e832046448}{ray}},\ \textcolor{keywordtype}{int}\ depth,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classAPrimitive}{APrimitive}}\&\ world)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00343\ }
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classRay}{Ray}}\ getRay(\textcolor{keywordtype}{int}\ i,\ \textcolor{keywordtype}{int}\ j,\ \textcolor{keywordtype}{int}\ sample)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ print(\textcolor{keywordtype}{void})\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Camera:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tImageDimension="{}}\ <<\ \mbox{\hyperlink{classCamera_a3bb37794182727f15cb059a3d5c27a7f}{\_imageDimension}}\ <<\ std::endl;}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tPosition(setLookFrom)="{}}\ <<\ \mbox{\hyperlink{classCamera_a841dc9ae6bd14e9dec2e0537ba96b985}{getLookFrom}}()\ <<\ std::endl;}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tPosition(setLookAt)="{}}\ <<\ \mbox{\hyperlink{classCamera_ae7deeecff1d5e24b8f767d9b76f206b5}{getLookAt}}()\ <<\ std::endl;}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tgetVfov="{}}\ <<\ \mbox{\hyperlink{classCamera_a7eb085087a9270566190e4d23c3aff06}{getVfov}}()\ <<\ std::endl;}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tgetVup="{}}\ <<\ \mbox{\hyperlink{classCamera_abaf5bcc87b42a30f95d8473734198965}{getVup}}()\ <<\ std::endl;}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tMaxDeph="{}}\ <<\ \mbox{\hyperlink{classCamera_a4ef4eba728d5b51dc66345be01dc78c1}{getMaxDepth}}()\ <<\ std::endl;}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tViewportWidth="{}}\ <<\ \mbox{\hyperlink{classCamera_a0a1d6842f61e39b372f0b3506d27eb13}{\_viewportWidth}}\ <<\ std::endl;}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tLightEnabled="{}}\ <<\ \_lightEnabled\ <<\ std::endl;}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tBackgroundColor="{}}\ <<\ \mbox{\hyperlink{classCamera_a53a22fe1fc586cfa43c97696d8b1df44}{\_backgroundColor}}.\mbox{\hyperlink{classColor_a2337ea72bc849039f73077d00ab42bbb}{red}}\ <<\ \mbox{\hyperlink{classCamera_a53a22fe1fc586cfa43c97696d8b1df44}{\_backgroundColor}}.\mbox{\hyperlink{classColor_a0398a30128909996780fce10e039ac24}{green}}\ <<\ \mbox{\hyperlink{classCamera_a53a22fe1fc586cfa43c97696d8b1df44}{\_backgroundColor}}.\mbox{\hyperlink{classColor_a0a35e5de46315db828b5bd56866d9fea}{blue}}\ <<\ std::endl;}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setLightEnabled(\textcolor{keywordtype}{bool}\ enabled);}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ getLightEnable(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_lightEnabled;}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00365\ }
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isLightEnabled()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00367\ }
+\DoxyCodeLine{00368\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ sampleSquare(\textcolor{keywordtype}{int}\ sample)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00370\ }
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ randomInUnitSphere()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ randomOnHemisphere(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \&normal)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00374\ }
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Rectangle}{Math::Rectangle}}\ \mbox{\hyperlink{classCamera_af77b0d1ca6302c917bbfa2da41d5a607}{\_viewport}};}
+\DoxyCodeLine{00381\ }
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<2>}}\ \mbox{\hyperlink{classCamera_a3bb37794182727f15cb059a3d5c27a7f}{\_imageDimension}};}
+\DoxyCodeLine{00388\ }
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classCamera_a53a22fe1fc586cfa43c97696d8b1df44}{\_backgroundColor}};}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classCamera_a43e80a9915627123372e21465ac58c9e}{\_fov}};}
+\DoxyCodeLine{00402\ }
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classCamera_a097bb124d6b5062753114fe79ac1a6fd}{\_focalLength}};}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classCamera_a0a1d6842f61e39b372f0b3506d27eb13}{\_viewportWidth}};}
+\DoxyCodeLine{00416\ }
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classCamera_a52329d50e3624bf3105785e7965dcb9b}{\_viewportHeight}};}
+\DoxyCodeLine{00423\ }
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_ab5d6833b4be95f4e13dd8b2eefa3525a}{\_horizontalPixelDelta}};}
+\DoxyCodeLine{00430\ }
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_a85647523d5196a7f6e08bbec51fa5fe7}{\_verticalPixelDelta}};}
+\DoxyCodeLine{00437\ }
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_af96201b3161c4ef1b3e649fecd6e6e1d}{\_viewportUpperLeft}};}
+\DoxyCodeLine{00444\ }
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_a12a61a764fee66a981907bc9ca3c7a51}{\_firstPixelPosition}};}
+\DoxyCodeLine{00451\ }
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCamera_afa820cf5f89a097df1771d20ce4dc56e}{\_samplesPerPixel}};}
+\DoxyCodeLine{00458\ }
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classCamera_a52a912bd0f2f08044436fe2a88bea7b6}{\_pixelSamplesScale}};}
+\DoxyCodeLine{00465\ }
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classCamera_aec766dd49e71c2fce1625a8445608cf1}{maxDepth}};}
+\DoxyCodeLine{00472\ }
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classCamera_af1ba847700749c93d41c0e56303e6896}{\_vfov}};}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_aa4bdfd2ced2277928189173551cab05b}{\_lookfrom}}\ =\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}(\{-\/2,\ 2,\ 1\});}
+\DoxyCodeLine{00486\ }
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_ab7217fa4e0904c4a9b6505a320b91dbd}{\_lookat}}\ =\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}(\{0,\ 0,\ -\/1\});}
+\DoxyCodeLine{00493\ }
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_a15b6e0d9460ee52c94fbc06476065a8f}{\_vup}}\ =\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}(\{0,\ 1,\ 0\});}
+\DoxyCodeLine{00500\ }
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_a5e66d7f4f62f4c7f497c34ff191c2737}{\_u}};}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00513\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_a51f68052bfd88c085b7c1e7574634884}{\_v}};}
+\DoxyCodeLine{00514\ }
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classCamera_a2e061f1d32767c50b9eb1c6d02e5efc0}{\_w}};}
+\DoxyCodeLine{00521\ }
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_defocusAngle;}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00524\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_focusDist;}
+\DoxyCodeLine{00525\ }
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ defocusDiskU;}
+\DoxyCodeLine{00527\ }
+\DoxyCodeLine{00528\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ defocusDiskV;}
+\DoxyCodeLine{00529\ }
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ sf::Uint8\ *\_pixels;}
+\DoxyCodeLine{00531\ }
+\DoxyCodeLine{00532\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_rendered;}
+\DoxyCodeLine{00533\ }
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_showAth;}
+\DoxyCodeLine{00535\ }
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_lightEnabled;}
+\DoxyCodeLine{00537\ }
+\DoxyCodeLine{00538\ }
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ std::function<\mbox{\hyperlink{classColor}{Color}}(\mbox{\hyperlink{classColor}{Color}})>\ \mbox{\hyperlink{classCamera_a288a71327455a721f78d627d722316dc}{\_filter}};}
+\DoxyCodeLine{00545\ \};}
+
+\end{DoxyCode}

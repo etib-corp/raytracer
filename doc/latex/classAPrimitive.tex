@@ -1,0 +1,124 @@
+\doxysection{APrimitive Class Reference}
+\hypertarget{classAPrimitive}{}\label{classAPrimitive}\index{APrimitive@{APrimitive}}
+
+
+Base class for all primitives in the scene.  
+
+
+
+
+{\ttfamily \#include $<$APrimitive.\+hpp$>$}
+
+Inheritance diagram for APrimitive\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classAPrimitive}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAPrimitive_a15bc48148c7d54376db26b952a422e8c}\label{classAPrimitive_a15bc48148c7d54376db26b952a422e8c} 
+enum {\bfseries Type} \{ \newline
+{\bfseries SPHERE}
+, {\bfseries PLANE}
+, {\bfseries CYLINDER}
+, {\bfseries CONE}
+, \newline
+{\bfseries DISK}
+, {\bfseries NONE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAPrimitive_a402c119be20cbb2291c3bf40b40f3e7a}\label{classAPrimitive_a402c119be20cbb2291c3bf40b40f3e7a} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+APrimitive} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classAPrimitive}{APrimitive}. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classAPrimitive_a6f021f32c7d3add33a0cc919d17caebd}{hit}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classInterval}{Interval}} \&ray\+\_\+t, \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&record) const =0
+\begin{DoxyCompactList}\small\item\em Checks if a ray intersects the primitive. \end{DoxyCompactList}\item 
+\Hypertarget{classAPrimitive_aa98fdc20e3ec5a964c1150a3c02d2aec}\label{classAPrimitive_aa98fdc20e3ec5a964c1150a3c02d2aec} 
+Type {\bfseries get\+Type} () const
+\item 
+\Hypertarget{classAPrimitive_ad6ebde07acdb5aa84c9b5781181b618e}\label{classAPrimitive_ad6ebde07acdb5aa84c9b5781181b618e} 
+void {\bfseries set\+Material} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ material)
+\item 
+\Hypertarget{classAPrimitive_a85292e8d5a00b6b1f54c592eceefea9a}\label{classAPrimitive_a85292e8d5a00b6b1f54c592eceefea9a} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ {\bfseries get\+Material} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAObject}{AObject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAObject_a38fdf4de5b6966272b268340ea7c7ffe}{\texorpdfstring{$\sim$}{\string~}\+AObject}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classAObject}{AObject} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classAObject_a92975190349260c0d886f081c8f2567c}{get\+Position}} () const override
+\begin{DoxyCompactList}\small\item\em Get the current position of the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAObject_abdd5a2887200cb715f74493fba344188}{set\+Position}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&position) override
+\begin{DoxyCompactList}\small\item\em Set the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIObject}{IObject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIObject_aade43d43340617257443ca5733669ef9}{\texorpdfstring{$\sim$}{\string~}\+IObject}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ \mbox{\hyperlink{classAPrimitive_a7d8627cb3005113ffddb4d71ae8ed0c6}{\+\_\+material}}
+\item 
+Type \mbox{\hyperlink{classAPrimitive_a19c0584626a95de875c9bb26c7f4f978}{\+\_\+type}} = NONE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classAObject}{AObject}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classAObject_ac5109ec253963d9c6ac184949518444b}{\+\_\+position}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all primitives in the scene. 
+
+This class provides a basic interface for all primitives in the scene. It includes a method to check if a ray intersects the primitive and a pointer to the material of the primitive. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAPrimitive_a6f021f32c7d3add33a0cc919d17caebd}\label{classAPrimitive_a6f021f32c7d3add33a0cc919d17caebd} 
+\index{APrimitive@{APrimitive}!hit@{hit}}
+\index{hit@{hit}!APrimitive@{APrimitive}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily virtual bool APrimitive\+::hit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classInterval}{Interval}} \&}]{ray\+\_\+t,  }\item[{\mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&}]{record }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Checks if a ray intersects the primitive. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em ray} & The ray to check for intersection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the ray intersects the primitive, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classCone_a4ad0c91b6b4aa5bb3db6c455ca688f69}{Cone}}, \mbox{\hyperlink{classCylindre_a22e563e879201fc71e3ba6e7964c1e9e}{Cylindre}}, \mbox{\hyperlink{classDisk_afc1458ed0f349b3011cc8c65a02a23eb}{Disk}}, \mbox{\hyperlink{classObjectsList_a4e7a90e31f69ce78fe357e345f1e050c}{Objects\+List}}, \mbox{\hyperlink{classPlan_a18ff0013a6b6c1817882053724af1e39}{Plan}}, and \mbox{\hyperlink{classSphere_a2bff644306d2f43bc9cf7c30ec908de1}{Sphere}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classAPrimitive_a7d8627cb3005113ffddb4d71ae8ed0c6}\label{classAPrimitive_a7d8627cb3005113ffddb4d71ae8ed0c6} 
+\index{APrimitive@{APrimitive}!\_material@{\_material}}
+\index{\_material@{\_material}!APrimitive@{APrimitive}}
+\doxysubsubsection{\texorpdfstring{\_material}{\_material}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classIMaterial}{IMaterial}}$>$ APrimitive\+::\+\_\+material\hspace{0.3cm}{\ttfamily [protected]}}
+
+Pointer to the material of the primitive. \Hypertarget{classAPrimitive_a19c0584626a95de875c9bb26c7f4f978}\label{classAPrimitive_a19c0584626a95de875c9bb26c7f4f978} 
+\index{APrimitive@{APrimitive}!\_type@{\_type}}
+\index{\_type@{\_type}!APrimitive@{APrimitive}}
+\doxysubsubsection{\texorpdfstring{\_type}{\_type}}
+{\footnotesize\ttfamily Type APrimitive\+::\+\_\+type = NONE\hspace{0.3cm}{\ttfamily [protected]}}
+
+Type of the primitive. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/APrimitive.\+hpp\end{DoxyCompactItemize}

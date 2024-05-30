@@ -1,0 +1,46 @@
+\doxysection{AGUI.\+hpp}
+\hypertarget{AGUI_8hpp_source}{}\label{AGUI_8hpp_source}\index{include/GUI/AGUI.hpp@{include/GUI/AGUI.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ AGUI}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ AGUI\_HPP\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ AGUI\_HPP\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}IGUI.hpp"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Primitive/ObjectsList.hpp"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{namespace\ }GUI\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGUI_1_1AGUI}{AGUI}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGUI_1_1IGUI}{IGUI}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classGUI_1_1AGUI_a391f1bf6b6db1ae0fed4293c7e94a16e}{\string~AGUI}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1AGUI_a379e08a1dc1b4751c388c20816d7926e}{update}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1AGUI_afa7a3534aa4e47edea79c3e8bcfb2115}{display}}()\ =\ 0;}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1AGUI_a9e180aa601d7f7e0492cd315b122d8b2}{init}}(sf::RenderWindow\ \&window,\ sf::Clock\ \&clock,\ \mbox{\hyperlink{classObjectsList}{ObjectsList}}\ \&world);}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGUI_1_1AGUI_ae6dc84b25ff036308f7c4757adb11205}{hasToDisplay}}();}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1AGUI_a99b90f4cffacf82946ae08659a19c35b}{setDisplay}}(\textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGUI_1_1AGUI_afa7a3534aa4e47edea79c3e8bcfb2115}{display}});}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classGUI_1_1AGUI_ab87e6df8e4b3079e8ba8b039cc730138}{\_display}}\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \ \ \ \ sf::RenderWindow\ *\mbox{\hyperlink{classGUI_1_1AGUI_adc6c12e2e09870719ecfd580bae605e8}{\_window}};}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ sf::Clock\ *\mbox{\hyperlink{classGUI_1_1AGUI_a84fd5365623b5830fd80677000f779e0}{\_clock}};}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjectsList}{ObjectsList}}\ *\mbox{\hyperlink{classGUI_1_1AGUI_af365422bad4d8f84316e362a77425544}{\_world}};}
+\DoxyCodeLine{00106\ \ \ \ \ \};}
+\DoxyCodeLine{00107\ \}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !AGUI\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

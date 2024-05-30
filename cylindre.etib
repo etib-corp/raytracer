@@ -1,0 +1,77 @@
+# Configuration of the camera\n"
+camera :
+{
+    resolution = { width = 1920.0; height = 1080.0; };
+    position = { x = 0.0; y = 5.0; z = 13.0; };
+    positionAt = { x = 0.0; y = 0.0; z = 0.0; }; # default = {0, 0, 0}
+    rotation = { x = 0; y = 1; z = 0; };
+    fieldOfView = 40.0; # In degree
+    maxDepth = 50; # default = 50
+    samplePerPixel = 20; # default = 32
+    light = False;
+    backgroundColor = {r = 0.0, g = 1.0, b = 0.0}; # default = {0.0, 0.0, 0.0}
+};
+
+# Primitives in the scene
+primitives :
+{
+    # List of spheres
+    spheres = (
+        {
+            x = 0.0;
+            y = -1000.0;
+            z = 0.0;
+            r = 1000.0;
+            material = {
+                type = "Lambertian";
+                textures = {
+                    scale = 6.4;
+                    colors = (
+                        {r = 0.0; g = 0.0; b = 0.0;},
+                        {r = 1.0; g = 1.0; b = 1.0;}
+                    )
+                },
+            }
+        },
+        {
+            x = 2.0;
+            y = 1.0;
+            z = 0.0;
+            r = 1.0;
+            material = {
+                type = "Lambertian";
+                textures = {
+                    scale = 1.0;
+                    colors = (
+                        {r = 0.0; g = 0.0; b = 0.0;},
+                        {r = 0.0; g = 0.0; b = 1.0;}
+                    )
+                },
+            }
+        },
+    );
+    cylindres = (
+        {
+            x = -2.0;
+            y = 0.0;
+            z = 00.0;
+            depth = 2.0;
+            r = 1.0;
+            material = {
+                type = "Metal";
+                color = {r = 0.8; g = 0.7; b = 0.5};
+            }
+        },
+    );
+    disks = ()
+    cones = ()
+    # List of planes
+    planes = (
+    );
+};
+# Light configuration
+lights :
+{
+    diffuse = ();
+    directional = ();
+};

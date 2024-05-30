@@ -1,0 +1,187 @@
+\doxysection{GUI\+::Radio\+Button\+List Class Reference}
+\hypertarget{classGUI_1_1RadioButtonList}{}\label{classGUI_1_1RadioButtonList}\index{GUI::RadioButtonList@{GUI::RadioButtonList}}
+
+
+A class that represents a list of radio buttons.  
+
+
+
+
+{\ttfamily \#include $<$Radio\+Button\+List.\+hpp$>$}
+
+Inheritance diagram for GUI\+::Radio\+Button\+List\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGUI_1_1RadioButtonList}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGUI_1_1RadioButtonList_a711148431f043193789514053b5fd476}{Radio\+Button\+List}} (std\+::string title, std\+::vector$<$ std\+::string $>$ titles)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classGUI_1_1RadioButtonList}{Radio\+Button\+List} class. \end{DoxyCompactList}\item 
+\Hypertarget{classGUI_1_1RadioButtonList_ab4585b5684c37d5c8f1e04a9b9763a15}\label{classGUI_1_1RadioButtonList_ab4585b5684c37d5c8f1e04a9b9763a15} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Radio\+Button\+List} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classGUI_1_1RadioButtonList}{Radio\+Button\+List} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1RadioButtonList_aced829cea12850a116f6cfba662e1e63}{display}} ()
+\begin{DoxyCompactList}\small\item\em Displays the radio button list on the screen. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1RadioButtonList_a0634af5600db916c0046e6086fc26952}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the state of the radio button list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1RadioButtonList_a1cd0499bfee524eee4ef92b06ac3c9d1}{init}} (sf\+::\+Render\+Window \&window, sf\+::\+Clock \&clock, \mbox{\hyperlink{classObjectsList}{Objects\+List}} \&world)
+\begin{DoxyCompactList}\small\item\em Initializes the radio button list for rendering. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classGUI_1_1RadioButtonList_a9ad0e1a19fd4998ea2a96c259c6fe72a}{get\+Checked}} () const
+\begin{DoxyCompactList}\small\item\em Gets the value of the currently checked radio button. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1AInteractive}{GUI\+::\+AInteractive}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGUI_1_1AInteractive_a42fc5a64ea67cb0734071ff15970d7ac}{\texorpdfstring{$\sim$}{\string~}\+AInteractive}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classGUI_1_1AInteractive}{AInteractive}. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classGUI_1_1AInteractive_a511eb004e29b9ddc38c2bbce538d45d4}{get\+Title}} () const
+\begin{DoxyCompactList}\small\item\em Get the title of the interactive element. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AInteractive_a59f2acad8c1fe6fd0c21d8a0bcc68b10}{set\+Title}} (const std\+::string title)
+\begin{DoxyCompactList}\small\item\em Sets the title of the interactive element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1AGUI}{GUI\+::\+AGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGUI_1_1AGUI_a391f1bf6b6db1ae0fed4293c7e94a16e}{\texorpdfstring{$\sim$}{\string~}\+AGUI}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classGUI_1_1AGUI}{AGUI} class. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGUI_1_1AGUI_ae6dc84b25ff036308f7c4757adb11205}{has\+To\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the GUI should be displayed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AGUI_a99b90f4cffacf82946ae08659a19c35b}{set\+Display}} (bool \mbox{\hyperlink{classGUI_1_1AGUI_afa7a3534aa4e47edea79c3e8bcfb2115}{display}})
+\begin{DoxyCompactList}\small\item\em Sets whether the GUI should be displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1IGUI}{GUI\+::\+IGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGUI_1_1IGUI_a6da7dffd12006282fe449229e0dd7f0b}{\texorpdfstring{$\sim$}{\string~}\+IGUI}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGUI_1_1RadioButtonList_a22aebcc890b7e6fac77768b2c47f46dc}\label{classGUI_1_1RadioButtonList_a22aebcc890b7e6fac77768b2c47f46dc} 
+std\+::vector$<$ \mbox{\hyperlink{classGUI_1_1RadioButton}{Radio\+Button}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries \+\_\+children}
+\begin{DoxyCompactList}\small\item\em A vector containing all the radio buttons in the list. \end{DoxyCompactList}\item 
+\Hypertarget{classGUI_1_1RadioButtonList_a2ba2b996e2a2a9c1b661ec021247b41d}\label{classGUI_1_1RadioButtonList_a2ba2b996e2a2a9c1b661ec021247b41d} 
+std\+::vector$<$ \mbox{\hyperlink{classGUI_1_1RadioButton}{Radio\+Button}} \texorpdfstring{$\ast$}{*} $>$\+::iterator {\bfseries \+\_\+last\+Checked} = \+\_\+children.\+end()
+\begin{DoxyCompactList}\small\item\em A pointer to the last checked radio button in the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGUI_1_1AInteractive}{GUI\+::\+AInteractive}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classGUI_1_1AInteractive_aefa21c4fee53cb0017fa929fbab407cb}{\+\_\+title}}
+\begin{DoxyCompactList}\small\item\em Protected member variable to store the title of the interactive element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGUI_1_1AGUI}{GUI\+::\+AGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classGUI_1_1AGUI_ab87e6df8e4b3079e8ba8b039cc730138}{\+\_\+display}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the GUI should be displayed. \end{DoxyCompactList}\item 
+sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGUI_1_1AGUI_adc6c12e2e09870719ecfd580bae605e8}{\+\_\+window}}
+\begin{DoxyCompactList}\small\item\em Pointer to the window on which the GUI will be displayed. \end{DoxyCompactList}\item 
+sf\+::\+Clock \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGUI_1_1AGUI_a84fd5365623b5830fd80677000f779e0}{\+\_\+clock}}
+\begin{DoxyCompactList}\small\item\em Pointer to the clock used to track time for animations and updates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classObjectsList}{Objects\+List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGUI_1_1AGUI_af365422bad4d8f84316e362a77425544}{\+\_\+world}}
+\begin{DoxyCompactList}\small\item\em Pointer to the world object containing all the objects in the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that represents a list of radio buttons. 
+
+The \doxylink{classGUI_1_1RadioButtonList}{Radio\+Button\+List} class is a subclass of \doxylink{classGUI_1_1AInteractive}{AInteractive} and provides a way to display and interact with a list of radio buttons.
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & The title of the radio button list. \\
+\hline
+{\em titles} & A vector of strings representing the titles of the radio buttons. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGUI_1_1RadioButtonList_a711148431f043193789514053b5fd476}\label{classGUI_1_1RadioButtonList_a711148431f043193789514053b5fd476} 
+\index{GUI::RadioButtonList@{GUI::RadioButtonList}!RadioButtonList@{RadioButtonList}}
+\index{RadioButtonList@{RadioButtonList}!GUI::RadioButtonList@{GUI::RadioButtonList}}
+\doxysubsubsection{\texorpdfstring{RadioButtonList()}{RadioButtonList()}}
+{\footnotesize\ttfamily GUI\+::\+Radio\+Button\+List\+::\+Radio\+Button\+List (\begin{DoxyParamCaption}\item[{std\+::string}]{title,  }\item[{std\+::vector$<$ std\+::string $>$}]{titles }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classGUI_1_1RadioButtonList}{Radio\+Button\+List} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em title} & The title of the radio button list. \\
+\hline
+{\em titles} & A vector of strings representing the titles of the radio buttons. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGUI_1_1RadioButtonList_aced829cea12850a116f6cfba662e1e63}\label{classGUI_1_1RadioButtonList_aced829cea12850a116f6cfba662e1e63} 
+\index{GUI::RadioButtonList@{GUI::RadioButtonList}!display@{display}}
+\index{display@{display}!GUI::RadioButtonList@{GUI::RadioButtonList}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void GUI\+::\+Radio\+Button\+List\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays the radio button list on the screen. 
+
+
+
+Implements \mbox{\hyperlink{classGUI_1_1AInteractive_a35d969327a1f0cf3898cd6189cff4923}{GUI\+::\+AInteractive}}.
+
+\Hypertarget{classGUI_1_1RadioButtonList_a9ad0e1a19fd4998ea2a96c259c6fe72a}\label{classGUI_1_1RadioButtonList_a9ad0e1a19fd4998ea2a96c259c6fe72a} 
+\index{GUI::RadioButtonList@{GUI::RadioButtonList}!getChecked@{getChecked}}
+\index{getChecked@{getChecked}!GUI::RadioButtonList@{GUI::RadioButtonList}}
+\doxysubsubsection{\texorpdfstring{getChecked()}{getChecked()}}
+{\footnotesize\ttfamily std\+::string GUI\+::\+Radio\+Button\+List\+::get\+Checked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the value of the currently checked radio button. 
+
+\begin{DoxyReturn}{Returns}
+The value of the currently checked radio button as a string. 
+\end{DoxyReturn}
+\Hypertarget{classGUI_1_1RadioButtonList_a1cd0499bfee524eee4ef92b06ac3c9d1}\label{classGUI_1_1RadioButtonList_a1cd0499bfee524eee4ef92b06ac3c9d1} 
+\index{GUI::RadioButtonList@{GUI::RadioButtonList}!init@{init}}
+\index{init@{init}!GUI::RadioButtonList@{GUI::RadioButtonList}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void GUI\+::\+Radio\+Button\+List\+::init (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{sf\+::\+Clock \&}]{clock,  }\item[{\mbox{\hyperlink{classObjectsList}{Objects\+List}} \&}]{world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initializes the radio button list for rendering. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML window to render the radio button list on. \\
+\hline
+{\em clock} & The SFML clock to track time. \\
+\hline
+{\em world} & The \doxylink{classObjectsList}{Objects\+List} containing all objects in the scene. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGUI_1_1AGUI_a9e180aa601d7f7e0492cd315b122d8b2}{GUI\+::\+AGUI}}.
+
+\Hypertarget{classGUI_1_1RadioButtonList_a0634af5600db916c0046e6086fc26952}\label{classGUI_1_1RadioButtonList_a0634af5600db916c0046e6086fc26952} 
+\index{GUI::RadioButtonList@{GUI::RadioButtonList}!update@{update}}
+\index{update@{update}!GUI::RadioButtonList@{GUI::RadioButtonList}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void GUI\+::\+Radio\+Button\+List\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Updates the state of the radio button list. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGUI_1_1AGUI_a379e08a1dc1b4751c388c20816d7926e}{GUI\+::\+AGUI}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+GUI/Radio\+Button\+List.\+hpp\end{DoxyCompactItemize}

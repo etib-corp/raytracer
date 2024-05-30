@@ -1,0 +1,159 @@
+\doxysection{Directionnal Class Reference}
+\hypertarget{classDirectionnal}{}\label{classDirectionnal}\index{Directionnal@{Directionnal}}
+
+
+Represents a directional light source in a raytracer.  
+
+
+
+
+{\ttfamily \#include $<$Directionnal.\+hpp$>$}
+
+Inheritance diagram for Directionnal\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDirectionnal}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDirectionnal_ac1f8e6c0a20a8292b58ad3b56c8d9809}{Directionnal}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$ \&texture)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classDirectionnal}{Directionnal} object with the given texture. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDirectionnal_ac2326c279e674290c0c598fb51c526d8}{Directionnal}} (const \mbox{\hyperlink{classColor}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classDirectionnal}{Directionnal} object with the given color. \end{DoxyCompactList}\item 
+\Hypertarget{classDirectionnal_a68c9d741b33c998f94cab2472f85e02a}\label{classDirectionnal_a68c9d741b33c998f94cab2472f85e02a} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Directionnal} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classDirectionnal}{Directionnal} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classDirectionnal_a4ce94a0584316c5cc9087da1071b2a7e}{emitted}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&record, double u, double v, const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&point) const override
+\begin{DoxyCompactList}\small\item\em Calculates the emitted color of the directional light at a given point. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAMaterial}{AMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+AMaterial} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classAMaterial_ae9132628a8b6b720e3b63de5885f5957}{scatter}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&hit, \mbox{\hyperlink{classColor}{Color}} \&attenuation, \mbox{\hyperlink{classRay}{Ray}} \&scattered) const override
+\begin{DoxyCompactList}\small\item\em Scatter a ray off the material\textquotesingle{}s surface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAMaterial_a3952275d5311d2afe98a684aa1659b84}{type\+Set}} (std\+::string type\+\_\+)
+\item 
+std\+::string \mbox{\hyperlink{classAMaterial_a1d471b042cd38e5e8b7579c15150cde8}{type\+Get}} (void)
+\item 
+void \mbox{\hyperlink{classAMaterial_ad00a04b9816304b27d28805a42995eec}{has\+Texture\+Set}} (void)
+\item 
+void \mbox{\hyperlink{classAMaterial_a8c8b19a49bb61a72b625e89e9aa5aa4d}{has\+Color\+Set}} (void)
+\item 
+bool \mbox{\hyperlink{classAMaterial_a8fe6c611f749cc43630ee99ccf22869c}{has\+Texture\+Get}} (void)
+\item 
+bool \mbox{\hyperlink{classAMaterial_a73c401db227fa67baa47823fffc77bb1}{has\+Color\+Get}} (void)
+\item 
+Type \mbox{\hyperlink{classAMaterial_afa565ccecc3e4e49939f40e55e887343}{get\+Type}} () const
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_af5e47705ad75d1d6f9f46193cefd6275}{get\+Albedo}} () const
+\item 
+void \mbox{\hyperlink{classAMaterial_ab09905c92264662aed34138be1c568af}{set\+Albedo}} (const \mbox{\hyperlink{classColor}{Color}} \&color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIMaterial}{IMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+IMaterial} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classIMaterial}{IMaterial}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classIMaterial}{IMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea}\label{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea} 
+enum {\bfseries Type} \{ {\bfseries DIELECTRIC}
+, {\bfseries LAMBERTIAN}
+, {\bfseries METAL}
+, {\bfseries NONE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classAMaterial}{AMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_ae50e64c6c65815089401715bf85ecf81}{\+\_\+albedo}}
+\item 
+std\+::string {\bfseries \+\_\+string\+Type}
+\item 
+bool {\bfseries \+\_\+is\+Texture}
+\item 
+bool {\bfseries \+\_\+is\+Color}
+\item 
+Type \mbox{\hyperlink{classAMaterial_aceefd2a6cc57189f12b6d0d739558da6}{\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a directional light source in a raytracer. 
+
+The \doxylink{classDirectionnal}{Directionnal} class is a subclass of \doxylink{classAMaterial}{AMaterial} and represents a directional light source in a raytracer. It can be initialized with a texture or a color. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDirectionnal_ac1f8e6c0a20a8292b58ad3b56c8d9809}\label{classDirectionnal_ac1f8e6c0a20a8292b58ad3b56c8d9809} 
+\index{Directionnal@{Directionnal}!Directionnal@{Directionnal}}
+\index{Directionnal@{Directionnal}!Directionnal@{Directionnal}}
+\doxysubsubsection{\texorpdfstring{Directionnal()}{Directionnal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Directionnal\+::\+Directionnal (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$ \&}]{texture }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classDirectionnal}{Directionnal} object with the given texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & The texture to be used for the directional light. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classDirectionnal_ac2326c279e674290c0c598fb51c526d8}\label{classDirectionnal_ac2326c279e674290c0c598fb51c526d8} 
+\index{Directionnal@{Directionnal}!Directionnal@{Directionnal}}
+\index{Directionnal@{Directionnal}!Directionnal@{Directionnal}}
+\doxysubsubsection{\texorpdfstring{Directionnal()}{Directionnal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Directionnal\+::\+Directionnal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classDirectionnal}{Directionnal} object with the given color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color of the directional light. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDirectionnal_a4ce94a0584316c5cc9087da1071b2a7e}\label{classDirectionnal_a4ce94a0584316c5cc9087da1071b2a7e} 
+\index{Directionnal@{Directionnal}!emitted@{emitted}}
+\index{emitted@{emitted}!Directionnal@{Directionnal}}
+\doxysubsubsection{\texorpdfstring{emitted()}{emitted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Directionnal\+::emitted (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&}]{record,  }\item[{double}]{u,  }\item[{double}]{v,  }\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the emitted color of the directional light at a given point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & The incident ray. \\
+\hline
+{\em record} & The hit record of the ray intersection. \\
+\hline
+{\em u} & The texture coordinate u. \\
+\hline
+{\em v} & The texture coordinate v. \\
+\hline
+{\em point} & The point at which the emitted color is calculated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The emitted color of the directional light. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAMaterial_aabaa0691d092f33ce4827f7c05fc9c6a}{AMaterial}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Light/Directionnal.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,261 @@
+\doxysection{AMaterial Class Reference}
+\hypertarget{classAMaterial}{}\label{classAMaterial}\index{AMaterial@{AMaterial}}
+
+
+Abstract base class for materials used in ray tracing.  
+
+
+
+
+{\ttfamily \#include $<$AMaterial.\+hpp$>$}
+
+Inheritance diagram for AMaterial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classAMaterial}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAMaterial_a35aa35d365184b2851b091e6e375d13f}\label{classAMaterial_a35aa35d365184b2851b091e6e375d13f} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+AMaterial} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_aabaa0691d092f33ce4827f7c05fc9c6a}{emitted}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&record, double u, double v, const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&point) const override
+\begin{DoxyCompactList}\small\item\em Emit light from the material. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classAMaterial_ae9132628a8b6b720e3b63de5885f5957}{scatter}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&hit, \mbox{\hyperlink{classColor}{Color}} \&attenuation, \mbox{\hyperlink{classRay}{Ray}} \&scattered) const override
+\begin{DoxyCompactList}\small\item\em Scatter a ray off the material\textquotesingle{}s surface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAMaterial_a3952275d5311d2afe98a684aa1659b84}{type\+Set}} (std\+::string type\+\_\+)
+\item 
+std\+::string \mbox{\hyperlink{classAMaterial_a1d471b042cd38e5e8b7579c15150cde8}{type\+Get}} (void)
+\item 
+void \mbox{\hyperlink{classAMaterial_ad00a04b9816304b27d28805a42995eec}{has\+Texture\+Set}} (void)
+\item 
+void \mbox{\hyperlink{classAMaterial_a8c8b19a49bb61a72b625e89e9aa5aa4d}{has\+Color\+Set}} (void)
+\item 
+bool \mbox{\hyperlink{classAMaterial_a8fe6c611f749cc43630ee99ccf22869c}{has\+Texture\+Get}} (void)
+\item 
+bool \mbox{\hyperlink{classAMaterial_a73c401db227fa67baa47823fffc77bb1}{has\+Color\+Get}} (void)
+\item 
+Type \mbox{\hyperlink{classAMaterial_afa565ccecc3e4e49939f40e55e887343}{get\+Type}} () const
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_af5e47705ad75d1d6f9f46193cefd6275}{get\+Albedo}} () const
+\item 
+void \mbox{\hyperlink{classAMaterial_ab09905c92264662aed34138be1c568af}{set\+Albedo}} (const \mbox{\hyperlink{classColor}{Color}} \&color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIMaterial}{IMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+IMaterial} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classIMaterial}{IMaterial}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_ae50e64c6c65815089401715bf85ecf81}{\+\_\+albedo}}
+\item 
+\Hypertarget{classAMaterial_a92f38627d2ce846860b326a25cdca301}\label{classAMaterial_a92f38627d2ce846860b326a25cdca301} 
+std\+::string {\bfseries \+\_\+string\+Type}
+\item 
+\Hypertarget{classAMaterial_ad99c31242cec0d3f63a7859d55f3b736}\label{classAMaterial_ad99c31242cec0d3f63a7859d55f3b736} 
+bool {\bfseries \+\_\+is\+Texture}
+\item 
+\Hypertarget{classAMaterial_ae5dc4055a6e521e06f9c15f30df7514d}\label{classAMaterial_ae5dc4055a6e521e06f9c15f30df7514d} 
+bool {\bfseries \+\_\+is\+Color}
+\item 
+Type \mbox{\hyperlink{classAMaterial_aceefd2a6cc57189f12b6d0d739558da6}{\+\_\+type}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classIMaterial}{IMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea}\label{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea} 
+enum {\bfseries Type} \{ {\bfseries DIELECTRIC}
+, {\bfseries LAMBERTIAN}
+, {\bfseries METAL}
+, {\bfseries NONE}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for materials used in ray tracing. 
+
+The \doxylink{classAMaterial}{AMaterial} class provides a common interface for materials used in ray tracing. It inherits from the \doxylink{classIMaterial}{IMaterial} interface and defines a virtual function for scattering rays. It also contains a protected member variable for the material\textquotesingle{}s albedo color. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAMaterial_aabaa0691d092f33ce4827f7c05fc9c6a}\label{classAMaterial_aabaa0691d092f33ce4827f7c05fc9c6a} 
+\index{AMaterial@{AMaterial}!emitted@{emitted}}
+\index{emitted@{emitted}!AMaterial@{AMaterial}}
+\doxysubsubsection{\texorpdfstring{emitted()}{emitted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} AMaterial\+::emitted (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&}]{record,  }\item[{double}]{u,  }\item[{double}]{v,  }\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Emit light from the material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & The incident ray. \\
+\hline
+{\em record} & The hit record containing information about the intersection. \\
+\hline
+{\em u} & The u texture coordinate. \\
+\hline
+{\em v} & The v texture coordinate. \\
+\hline
+{\em point} & The point of intersection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The emitted color. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIMaterial_a8254a76353270de5c675b12c69a23fe4}{IMaterial}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classDiffuse_aef3ba3c8c6ee9d3de0b3b07f9043d490}{Diffuse}}, and \mbox{\hyperlink{classDirectionnal_a4ce94a0584316c5cc9087da1071b2a7e}{Directionnal}}.
+
+\Hypertarget{classAMaterial_af5e47705ad75d1d6f9f46193cefd6275}\label{classAMaterial_af5e47705ad75d1d6f9f46193cefd6275} 
+\index{AMaterial@{AMaterial}!getAlbedo@{getAlbedo}}
+\index{getAlbedo@{getAlbedo}!AMaterial@{AMaterial}}
+\doxysubsubsection{\texorpdfstring{getAlbedo()}{getAlbedo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} AMaterial\+::get\+Albedo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIMaterial}{IMaterial}}.
+
+\Hypertarget{classAMaterial_afa565ccecc3e4e49939f40e55e887343}\label{classAMaterial_afa565ccecc3e4e49939f40e55e887343} 
+\index{AMaterial@{AMaterial}!getType@{getType}}
+\index{getType@{getType}!AMaterial@{AMaterial}}
+\doxysubsubsection{\texorpdfstring{getType()}{getType()}}
+{\footnotesize\ttfamily Type AMaterial\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIMaterial}{IMaterial}}.
+
+\Hypertarget{classAMaterial_a73c401db227fa67baa47823fffc77bb1}\label{classAMaterial_a73c401db227fa67baa47823fffc77bb1} 
+\index{AMaterial@{AMaterial}!hasColorGet@{hasColorGet}}
+\index{hasColorGet@{hasColorGet}!AMaterial@{AMaterial}}
+\doxysubsubsection{\texorpdfstring{hasColorGet()}{hasColorGet()}}
+{\footnotesize\ttfamily bool AMaterial\+::has\+Color\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIMaterial}{IMaterial}}.
+
+\Hypertarget{classAMaterial_a8c8b19a49bb61a72b625e89e9aa5aa4d}\label{classAMaterial_a8c8b19a49bb61a72b625e89e9aa5aa4d} 
+\index{AMaterial@{AMaterial}!hasColorSet@{hasColorSet}}
+\index{hasColorSet@{hasColorSet}!AMaterial@{AMaterial}}
+\doxysubsubsection{\texorpdfstring{hasColorSet()}{hasColorSet()}}
+{\footnotesize\ttfamily void AMaterial\+::has\+Color\+Set (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIMaterial}{IMaterial}}.
+
+\Hypertarget{classAMaterial_a8fe6c611f749cc43630ee99ccf22869c}\label{classAMaterial_a8fe6c611f749cc43630ee99ccf22869c} 
+\index{AMaterial@{AMaterial}!hasTextureGet@{hasTextureGet}}
+\index{hasTextureGet@{hasTextureGet}!AMaterial@{AMaterial}}
+\doxysubsubsection{\texorpdfstring{hasTextureGet()}{hasTextureGet()}}
+{\footnotesize\ttfamily bool AMaterial\+::has\+Texture\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIMaterial}{IMaterial}}.
+
+\Hypertarget{classAMaterial_ad00a04b9816304b27d28805a42995eec}\label{classAMaterial_ad00a04b9816304b27d28805a42995eec} 
+\index{AMaterial@{AMaterial}!hasTextureSet@{hasTextureSet}}
+\index{hasTextureSet@{hasTextureSet}!AMaterial@{AMaterial}}
+\doxysubsubsection{\texorpdfstring{hasTextureSet()}{hasTextureSet()}}
+{\footnotesize\ttfamily void AMaterial\+::has\+Texture\+Set (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIMaterial}{IMaterial}}.
+
+\Hypertarget{classAMaterial_ae9132628a8b6b720e3b63de5885f5957}\label{classAMaterial_ae9132628a8b6b720e3b63de5885f5957} 
+\index{AMaterial@{AMaterial}!scatter@{scatter}}
+\index{scatter@{scatter}!AMaterial@{AMaterial}}
+\doxysubsubsection{\texorpdfstring{scatter()}{scatter()}}
+{\footnotesize\ttfamily virtual bool AMaterial\+::scatter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&}]{hit,  }\item[{\mbox{\hyperlink{classColor}{Color}} \&}]{attenuation,  }\item[{\mbox{\hyperlink{classRay}{Ray}} \&}]{scattered }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Scatter a ray off the material\textquotesingle{}s surface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & The incident ray. \\
+\hline
+{\em hit} & The hit record containing information about the intersection. \\
+\hline
+{\em attenuation} & The color attenuation of the scattered ray. \\
+\hline
+{\em scattered} & The scattered ray. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the ray is scattered, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIMaterial_aa41840b65d4da0af8bcdd353230ce753}{IMaterial}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classMetal_a74fe406f586d8e4d58c7158487eb9d8d}{Metal}}, \mbox{\hyperlink{classLambertian_a14d4231cf93060680905cd35f39a0eaf}{Lambertian}}, and \mbox{\hyperlink{classDielectric_a0f986023c97598760563b35838069ebf}{Dielectric}}.
+
+\Hypertarget{classAMaterial_ab09905c92264662aed34138be1c568af}\label{classAMaterial_ab09905c92264662aed34138be1c568af} 
+\index{AMaterial@{AMaterial}!setAlbedo@{setAlbedo}}
+\index{setAlbedo@{setAlbedo}!AMaterial@{AMaterial}}
+\doxysubsubsection{\texorpdfstring{setAlbedo()}{setAlbedo()}}
+{\footnotesize\ttfamily void AMaterial\+::set\+Albedo (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIMaterial}{IMaterial}}.
+
+\Hypertarget{classAMaterial_a1d471b042cd38e5e8b7579c15150cde8}\label{classAMaterial_a1d471b042cd38e5e8b7579c15150cde8} 
+\index{AMaterial@{AMaterial}!typeGet@{typeGet}}
+\index{typeGet@{typeGet}!AMaterial@{AMaterial}}
+\doxysubsubsection{\texorpdfstring{typeGet()}{typeGet()}}
+{\footnotesize\ttfamily std\+::string AMaterial\+::type\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIMaterial}{IMaterial}}.
+
+\Hypertarget{classAMaterial_a3952275d5311d2afe98a684aa1659b84}\label{classAMaterial_a3952275d5311d2afe98a684aa1659b84} 
+\index{AMaterial@{AMaterial}!typeSet@{typeSet}}
+\index{typeSet@{typeSet}!AMaterial@{AMaterial}}
+\doxysubsubsection{\texorpdfstring{typeSet()}{typeSet()}}
+{\footnotesize\ttfamily void AMaterial\+::type\+Set (\begin{DoxyParamCaption}\item[{std\+::string}]{type\+\_\+ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Implements \mbox{\hyperlink{classIMaterial}{IMaterial}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classAMaterial_ae50e64c6c65815089401715bf85ecf81}\label{classAMaterial_ae50e64c6c65815089401715bf85ecf81} 
+\index{AMaterial@{AMaterial}!\_albedo@{\_albedo}}
+\index{\_albedo@{\_albedo}!AMaterial@{AMaterial}}
+\doxysubsubsection{\texorpdfstring{\_albedo}{\_albedo}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} AMaterial\+::\+\_\+albedo\hspace{0.3cm}{\ttfamily [protected]}}
+
+The albedo color of the material. \Hypertarget{classAMaterial_aceefd2a6cc57189f12b6d0d739558da6}\label{classAMaterial_aceefd2a6cc57189f12b6d0d739558da6} 
+\index{AMaterial@{AMaterial}!\_type@{\_type}}
+\index{\_type@{\_type}!AMaterial@{AMaterial}}
+\doxysubsubsection{\texorpdfstring{\_type}{\_type}}
+{\footnotesize\ttfamily Type AMaterial\+::\+\_\+type\hspace{0.3cm}{\ttfamily [protected]}}
+
+The type of the material. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/AMaterial.\+hpp\end{DoxyCompactItemize}

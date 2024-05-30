@@ -1,0 +1,167 @@
+\doxysection{Cylindre Class Reference}
+\hypertarget{classCylindre}{}\label{classCylindre}\index{Cylindre@{Cylindre}}
+
+
+Represents a cylinder primitive in a raytracer.  
+
+
+
+
+{\ttfamily \#include $<$Cylindre.\+hpp$>$}
+
+Inheritance diagram for Cylindre\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classCylindre}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCylindre_a99d1f13cd19ecc9a3b6f21f39ab07f68}\label{classCylindre_a99d1f13cd19ecc9a3b6f21f39ab07f68} 
+{\bfseries Cylindre} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{classCylindre}{Cylindre}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCylindre_af3f68ad940514ce619e1188be310acac}{Cylindre}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&\+\_\+center, double depth, double radius, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ material=nullptr)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classCylindre}{Cylindre}. \end{DoxyCompactList}\item 
+\Hypertarget{classCylindre_a6ccf730b2e4e108c128c74dcce53be88}\label{classCylindre_a6ccf730b2e4e108c128c74dcce53be88} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Cylindre} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classCylindre}{Cylindre}. \end{DoxyCompactList}\item 
+\Hypertarget{classCylindre_ab05b8c3f16ff5ce95dad3b8d1c381758}\label{classCylindre_ab05b8c3f16ff5ce95dad3b8d1c381758} 
+void {\bfseries set\+Radius} (d64 radius) noexcept
+\item 
+\Hypertarget{classCylindre_ac669df81c0797d0c64417a4ad48c91a1}\label{classCylindre_ac669df81c0797d0c64417a4ad48c91a1} 
+void {\bfseries set\+Depth} (d64 depth) noexcept
+\item 
+\Hypertarget{classCylindre_ac2b9af159830f10e043afdf86374d5ef}\label{classCylindre_ac2b9af159830f10e043afdf86374d5ef} 
+void {\bfseries set\+Material} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ material) noexcept
+\item 
+\Hypertarget{classCylindre_a76d18a058c7a899a6c0addb4215ba33e}\label{classCylindre_a76d18a058c7a899a6c0addb4215ba33e} 
+d64 {\bfseries get\+Radius} (void) const noexcept
+\item 
+\Hypertarget{classCylindre_a7deae1c6a438ce424df431844a3ae87a}\label{classCylindre_a7deae1c6a438ce424df431844a3ae87a} 
+d64 {\bfseries get\+Depth} (void) const noexcept
+\item 
+\Hypertarget{classCylindre_a3caf51be7beb065cc01d33eefba32646}\label{classCylindre_a3caf51be7beb065cc01d33eefba32646} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ {\bfseries get\+Material} (void) const noexcept
+\item 
+bool \mbox{\hyperlink{classCylindre_a22e563e879201fc71e3ba6e7964c1e9e}{hit}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classInterval}{Interval}} \&ray\+\_\+t, \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&record) const override
+\begin{DoxyCompactList}\small\item\em Checks if a ray intersects with the cylinder. \end{DoxyCompactList}\item 
+\Hypertarget{classCylindre_ab124cfd9fbe3f4cb5cbaad99f869b869}\label{classCylindre_ab124cfd9fbe3f4cb5cbaad99f869b869} 
+void {\bfseries set\+Center} (\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ center)
+\item 
+\Hypertarget{classCylindre_a9d46bb8b1528b06c7b3f057eab18284a}\label{classCylindre_a9d46bb8b1528b06c7b3f057eab18284a} 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ {\bfseries get\+Center} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAPrimitive}{APrimitive}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+APrimitive} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classAPrimitive}{APrimitive}. \end{DoxyCompactList}\item 
+Type {\bfseries get\+Type} () const
+\item 
+void {\bfseries set\+Material} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ material)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ {\bfseries get\+Material} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAObject}{AObject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAObject_a38fdf4de5b6966272b268340ea7c7ffe}{\texorpdfstring{$\sim$}{\string~}\+AObject}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classAObject}{AObject} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classAObject_a92975190349260c0d886f081c8f2567c}{get\+Position}} () const override
+\begin{DoxyCompactList}\small\item\em Get the current position of the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAObject_abdd5a2887200cb715f74493fba344188}{set\+Position}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&position) override
+\begin{DoxyCompactList}\small\item\em Set the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIObject}{IObject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIObject_aade43d43340617257443ca5733669ef9}{\texorpdfstring{$\sim$}{\string~}\+IObject}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classAPrimitive}{APrimitive}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAPrimitive_a15bc48148c7d54376db26b952a422e8c}\label{classAPrimitive_a15bc48148c7d54376db26b952a422e8c} 
+enum {\bfseries Type} \{ \newline
+{\bfseries SPHERE}
+, {\bfseries PLANE}
+, {\bfseries CYLINDER}
+, {\bfseries CONE}
+, \newline
+{\bfseries DISK}
+, {\bfseries NONE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classAPrimitive}{APrimitive}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ \mbox{\hyperlink{classAPrimitive_a7d8627cb3005113ffddb4d71ae8ed0c6}{\+\_\+material}}
+\item 
+Type \mbox{\hyperlink{classAPrimitive_a19c0584626a95de875c9bb26c7f4f978}{\+\_\+type}} = NONE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classAObject}{AObject}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classAObject_ac5109ec253963d9c6ac184949518444b}{\+\_\+position}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a cylinder primitive in a raytracer. 
+
+The \doxylink{classCylindre}{Cylindre} class inherits from the \doxylink{classAPrimitive}{APrimitive} class and represents a cylinder primitive in a raytracer. It defines the properties and behavior of a cylinder, such as its position, depth, and radius. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCylindre_af3f68ad940514ce619e1188be310acac}\label{classCylindre_af3f68ad940514ce619e1188be310acac} 
+\index{Cylindre@{Cylindre}!Cylindre@{Cylindre}}
+\index{Cylindre@{Cylindre}!Cylindre@{Cylindre}}
+\doxysubsubsection{\texorpdfstring{Cylindre()}{Cylindre()}}
+{\footnotesize\ttfamily Cylindre\+::\+Cylindre (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{\+\_\+center,  }\item[{double}]{depth,  }\item[{double}]{radius,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$}]{material = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classCylindre}{Cylindre}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The position of the cylinder. \\
+\hline
+{\em depth} & The depth of the cylinder. \\
+\hline
+{\em radius} & The radius of the cylinder. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCylindre_a22e563e879201fc71e3ba6e7964c1e9e}\label{classCylindre_a22e563e879201fc71e3ba6e7964c1e9e} 
+\index{Cylindre@{Cylindre}!hit@{hit}}
+\index{hit@{hit}!Cylindre@{Cylindre}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily bool Cylindre\+::hit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classInterval}{Interval}} \&}]{ray\+\_\+t,  }\item[{\mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&}]{record }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if a ray intersects with the cylinder. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & The ray to check for intersection. \\
+\hline
+{\em ray\+\_\+t} & The interval of the ray to check for intersection. \\
+\hline
+{\em record} & The hit record to store the intersection information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the ray intersects with the cylinder, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAPrimitive_a6f021f32c7d3add33a0cc919d17caebd}{APrimitive}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Primitive/Cylindre.\+hpp\end{DoxyCompactItemize}

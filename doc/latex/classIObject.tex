@@ -1,0 +1,92 @@
+\doxysection{IObject Class Reference}
+\hypertarget{classIObject}{}\label{classIObject}\index{IObject@{IObject}}
+
+
+Interface for objects with positioning capabilities.  
+
+
+
+
+{\ttfamily \#include $<$IObject.\+hpp$>$}
+
+Inheritance diagram for IObject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classIObject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIObject_aade43d43340617257443ca5733669ef9}{\texorpdfstring{$\sim$}{\string~}\+IObject}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classIObject_a4f6cd34b5a8ef7cf6f7ba7a94f54024e}{get\+Position}} () const =0
+\begin{DoxyCompactList}\small\item\em Get the position of the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classIObject_ad4eb4bd70ce9a399c26129993cc11389}{set\+Position}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&position)=0
+\begin{DoxyCompactList}\small\item\em Set the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for objects with positioning capabilities. 
+
+This class serves as an interface for objects that have a position in 3D space. It provides methods to get and set the position of the object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classIObject_aade43d43340617257443ca5733669ef9}\label{classIObject_aade43d43340617257443ca5733669ef9} 
+\index{IObject@{IObject}!````~IObject@{\texorpdfstring{$\sim$}{\string~}IObject}}
+\index{````~IObject@{\texorpdfstring{$\sim$}{\string~}IObject}!IObject@{IObject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IObject()}{\string~IObject()}}
+{\footnotesize\ttfamily virtual IObject\+::\texorpdfstring{$\sim$}{\string~}\+IObject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+This virtual destructor ensures that derived classes can be properly destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classIObject_a4f6cd34b5a8ef7cf6f7ba7a94f54024e}\label{classIObject_a4f6cd34b5a8ef7cf6f7ba7a94f54024e} 
+\index{IObject@{IObject}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!IObject@{IObject}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ IObject\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Get the position of the object. 
+
+This method returns the current position of the object as a Vector3 object.
+
+\begin{DoxyReturn}{Returns}
+The position of the object as a Vector3 object. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classAObject_a92975190349260c0d886f081c8f2567c}{AObject}}.
+
+\Hypertarget{classIObject_ad4eb4bd70ce9a399c26129993cc11389}\label{classIObject_ad4eb4bd70ce9a399c26129993cc11389} 
+\index{IObject@{IObject}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!IObject@{IObject}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily virtual void IObject\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set the position of the object. 
+
+This method sets the position of the object to the given Vector3 object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The new position of the object as a Vector3 object. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classAObject_abdd5a2887200cb715f74493fba344188}{AObject}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/IObject.\+hpp\end{DoxyCompactItemize}

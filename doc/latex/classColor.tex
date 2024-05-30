@@ -1,0 +1,170 @@
+\doxysection{Color Class Reference}
+\hypertarget{classColor}{}\label{classColor}\index{Color@{Color}}
+
+
+The \doxylink{classColor}{Color} class represents a color with red, green, blue, and alpha components.  
+
+
+
+
+{\ttfamily \#include $<$Color.\+hpp$>$}
+
+Inheritance diagram for Color\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classColor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classColor_ac2d505b186fb1faf0ce5d3945b1ff5c1}{Color}} (double r, double g, double b, double a=1.\+0)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classColor}{Color} object with the specified red, green, and blue values, along with an optional alpha value. If the alpha value is not provided, it defaults to 1.\+0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor_a7b075d27e3bbdde7cbe648dc3b804261}{Color}} (const \mbox{\hyperlink{classColor}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classColor}{Color} object from an existing one. \end{DoxyCompactList}\item 
+\Hypertarget{classColor_a9a742cbe9f9f4037f5d9f4e81a9b2428}\label{classColor_a9a742cbe9f9f4037f5d9f4e81a9b2428} 
+{\bfseries Color} ()
+\begin{DoxyCompactList}\small\item\em Default constructor that initializes the color with red, green, and blue components set to 0, and the alpha component set to 1.\+0. \end{DoxyCompactList}\item 
+\Hypertarget{classColor_a3cfce6c6821d3bf489e26074c55378c0}\label{classColor_a3cfce6c6821d3bf489e26074c55378c0} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Color} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classColor}{Color} class. \end{DoxyCompactList}\item 
+\Hypertarget{classColor_a107e86132daa3400e062c31ceb795afa}\label{classColor_a107e86132daa3400e062c31ceb795afa} 
+void {\bfseries write} (std\+::ostream \&out)
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classColor_a457a855b1394e379aca1c55c1eb9bec1}{operator\texorpdfstring{$\ast$}{*}}} (double scalar) const
+\begin{DoxyCompactList}\small\item\em Overloaded assignment operator that assigns the values of one \doxylink{classColor}{Color} object to another. \end{DoxyCompactList}\item 
+\Hypertarget{classColor_a6cc052b0ca852fb8703e642e49fcdbe9}\label{classColor_a6cc052b0ca852fb8703e642e49fcdbe9} 
+\mbox{\hyperlink{classColor}{Color}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (const \mbox{\hyperlink{classColor}{Color}} \&color) const
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classColor_acd40b26ca2f9217b5cde1e5c1251ef04}{operator+}} (const \mbox{\hyperlink{classColor}{Color}} \&color) const
+\begin{DoxyCompactList}\small\item\em Overloaded addition operator that adds the values of one \doxylink{classColor}{Color} object to another. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classColor_a969e7375b49f70ec81c7c28d22c148e4}\label{classColor_a969e7375b49f70ec81c7c28d22c148e4} 
+static double {\bfseries linear\+To\+Gamma} (double linear)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classColor_a2337ea72bc849039f73077d00ab42bbb}{red}}
+\item 
+double \mbox{\hyperlink{classColor_a0398a30128909996780fce10e039ac24}{green}}
+\item 
+double \mbox{\hyperlink{classColor_a0a35e5de46315db828b5bd56866d9fea}{blue}}
+\item 
+double \mbox{\hyperlink{classColor_aa14c59ce06c2a70f4683df266e26a261}{alpha}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classColor}{Color} class represents a color with red, green, blue, and alpha components. 
+
+The \doxylink{classColor}{Color} class has a constructor that takes red, green, and blue values as parameters, along with an optional alpha value. If the alpha value is not provided, it defaults to 255.
+
+The class also has a copy constructor that creates a new \doxylink{classColor}{Color} object from an existing one.
+
+The \doxylink{classColor}{Color} class has private data members for the red, green, blue, and alpha components. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classColor_ac2d505b186fb1faf0ce5d3945b1ff5c1}\label{classColor_ac2d505b186fb1faf0ce5d3945b1ff5c1} 
+\index{Color@{Color}!Color@{Color}}
+\index{Color@{Color}!Color@{Color}}
+\doxysubsubsection{\texorpdfstring{Color()}{Color()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Color\+::\+Color (\begin{DoxyParamCaption}\item[{double}]{r,  }\item[{double}]{g,  }\item[{double}]{b,  }\item[{double}]{a = {\ttfamily 1.0} }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{classColor}{Color} object with the specified red, green, and blue values, along with an optional alpha value. If the alpha value is not provided, it defaults to 1.\+0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The red component of the color. \\
+\hline
+{\em g} & The green component of the color. \\
+\hline
+{\em b} & The blue component of the color. \\
+\hline
+{\em a} & The alpha component of the color. Defaults to 1.\+0 if not provided. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classColor_a7b075d27e3bbdde7cbe648dc3b804261}\label{classColor_a7b075d27e3bbdde7cbe648dc3b804261} 
+\index{Color@{Color}!Color@{Color}}
+\index{Color@{Color}!Color@{Color}}
+\doxysubsubsection{\texorpdfstring{Color()}{Color()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Color\+::\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Constructs a new \doxylink{classColor}{Color} object from an existing one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The existing \doxylink{classColor}{Color} object to be copied. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classColor_a457a855b1394e379aca1c55c1eb9bec1}\label{classColor_a457a855b1394e379aca1c55c1eb9bec1} 
+\index{Color@{Color}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Color@{Color}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Color\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{double}]{scalar }\end{DoxyParamCaption}) const}
+
+
+
+Overloaded assignment operator that assigns the values of one \doxylink{classColor}{Color} object to another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scalar} & The double value to multiply the color by. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classColor_acd40b26ca2f9217b5cde1e5c1251ef04}\label{classColor_acd40b26ca2f9217b5cde1e5c1251ef04} 
+\index{Color@{Color}!operator+@{operator+}}
+\index{operator+@{operator+}!Color@{Color}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Color\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{color }\end{DoxyParamCaption}) const}
+
+
+
+Overloaded addition operator that adds the values of one \doxylink{classColor}{Color} object to another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The \doxylink{classColor}{Color} object to add to the current one. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classColor_aa14c59ce06c2a70f4683df266e26a261}\label{classColor_aa14c59ce06c2a70f4683df266e26a261} 
+\index{Color@{Color}!alpha@{alpha}}
+\index{alpha@{alpha}!Color@{Color}}
+\doxysubsubsection{\texorpdfstring{alpha}{alpha}}
+{\footnotesize\ttfamily double Color\+::alpha}
+
+The alpha component of the color. \Hypertarget{classColor_a0a35e5de46315db828b5bd56866d9fea}\label{classColor_a0a35e5de46315db828b5bd56866d9fea} 
+\index{Color@{Color}!blue@{blue}}
+\index{blue@{blue}!Color@{Color}}
+\doxysubsubsection{\texorpdfstring{blue}{blue}}
+{\footnotesize\ttfamily double Color\+::blue}
+
+The blue component of the color. \Hypertarget{classColor_a0398a30128909996780fce10e039ac24}\label{classColor_a0398a30128909996780fce10e039ac24} 
+\index{Color@{Color}!green@{green}}
+\index{green@{green}!Color@{Color}}
+\doxysubsubsection{\texorpdfstring{green}{green}}
+{\footnotesize\ttfamily double Color\+::green}
+
+The green component of the color. \Hypertarget{classColor_a2337ea72bc849039f73077d00ab42bbb}\label{classColor_a2337ea72bc849039f73077d00ab42bbb} 
+\index{Color@{Color}!red@{red}}
+\index{red@{red}!Color@{Color}}
+\doxysubsubsection{\texorpdfstring{red}{red}}
+{\footnotesize\ttfamily double Color\+::red}
+
+The red component of the color. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Color.\+hpp\end{DoxyCompactItemize}

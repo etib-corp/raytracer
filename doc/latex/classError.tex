@@ -1,0 +1,101 @@
+\doxysection{Error Class Reference}
+\hypertarget{classError}{}\label{classError}\index{Error@{Error}}
+
+
+This class represents a custom exception that can be thrown when an error occurs.  
+
+
+
+
+{\ttfamily \#include $<$Error.\+hpp$>$}
+
+Inheritance diagram for Error\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classError}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classError_accd611f3ddae0828adeb6ca251113ffd}{Error}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classError}{Error} object with the specified error message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classError_aee7d800cc0eedf3a353730891803b6e0}{\texorpdfstring{$\sim$}{\string~}\+Error}} ()=default
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classError}{Error} object. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classError_a94f60633baf3f7cbd175c05a2d5bec86}{what}} () const noexcept override
+\begin{DoxyCompactList}\small\item\em Retrieves the error message associated with the exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classError_af2cfd799393ab472242a364701f0244e}{\+\_\+message}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class represents a custom exception that can be thrown when an error occurs. 
+
+The \doxylink{classError}{Error} class inherits from the standard exception class and provides a way to store and retrieve an error message.
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em None} & \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classError_accd611f3ddae0828adeb6ca251113ffd}\label{classError_accd611f3ddae0828adeb6ca251113ffd} 
+\index{Error@{Error}!Error@{Error}}
+\index{Error@{Error}!Error@{Error}}
+\doxysubsubsection{\texorpdfstring{Error()}{Error()}}
+{\footnotesize\ttfamily Error\+::\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs an \doxylink{classError}{Error} object with the specified error message. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em message} & The error message to be associated with the exception. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classError_aee7d800cc0eedf3a353730891803b6e0}\label{classError_aee7d800cc0eedf3a353730891803b6e0} 
+\index{Error@{Error}!````~Error@{\texorpdfstring{$\sim$}{\string~}Error}}
+\index{````~Error@{\texorpdfstring{$\sim$}{\string~}Error}!Error@{Error}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Error()}{\string~Error()}}
+{\footnotesize\ttfamily Error\+::\texorpdfstring{$\sim$}{\string~}\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Destroys the \doxylink{classError}{Error} object. 
+
+The default destructor is provided by the base class std\+::exception. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classError_a94f60633baf3f7cbd175c05a2d5bec86}\label{classError_a94f60633baf3f7cbd175c05a2d5bec86} 
+\index{Error@{Error}!what@{what}}
+\index{what@{what}!Error@{Error}}
+\doxysubsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily const char \texorpdfstring{$\ast$}{*} Error\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [override]}, {\ttfamily [noexcept]}}
+
+
+
+Retrieves the error message associated with the exception. 
+
+\begin{DoxyReturn}{Returns}
+A pointer to a null-\/terminated string containing the error message. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classError_af2cfd799393ab472242a364701f0244e}\label{classError_af2cfd799393ab472242a364701f0244e} 
+\index{Error@{Error}!\_message@{\_message}}
+\index{\_message@{\_message}!Error@{Error}}
+\doxysubsubsection{\texorpdfstring{\_message}{\_message}}
+{\footnotesize\ttfamily std\+::string Error\+::\+\_\+message\hspace{0.3cm}{\ttfamily [protected]}}
+
+The error message associated with the exception. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Error.\+hpp\end{DoxyCompactItemize}

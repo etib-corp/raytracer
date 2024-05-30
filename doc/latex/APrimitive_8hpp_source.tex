@@ -1,0 +1,49 @@
+\doxysection{APrimitive.\+hpp}
+\hypertarget{APrimitive_8hpp_source}{}\label{APrimitive_8hpp_source}\index{include/APrimitive.hpp@{include/APrimitive.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ Visual\ Studio\ Live\ Share\ (Workspace)}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ APrimitive}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}raytracer.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Ray.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}AObject.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Interval_8hpp}{Interval.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}IMaterial.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}HitRecord.hpp"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAPrimitive}{APrimitive}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classAObject}{AObject}}\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ Type\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ SPHERE,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ PLANE,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ CYLINDER,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ CONE,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \ \ \ \ DISK,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ NONE}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classAPrimitive_a402c119be20cbb2291c3bf40b40f3e7a}{\string~APrimitive}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAPrimitive}{APrimitive}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ APrimitive(const\ APrimitive\&)\ =\ default;}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ APrimitive(APrimitive\&\&)\ =\ default;}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAPrimitive_a6f021f32c7d3add33a0cc919d17caebd}{hit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRay}{Ray}}\ \&ray,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classInterval}{Interval}}\&\ ray\_t,\ \mbox{\hyperlink{classHitRecord}{HitRecord}}\&\ record)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ Type\ getType()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classAPrimitive_a19c0584626a95de875c9bb26c7f4f978}{\_type}};\ \}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setMaterial(std::shared\_ptr<IMaterial>\ material)\ \{\ this-\/>\mbox{\hyperlink{classAPrimitive_a7d8627cb3005113ffddb4d71ae8ed0c6}{\_material}}\ =\ material;\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ std::shared\_ptr<IMaterial>\ getMaterial()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classAPrimitive_a7d8627cb3005113ffddb4d71ae8ed0c6}{\_material}};\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ std::shared\_ptr<IMaterial>\ \mbox{\hyperlink{classAPrimitive_a7d8627cb3005113ffddb4d71ae8ed0c6}{\_material}};\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ Type\ \mbox{\hyperlink{classAPrimitive_a19c0584626a95de875c9bb26c7f4f978}{\_type}}\ =\ NONE;\ }
+\DoxyCodeLine{00059\ \};}
+
+\end{DoxyCode}

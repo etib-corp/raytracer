@@ -1,0 +1,155 @@
+\doxysection{Cone Class Reference}
+\hypertarget{classCone}{}\label{classCone}\index{Cone@{Cone}}
+Inheritance diagram for Cone\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classCone}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCone_aec709e915b3271a750d420b14b215bfb}\label{classCone_aec709e915b3271a750d420b14b215bfb} 
+{\bfseries Cone} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCone_a753a46419443a39a4c0a994e193894a8}{Cone}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&base\+Center, double height, double radius, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ material)
+\begin{DoxyCompactList}\small\item\em Parameterized constructor. \end{DoxyCompactList}\item 
+\Hypertarget{classCone_a1f22e5054b9927a9bcf2d33fcc6fc64b}\label{classCone_a1f22e5054b9927a9bcf2d33fcc6fc64b} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Cone} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCone_a4ad0c91b6b4aa5bb3db6c455ca688f69}{hit}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classInterval}{Interval}} \&ray\+\_\+t, \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&record) const override
+\begin{DoxyCompactList}\small\item\em Checks for ray-\/\+Cone intersection. \end{DoxyCompactList}\item 
+\Hypertarget{classCone_ab87261ccd83d247fbd19a365941d67ce}\label{classCone_ab87261ccd83d247fbd19a365941d67ce} 
+double {\bfseries get\+Radius} () const
+\item 
+\Hypertarget{classCone_a42e6432943d5583b3a7daebf03a99770}\label{classCone_a42e6432943d5583b3a7daebf03a99770} 
+double {\bfseries get\+Height} () const
+\item 
+\Hypertarget{classCone_aa3ce3ed8a73cd5302491181bcac48495}\label{classCone_aa3ce3ed8a73cd5302491181bcac48495} 
+void {\bfseries set\+Radius} (double radius)
+\item 
+\Hypertarget{classCone_a754c64c7777e19eefa46601e1a3780d2}\label{classCone_a754c64c7777e19eefa46601e1a3780d2} 
+void {\bfseries set\+Height} (double depth)
+\item 
+\Hypertarget{classCone_a7995604ba0d2305640d53b800aa99cae}\label{classCone_a7995604ba0d2305640d53b800aa99cae} 
+void {\bfseries set\+Base\+Center} (\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ center)
+\item 
+\Hypertarget{classCone_af3423f2c25bd1d0e2a1c3af534048529}\label{classCone_af3423f2c25bd1d0e2a1c3af534048529} 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ {\bfseries get\+Base\+Center} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAPrimitive}{APrimitive}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+APrimitive} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classAPrimitive}{APrimitive}. \end{DoxyCompactList}\item 
+Type {\bfseries get\+Type} () const
+\item 
+void {\bfseries set\+Material} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ material)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ {\bfseries get\+Material} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAObject}{AObject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAObject_a38fdf4de5b6966272b268340ea7c7ffe}{\texorpdfstring{$\sim$}{\string~}\+AObject}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classAObject}{AObject} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classAObject_a92975190349260c0d886f081c8f2567c}{get\+Position}} () const override
+\begin{DoxyCompactList}\small\item\em Get the current position of the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAObject_abdd5a2887200cb715f74493fba344188}{set\+Position}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&position) override
+\begin{DoxyCompactList}\small\item\em Set the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIObject}{IObject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIObject_aade43d43340617257443ca5733669ef9}{\texorpdfstring{$\sim$}{\string~}\+IObject}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCone_a4150254451c8f149e13b292f5905f4ab}\label{classCone_a4150254451c8f149e13b292f5905f4ab} 
+static void {\bfseries get\+Cone\+UV} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&p, double \&u, double \&v)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classAPrimitive}{APrimitive}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAPrimitive_a15bc48148c7d54376db26b952a422e8c}\label{classAPrimitive_a15bc48148c7d54376db26b952a422e8c} 
+enum {\bfseries Type} \{ \newline
+{\bfseries SPHERE}
+, {\bfseries PLANE}
+, {\bfseries CYLINDER}
+, {\bfseries CONE}
+, \newline
+{\bfseries DISK}
+, {\bfseries NONE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classAPrimitive}{APrimitive}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ \mbox{\hyperlink{classAPrimitive_a7d8627cb3005113ffddb4d71ae8ed0c6}{\+\_\+material}}
+\item 
+Type \mbox{\hyperlink{classAPrimitive_a19c0584626a95de875c9bb26c7f4f978}{\+\_\+type}} = NONE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classAObject}{AObject}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classAObject_ac5109ec253963d9c6ac184949518444b}{\+\_\+position}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCone_a753a46419443a39a4c0a994e193894a8}\label{classCone_a753a46419443a39a4c0a994e193894a8} 
+\index{Cone@{Cone}!Cone@{Cone}}
+\index{Cone@{Cone}!Cone@{Cone}}
+\doxysubsubsection{\texorpdfstring{Cone()}{Cone()}}
+{\footnotesize\ttfamily Cone\+::\+Cone (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{base\+Center,  }\item[{double}]{height,  }\item[{double}]{radius,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$}]{material }\end{DoxyParamCaption})}
+
+
+
+Parameterized constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Center} & The base center of the \doxylink{classCone}{Cone}. \\
+\hline
+{\em top} & The top of the \doxylink{classCone}{Cone}. \\
+\hline
+{\em radius} & The radius of the \doxylink{classCone}{Cone}. \\
+\hline
+{\em naterial} & The material to be set on the \doxylink{classCone}{Cone}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCone_a4ad0c91b6b4aa5bb3db6c455ca688f69}\label{classCone_a4ad0c91b6b4aa5bb3db6c455ca688f69} 
+\index{Cone@{Cone}!hit@{hit}}
+\index{hit@{hit}!Cone@{Cone}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily bool Cone\+::hit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classInterval}{Interval}} \&}]{ray\+\_\+t,  }\item[{\mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&}]{record }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks for ray-\/\+Cone intersection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & The ray to check intersection with. \\
+\hline
+{\em ray\+\_\+t} & The interval of the ray to consider. \\
+\hline
+{\em record} & The hit record to update if intersection occurs. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if intersection occurs, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAPrimitive_a6f021f32c7d3add33a0cc919d17caebd}{APrimitive}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Primitive/Cone.\+hpp\end{DoxyCompactItemize}

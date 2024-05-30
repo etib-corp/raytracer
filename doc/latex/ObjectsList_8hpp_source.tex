@@ -1,0 +1,66 @@
+\doxysection{Objects\+List.\+hpp}
+\hypertarget{ObjectsList_8hpp_source}{}\label{ObjectsList_8hpp_source}\index{include/Primitive/ObjectsList.hpp@{include/Primitive/ObjectsList.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ ObjectsList}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}raytracer.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}APrimitive.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Interval_8hpp}{Interval.hpp}}"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Primitive/Sphere.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}Primitive/Cylindre.hpp"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classObjectsList}{ObjectsList}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classAPrimitive}{APrimitive}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjectsList_ae7de1293b6deb7c28ef3123db9fad637}{ObjectsList}}();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjectsList_ae7de1293b6deb7c28ef3123db9fad637}{ObjectsList}}(\mbox{\hyperlink{classObjectsList}{ObjectsList}}\&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjectsList_a368c62e1bcd050dcb22cfb4b0d7e026d}{ObjectsList}}(std::shared\_ptr<APrimitive>\ \textcolor{keywordtype}{object});}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjectsList_ac5c97ff0ce5725fa183bd2357784bc22}{\string~ObjectsList}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classObjectsList_a4e7a90e31f69ce78fe357e345f1e050c}{hit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRay}{Ray}}\ \&ray,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classInterval}{Interval}}\&\ ray\_t,\ \mbox{\hyperlink{classHitRecord}{HitRecord}}\ \&record)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classObjectsList_af7d5aacaaf331043347657ac4e4fd098}{add}}(\textcolor{keyword}{const}\ std::shared\_ptr<APrimitive>\ \&\textcolor{keywordtype}{object});}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classObjectsList_a957436361a0e4d0193bfbd2c8b7c3275}{clear}}();}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ print(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}ObjectsList:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ object\_:\ \mbox{\hyperlink{classObjectsList_afb563421ad2bc527394084da28cae602}{\_objects}})\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ sphere\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classSphere}{Sphere}}*\textcolor{keyword}{>}(object\_.get()))\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Sphere:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tPosition="{}}\ <<\ sphere-\/>getPosition()\ <<\ std::endl;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tCenter="{}}\ <<\ sphere-\/>getCenter()\ <<\ std::endl;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tRadius="{}}\ <<\ sphere-\/>getRadius()\ <<\ std::endl;}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tMaterial="{}}\ <<\ sphere-\/>getMaterial().get()-\/>typeGet()\ <<\ std::endl;}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tisColor="{}}\ <<\ sphere-\/>getMaterial().get()-\/>hasColorGet()\ <<\ std::endl;}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tisTexture="{}}\ <<\ sphere-\/>getMaterial().get()-\/>hasTextureGet()\ <<\ std::endl;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tis="{}}\ <<\ sphere-\/>getMaterial().get()-\/>hasTextureGet()\ <<\ std::endl;}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ cylindre\ =\ \textcolor{keyword}{dynamic\_cast<}\mbox{\hyperlink{classCylindre}{Cylindre}}*\textcolor{keyword}{>}(object\_.get()))\ \{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Cylindre:"{}}\ <<\ std::endl;}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tPosition="{}}\ <<\ cylindre-\/>getPosition()\ <<\ std::endl;}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tDepth="{}}\ <<\ cylindre-\/>getDepth()\ <<\ std::endl;}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tRadius="{}}\ <<\ cylindre-\/>getRadius()\ <<\ std::endl;}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tMaterial="{}}\ <<\ cylindre-\/>getMaterial().get()-\/>typeGet()\ <<\ std::endl;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tisColor="{}}\ <<\ cylindre-\/>getMaterial().get()-\/>hasColorGet()\ <<\ std::endl;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tisTexture="{}}\ <<\ cylindre-\/>getMaterial().get()-\/>hasTextureGet()\ <<\ std::endl;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjectsList}{ObjectsList}}\ \&operator=(\mbox{\hyperlink{classObjectsList}{ObjectsList}}\ \&\&)\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ std::vector<std::shared\_ptr<APrimitive>>\ \mbox{\hyperlink{classObjectsList_afb563421ad2bc527394084da28cae602}{\_objects}};\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00090\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,60 @@
+\doxysection{Plan.\+hpp}
+\hypertarget{Plan_8hpp_source}{}\label{Plan_8hpp_source}\index{include/Primitive/Plan.hpp@{include/Primitive/Plan.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Plan}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ PLAN\_HPP\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\ \ \ \ \#define\ PLAN\_HPP\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}APrimitive.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}Color.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}Error.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}Material/Lambertian.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\ \ \ \ \#include\ "{}Texture/SolidColor.hpp"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPlan}{Plan}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classAPrimitive}{APrimitive}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPlan_1_1PlanError}{PlanError}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classError}{Error}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPlan_1_1PlanError}{PlanError}}(\textcolor{keyword}{const}\ std::string\ \&message)\ :\ \mbox{\hyperlink{classError_accd611f3ddae0828adeb6ca251113ffd}{Error}}(message)\ \{\}}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPlan_a031ab495af5a99a883be2e09860086f1}{Plan}}();}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPlan_ab148b093f377b120158cbb92a466aa31}{Plan}}(\textcolor{keyword}{const}\ std::string\&\ axis,\ \textcolor{keywordtype}{double}\ position,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&\ color\ =\ \mbox{\hyperlink{classColor}{Color}}(255,\ 255,\ 255));}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPlan_abeff7692a1657e45efb729c048430f76}{Plan}}(\textcolor{keyword}{const}\ std::string\&\ axis,\ \textcolor{keywordtype}{double}\ position,\ \textcolor{keyword}{const}\ std::shared\_ptr<IMaterial>\&\ material);}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPlan_a4df05d0211ed4572125f79cbfaafa626}{\string~Plan}}();}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPlan_a18ff0013a6b6c1817882053724af1e39}{hit}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRay}{Ray}}\ \&ray,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classInterval}{Interval}}\&\ ray\_t,\ \mbox{\hyperlink{classHitRecord}{HitRecord}}\&\ record)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPlan_a5e485b87b0b7151d3fbfd18ffb448a74}{getPlanUV}}(\mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ p,\ \textcolor{keywordtype}{double}\&\ u,\ \textcolor{keywordtype}{double}\&\ v)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00074\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>\_axis\ ==\ \textcolor{stringliteral}{"{}x"{}})\ \{}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u\ =\ p[1];}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ p[2];}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this-\/>\_axis\ ==\ \textcolor{stringliteral}{"{}y"{}})\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u\ =\ p[0];}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ p[2];}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (this-\/>\_axis\ ==\ \textcolor{stringliteral}{"{}z"{}})\ \{}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ u\ =\ p[0];}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ v\ =\ p[1];}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ std::string\ \_axis;\ }
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_value;\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ std::shared\_ptr<IMaterial>\ \_material;\ }
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !PLAN\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

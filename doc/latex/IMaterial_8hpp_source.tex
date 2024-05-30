@@ -1,0 +1,44 @@
+\doxysection{IMaterial.\+hpp}
+\hypertarget{IMaterial_8hpp_source}{}\label{IMaterial_8hpp_source}\index{include/IMaterial.hpp@{include/IMaterial.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ Visual\ Studio\ Live\ Share\ (Workspace)}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ IMaterial}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}raytracer.hpp"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}Ray.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}HitRecord.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Color.hpp"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classIMaterial}{IMaterial}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{enum}\ Type\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ \ \ \ \ DIELECTRIC,}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \ \ \ \ LAMBERTIAN,}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ METAL,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ NONE}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classIMaterial_a43ad960a33ef87b199c1d8b28c364130}{\string~IMaterial}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classIMaterial_a8254a76353270de5c675b12c69a23fe4}{emitted}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRay}{Ray}}\&\ ray,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHitRecord}{HitRecord}}\&\ record,\ \textcolor{keywordtype}{double}\ u,\ \textcolor{keywordtype}{double}\ v,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\&\ point)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classIMaterial_aa41840b65d4da0af8bcdd353230ce753}{scatter}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRay}{Ray}}\&\ ray,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHitRecord}{HitRecord}}\&\ hit,\ \mbox{\hyperlink{classColor}{Color}}\&\ attenuation,\ \mbox{\hyperlink{classRay}{Ray}}\&\ scattered)\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ typeGet(\textcolor{keywordtype}{void})\ =\ 0;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ typeSet(std::string)\ =\ 0;}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ hasTextureSet(\textcolor{keywordtype}{void})\ =\ 0;}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ hasColorSet(\textcolor{keywordtype}{void})\ =\ 0;}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ hasTextureGet(\textcolor{keywordtype}{void})\ =\ 0;}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ hasColorGet(\textcolor{keywordtype}{void})\ =\ 0;}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ Type\ getType()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{classColor}{Color}}\ getAlbedo()\ \textcolor{keyword}{const}\ =\ 0;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ setAlbedo(\textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&\ albedo)\ =\ 0;}
+\DoxyCodeLine{00070\ \};}
+
+\end{DoxyCode}

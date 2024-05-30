@@ -1,0 +1,66 @@
+\doxysection{Math\+::Vector\texorpdfstring{$<$}{<} N \texorpdfstring{$>$}{>}\+::Vector\+Error Class Reference}
+\hypertarget{classMath_1_1Vector_1_1VectorError}{}\label{classMath_1_1Vector_1_1VectorError}\index{Math::Vector$<$ N $>$::VectorError@{Math::Vector$<$ N $>$::VectorError}}
+
+
+Custom exception class for \doxylink{classMath_1_1Vector}{Vector} errors. This class is derived from the \doxylink{classError}{Error} class and is used to handle errors specific to \doxylink{classMath_1_1Vector}{Vector} operations.  
+
+
+
+
+{\ttfamily \#include $<$Vector.\+hpp$>$}
+
+Inheritance diagram for Math\+::Vector\texorpdfstring{$<$}{<} N \texorpdfstring{$>$}{>}\+::Vector\+Error\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classMath_1_1Vector_1_1VectorError}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMath_1_1Vector_1_1VectorError_a7babaae1dba9a4d155f1ae84d972a46c}{Vector\+Error}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error} object with the given error message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classError}{Error}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classError_accd611f3ddae0828adeb6ca251113ffd}{Error}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classError}{Error} object with the specified error message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classError_aee7d800cc0eedf3a353730891803b6e0}{\texorpdfstring{$\sim$}{\string~}\+Error}} ()=default
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classError}{Error} object. \end{DoxyCompactList}\item 
+const char \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classError_a94f60633baf3f7cbd175c05a2d5bec86}{what}} () const noexcept override
+\begin{DoxyCompactList}\small\item\em Retrieves the error message associated with the exception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classError}{Error}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classError_af2cfd799393ab472242a364701f0244e}{\+\_\+message}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$int N$>$\newline
+class Math\+::\+Vector$<$ N $>$\+::\+Vector\+Error}
+Custom exception class for \doxylink{classMath_1_1Vector}{Vector} errors. This class is derived from the \doxylink{classError}{Error} class and is used to handle errors specific to \doxylink{classMath_1_1Vector}{Vector} operations. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMath_1_1Vector_1_1VectorError_a7babaae1dba9a4d155f1ae84d972a46c}\label{classMath_1_1Vector_1_1VectorError_a7babaae1dba9a4d155f1ae84d972a46c} 
+\index{Math::Vector$<$ N $>$::VectorError@{Math::Vector$<$ N $>$::VectorError}!VectorError@{VectorError}}
+\index{VectorError@{VectorError}!Math::Vector$<$ N $>$::VectorError@{Math::Vector$<$ N $>$::VectorError}}
+\doxysubsubsection{\texorpdfstring{VectorError()}{VectorError()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::\+Vector\+Error\+::\+Vector\+Error (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error} object with the given error message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em message} & The error message. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Vector.\+hpp\end{DoxyCompactItemize}

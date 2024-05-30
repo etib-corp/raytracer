@@ -1,0 +1,177 @@
+\doxysection{PMaterial.\+hpp}
+\hypertarget{PMaterial_8hpp_source}{}\label{PMaterial_8hpp_source}\index{include/Parser/PMaterial.hpp@{include/Parser/PMaterial.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ PMaterial}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ PMATERIAL\_HPP\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ PMATERIAL\_HPP\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Vector.hpp"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPRefractive}{PRefractive}}}
+\DoxyCodeLine{00021\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{using\ }d64\ =\ double;}
+\DoxyCodeLine{00023\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \mbox{\hyperlink{classPRefractive_a3b1a8167dc27988ae276ba07c09c71a0}{PRefractive}}(std::string\ name,\ d64\ refractiveIndex)\ :\ \_refractiveIndex(refractiveIndex)}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \_name\ =\ name;}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{classPRefractive_a48e12d0ec80f54b86f0885d4618b93ef}{PRefractive}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPRefractive_a96c8475919f9a0ae613227585ad440c5}{print}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00043\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tRefractiveIndex:\ "{}}\ <<\ \_name\ <<\ \_refractiveIndex\ <<\ std::endl;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00052\ \ \ \ \ [[nodiscard]]\ d64\ \mbox{\hyperlink{classPRefractive_a0bf87e4172db58180e9bd6ebde4d3c49}{refractiveIndexGet}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ \_refractiveIndex;\ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00055\ \ \ \ \ std::string\ \_name;\ }
+\DoxyCodeLine{00056\ \ \ \ \ d64\ \_refractiveIndex;\ }
+\DoxyCodeLine{00057\ \};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00063\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPColor}{PColor}}}
+\DoxyCodeLine{00064\ \{}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPColor_a6406271f106a9783d2f7adb2dbd54aee}{PColor}}(std::string\ name,\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ rgb)\ :\ \_rgb(rgb)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \_name\ =\ name;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPColor_ac0aa794ebec7eeea71ed0d21d1eaeff8}{print}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00080\ \textcolor{keyword}{\ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tColor:\ "{}}\ <<\ \_name\ <<\ \_rgb\ <<\ std::endl;}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \mbox{\hyperlink{classPColor_a6754a915cd711121b5455e6c3b1824d8}{rgbGet}}(\textcolor{keywordtype}{void})\ \{\ \textcolor{keywordflow}{return}\ \_rgb;\ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ std::string\ \_name;\ }
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \_rgb;\ }
+\DoxyCodeLine{00094\ \};}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPTexture}{PTexture}}}
+\DoxyCodeLine{00100\ \{}
+\DoxyCodeLine{00101\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00106\ \ \ \ \ \mbox{\hyperlink{classPTexture_a8234efa740747b8e642bba58bf643200}{PTexture}}(\textcolor{keyword}{const}\ std::string\&\ name)}
+\DoxyCodeLine{00107\ \ \ \ \ \{}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \_name\ =\ name;}
+\DoxyCodeLine{00109\ \ \ \ \ \}}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPTexture_a0112b5198a637cb56c5348750e58335b}{print}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00115\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)tTexture:\ "{}}\ <<\ \_name\ <<\ std::endl;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)tscale:\ "{}}\ <<\ \_scale\ <<\ std::endl;}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ color\ :\ \_colors)}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)t\(\backslash\)tColor:"{}}\ <<\ color\ <<\ std::endl;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ std::cout\ <<\ std::endl;}
+\DoxyCodeLine{00121\ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00127\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPTexture_a63805de9d6bbcf7c69d8e8027f259099}{scaleSet}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ scale)\ \{\ \_scale\ =\ scale;\ \}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00133\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classPTexture_ab24e425e742e8a239029f6d111c998f3}{scaleGet}}()\ \{\ \textcolor{keywordflow}{return}\ \_scale;\ \}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPTexture_a48fdc467d442cb1f97302bb6f9c949fc}{colorsSet}}(\mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ color)\ \{\ \_colors.push\_back(color);\ \}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00145\ \ \ \ \ [[nodiscard]]\ std::vector<Math::Vector<3>>\ \mbox{\hyperlink{classPTexture_a63621a3d3c55f046b2e49dc3407e8b76}{colorsGet}}(\textcolor{keywordtype}{void})\ \{\ \textcolor{keywordflow}{return}\ \_colors;\ \};}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordtype}{double}\ \_scale;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00149\ \ \ \ \ std::string\ \_name;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00150\ \ \ \ \ std::vector<Math::Vector<3>>\ \_colors;\ \ \ \ }
+\DoxyCodeLine{00151\ \};}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00161\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPMaterial}{PMaterial}}}
+\DoxyCodeLine{00162\ \{}
+\DoxyCodeLine{00163\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00170\ \ \ \ \ \mbox{\hyperlink{classPMaterial_acba779b05fef0e4ba306708874c81168}{PMaterial}}()}
+\DoxyCodeLine{00171\ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \_isColor\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \_isRefractive\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \_isTexture\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00175\ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00182\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPMaterial_afcb9af397946c6be7516c962460b8edc}{addColor}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPColor}{PColor}}\&\ color)}
+\DoxyCodeLine{00183\ \ \ \ \ \{}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ colors.push\_back(color);}
+\DoxyCodeLine{00185\ \ \ \ \ \}}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00192\ \ \ \ \ std::vector<PColor>\ \mbox{\hyperlink{classPMaterial_a379aec1c4ca6c28ce274149c16dba770}{colorGet}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ colors;\ \}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00199\ \ \ \ \ std::vector<PTexture>\ \mbox{\hyperlink{classPMaterial_ad2b4de7f559f3890023f2d01694b42c5}{textureGet}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ textures;\ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00206\ \ \ \ \ std::vector<PRefractive>\ \mbox{\hyperlink{classPMaterial_a3eb3dfc17dfbe0ea11fae2b0a4e305c9}{refractiveGet}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_refractiveIndex;\ \}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPMaterial_a95bf8e70a65dd8af55d60535850d1b6d}{addTexture}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPTexture}{PTexture}}\&\ texture)}
+\DoxyCodeLine{00214\ \ \ \ \ \{}
+\DoxyCodeLine{00215\ \ \ \ \ \ \ \ \ textures.push\_back(texture);}
+\DoxyCodeLine{00216\ \ \ \ \ \}}
+\DoxyCodeLine{00217\ }
+\DoxyCodeLine{00223\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPMaterial_ae4285ec421d1c6ae52e179cda2c3d34f}{addRefractive}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classPRefractive}{PRefractive}}\&\ refractiveIndex)}
+\DoxyCodeLine{00224\ \ \ \ \ \{}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \_refractiveIndex.push\_back(refractiveIndex);}
+\DoxyCodeLine{00226\ \ \ \ \ \}}
+\DoxyCodeLine{00227\ }
+\DoxyCodeLine{00233\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPMaterial_a2b74e4a676b4cb88d4dde5d11bd3e592}{isRefractiveSet}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\&\ hasRefractive)}
+\DoxyCodeLine{00234\ \ \ \ \ \{}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ \_isRefractive\ =\ hasRefractive;}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \_isColor\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \_isTexture\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00238\ \ \ \ \ \}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00245\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPMaterial_a24a70365d6a8bc95981db552cfd75fa9}{isRefractiveGet}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ \_isRefractive;\ \}}
+\DoxyCodeLine{00246\ }
+\DoxyCodeLine{00252\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPMaterial_ae62a8188fef45d215a25a60d822f86e3}{print}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00253\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ color\ :\ colors)}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ color.print();}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keyword}{const}\ \textcolor{keyword}{auto}\&\ texture\ :\ textures)}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ texture.print();}
+\DoxyCodeLine{00258\ \ \ \ \ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00265\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPMaterial_abd41b22b7dd15dcfe0543e4187c251b9}{nameSet}}(\textcolor{keyword}{const}\ std::string\&\ name)\ \{\ \_name\ =\ name;\ \}}
+\DoxyCodeLine{00266\ }
+\DoxyCodeLine{00272\ \ \ \ \ std::string\ \mbox{\hyperlink{classPMaterial_ac3d3fce2d51ec7728515cd5c72264e9c}{nameGet}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_name;\ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00279\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPMaterial_a0ad44e4494cb3a1111574b528442000b}{istextureSet}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\&\ hasTexture)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00280\ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \_isTexture\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \_isColor\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \_isRefractive\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00284\ \ \ \ \ \}}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00291\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPMaterial_ac0b10f62e5e242cbbbbe98810d9f39f6}{istextureGet}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ \_isTexture;\ \}}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00298\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPMaterial_ac0dc7f08aab6d63b3f00b69327cdb698}{isColorSet}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\&\ hasColor)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00299\ \ \ \ \ \{}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ \_isColor\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ \_isTexture\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ \_isRefractive\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00303\ \ \ \ \ \}}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00310\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classPMaterial_a13ba1fb06176635650fb62cef44bd010}{isColorGet}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept}\ \{\ \textcolor{keywordflow}{return}\ \_isColor;\ \}}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00312\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00313\ \ \ \ \ std::string\ \_name;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ name\ of\ the\ material}}
+\DoxyCodeLine{00314\ \ \ \ \ std::vector<PColor>\ colors;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ list\ of\ colors}}
+\DoxyCodeLine{00315\ \ \ \ \ std::vector<PTexture>\ textures;\ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ The\ list\ of\ textures}}
+\DoxyCodeLine{00316\ \ \ \ \ std::vector<PRefractive>\ \_refractiveIndex;\ \textcolor{comment}{//\ The\ list\ of\ refractive\ indices}}
+\DoxyCodeLine{00317\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_isTexture;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Whether\ the\ material\ has\ a\ texture}}
+\DoxyCodeLine{00318\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_isColor;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Whether\ the\ material\ has\ a\ color}}
+\DoxyCodeLine{00319\ \ \ \ \ \textcolor{keywordtype}{bool}\ \_isRefractive;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Whether\ the\ material\ is\ refractive}}
+\DoxyCodeLine{00320\ \};}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !PMATERIAL\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

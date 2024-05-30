@@ -1,0 +1,278 @@
+\doxysection{PMaterial Class Reference}
+\hypertarget{classPMaterial}{}\label{classPMaterial}\index{PMaterial@{PMaterial}}
+
+
+Represents a material in the raytracer.  
+
+
+
+
+{\ttfamily \#include $<$PMaterial.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPMaterial_acba779b05fef0e4ba306708874c81168}{PMaterial}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{classPMaterial}{PMaterial} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPMaterial_afcb9af397946c6be7516c962460b8edc}{add\+Color}} (const \mbox{\hyperlink{classPColor}{PColor}} \&color)
+\begin{DoxyCompactList}\small\item\em Adds a color to the list of colors. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classPColor}{PColor}} $>$ \mbox{\hyperlink{classPMaterial_a379aec1c4ca6c28ce274149c16dba770}{color\+Get}} (void) const
+\begin{DoxyCompactList}\small\item\em Gets the list of colors. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classPTexture}{PTexture}} $>$ \mbox{\hyperlink{classPMaterial_ad2b4de7f559f3890023f2d01694b42c5}{texture\+Get}} (void) const
+\begin{DoxyCompactList}\small\item\em Gets the list of textures. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classPRefractive}{PRefractive}} $>$ \mbox{\hyperlink{classPMaterial_a3eb3dfc17dfbe0ea11fae2b0a4e305c9}{refractive\+Get}} (void) const
+\begin{DoxyCompactList}\small\item\em Gets the list of refractive indices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPMaterial_a95bf8e70a65dd8af55d60535850d1b6d}{add\+Texture}} (const \mbox{\hyperlink{classPTexture}{PTexture}} \&texture)
+\begin{DoxyCompactList}\small\item\em Adds a texture to the list of textures. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPMaterial_ae4285ec421d1c6ae52e179cda2c3d34f}{add\+Refractive}} (const \mbox{\hyperlink{classPRefractive}{PRefractive}} \&refractive\+Index)
+\begin{DoxyCompactList}\small\item\em Adds a refractive index to the list of refractive indices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPMaterial_a2b74e4a676b4cb88d4dde5d11bd3e592}{is\+Refractive\+Set}} (const bool \&has\+Refractive)
+\begin{DoxyCompactList}\small\item\em Sets whether the material is refractive. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPMaterial_a24a70365d6a8bc95981db552cfd75fa9}{is\+Refractive\+Get}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Gets whether the material is refractive. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPMaterial_ae62a8188fef45d215a25a60d822f86e3}{print}} () const
+\begin{DoxyCompactList}\small\item\em Prints the material. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPMaterial_abd41b22b7dd15dcfe0543e4187c251b9}{name\+Set}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Sets the name of the material. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classPMaterial_ac3d3fce2d51ec7728515cd5c72264e9c}{name\+Get}} (void) const
+\begin{DoxyCompactList}\small\item\em Gets the name of the material. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPMaterial_a0ad44e4494cb3a1111574b528442000b}{istexture\+Set}} (const bool \&has\+Texture) noexcept
+\begin{DoxyCompactList}\small\item\em Sets whether the material has a texture. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPMaterial_ac0b10f62e5e242cbbbbe98810d9f39f6}{istexture\+Get}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Gets whether the material has a texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPMaterial_ac0dc7f08aab6d63b3f00b69327cdb698}{is\+Color\+Set}} (const bool \&has\+Color) noexcept
+\begin{DoxyCompactList}\small\item\em Sets whether the material has a color. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classPMaterial_a13ba1fb06176635650fb62cef44bd010}{is\+Color\+Get}} (void) const noexcept
+\begin{DoxyCompactList}\small\item\em Gets whether the material has a color. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a material in the raytracer. 
+
+The \doxylink{classPMaterial}{PMaterial} class stores information about a material, including its name, colors, textures, and refractive indices. It provides methods to add and retrieve colors, textures, and refractive indices, as well as to set and get flags indicating whether the material has color, texture, or refraction. The class also provides a method to print the material\textquotesingle{}s colors and textures. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPMaterial_acba779b05fef0e4ba306708874c81168}\label{classPMaterial_acba779b05fef0e4ba306708874c81168} 
+\index{PMaterial@{PMaterial}!PMaterial@{PMaterial}}
+\index{PMaterial@{PMaterial}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{PMaterial()}{PMaterial()}}
+{\footnotesize\ttfamily PMaterial\+::\+PMaterial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor for the \doxylink{classPMaterial}{PMaterial} class. 
+
+This constructor initializes the \doxylink{classPMaterial}{PMaterial} object with default values. The {\ttfamily \+\_\+is\+Color}, {\ttfamily \+\_\+is\+Refractive}, and {\ttfamily \+\_\+is\+Texture} member variables are set to {\ttfamily false}. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPMaterial_afcb9af397946c6be7516c962460b8edc}\label{classPMaterial_afcb9af397946c6be7516c962460b8edc} 
+\index{PMaterial@{PMaterial}!addColor@{addColor}}
+\index{addColor@{addColor}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{addColor()}{addColor()}}
+{\footnotesize\ttfamily void PMaterial\+::add\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPColor}{PColor}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a color to the list of colors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPMaterial_ae4285ec421d1c6ae52e179cda2c3d34f}\label{classPMaterial_ae4285ec421d1c6ae52e179cda2c3d34f} 
+\index{PMaterial@{PMaterial}!addRefractive@{addRefractive}}
+\index{addRefractive@{addRefractive}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{addRefractive()}{addRefractive()}}
+{\footnotesize\ttfamily void PMaterial\+::add\+Refractive (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPRefractive}{PRefractive}} \&}]{refractive\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a refractive index to the list of refractive indices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em refractive\+Index} & The refractive index to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPMaterial_a95bf8e70a65dd8af55d60535850d1b6d}\label{classPMaterial_a95bf8e70a65dd8af55d60535850d1b6d} 
+\index{PMaterial@{PMaterial}!addTexture@{addTexture}}
+\index{addTexture@{addTexture}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{addTexture()}{addTexture()}}
+{\footnotesize\ttfamily void PMaterial\+::add\+Texture (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classPTexture}{PTexture}} \&}]{texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a texture to the list of textures. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & The texture to be added. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPMaterial_a379aec1c4ca6c28ce274149c16dba770}\label{classPMaterial_a379aec1c4ca6c28ce274149c16dba770} 
+\index{PMaterial@{PMaterial}!colorGet@{colorGet}}
+\index{colorGet@{colorGet}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{colorGet()}{colorGet()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classPColor}{PColor}} $>$ PMaterial\+::color\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the list of colors. 
+
+\begin{DoxyReturn}{Returns}
+The list of colors. 
+\end{DoxyReturn}
+\Hypertarget{classPMaterial_a13ba1fb06176635650fb62cef44bd010}\label{classPMaterial_a13ba1fb06176635650fb62cef44bd010} 
+\index{PMaterial@{PMaterial}!isColorGet@{isColorGet}}
+\index{isColorGet@{isColorGet}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{isColorGet()}{isColorGet()}}
+{\footnotesize\ttfamily bool PMaterial\+::is\+Color\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Gets whether the material has a color. 
+
+\begin{DoxyReturn}{Returns}
+Whether the material has a color. 
+\end{DoxyReturn}
+\Hypertarget{classPMaterial_ac0dc7f08aab6d63b3f00b69327cdb698}\label{classPMaterial_ac0dc7f08aab6d63b3f00b69327cdb698} 
+\index{PMaterial@{PMaterial}!isColorSet@{isColorSet}}
+\index{isColorSet@{isColorSet}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{isColorSet()}{isColorSet()}}
+{\footnotesize\ttfamily void PMaterial\+::is\+Color\+Set (\begin{DoxyParamCaption}\item[{const bool \&}]{has\+Color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Sets whether the material has a color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em has\+Color} & Whether the material has a color. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPMaterial_a24a70365d6a8bc95981db552cfd75fa9}\label{classPMaterial_a24a70365d6a8bc95981db552cfd75fa9} 
+\index{PMaterial@{PMaterial}!isRefractiveGet@{isRefractiveGet}}
+\index{isRefractiveGet@{isRefractiveGet}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{isRefractiveGet()}{isRefractiveGet()}}
+{\footnotesize\ttfamily bool PMaterial\+::is\+Refractive\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Gets whether the material is refractive. 
+
+\begin{DoxyReturn}{Returns}
+Whether the material is refractive. 
+\end{DoxyReturn}
+\Hypertarget{classPMaterial_a2b74e4a676b4cb88d4dde5d11bd3e592}\label{classPMaterial_a2b74e4a676b4cb88d4dde5d11bd3e592} 
+\index{PMaterial@{PMaterial}!isRefractiveSet@{isRefractiveSet}}
+\index{isRefractiveSet@{isRefractiveSet}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{isRefractiveSet()}{isRefractiveSet()}}
+{\footnotesize\ttfamily void PMaterial\+::is\+Refractive\+Set (\begin{DoxyParamCaption}\item[{const bool \&}]{has\+Refractive }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets whether the material is refractive. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em has\+Refractive} & Whether the material is refractive. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPMaterial_ac0b10f62e5e242cbbbbe98810d9f39f6}\label{classPMaterial_ac0b10f62e5e242cbbbbe98810d9f39f6} 
+\index{PMaterial@{PMaterial}!istextureGet@{istextureGet}}
+\index{istextureGet@{istextureGet}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{istextureGet()}{istextureGet()}}
+{\footnotesize\ttfamily bool PMaterial\+::istexture\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Gets whether the material has a texture. 
+
+\begin{DoxyReturn}{Returns}
+Whether the material has a texture. 
+\end{DoxyReturn}
+\Hypertarget{classPMaterial_a0ad44e4494cb3a1111574b528442000b}\label{classPMaterial_a0ad44e4494cb3a1111574b528442000b} 
+\index{PMaterial@{PMaterial}!istextureSet@{istextureSet}}
+\index{istextureSet@{istextureSet}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{istextureSet()}{istextureSet()}}
+{\footnotesize\ttfamily void PMaterial\+::istexture\+Set (\begin{DoxyParamCaption}\item[{const bool \&}]{has\+Texture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Sets whether the material has a texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em has\+Texture} & Whether the material has a texture. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPMaterial_ac3d3fce2d51ec7728515cd5c72264e9c}\label{classPMaterial_ac3d3fce2d51ec7728515cd5c72264e9c} 
+\index{PMaterial@{PMaterial}!nameGet@{nameGet}}
+\index{nameGet@{nameGet}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{nameGet()}{nameGet()}}
+{\footnotesize\ttfamily std\+::string PMaterial\+::name\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the name of the material. 
+
+\begin{DoxyReturn}{Returns}
+The name of the material. 
+\end{DoxyReturn}
+\Hypertarget{classPMaterial_abd41b22b7dd15dcfe0543e4187c251b9}\label{classPMaterial_abd41b22b7dd15dcfe0543e4187c251b9} 
+\index{PMaterial@{PMaterial}!nameSet@{nameSet}}
+\index{nameSet@{nameSet}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{nameSet()}{nameSet()}}
+{\footnotesize\ttfamily void PMaterial\+::name\+Set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the name of the material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the material. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPMaterial_ae62a8188fef45d215a25a60d822f86e3}\label{classPMaterial_ae62a8188fef45d215a25a60d822f86e3} 
+\index{PMaterial@{PMaterial}!print@{print}}
+\index{print@{print}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void PMaterial\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Prints the material. 
+
+This method prints the colors and textures of the material. \Hypertarget{classPMaterial_a3eb3dfc17dfbe0ea11fae2b0a4e305c9}\label{classPMaterial_a3eb3dfc17dfbe0ea11fae2b0a4e305c9} 
+\index{PMaterial@{PMaterial}!refractiveGet@{refractiveGet}}
+\index{refractiveGet@{refractiveGet}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{refractiveGet()}{refractiveGet()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classPRefractive}{PRefractive}} $>$ PMaterial\+::refractive\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the list of refractive indices. 
+
+\begin{DoxyReturn}{Returns}
+The list of refractive indices. 
+\end{DoxyReturn}
+\Hypertarget{classPMaterial_ad2b4de7f559f3890023f2d01694b42c5}\label{classPMaterial_ad2b4de7f559f3890023f2d01694b42c5} 
+\index{PMaterial@{PMaterial}!textureGet@{textureGet}}
+\index{textureGet@{textureGet}!PMaterial@{PMaterial}}
+\doxysubsubsection{\texorpdfstring{textureGet()}{textureGet()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classPTexture}{PTexture}} $>$ PMaterial\+::texture\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the list of textures. 
+
+\begin{DoxyReturn}{Returns}
+The list of textures. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Parser/PMaterial.\+hpp\end{DoxyCompactItemize}

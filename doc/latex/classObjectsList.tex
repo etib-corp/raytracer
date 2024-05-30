@@ -1,0 +1,182 @@
+\doxysection{Objects\+List Class Reference}
+\hypertarget{classObjectsList}{}\label{classObjectsList}\index{ObjectsList@{ObjectsList}}
+
+
+The \doxylink{classObjectsList}{Objects\+List} class represents a list of objects in a scene.  
+
+
+
+
+{\ttfamily \#include $<$Objects\+List.\+hpp$>$}
+
+Inheritance diagram for Objects\+List\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classObjectsList}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classObjectsList_ae7de1293b6deb7c28ef3123db9fad637}\label{classObjectsList_ae7de1293b6deb7c28ef3123db9fad637} 
+{\bfseries Objects\+List} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for \doxylink{classObjectsList}{Objects\+List}. \end{DoxyCompactList}\item 
+\Hypertarget{classObjectsList_ad8320fe4a74a676877cbbeaf1c980307}\label{classObjectsList_ad8320fe4a74a676877cbbeaf1c980307} 
+{\bfseries Objects\+List} (\mbox{\hyperlink{classObjectsList}{Objects\+List}} \&\&)=default
+\item 
+\mbox{\hyperlink{classObjectsList_a368c62e1bcd050dcb22cfb4b0d7e026d}{Objects\+List}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classAPrimitive}{APrimitive}} $>$ object)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classObjectsList}{Objects\+List} that initializes the list with a single object. \end{DoxyCompactList}\item 
+\Hypertarget{classObjectsList_ac5c97ff0ce5725fa183bd2357784bc22}\label{classObjectsList_ac5c97ff0ce5725fa183bd2357784bc22} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Objects\+List} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classObjectsList}{Objects\+List}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classObjectsList_a4e7a90e31f69ce78fe357e345f1e050c}{hit}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classInterval}{Interval}} \&ray\+\_\+t, \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&record) const override
+\begin{DoxyCompactList}\small\item\em Checks if the given ray intersects with any object in the list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classObjectsList_af7d5aacaaf331043347657ac4e4fd098}{add}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classAPrimitive}{APrimitive}} $>$ \&object)
+\begin{DoxyCompactList}\small\item\em Adds an object to the list. \end{DoxyCompactList}\item 
+\Hypertarget{classObjectsList_a957436361a0e4d0193bfbd2c8b7c3275}\label{classObjectsList_a957436361a0e4d0193bfbd2c8b7c3275} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Clears the list of objects. \end{DoxyCompactList}\item 
+\Hypertarget{classObjectsList_a130d1c10bcf2ad8e50a3e223d867ab3f}\label{classObjectsList_a130d1c10bcf2ad8e50a3e223d867ab3f} 
+void {\bfseries print} (void)
+\item 
+\Hypertarget{classObjectsList_a1b61353e09c00b3cf4468452eca6a2f5}\label{classObjectsList_a1b61353e09c00b3cf4468452eca6a2f5} 
+\mbox{\hyperlink{classObjectsList}{Objects\+List}} \& {\bfseries operator=} (\mbox{\hyperlink{classObjectsList}{Objects\+List}} \&\&)=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAPrimitive}{APrimitive}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+APrimitive} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classAPrimitive}{APrimitive}. \end{DoxyCompactList}\item 
+Type {\bfseries get\+Type} () const
+\item 
+void {\bfseries set\+Material} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ material)
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ {\bfseries get\+Material} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAObject}{AObject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAObject_a38fdf4de5b6966272b268340ea7c7ffe}{\texorpdfstring{$\sim$}{\string~}\+AObject}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classAObject}{AObject} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classAObject_a92975190349260c0d886f081c8f2567c}{get\+Position}} () const override
+\begin{DoxyCompactList}\small\item\em Get the current position of the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAObject_abdd5a2887200cb715f74493fba344188}{set\+Position}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&position) override
+\begin{DoxyCompactList}\small\item\em Set the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIObject}{IObject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIObject_aade43d43340617257443ca5733669ef9}{\texorpdfstring{$\sim$}{\string~}\+IObject}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classAPrimitive}{APrimitive}} $>$ $>$ \mbox{\hyperlink{classObjectsList_afb563421ad2bc527394084da28cae602}{\+\_\+objects}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classAPrimitive}{APrimitive}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classAPrimitive_a15bc48148c7d54376db26b952a422e8c}\label{classAPrimitive_a15bc48148c7d54376db26b952a422e8c} 
+enum {\bfseries Type} \{ \newline
+{\bfseries SPHERE}
+, {\bfseries PLANE}
+, {\bfseries CYLINDER}
+, {\bfseries CONE}
+, \newline
+{\bfseries DISK}
+, {\bfseries NONE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classAPrimitive}{APrimitive}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classIMaterial}{IMaterial}} $>$ \mbox{\hyperlink{classAPrimitive_a7d8627cb3005113ffddb4d71ae8ed0c6}{\+\_\+material}}
+\item 
+Type \mbox{\hyperlink{classAPrimitive_a19c0584626a95de875c9bb26c7f4f978}{\+\_\+type}} = NONE
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classAObject}{AObject}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classAObject_ac5109ec253963d9c6ac184949518444b}{\+\_\+position}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classObjectsList}{Objects\+List} class represents a list of objects in a scene. 
+
+This class inherits from the \doxylink{classAPrimitive}{APrimitive} class and provides functionality to store and manage a collection of objects. It allows adding objects to the list, clearing the list, and checking for intersection with a ray. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classObjectsList_a368c62e1bcd050dcb22cfb4b0d7e026d}\label{classObjectsList_a368c62e1bcd050dcb22cfb4b0d7e026d} 
+\index{ObjectsList@{ObjectsList}!ObjectsList@{ObjectsList}}
+\index{ObjectsList@{ObjectsList}!ObjectsList@{ObjectsList}}
+\doxysubsubsection{\texorpdfstring{ObjectsList()}{ObjectsList()}}
+{\footnotesize\ttfamily Objects\+List\+::\+Objects\+List (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classAPrimitive}{APrimitive}} $>$}]{object }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classObjectsList}{Objects\+List} that initializes the list with a single object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & The object to add to the list. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classObjectsList_af7d5aacaaf331043347657ac4e4fd098}\label{classObjectsList_af7d5aacaaf331043347657ac4e4fd098} 
+\index{ObjectsList@{ObjectsList}!add@{add}}
+\index{add@{add}!ObjectsList@{ObjectsList}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void Objects\+List\+::add (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classAPrimitive}{APrimitive}} $>$ \&}]{object }\end{DoxyParamCaption})}
+
+
+
+Adds an object to the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & The object to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classObjectsList_a4e7a90e31f69ce78fe357e345f1e050c}\label{classObjectsList_a4e7a90e31f69ce78fe357e345f1e050c} 
+\index{ObjectsList@{ObjectsList}!hit@{hit}}
+\index{hit@{hit}!ObjectsList@{ObjectsList}}
+\doxysubsubsection{\texorpdfstring{hit()}{hit()}}
+{\footnotesize\ttfamily bool Objects\+List\+::hit (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classInterval}{Interval}} \&}]{ray\+\_\+t,  }\item[{\mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&}]{record }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Checks if the given ray intersects with any object in the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & The ray to check for intersection. \\
+\hline
+{\em ray\+\_\+t} & The interval of valid ray parameter values. \\
+\hline
+{\em record} & The hit record to store the intersection information. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the ray intersects with an object, false otherwise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classAPrimitive_a6f021f32c7d3add33a0cc919d17caebd}{APrimitive}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classObjectsList_afb563421ad2bc527394084da28cae602}\label{classObjectsList_afb563421ad2bc527394084da28cae602} 
+\index{ObjectsList@{ObjectsList}!\_objects@{\_objects}}
+\index{\_objects@{\_objects}!ObjectsList@{ObjectsList}}
+\doxysubsubsection{\texorpdfstring{\_objects}{\_objects}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classAPrimitive}{APrimitive}}$>$ $>$ Objects\+List\+::\+\_\+objects}
+
+The list of objects. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Primitive/Objects\+List.\+hpp\end{DoxyCompactItemize}

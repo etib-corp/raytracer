@@ -1,0 +1,105 @@
+\doxysection{Lights Class Reference}
+\hypertarget{classLights}{}\label{classLights}\index{Lights@{Lights}}
+
+
+Represents a collection of lights in a scene.  
+
+
+
+
+{\ttfamily \#include $<$Lights.\+hpp$>$}
+
+Inheritance diagram for Lights\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classLights}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classLights_aa476c7db6f3bc52212a7f2ee907fc9e0}{ambient\+Set}} (const float ambient)
+\begin{DoxyCompactList}\small\item\em Set the ambient light intensity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLights_a40c6e7bdc365cd75be33987a1c64b8cd}{diffuse\+Set}} (const float diffuse)
+\begin{DoxyCompactList}\small\item\em Set the diffuse light intensity. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLights_a8e1cb46dc4ababe0cd9d19b7514ddb2b}{add\+Point}} (const \mbox{\hyperlink{structPoint}{Point}} \&point)
+\begin{DoxyCompactList}\small\item\em Add a point light to the collection. \end{DoxyCompactList}\item 
+\Hypertarget{classLights_a864e205a012c648f43901d8981cb300e}\label{classLights_a864e205a012c648f43901d8981cb300e} 
+void {\bfseries directional\+Set} (void)
+\begin{DoxyCompactList}\small\item\em Set the directional light. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classLights_a962c87a1c8170e1d9fa41b4358942163}{points\+Set}} (std\+::vector$<$ \mbox{\hyperlink{structPoint}{Point}} $>$ points)
+\begin{DoxyCompactList}\small\item\em Set the list of point lights. \end{DoxyCompactList}\item 
+\Hypertarget{classLights_a1129a1c4279b5398fb86f24cf17aabb7}\label{classLights_a1129a1c4279b5398fb86f24cf17aabb7} 
+void {\bfseries print} () const
+\begin{DoxyCompactList}\small\item\em Print the lights information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a collection of lights in a scene. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLights_a8e1cb46dc4ababe0cd9d19b7514ddb2b}\label{classLights_a8e1cb46dc4ababe0cd9d19b7514ddb2b} 
+\index{Lights@{Lights}!addPoint@{addPoint}}
+\index{addPoint@{addPoint}!Lights@{Lights}}
+\doxysubsubsection{\texorpdfstring{addPoint()}{addPoint()}}
+{\footnotesize\ttfamily void Lights\+::add\+Point (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structPoint}{Point}} \&}]{point }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a point light to the collection. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The point light to add. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLights_aa476c7db6f3bc52212a7f2ee907fc9e0}\label{classLights_aa476c7db6f3bc52212a7f2ee907fc9e0} 
+\index{Lights@{Lights}!ambientSet@{ambientSet}}
+\index{ambientSet@{ambientSet}!Lights@{Lights}}
+\doxysubsubsection{\texorpdfstring{ambientSet()}{ambientSet()}}
+{\footnotesize\ttfamily void Lights\+::ambient\+Set (\begin{DoxyParamCaption}\item[{const float}]{ambient }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the ambient light intensity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ambient} & The ambient light intensity. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLights_a40c6e7bdc365cd75be33987a1c64b8cd}\label{classLights_a40c6e7bdc365cd75be33987a1c64b8cd} 
+\index{Lights@{Lights}!diffuseSet@{diffuseSet}}
+\index{diffuseSet@{diffuseSet}!Lights@{Lights}}
+\doxysubsubsection{\texorpdfstring{diffuseSet()}{diffuseSet()}}
+{\footnotesize\ttfamily void Lights\+::diffuse\+Set (\begin{DoxyParamCaption}\item[{const float}]{diffuse }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the diffuse light intensity. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em diffuse} & The diffuse light intensity. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLights_a962c87a1c8170e1d9fa41b4358942163}\label{classLights_a962c87a1c8170e1d9fa41b4358942163} 
+\index{Lights@{Lights}!pointsSet@{pointsSet}}
+\index{pointsSet@{pointsSet}!Lights@{Lights}}
+\doxysubsubsection{\texorpdfstring{pointsSet()}{pointsSet()}}
+{\footnotesize\ttfamily void Lights\+::points\+Set (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structPoint}{Point}} $>$}]{points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the list of point lights. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & The list of point lights. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Parser/Lights.\+hpp\end{DoxyCompactItemize}

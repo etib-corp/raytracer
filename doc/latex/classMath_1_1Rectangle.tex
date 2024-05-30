@@ -1,0 +1,157 @@
+\doxysection{Math\+::Rectangle Class Reference}
+\hypertarget{classMath_1_1Rectangle}{}\label{classMath_1_1Rectangle}\index{Math::Rectangle@{Math::Rectangle}}
+
+
+Represents a rectangle shape.  
+
+
+
+
+{\ttfamily \#include $<$Rectangle.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMath_1_1Rectangle_a77b19582eaa215a94bd1679c0e91c408}{Rectangle}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \doxylink{classMath_1_1Rectangle}{Rectangle} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Rectangle_a311d5d0e963f1e172f82f09e9c250a50}{Rectangle}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&origin, const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&top\+Side, const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&left\+Side)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classMath_1_1Rectangle}{Rectangle} object with the specified width and height. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Rectangle_a540233b0c5d040b2acb94e8d23231adb}{\texorpdfstring{$\sim$}{\string~}\+Rectangle}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classMath_1_1Rectangle}{Rectangle} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMath_1_1Rectangle_aee8a65d026cc5b70b07356b5a76fde36}{set\+Origin}} (const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ 3 $>$ \&origin)
+\begin{DoxyCompactList}\small\item\em Sets the origin point of the rectangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMath_1_1Rectangle_a3e966a62aca882cd7322238d234e2791}{set\+Top\+Side}} (const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ 3 $>$ \&top\+Side)
+\begin{DoxyCompactList}\small\item\em Sets the top side vector of the rectangle. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMath_1_1Rectangle_ad44fdab0e257cf445421c304f68f68e9}{set\+Left\+Side}} (const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ 3 $>$ \&left\+Side)
+\begin{DoxyCompactList}\small\item\em Sets the left side vector of the rectangle. \end{DoxyCompactList}\item 
+\Hypertarget{classMath_1_1Rectangle_a6fe408984e62bd9295689d1b9834bda1}\label{classMath_1_1Rectangle_a6fe408984e62bd9295689d1b9834bda1} 
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ 3 $>$ {\bfseries get\+Origin} () const
+\begin{DoxyCompactList}\small\item\em Returns the origin point of the rectangle. \end{DoxyCompactList}\item 
+\Hypertarget{classMath_1_1Rectangle_ab304298fc1bddead83568b8a17d2f119}\label{classMath_1_1Rectangle_ab304298fc1bddead83568b8a17d2f119} 
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ 3 $>$ {\bfseries get\+Top\+Side} () const
+\begin{DoxyCompactList}\small\item\em Returns the top side vector of the rectangle. \end{DoxyCompactList}\item 
+\Hypertarget{classMath_1_1Rectangle_a2213a9b4022052d42c38f02c8bb8a16a}\label{classMath_1_1Rectangle_a2213a9b4022052d42c38f02c8bb8a16a} 
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ 3 $>$ {\bfseries get\+Left\+Side} () const
+\begin{DoxyCompactList}\small\item\em Returns the left side vector of the rectangle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ 3 $>$ \mbox{\hyperlink{classMath_1_1Rectangle_a29f5b42cc2f1f696bfa3dc7f4483775b}{point\+At}} (double u, double v) const
+\begin{DoxyCompactList}\small\item\em Returns the point at the specified UV coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a rectangle shape. 
+
+The \doxylink{classMath_1_1Rectangle}{Rectangle} class provides functionality to create and manipulate rectangle objects. It includes methods to calculate the area, perimeter, and check if a point is inside the rectangle. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMath_1_1Rectangle_a77b19582eaa215a94bd1679c0e91c408}\label{classMath_1_1Rectangle_a77b19582eaa215a94bd1679c0e91c408} 
+\index{Math::Rectangle@{Math::Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!Math::Rectangle@{Math::Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Math\+::\+Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \doxylink{classMath_1_1Rectangle}{Rectangle} class. 
+
+This constructor creates a \doxylink{classMath_1_1Rectangle}{Rectangle} object with default {\ttfamily origin}, {\ttfamily top\+Side} and {\ttfamily left\+Side} values. \Hypertarget{classMath_1_1Rectangle_a311d5d0e963f1e172f82f09e9c250a50}\label{classMath_1_1Rectangle_a311d5d0e963f1e172f82f09e9c250a50} 
+\index{Math::Rectangle@{Math::Rectangle}!Rectangle@{Rectangle}}
+\index{Rectangle@{Rectangle}!Math::Rectangle@{Math::Rectangle}}
+\doxysubsubsection{\texorpdfstring{Rectangle()}{Rectangle()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Math\+::\+Rectangle\+::\+Rectangle (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{origin,  }\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{top\+Side,  }\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{left\+Side }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classMath_1_1Rectangle}{Rectangle} object with the specified width and height. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The origin point of the rectangle. \\
+\hline
+{\em top\+Side} & The top side of the rectangle. \\
+\hline
+{\em left\+Side} & The left side of the rectangle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMath_1_1Rectangle_a540233b0c5d040b2acb94e8d23231adb}\label{classMath_1_1Rectangle_a540233b0c5d040b2acb94e8d23231adb} 
+\index{Math::Rectangle@{Math::Rectangle}!````~Rectangle@{\texorpdfstring{$\sim$}{\string~}Rectangle}}
+\index{````~Rectangle@{\texorpdfstring{$\sim$}{\string~}Rectangle}!Math::Rectangle@{Math::Rectangle}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Rectangle()}{\string~Rectangle()}}
+{\footnotesize\ttfamily Math\+::\+Rectangle\+::\texorpdfstring{$\sim$}{\string~}\+Rectangle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \doxylink{classMath_1_1Rectangle}{Rectangle} class. 
+
+This destructor is responsible for cleaning up any resources allocated by the \doxylink{classMath_1_1Rectangle}{Rectangle} class. It is automatically called when an instance of the \doxylink{classMath_1_1Rectangle}{Rectangle} class is destroyed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMath_1_1Rectangle_a29f5b42cc2f1f696bfa3dc7f4483775b}\label{classMath_1_1Rectangle_a29f5b42cc2f1f696bfa3dc7f4483775b} 
+\index{Math::Rectangle@{Math::Rectangle}!pointAt@{pointAt}}
+\index{pointAt@{pointAt}!Math::Rectangle@{Math::Rectangle}}
+\doxysubsubsection{\texorpdfstring{pointAt()}{pointAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ 3 $>$ Math\+::\+Rectangle\+::point\+At (\begin{DoxyParamCaption}\item[{double}]{u,  }\item[{double}]{v }\end{DoxyParamCaption}) const}
+
+
+
+Returns the point at the specified UV coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & The U coordinate. \\
+\hline
+{\em v} & The V coordinate. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The point at the specified UV coordinates. 
+\end{DoxyReturn}
+\Hypertarget{classMath_1_1Rectangle_ad44fdab0e257cf445421c304f68f68e9}\label{classMath_1_1Rectangle_ad44fdab0e257cf445421c304f68f68e9} 
+\index{Math::Rectangle@{Math::Rectangle}!setLeftSide@{setLeftSide}}
+\index{setLeftSide@{setLeftSide}!Math::Rectangle@{Math::Rectangle}}
+\doxysubsubsection{\texorpdfstring{setLeftSide()}{setLeftSide()}}
+{\footnotesize\ttfamily void Math\+::\+Rectangle\+::set\+Left\+Side (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ 3 $>$ \&}]{left\+Side }\end{DoxyParamCaption})}
+
+
+
+Sets the left side vector of the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left\+Side} & The left side vector of the rectangle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMath_1_1Rectangle_aee8a65d026cc5b70b07356b5a76fde36}\label{classMath_1_1Rectangle_aee8a65d026cc5b70b07356b5a76fde36} 
+\index{Math::Rectangle@{Math::Rectangle}!setOrigin@{setOrigin}}
+\index{setOrigin@{setOrigin}!Math::Rectangle@{Math::Rectangle}}
+\doxysubsubsection{\texorpdfstring{setOrigin()}{setOrigin()}}
+{\footnotesize\ttfamily void Math\+::\+Rectangle\+::set\+Origin (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ 3 $>$ \&}]{origin }\end{DoxyParamCaption})}
+
+
+
+Sets the origin point of the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origin} & The origin point of the rectangle. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMath_1_1Rectangle_a3e966a62aca882cd7322238d234e2791}\label{classMath_1_1Rectangle_a3e966a62aca882cd7322238d234e2791} 
+\index{Math::Rectangle@{Math::Rectangle}!setTopSide@{setTopSide}}
+\index{setTopSide@{setTopSide}!Math::Rectangle@{Math::Rectangle}}
+\doxysubsubsection{\texorpdfstring{setTopSide()}{setTopSide()}}
+{\footnotesize\ttfamily void Math\+::\+Rectangle\+::set\+Top\+Side (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ 3 $>$ \&}]{top\+Side }\end{DoxyParamCaption})}
+
+
+
+Sets the top side vector of the rectangle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em top\+Side} & The top side vector of the rectangle. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{Rectangle_8hpp}{Rectangle.\+hpp}}\end{DoxyCompactItemize}

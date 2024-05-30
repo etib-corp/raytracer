@@ -1,0 +1,151 @@
+\doxysection{Checker Class Reference}
+\hypertarget{classChecker}{}\label{classChecker}\index{Checker@{Checker}}
+
+
+Represents a checkerboard texture.  
+
+
+
+
+{\ttfamily \#include $<$Checker.\+hpp$>$}
+
+Inheritance diagram for Checker\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classChecker}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classChecker_afee88a6684701c5643bee17190cb0e7a}{Checker}} (double scale, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$ even, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$ odd)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classChecker}{Checker} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classChecker_a44131a274f36236359322bd10121b136}{Checker}} (double scale, const \mbox{\hyperlink{classColor}{Color}} \&even, const \mbox{\hyperlink{classColor}{Color}} \&odd)
+\begin{DoxyCompactList}\small\item\em Constructor for the \doxylink{classChecker}{Checker} class. \end{DoxyCompactList}\item 
+\Hypertarget{classChecker_a1022d23968960d415c4c3c368a6a69bc}\label{classChecker_a1022d23968960d415c4c3c368a6a69bc} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Checker} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classChecker}{Checker} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classChecker_a9a2ca074c39dc3de2da7cc5641e445d6}{value}} (double u, double v, const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&p) const override
+\begin{DoxyCompactList}\small\item\em Calculates the color value of the checkerboard texture at a given UV coordinate and point. \end{DoxyCompactList}\item 
+\Hypertarget{classChecker_ac1e6cdabdd6f92cb3506193d46b9323b}\label{classChecker_ac1e6cdabdd6f92cb3506193d46b9323b} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$ {\bfseries get\+Odd} () const
+\item 
+\Hypertarget{classChecker_ab7f1d8aaaa6121cc726f0243fd6a0e4c}\label{classChecker_ab7f1d8aaaa6121cc726f0243fd6a0e4c} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$ {\bfseries get\+Even} () const
+\item 
+\Hypertarget{classChecker_abeff62fa7507e3c386cfcae7648cd695}\label{classChecker_abeff62fa7507e3c386cfcae7648cd695} 
+void {\bfseries set\+Odd} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$ texture)
+\item 
+\Hypertarget{classChecker_aee96bf05c31a7d28470b849fb3d14600}\label{classChecker_aee96bf05c31a7d28470b849fb3d14600} 
+void {\bfseries set\+Even} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$ texture)
+\item 
+\Hypertarget{classChecker_a9f3895bd62ce131279e34c22af220f26}\label{classChecker_a9f3895bd62ce131279e34c22af220f26} 
+double {\bfseries get\+Scale} () const
+\item 
+\Hypertarget{classChecker_a90fb9330486994eab00b3edd054c1aea}\label{classChecker_a90fb9330486994eab00b3edd054c1aea} 
+void {\bfseries set\+Scale} (double scale)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classATexture}{ATexture}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual Type \mbox{\hyperlink{classATexture_a6ab734307064f67f7c411e7dc5289794}{get\+Type}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classITexture}{ITexture}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+ITexture} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classITexture}{ITexture} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classITexture}{ITexture}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classITexture_a1baf6cf8c57300b8d05540921e7a014c}\label{classITexture_a1baf6cf8c57300b8d05540921e7a014c} 
+enum {\bfseries Type} \{ {\bfseries CHECKER}
+, {\bfseries SOLIDCOLOR}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classATexture}{ATexture}}}
+\begin{DoxyCompactItemize}
+\item 
+Type {\bfseries \+\_\+type}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a checkerboard texture. 
+
+The \doxylink{classChecker}{Checker} class is a concrete implementation of the \doxylink{classATexture}{ATexture} abstract class. It represents a checkerboard texture that alternates between two given textures or colors. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classChecker_afee88a6684701c5643bee17190cb0e7a}\label{classChecker_afee88a6684701c5643bee17190cb0e7a} 
+\index{Checker@{Checker}!Checker@{Checker}}
+\index{Checker@{Checker}!Checker@{Checker}}
+\doxysubsubsection{\texorpdfstring{Checker()}{Checker()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Checker\+::\+Checker (\begin{DoxyParamCaption}\item[{double}]{scale,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$}]{even,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$}]{odd }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classChecker}{Checker} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The scale factor for the checkerboard pattern. \\
+\hline
+{\em even} & The texture to be used for the even squares of the checkerboard. \\
+\hline
+{\em odd} & The texture to be used for the odd squares of the checkerboard. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classChecker_a44131a274f36236359322bd10121b136}\label{classChecker_a44131a274f36236359322bd10121b136} 
+\index{Checker@{Checker}!Checker@{Checker}}
+\index{Checker@{Checker}!Checker@{Checker}}
+\doxysubsubsection{\texorpdfstring{Checker()}{Checker()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Checker\+::\+Checker (\begin{DoxyParamCaption}\item[{double}]{scale,  }\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{even,  }\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{odd }\end{DoxyParamCaption})}
+
+
+
+Constructor for the \doxylink{classChecker}{Checker} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The scale factor for the checkerboard pattern. \\
+\hline
+{\em even} & The color to be used for the even squares of the checkerboard. \\
+\hline
+{\em odd} & The color to be used for the odd squares of the checkerboard. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classChecker_a9a2ca074c39dc3de2da7cc5641e445d6}\label{classChecker_a9a2ca074c39dc3de2da7cc5641e445d6} 
+\index{Checker@{Checker}!value@{value}}
+\index{value@{value}!Checker@{Checker}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Checker\+::value (\begin{DoxyParamCaption}\item[{double}]{u,  }\item[{double}]{v,  }\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the color value of the checkerboard texture at a given UV coordinate and point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & The U coordinate of the texture. \\
+\hline
+{\em v} & The V coordinate of the texture. \\
+\hline
+{\em p} & The point in 3D space. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The color value of the checkerboard texture at the given coordinates and point. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classATexture_a8521af7718fd997e6989f0f05f70fb66}{ATexture}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Texture/Checker.\+hpp\end{DoxyCompactItemize}

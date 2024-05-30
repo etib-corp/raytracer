@@ -1,0 +1,75 @@
+\doxysection{ITexture Class Reference}
+\hypertarget{classITexture}{}\label{classITexture}\index{ITexture@{ITexture}}
+
+
+The \doxylink{classITexture}{ITexture} class represents an interface for textures in a raytracer.  
+
+
+
+
+{\ttfamily \#include $<$ITexture.\+hpp$>$}
+
+Inheritance diagram for ITexture\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classITexture}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classITexture_a1baf6cf8c57300b8d05540921e7a014c}\label{classITexture_a1baf6cf8c57300b8d05540921e7a014c} 
+enum {\bfseries Type} \{ {\bfseries CHECKER}
+, {\bfseries SOLIDCOLOR}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classITexture_a17a3b242ae6ad7ee4e85a3eb91c58b25}\label{classITexture_a17a3b242ae6ad7ee4e85a3eb91c58b25} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+ITexture} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classITexture}{ITexture} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classITexture_a9e30d507ca296febca1e5b58720e73e3}{value}} (double u, double v, const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&p) const =0
+\begin{DoxyCompactList}\small\item\em Returns the color of the texture at the given UV coordinate and point. \end{DoxyCompactList}\item 
+\Hypertarget{classITexture_ac16535be476fbc571decd89bfcb04bbc}\label{classITexture_ac16535be476fbc571decd89bfcb04bbc} 
+virtual Type {\bfseries get\+Type} () const =0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classITexture}{ITexture} class represents an interface for textures in a raytracer. 
+
+This class provides a common interface for different types of textures that can be used in a raytracer. It defines a pure virtual function {\ttfamily value} that returns the color of the texture at a given UV coordinate and point. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classITexture_a9e30d507ca296febca1e5b58720e73e3}\label{classITexture_a9e30d507ca296febca1e5b58720e73e3} 
+\index{ITexture@{ITexture}!value@{value}}
+\index{value@{value}!ITexture@{ITexture}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classColor}{Color}} ITexture\+::value (\begin{DoxyParamCaption}\item[{double}]{u,  }\item[{double}]{v,  }\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Returns the color of the texture at the given UV coordinate and point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & The U coordinate of the texture. \\
+\hline
+{\em v} & The V coordinate of the texture. \\
+\hline
+{\em p} & The point at which the texture is being evaluated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The color of the texture at the given UV coordinate and point. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classATexture_a8521af7718fd997e6989f0f05f70fb66}{ATexture}}, \mbox{\hyperlink{classChecker_a9a2ca074c39dc3de2da7cc5641e445d6}{Checker}}, and \mbox{\hyperlink{classSolidColor_af52a6658b0e038f68e1da2149a1fae75}{Solid\+Color}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/ITexture.\+hpp\end{DoxyCompactItemize}

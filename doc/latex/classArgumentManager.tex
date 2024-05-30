@@ -1,0 +1,85 @@
+\doxysection{Argument\+Manager Class Reference}
+\hypertarget{classArgumentManager}{}\label{classArgumentManager}\index{ArgumentManager@{ArgumentManager}}
+
+
+A class that manages command line arguments.  
+
+
+
+
+{\ttfamily \#include $<$Argument\+Manager.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArgumentManager_aeb849574c3c3b408306ed761660cb170}{Argument\+Manager}} (i32 ac, char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}av)
+\begin{DoxyCompactList}\small\item\em Constructs an \doxylink{classArgumentManager}{Argument\+Manager} object. \end{DoxyCompactList}\item 
+\Hypertarget{classArgumentManager_a505292f36154ecccb37ae3a4cdffceb4}\label{classArgumentManager_a505292f36154ecccb37ae3a4cdffceb4} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Argument\+Manager} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classArgumentManager}{Argument\+Manager} object. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classArgumentManager_a4d9dc0ac4044049cdfc7d915db0a1c04}{file\+Name\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the file name from the command line arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classArgumentManager_a241166e868b0e39a3ee9bca287dac6a3}{help}} (i32 exit\+Code)
+\begin{DoxyCompactList}\small\item\em Displays the help message and exits the program. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that manages command line arguments. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classArgumentManager_aeb849574c3c3b408306ed761660cb170}\label{classArgumentManager_aeb849574c3c3b408306ed761660cb170} 
+\index{ArgumentManager@{ArgumentManager}!ArgumentManager@{ArgumentManager}}
+\index{ArgumentManager@{ArgumentManager}!ArgumentManager@{ArgumentManager}}
+\doxysubsubsection{\texorpdfstring{ArgumentManager()}{ArgumentManager()}}
+{\footnotesize\ttfamily Argument\+Manager\+::\+Argument\+Manager (\begin{DoxyParamCaption}\item[{i32}]{ac,  }\item[{char \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{av }\end{DoxyParamCaption})}
+
+
+
+Constructs an \doxylink{classArgumentManager}{Argument\+Manager} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ac} & The number of command line arguments. \\
+\hline
+{\em av} & The array of command line arguments. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classArgumentManager_a4d9dc0ac4044049cdfc7d915db0a1c04}\label{classArgumentManager_a4d9dc0ac4044049cdfc7d915db0a1c04} 
+\index{ArgumentManager@{ArgumentManager}!fileNameGet@{fileNameGet}}
+\index{fileNameGet@{fileNameGet}!ArgumentManager@{ArgumentManager}}
+\doxysubsubsection{\texorpdfstring{fileNameGet()}{fileNameGet()}}
+{\footnotesize\ttfamily std\+::string Argument\+Manager\+::file\+Name\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Gets the file name from the command line arguments. 
+
+\begin{DoxyReturn}{Returns}
+The file name as a string. 
+\end{DoxyReturn}
+\Hypertarget{classArgumentManager_a241166e868b0e39a3ee9bca287dac6a3}\label{classArgumentManager_a241166e868b0e39a3ee9bca287dac6a3} 
+\index{ArgumentManager@{ArgumentManager}!help@{help}}
+\index{help@{help}!ArgumentManager@{ArgumentManager}}
+\doxysubsubsection{\texorpdfstring{help()}{help()}}
+{\footnotesize\ttfamily void Argument\+Manager\+::help (\begin{DoxyParamCaption}\item[{i32}]{exit\+Code }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Displays the help message and exits the program. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em exit\+Code} & The exit code to be returned. @noreturn This function does not return. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Parser/Argument\+Manager.\+hpp\end{DoxyCompactItemize}

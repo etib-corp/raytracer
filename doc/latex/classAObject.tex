@@ -1,0 +1,111 @@
+\doxysection{AObject Class Reference}
+\hypertarget{classAObject}{}\label{classAObject}\index{AObject@{AObject}}
+
+
+A class representing an object with a position.  
+
+
+
+
+{\ttfamily \#include $<$AObject.\+hpp$>$}
+
+Inheritance diagram for AObject\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classAObject}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAObject_a38fdf4de5b6966272b268340ea7c7ffe}{\texorpdfstring{$\sim$}{\string~}\+AObject}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classAObject}{AObject} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classAObject_a92975190349260c0d886f081c8f2567c}{get\+Position}} () const override
+\begin{DoxyCompactList}\small\item\em Get the current position of the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAObject_abdd5a2887200cb715f74493fba344188}{set\+Position}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&position) override
+\begin{DoxyCompactList}\small\item\em Set the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIObject}{IObject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIObject_aade43d43340617257443ca5733669ef9}{\texorpdfstring{$\sim$}{\string~}\+IObject}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classAObject_ac5109ec253963d9c6ac184949518444b}{\+\_\+position}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class representing an object with a position. 
+
+This class provides methods to get and set the position of the object. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classAObject_a38fdf4de5b6966272b268340ea7c7ffe}\label{classAObject_a38fdf4de5b6966272b268340ea7c7ffe} 
+\index{AObject@{AObject}!````~AObject@{\texorpdfstring{$\sim$}{\string~}AObject}}
+\index{````~AObject@{\texorpdfstring{$\sim$}{\string~}AObject}!AObject@{AObject}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}AObject()}{\string~AObject()}}
+{\footnotesize\ttfamily virtual AObject\+::\texorpdfstring{$\sim$}{\string~}\+AObject (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destructor for the \doxylink{classAObject}{AObject} class. 
+
+This function is a virtual destructor that allows for proper memory management when dealing with derived classes. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAObject_a92975190349260c0d886f081c8f2567c}\label{classAObject_a92975190349260c0d886f081c8f2567c} 
+\index{AObject@{AObject}!getPosition@{getPosition}}
+\index{getPosition@{getPosition}!AObject@{AObject}}
+\doxysubsubsection{\texorpdfstring{getPosition()}{getPosition()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ AObject\+::get\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Get the current position of the object. 
+
+This function returns the current position of the object as a Math\+::\+Vector$<$3$>$ object.
+
+\begin{DoxyReturn}{Returns}
+The current position of the object. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classIObject_a4f6cd34b5a8ef7cf6f7ba7a94f54024e}{IObject}}.
+
+\Hypertarget{classAObject_abdd5a2887200cb715f74493fba344188}\label{classAObject_abdd5a2887200cb715f74493fba344188} 
+\index{AObject@{AObject}!setPosition@{setPosition}}
+\index{setPosition@{setPosition}!AObject@{AObject}}
+\doxysubsubsection{\texorpdfstring{setPosition()}{setPosition()}}
+{\footnotesize\ttfamily virtual void AObject\+::set\+Position (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Set the position of the object. 
+
+This function sets the position of the object to the provided Math\+::\+Vector$<$3$>$ object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & The new position of the object. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classIObject_ad4eb4bd70ce9a399c26129993cc11389}{IObject}}.
+
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classAObject_ac5109ec253963d9c6ac184949518444b}\label{classAObject_ac5109ec253963d9c6ac184949518444b} 
+\index{AObject@{AObject}!\_position@{\_position}}
+\index{\_position@{\_position}!AObject@{AObject}}
+\doxysubsubsection{\texorpdfstring{\_position}{\_position}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$ AObject\+::\+\_\+position\hspace{0.3cm}{\ttfamily [protected]}}
+
+The vector representing the position of the object. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/AObject.\+hpp\end{DoxyCompactItemize}

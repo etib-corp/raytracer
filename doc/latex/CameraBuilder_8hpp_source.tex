@@ -1,0 +1,91 @@
+\doxysection{Camera\+Builder.\+hpp}
+\hypertarget{CameraBuilder_8hpp_source}{}\label{CameraBuilder_8hpp_source}\index{include/Parser/CameraBuilder.hpp@{include/Parser/CameraBuilder.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ CameraBuilder}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ CAMERABUILDER\_HPP\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ CAMERABUILDER\_HPP\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}../Camera.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}../Vector.hpp"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCameraBuilder}{CameraBuilder}}\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{using\ }i32\ =\ int32\_t;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{using\ }d64\ =\ double;}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCameraBuilder}{CameraBuilder}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCameraBuilder}{\string~CameraBuilder}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classCameraBuilder}{CameraBuilder}}\&\ \mbox{\hyperlink{classCameraBuilder_a1304b5947261b884897efe7808b5a720}{withResolution}}(\textcolor{keyword}{const}\ std::pair<d64,\ d64>\&\ resolution)}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ camera\_.setImageDimension(\mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<2>}}(\{resolution.first,\ resolution.second\}));}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classCameraBuilder}{CameraBuilder}}\&\ \mbox{\hyperlink{classCameraBuilder_a5cade1607ab4d0db50f29e8767973056}{withPositionFrom}}(\textcolor{keyword}{const}\ d64\&\ x,\ \textcolor{keyword}{const}\ d64\&\ y,\ \textcolor{keyword}{const}\ d64\&\ z)}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ camera\_.\mbox{\hyperlink{classCamera_a0f17ca835818e0f3054e779671b402f1}{setLookFrom}}(\mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}(\{x,\ y,\ z\}));}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classCameraBuilder}{CameraBuilder}}\&\ \mbox{\hyperlink{classCameraBuilder_a3a07a6442cd02a5fd4d75000797c3e08}{withPositionAt}}(\textcolor{keyword}{const}\ d64\&\ x,\ \textcolor{keyword}{const}\ d64\&\ y,\ \textcolor{keyword}{const}\ d64\&\ z)}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ camera\_.\mbox{\hyperlink{classCamera_afd8abf611cb961d255f5527e96637338}{setLookAt}}(\mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}(\{x,\ y,\ z\}));}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classCameraBuilder}{CameraBuilder}}\&\ \mbox{\hyperlink{classCameraBuilder_a3007d68256b4a757ca54240fc410ace7}{withRotation}}(\textcolor{keyword}{const}\ i32\ x,\ \textcolor{keyword}{const}\ i32\ y,\ \textcolor{keyword}{const}\ i32\ z)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \ \ \ \ camera\_.\mbox{\hyperlink{classCamera_a7b3b266d4ef9067f2f02e1f4d826b990}{setVup}}(\mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}(\{\textcolor{keyword}{static\_cast<}d64\textcolor{keyword}{>}(x),\ \textcolor{keyword}{static\_cast<}d64\textcolor{keyword}{>}(y),\ \textcolor{keyword}{static\_cast<}d64\textcolor{keyword}{>}(z)\}));}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classCameraBuilder}{CameraBuilder}}\&\ \mbox{\hyperlink{classCameraBuilder_ad9cdb4138ae5de4d917add4ca16c8f87}{withFieldOfView}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{float}\ fov)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ camera\_.\mbox{\hyperlink{classCamera_a33e62658cfe1ab2ee38e002d925eb32f}{setVfov}}(\textcolor{keyword}{static\_cast<}d64\textcolor{keyword}{>}(fov));}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classCameraBuilder}{CameraBuilder}}\&\ \mbox{\hyperlink{classCameraBuilder_a614245cfad666092d209f9dc6375f4ab}{withMaxDepth}}(\textcolor{keyword}{const}\ i32\ maxDepth)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00111\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ \ \ \ \ camera\_.\mbox{\hyperlink{classCamera_a81a0d3d697591ccc414f95cf90b4d365}{setMaxDepth}}(maxDepth);}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classCameraBuilder}{CameraBuilder}}\&\ \mbox{\hyperlink{classCameraBuilder_ae4202a82643ecfe8798e1a6049ef0db2}{withSamplePerPixel}}(\textcolor{keyword}{const}\ i32\ samplePerPixel)\ \textcolor{keyword}{noexcept}}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ \ \ \ \ camera\_.\mbox{\hyperlink{classCamera_a7c856c350861ec81ee28c7267bdd3b85}{setSamplesPerPixel}}(samplePerPixel);}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00138\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classCameraBuilder}{CameraBuilder}}\&\ \mbox{\hyperlink{classCameraBuilder_a9e97a6148cb7373e8959b6fcc250dd64}{withLight}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\&\ lightEnable)}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ camera\_.setLightEnabled(lightEnable);}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classCameraBuilder}{CameraBuilder}}\&\ \mbox{\hyperlink{classCameraBuilder_a1dbf6be820b17fc9bd9d9a57161aa5bf}{withBackgroundColor}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&\ color)}
+\DoxyCodeLine{00153\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ camera\_.\mbox{\hyperlink{classCamera_a2445a72a871ff79ebae83fe98136cba7}{setBackgroundColor}}(color);}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ *\textcolor{keyword}{this};}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classCamera}{Camera}}\ \mbox{\hyperlink{classCameraBuilder_a1d0019225e559399fe51fdea859ae4f7}{build}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ camera\_;}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classCamera}{Camera}}\ camera\_;}
+\DoxyCodeLine{00176\ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !CAMERABUILDER\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

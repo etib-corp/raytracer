@@ -1,0 +1,126 @@
+\doxysection{Raytracer\+Config\+Panel Class Reference}
+\hypertarget{classRaytracerConfigPanel}{}\label{classRaytracerConfigPanel}\index{RaytracerConfigPanel@{RaytracerConfigPanel}}
+Inheritance diagram for Raytracer\+Config\+Panel\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classRaytracerConfigPanel}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classRaytracerConfigPanel_a6c49d66f7e004de5eac4f54a6b3ffd5c}{init}} (sf\+::\+Render\+Window \&window, sf\+::\+Clock \&clock, \mbox{\hyperlink{classObjectsList}{Objects\+List}} \&world)
+\begin{DoxyCompactList}\small\item\em Initializes the GUI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRaytracerConfigPanel_a1ede6966fbb97e8a8cf12086f1e50270}{display}} ()
+\begin{DoxyCompactList}\small\item\em Displays the panel and its interactive elements. \end{DoxyCompactList}\item 
+\Hypertarget{classRaytracerConfigPanel_a7f5a6508f70b2f053a115c00ffbc7530}\label{classRaytracerConfigPanel_a7f5a6508f70b2f053a115c00ffbc7530} 
+void {\bfseries set\+Object} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classAPrimitive}{APrimitive}} $>$ object)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1Panel}{GUI\+::\+Panel}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGUI_1_1Panel_af83989afe6a309a914bd29befbb79a7d}{Panel}} (const std\+::string \&title)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classGUI_1_1Panel}{Panel} with the given title. \end{DoxyCompactList}\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Panel} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classGUI_1_1Panel}{Panel} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1Panel_a7fd41589567a2ebe27c9a43191920a73}{add\+Interactive}} (\mbox{\hyperlink{classGUI_1_1AInteractive}{AInteractive}} \&interactive)
+\begin{DoxyCompactList}\small\item\em Adds an interactive element to the panel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1AGUI}{GUI\+::\+AGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGUI_1_1AGUI_a391f1bf6b6db1ae0fed4293c7e94a16e}{\texorpdfstring{$\sim$}{\string~}\+AGUI}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classGUI_1_1AGUI}{AGUI} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AGUI_a379e08a1dc1b4751c388c20816d7926e}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the GUI. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGUI_1_1AGUI_ae6dc84b25ff036308f7c4757adb11205}{has\+To\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the GUI should be displayed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AGUI_a99b90f4cffacf82946ae08659a19c35b}{set\+Display}} (bool \mbox{\hyperlink{classGUI_1_1AGUI_afa7a3534aa4e47edea79c3e8bcfb2115}{display}})
+\begin{DoxyCompactList}\small\item\em Sets whether the GUI should be displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1IGUI}{GUI\+::\+IGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGUI_1_1IGUI_a6da7dffd12006282fe449229e0dd7f0b}{\texorpdfstring{$\sim$}{\string~}\+IGUI}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRaytracerConfigPanel_a1f543183db18dc864b5ea5d72e22ddd4}\label{classRaytracerConfigPanel_a1f543183db18dc864b5ea5d72e22ddd4} 
+std\+::string {\bfseries \+\_\+name}
+\item 
+\Hypertarget{classRaytracerConfigPanel_abce46f125aee6cab9f73726fcc1103c8}\label{classRaytracerConfigPanel_abce46f125aee6cab9f73726fcc1103c8} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classAPrimitive}{APrimitive}} $>$ {\bfseries \+\_\+object}
+\item 
+\Hypertarget{classRaytracerConfigPanel_a6572e8e3dea8e3abd79218d3c7540bca}\label{classRaytracerConfigPanel_a6572e8e3dea8e3abd79218d3c7540bca} 
+\mbox{\hyperlink{classTransformPanel}{Transform\+Panel}} \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+transform}
+\item 
+\Hypertarget{classRaytracerConfigPanel_a5cf769021d360fc6b294c9158329ba4d}\label{classRaytracerConfigPanel_a5cf769021d360fc6b294c9158329ba4d} 
+\mbox{\hyperlink{classMaterialPanel}{Material\+Panel}} \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+material}
+\item 
+\Hypertarget{classRaytracerConfigPanel_afdbf84e95c02ad1575944a90c90b6d16}\label{classRaytracerConfigPanel_afdbf84e95c02ad1575944a90c90b6d16} 
+\mbox{\hyperlink{classTexturePanel}{Texture\+Panel}} \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+texture}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGUI_1_1Panel}{GUI\+::\+Panel}}}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries \+\_\+title}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classGUI_1_1AInteractive}{AInteractive}} \texorpdfstring{$\ast$}{*} $>$ {\bfseries \+\_\+children}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGUI_1_1AGUI}{GUI\+::\+AGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classGUI_1_1AGUI_ab87e6df8e4b3079e8ba8b039cc730138}{\+\_\+display}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the GUI should be displayed. \end{DoxyCompactList}\item 
+sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGUI_1_1AGUI_adc6c12e2e09870719ecfd580bae605e8}{\+\_\+window}}
+\begin{DoxyCompactList}\small\item\em Pointer to the window on which the GUI will be displayed. \end{DoxyCompactList}\item 
+sf\+::\+Clock \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGUI_1_1AGUI_a84fd5365623b5830fd80677000f779e0}{\+\_\+clock}}
+\begin{DoxyCompactList}\small\item\em Pointer to the clock used to track time for animations and updates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classObjectsList}{Objects\+List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGUI_1_1AGUI_af365422bad4d8f84316e362a77425544}{\+\_\+world}}
+\begin{DoxyCompactList}\small\item\em Pointer to the world object containing all the objects in the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRaytracerConfigPanel_a1ede6966fbb97e8a8cf12086f1e50270}\label{classRaytracerConfigPanel_a1ede6966fbb97e8a8cf12086f1e50270} 
+\index{RaytracerConfigPanel@{RaytracerConfigPanel}!display@{display}}
+\index{display@{display}!RaytracerConfigPanel@{RaytracerConfigPanel}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void Raytracer\+Config\+Panel\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Displays the panel and its interactive elements. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classGUI_1_1Panel_ab6891c27c6c870dc3c5f41387064ebea}{GUI\+::\+Panel}}.
+
+\Hypertarget{classRaytracerConfigPanel_a6c49d66f7e004de5eac4f54a6b3ffd5c}\label{classRaytracerConfigPanel_a6c49d66f7e004de5eac4f54a6b3ffd5c} 
+\index{RaytracerConfigPanel@{RaytracerConfigPanel}!init@{init}}
+\index{init@{init}!RaytracerConfigPanel@{RaytracerConfigPanel}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Raytracer\+Config\+Panel\+::init (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{sf\+::\+Clock \&}]{clock,  }\item[{\mbox{\hyperlink{classObjectsList}{Objects\+List}} \&}]{world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Initializes the GUI. 
+
+This function sets up the GUI with the provided window, clock, and world objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window on which the GUI will be displayed. \\
+\hline
+{\em clock} & The clock used to track time for animations and updates. \\
+\hline
+{\em world} & The world object containing all the objects in the scene. \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classGUI_1_1AGUI_a9e180aa601d7f7e0492cd315b122d8b2}{GUI\+::\+AGUI}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Raytracer\+Ath/Raytracer\+Config\+Panel.\+hpp\end{DoxyCompactItemize}

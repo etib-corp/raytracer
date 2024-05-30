@@ -1,0 +1,148 @@
+\doxysection{Dielectric Class Reference}
+\hypertarget{classDielectric}{}\label{classDielectric}\index{Dielectric@{Dielectric}}
+
+
+\doxylink{classDielectric}{Dielectric} material class.  
+
+
+
+
+{\ttfamily \#include $<$Dielectric.\+hpp$>$}
+
+Inheritance diagram for Dielectric\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDielectric}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDielectric_aef51bffdc88f4895e449a6dfdeaac14d}{Dielectric}} (double refractive\+\_\+index)
+\begin{DoxyCompactList}\small\item\em Constructor for \doxylink{classDielectric}{Dielectric}. \end{DoxyCompactList}\item 
+\Hypertarget{classDielectric_a7b8d0dcb3d6f2673d6c7a6d726ee2cab}\label{classDielectric_a7b8d0dcb3d6f2673d6c7a6d726ee2cab} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Dielectric} ()
+\begin{DoxyCompactList}\small\item\em Destructor for \doxylink{classDielectric}{Dielectric}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classDielectric_a0f986023c97598760563b35838069ebf}{scatter}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray\+\_\+in, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&rec, \mbox{\hyperlink{classColor}{Color}} \&attenuation, \mbox{\hyperlink{classRay}{Ray}} \&scattered) const
+\begin{DoxyCompactList}\small\item\em Scatter function for \doxylink{classDielectric}{Dielectric}. \end{DoxyCompactList}\item 
+\Hypertarget{classDielectric_a70dddf30d1080355282eff3f5bb4dec5}\label{classDielectric_a70dddf30d1080355282eff3f5bb4dec5} 
+void {\bfseries set\+Refractive\+Index} (double refractive\+\_\+index)
+\item 
+\Hypertarget{classDielectric_ae2871b770f4376d6021c46162c70919b}\label{classDielectric_ae2871b770f4376d6021c46162c70919b} 
+double {\bfseries get\+Refractive\+Index} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAMaterial}{AMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+AMaterial} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_aabaa0691d092f33ce4827f7c05fc9c6a}{emitted}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&record, double u, double v, const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&point) const override
+\begin{DoxyCompactList}\small\item\em Emit light from the material. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAMaterial_a3952275d5311d2afe98a684aa1659b84}{type\+Set}} (std\+::string type\+\_\+)
+\item 
+std\+::string \mbox{\hyperlink{classAMaterial_a1d471b042cd38e5e8b7579c15150cde8}{type\+Get}} (void)
+\item 
+void \mbox{\hyperlink{classAMaterial_ad00a04b9816304b27d28805a42995eec}{has\+Texture\+Set}} (void)
+\item 
+void \mbox{\hyperlink{classAMaterial_a8c8b19a49bb61a72b625e89e9aa5aa4d}{has\+Color\+Set}} (void)
+\item 
+bool \mbox{\hyperlink{classAMaterial_a8fe6c611f749cc43630ee99ccf22869c}{has\+Texture\+Get}} (void)
+\item 
+bool \mbox{\hyperlink{classAMaterial_a73c401db227fa67baa47823fffc77bb1}{has\+Color\+Get}} (void)
+\item 
+Type \mbox{\hyperlink{classAMaterial_afa565ccecc3e4e49939f40e55e887343}{get\+Type}} () const
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_af5e47705ad75d1d6f9f46193cefd6275}{get\+Albedo}} () const
+\item 
+void \mbox{\hyperlink{classAMaterial_ab09905c92264662aed34138be1c568af}{set\+Albedo}} (const \mbox{\hyperlink{classColor}{Color}} \&color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIMaterial}{IMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+IMaterial} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classIMaterial}{IMaterial}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classIMaterial}{IMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea}\label{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea} 
+enum {\bfseries Type} \{ {\bfseries DIELECTRIC}
+, {\bfseries LAMBERTIAN}
+, {\bfseries METAL}
+, {\bfseries NONE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classAMaterial}{AMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_ae50e64c6c65815089401715bf85ecf81}{\+\_\+albedo}}
+\item 
+std\+::string {\bfseries \+\_\+string\+Type}
+\item 
+bool {\bfseries \+\_\+is\+Texture}
+\item 
+bool {\bfseries \+\_\+is\+Color}
+\item 
+Type \mbox{\hyperlink{classAMaterial_aceefd2a6cc57189f12b6d0d739558da6}{\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{classDielectric}{Dielectric} material class. 
+
+This class represents a dielectric material in a ray tracer. It inherits from the \doxylink{classAMaterial}{AMaterial} base class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDielectric_aef51bffdc88f4895e449a6dfdeaac14d}\label{classDielectric_aef51bffdc88f4895e449a6dfdeaac14d} 
+\index{Dielectric@{Dielectric}!Dielectric@{Dielectric}}
+\index{Dielectric@{Dielectric}!Dielectric@{Dielectric}}
+\doxysubsubsection{\texorpdfstring{Dielectric()}{Dielectric()}}
+{\footnotesize\ttfamily Dielectric\+::\+Dielectric (\begin{DoxyParamCaption}\item[{double}]{refractive\+\_\+index }\end{DoxyParamCaption})}
+
+
+
+Constructor for \doxylink{classDielectric}{Dielectric}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em refractive\+\_\+index} & The refractive index of the dielectric material. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDielectric_a0f986023c97598760563b35838069ebf}\label{classDielectric_a0f986023c97598760563b35838069ebf} 
+\index{Dielectric@{Dielectric}!scatter@{scatter}}
+\index{scatter@{scatter}!Dielectric@{Dielectric}}
+\doxysubsubsection{\texorpdfstring{scatter()}{scatter()}}
+{\footnotesize\ttfamily bool Dielectric\+::scatter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray\+\_\+in,  }\item[{const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&}]{rec,  }\item[{\mbox{\hyperlink{classColor}{Color}} \&}]{attenuation,  }\item[{\mbox{\hyperlink{classRay}{Ray}} \&}]{scattered }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Scatter function for \doxylink{classDielectric}{Dielectric}. 
+
+This function scatters a ray when it hits a dielectric material. It calculates the scattered ray and the attenuation of the ray.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray\+\_\+in} & The incident ray. \\
+\hline
+{\em rec} & The hit record containing information about the intersection point. \\
+\hline
+{\em attenuation} & The attenuation of the ray. \\
+\hline
+{\em scattered} & The scattered ray. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the ray is scattered, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAMaterial_ae9132628a8b6b720e3b63de5885f5957}{AMaterial}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Material/Dielectric.\+hpp\end{DoxyCompactItemize}

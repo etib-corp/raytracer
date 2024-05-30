@@ -1,0 +1,297 @@
+\doxysection{Vector.\+hpp}
+\hypertarget{Vector_8hpp_source}{}\label{Vector_8hpp_source}\index{include/Vector.hpp@{include/Vector.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Vector}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}raytracer.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Error.hpp"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{namespace\ }\mbox{\hyperlink{namespaceMath}{Math}}\ \{}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keywordtype}{int}\ N>}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{VectorError}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classError}{Error}}\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError_a7babaae1dba9a4d155f1ae84d972a46c}{VectorError}}(\textcolor{keyword}{const}\ std::string\ \&message)\ :\ \mbox{\hyperlink{classError}{Error}}(message)\ \{\}}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10}{Vector}}()}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ =\ 0;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector_a1245c8a53ab468a8b158c44d168a2e62}{Vector}}(std::array<double,\ N>\ values)}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ =\ values[i];}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector_a1befd7c8ba80776c9b1f938ca5452c91}{\string~Vector}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918}{size}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00067\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ N;}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classMath_1_1Vector_af01d920bd83b429cc420c54656a85d82}{length}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00076\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sqrt(this-\/>\mbox{\hyperlink{classMath_1_1Vector_a7a0e58d5e581a1d3d1dbfb76eb8a9aef}{length\_squared}}());}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classMath_1_1Vector_a7a0e58d5e581a1d3d1dbfb76eb8a9aef}{length\_squared}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00085\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sum\ =\ 0.0F;}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ *\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i];}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sum;}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classMath_1_1Vector_ade4ef21b9caa45c3507772e6fcbf6a20}{dot}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \&vec)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00099\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sum\ =\ 0.0F;}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (N\ !=\ vec.\mbox{\hyperlink{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918}{size}}())}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{VectorError}}(\textcolor{stringliteral}{"{}Vectors\ must\ have\ the\ same\ size\ to\ perform\ dot\ product"{}});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sum\ +=\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ *\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i];}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ sum;}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \mbox{\hyperlink{classMath_1_1Vector_aabfeafc61fbdee564a8ffdb2a79afb92}{cross}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \&vec)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00116\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (N\ !=\ 3\ ||\ vec.\mbox{\hyperlink{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918}{size}}()\ !=\ 3)}
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{VectorError}}(\textcolor{stringliteral}{"{}Cross\ product\ is\ only\ defined\ for\ 3D\ vectors"{}});}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<double,\ N>\ values;}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values[0]\ =\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[1]\ *\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[2]\ -\/\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[2]\ *\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[1];}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values[1]\ =\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[2]\ *\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[0]\ -\/\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[0]\ *\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[2];}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values[2]\ =\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[0]\ *\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[1]\ -\/\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[1]\ *\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[0];}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10}{Vector}}(values);}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \mbox{\hyperlink{classMath_1_1Vector_a94bbffee6487225d1529bb67620adf63}{unit\_vector}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00132\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_a4fa6dee255838d7accb8398780be80d7}{normalize}}();}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \mbox{\hyperlink{classMath_1_1Vector_a4fa6dee255838d7accb8398780be80d7}{normalize}}()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00141\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ len\ =\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af01d920bd83b429cc420c54656a85d82}{length}}();}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<double,\ N>\ values;}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values[i]\ =\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ /\ len;}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10}{Vector}}(values);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ random()}
+\DoxyCodeLine{00151\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<double,\ N>\ values;}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values[i]\ =\ random\_double();}
+\DoxyCodeLine{00156\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10}{Vector}}(values);}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00158\ }
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10}{Vector}}\ random(\textcolor{keywordtype}{double}\ min,\ \textcolor{keywordtype}{double}\ max)}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<double,\ N>\ values;}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values[i]\ =\ random\_double(min,\ max);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10}{Vector}}(values);}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ nearZero()\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00169\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ s\ =\ 1e-\/8;}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (fabs(this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i])\ >\ s)}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \mbox{\hyperlink{classMath_1_1Vector_ab680888a538883c778f174381836069a}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \&vec)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00185\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<double,\ N>\ values;}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (N\ !=\ vec.\mbox{\hyperlink{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918}{size}}())}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{VectorError}}(\textcolor{stringliteral}{"{}Vectors\ must\ have\ the\ same\ size\ to\ perform\ addition"{}});}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values[i]\ =\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ +\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i];}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10}{Vector}}(values);}
+\DoxyCodeLine{00193\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \mbox{\hyperlink{classMath_1_1Vector_a4fa09fcf23865a6ad64b04bc42e6a842}{operator-\/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \&vec)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00202\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<double,\ N>\ values;}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (N\ !=\ vec.\mbox{\hyperlink{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918}{size}}())}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{VectorError}}(\textcolor{stringliteral}{"{}Vectors\ must\ have\ the\ same\ size\ to\ perform\ substraction"{}});}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values[i]\ =\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ -\/\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i];}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10}{Vector}}(values);}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \mbox{\hyperlink{classMath_1_1Vector_afa5b0a4378781103702cbfecf4b4b4fe}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \&vec)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00219\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<double,\ N>\ values;}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (N\ !=\ vec.\mbox{\hyperlink{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918}{size}}())}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{VectorError}}(\textcolor{stringliteral}{"{}Vectors\ must\ have\ the\ same\ size\ to\ perform\ addition"{}});}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values[i]\ =\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ *\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i];}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10}{Vector}}(values);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \mbox{\hyperlink{classMath_1_1Vector_a28210d8c0e9646b0b76765818f73ef9f}{operator*}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \&val)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00235\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<double,\ N>\ values;}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00239\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values[i]\ =\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ *\ val;}
+\DoxyCodeLine{00240\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10}{Vector}}(values);}
+\DoxyCodeLine{00241\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \mbox{\hyperlink{classMath_1_1Vector_af625f05ff81db156a4ca69e43cdb956d}{operator/}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \&vec)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00250\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<double,\ N>\ values;}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (N\ !=\ vec.\mbox{\hyperlink{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918}{size}}())}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{VectorError}}(\textcolor{stringliteral}{"{}Vectors\ must\ have\ the\ same\ size\ to\ perform\ addition"{}});}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values[i]\ =\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ /\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i];}
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10}{Vector}}(values);}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00259\ }
+\DoxyCodeLine{00265\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \mbox{\hyperlink{classMath_1_1Vector_ab9ce965daab4505751b3d56eb96a7395}{operator/}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \&val)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00266\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ std::array<double,\ N>\ values;}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00270\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ values[i]\ =\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ /\ val;}
+\DoxyCodeLine{00271\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10}{Vector}}(values);}
+\DoxyCodeLine{00272\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00273\ }
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMath_1_1Vector_ae9d33d6649405d60275c084f04785817}{operator+=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \&vec)}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (N\ !=\ vec.\mbox{\hyperlink{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918}{size}}())}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{VectorError}}(\textcolor{stringliteral}{"{}Vectors\ must\ have\ the\ same\ size\ to\ perform\ addition"{}});}
+\DoxyCodeLine{00283\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ +=\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i];}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMath_1_1Vector_a9fba0eda035c8d65350b9f393ae92f2f}{operator-\/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \&vec)}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00294\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (N\ !=\ vec.\mbox{\hyperlink{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918}{size}}())}
+\DoxyCodeLine{00295\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{VectorError}}(\textcolor{stringliteral}{"{}Vectors\ must\ have\ the\ same\ size\ to\ perform\ addition"{}});}
+\DoxyCodeLine{00296\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00297\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ -\/=\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i];}
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00299\ }
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMath_1_1Vector_a18fb1d76e658d9e8e293683fd55b5d0c}{operator*=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \&vec)}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (N\ !=\ vec.\mbox{\hyperlink{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918}{size}}())}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{VectorError}}(\textcolor{stringliteral}{"{}Vectors\ must\ have\ the\ same\ size\ to\ perform\ addition"{}});}
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ *=\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i];}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00312\ }
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMath_1_1Vector_a1a0dac8edc1a53cd97e80881115e49e6}{operator*=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \&val)}
+\DoxyCodeLine{00318\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00319\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ *=\ val;}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMath_1_1Vector_ac8cd95692ca336093dd181500590f8b0}{operator/=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Vector}}\ \&vec)}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (N\ !=\ vec.\mbox{\hyperlink{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918}{size}}())}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{VectorError}}(\textcolor{stringliteral}{"{}Vectors\ must\ have\ the\ same\ size\ to\ perform\ addition"{}});}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00333\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ /=\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i];}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classMath_1_1Vector_a969ccad8d8c4230589e8cbb1eb922d8f}{operator/=}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\ \&val)}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i]\ /=\ val;}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00345\ }
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{classMath_1_1Vector_a6dc9afcd6142ed8775ce94c62db27d5b}{operator[]}}(\textcolor{keywordtype}{int}\ index)}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0\ ||\ index\ >=\ N)}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{VectorError}}(\textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00356\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[index];}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{double}\&\ \mbox{\hyperlink{classMath_1_1Vector_a3bc4dae20952b8e1dd9de4760c4975b6}{operator[]}}(\textcolor{keywordtype}{int}\ index)\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00366\ \textcolor{keyword}{\ \ \ \ \ \ \ \ \ \ \ \ }\{}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (index\ <\ 0\ ||\ index\ >=\ N)}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{VectorError}}(\textcolor{stringliteral}{"{}Index\ out\ of\ bounds"{}});}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[index];}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00371\ }
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\ \&\mbox{\hyperlink{classMath_1_1Vector_a513e5f37d15233d5df71ce3cc38c7ff8}{operator<<}}(std::ostream\ \&os,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<N>}}\ \&vec)}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{}("{}};}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ N;\ i++)\ \{}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ vec.\mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}}[i];}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ <\ N\ -\/\ 1)}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{},\ "{}};}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ os\ <<\ \textcolor{stringliteral}{"{})"{}};}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ os;}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00389\ }
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ std::array<double,\ N>\ \mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\_values}};\ }
+\DoxyCodeLine{00391\ \ \ \ \ \};}
+\DoxyCodeLine{00392\ \}}
+\DoxyCodeLine{00393\ }
+\DoxyCodeLine{00399\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ randomInUnitSphere()}
+\DoxyCodeLine{00400\ \{}
+\DoxyCodeLine{00401\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ v\ =\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>::random}}(-\/1.0,\ 1.0);}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (v.\mbox{\hyperlink{classMath_1_1Vector_a7a0e58d5e581a1d3d1dbfb76eb8a9aef}{length\_squared}}()\ <\ 1)}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ v;}
+\DoxyCodeLine{00405\ \ \ \ \ \}}
+\DoxyCodeLine{00406\ \}}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00413\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ randomUnitVector()}
+\DoxyCodeLine{00414\ \{}
+\DoxyCodeLine{00415\ \ \ \ \ \textcolor{keywordflow}{return}\ randomInUnitSphere().\mbox{\hyperlink{classMath_1_1Vector_a94bbffee6487225d1529bb67620adf63}{unit\_vector}}();}
+\DoxyCodeLine{00416\ \}}
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00425\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ reflect(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \&v,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \&n)}
+\DoxyCodeLine{00426\ \{}
+\DoxyCodeLine{00427\ \ \ \ \ \textcolor{keywordflow}{return}\ v\ -\/\ n\ *\ 2\ *\ v.\mbox{\hyperlink{classMath_1_1Vector_ade4ef21b9caa45c3507772e6fcbf6a20}{dot}}(n);}
+\DoxyCodeLine{00428\ \}}
+\DoxyCodeLine{00429\ }
+\DoxyCodeLine{00438\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ refract(\textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \&uv,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ \&n,\ \textcolor{keywordtype}{double}\ etai\_over\_etat)}
+\DoxyCodeLine{00439\ \{}
+\DoxyCodeLine{00440\ \ \ \ \ \textcolor{keywordtype}{double}\ cos\_theta\ =\ fmin((uv\ *\ -\/1.0).dot(n),\ 1.0);}
+\DoxyCodeLine{00441\ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ r\_out\_perp\ =\ (uv\ +\ n\ *\ cos\_theta)\ *\ etai\_over\_etat;}
+\DoxyCodeLine{00442\ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ r\_out\_parallel\ =\ n\ *\ -\/sqrt(fabs(1.0\ -\/\ r\_out\_perp.\mbox{\hyperlink{classMath_1_1Vector_a7a0e58d5e581a1d3d1dbfb76eb8a9aef}{length\_squared}}()));}
+\DoxyCodeLine{00443\ \ \ \ \ \textcolor{keywordflow}{return}\ r\_out\_perp\ +\ r\_out\_parallel;}
+\DoxyCodeLine{00444\ \}}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00451\ \textcolor{keyword}{inline}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ randomInUnitDisk()}
+\DoxyCodeLine{00452\ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\ p\ =\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}(\{random\_double(-\/1,\ 1),\ random\_double(-\/1,\ 1),\ 0.0\});}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (p.\mbox{\hyperlink{classMath_1_1Vector_a7a0e58d5e581a1d3d1dbfb76eb8a9aef}{length\_squared}}()\ <\ 1)}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ p;}
+\DoxyCodeLine{00457\ \ \ \ \ \}}
+\DoxyCodeLine{00458\ \}}
+\DoxyCodeLine{00459\ }
+
+\end{DoxyCode}

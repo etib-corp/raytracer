@@ -1,0 +1,137 @@
+\doxysection{IMaterial Class Reference}
+\hypertarget{classIMaterial}{}\label{classIMaterial}\index{IMaterial@{IMaterial}}
+
+
+The \doxylink{classIMaterial}{IMaterial} class represents an interface for materials used in ray tracing.  
+
+
+
+
+{\ttfamily \#include $<$IMaterial.\+hpp$>$}
+
+Inheritance diagram for IMaterial\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classIMaterial}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea}\label{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea} 
+enum {\bfseries Type} \{ {\bfseries DIELECTRIC}
+, {\bfseries LAMBERTIAN}
+, {\bfseries METAL}
+, {\bfseries NONE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classIMaterial_a43ad960a33ef87b199c1d8b28c364130}\label{classIMaterial_a43ad960a33ef87b199c1d8b28c364130} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+IMaterial} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classIMaterial}{IMaterial}. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classIMaterial_a8254a76353270de5c675b12c69a23fe4}{emitted}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&record, double u, double v, const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&point) const =0
+\begin{DoxyCompactList}\small\item\em Emit light from the material. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classIMaterial_aa41840b65d4da0af8bcdd353230ce753}{scatter}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&hit, \mbox{\hyperlink{classColor}{Color}} \&attenuation, \mbox{\hyperlink{classRay}{Ray}} \&scattered) const =0
+\begin{DoxyCompactList}\small\item\em Calculates the scattered ray and attenuation color for a given incoming ray and hit record. \end{DoxyCompactList}\item 
+\Hypertarget{classIMaterial_afded55b253c4690ea347ad1bf3cd1c02}\label{classIMaterial_afded55b253c4690ea347ad1bf3cd1c02} 
+virtual std\+::string {\bfseries type\+Get} (void)=0
+\item 
+\Hypertarget{classIMaterial_adf5de0943ff786dc3b46727ee8abe5b7}\label{classIMaterial_adf5de0943ff786dc3b46727ee8abe5b7} 
+virtual void {\bfseries type\+Set} (std\+::string)=0
+\item 
+\Hypertarget{classIMaterial_aeae5abb4b49ba3a463054bf3f0525bd3}\label{classIMaterial_aeae5abb4b49ba3a463054bf3f0525bd3} 
+virtual void {\bfseries has\+Texture\+Set} (void)=0
+\item 
+\Hypertarget{classIMaterial_a41998ee8a9e8e28bb9b43a961d847a7d}\label{classIMaterial_a41998ee8a9e8e28bb9b43a961d847a7d} 
+virtual void {\bfseries has\+Color\+Set} (void)=0
+\item 
+\Hypertarget{classIMaterial_a4cf81b231de69281a14bbc9f2dbbb5f6}\label{classIMaterial_a4cf81b231de69281a14bbc9f2dbbb5f6} 
+virtual bool {\bfseries has\+Texture\+Get} (void)=0
+\item 
+\Hypertarget{classIMaterial_ab7eb2d165a1da4076a34063a83d2db90}\label{classIMaterial_ab7eb2d165a1da4076a34063a83d2db90} 
+virtual bool {\bfseries has\+Color\+Get} (void)=0
+\item 
+\Hypertarget{classIMaterial_ae8653e76078e05a3508f13a9fd68a819}\label{classIMaterial_ae8653e76078e05a3508f13a9fd68a819} 
+virtual Type {\bfseries get\+Type} () const =0
+\item 
+\Hypertarget{classIMaterial_a12662fbebf1ddeb41ee8693e06d8bfbb}\label{classIMaterial_a12662fbebf1ddeb41ee8693e06d8bfbb} 
+virtual \mbox{\hyperlink{classColor}{Color}} {\bfseries get\+Albedo} () const =0
+\item 
+\Hypertarget{classIMaterial_a0e2af5d612c3aed83edc2344246d6af9}\label{classIMaterial_a0e2af5d612c3aed83edc2344246d6af9} 
+virtual void {\bfseries set\+Albedo} (const \mbox{\hyperlink{classColor}{Color}} \&albedo)=0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classIMaterial}{IMaterial} class represents an interface for materials used in ray tracing. 
+
+This class provides a common interface for different types of materials that can be used in ray tracing. It defines a pure virtual function \doxylink{classIMaterial_aa41840b65d4da0af8bcdd353230ce753}{scatter()} that calculates the scattered ray and attenuation color based on the incoming ray and hit record. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classIMaterial_a8254a76353270de5c675b12c69a23fe4}\label{classIMaterial_a8254a76353270de5c675b12c69a23fe4} 
+\index{IMaterial@{IMaterial}!emitted@{emitted}}
+\index{emitted@{emitted}!IMaterial@{IMaterial}}
+\doxysubsubsection{\texorpdfstring{emitted()}{emitted()}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{classColor}{Color}} IMaterial\+::emitted (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&}]{record,  }\item[{double}]{u,  }\item[{double}]{v,  }\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Emit light from the material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & The incident ray. \\
+\hline
+{\em record} & The hit record containing information about the intersection. \\
+\hline
+{\em u} & The u texture coordinate. \\
+\hline
+{\em v} & The v texture coordinate. \\
+\hline
+{\em point} & The point of intersection. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The emitted color. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classAMaterial_aabaa0691d092f33ce4827f7c05fc9c6a}{AMaterial}}, \mbox{\hyperlink{classDiffuse_aef3ba3c8c6ee9d3de0b3b07f9043d490}{Diffuse}}, and \mbox{\hyperlink{classDirectionnal_a4ce94a0584316c5cc9087da1071b2a7e}{Directionnal}}.
+
+\Hypertarget{classIMaterial_aa41840b65d4da0af8bcdd353230ce753}\label{classIMaterial_aa41840b65d4da0af8bcdd353230ce753} 
+\index{IMaterial@{IMaterial}!scatter@{scatter}}
+\index{scatter@{scatter}!IMaterial@{IMaterial}}
+\doxysubsubsection{\texorpdfstring{scatter()}{scatter()}}
+{\footnotesize\ttfamily virtual bool IMaterial\+::scatter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&}]{hit,  }\item[{\mbox{\hyperlink{classColor}{Color}} \&}]{attenuation,  }\item[{\mbox{\hyperlink{classRay}{Ray}} \&}]{scattered }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Calculates the scattered ray and attenuation color for a given incoming ray and hit record. 
+
+This pure virtual function is implemented by derived classes to calculate the scattered ray and attenuation color based on the incoming ray and hit record. The function returns true if scattering occurs, and false otherwise.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & The incoming ray. \\
+\hline
+{\em hit} & The hit record containing information about the intersection point. \\
+\hline
+{\em attenuation} & The attenuation color. \\
+\hline
+{\em scattered} & The scattered ray. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if scattering occurs, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classMetal_a74fe406f586d8e4d58c7158487eb9d8d}{Metal}}, \mbox{\hyperlink{classAMaterial_ae9132628a8b6b720e3b63de5885f5957}{AMaterial}}, \mbox{\hyperlink{classLambertian_a14d4231cf93060680905cd35f39a0eaf}{Lambertian}}, and \mbox{\hyperlink{classDielectric_a0f986023c97598760563b35838069ebf}{Dielectric}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/IMaterial.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,246 @@
+\doxysection{Camera\+Builder Class Reference}
+\hypertarget{classCameraBuilder}{}\label{classCameraBuilder}\index{CameraBuilder@{CameraBuilder}}
+
+
+A builder class for constructing \doxylink{classCamera}{Camera} objects.  
+
+
+
+
+{\ttfamily \#include $<$Camera\+Builder.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& \mbox{\hyperlink{classCameraBuilder_a1304b5947261b884897efe7808b5a720}{with\+Resolution}} (const std\+::pair$<$ d64, d64 $>$ \&resolution)
+\begin{DoxyCompactList}\small\item\em Sets the resolution of the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& \mbox{\hyperlink{classCameraBuilder_a5cade1607ab4d0db50f29e8767973056}{with\+Position\+From}} (const d64 \&x, const d64 \&y, const d64 \&z)
+\begin{DoxyCompactList}\small\item\em Sets the position of the camera using the specified coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& \mbox{\hyperlink{classCameraBuilder_a3a07a6442cd02a5fd4d75000797c3e08}{with\+Position\+At}} (const d64 \&x, const d64 \&y, const d64 \&z)
+\begin{DoxyCompactList}\small\item\em Sets the position of the camera at the specified coordinates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& \mbox{\hyperlink{classCameraBuilder_a3007d68256b4a757ca54240fc410ace7}{with\+Rotation}} (const i32 x, const i32 y, const i32 z) noexcept
+\begin{DoxyCompactList}\small\item\em Sets the rotation of the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& \mbox{\hyperlink{classCameraBuilder_ad9cdb4138ae5de4d917add4ca16c8f87}{with\+Field\+Of\+View}} (const float fov) noexcept
+\begin{DoxyCompactList}\small\item\em Sets the field of view for the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& \mbox{\hyperlink{classCameraBuilder_a614245cfad666092d209f9dc6375f4ab}{with\+Max\+Depth}} (const i32 max\+Depth) noexcept
+\begin{DoxyCompactList}\small\item\em Sets the maximum depth of the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& \mbox{\hyperlink{classCameraBuilder_ae4202a82643ecfe8798e1a6049ef0db2}{with\+Sample\+Per\+Pixel}} (const i32 sample\+Per\+Pixel) noexcept
+\begin{DoxyCompactList}\small\item\em Sets the number of samples per pixel for the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& \mbox{\hyperlink{classCameraBuilder_a9e97a6148cb7373e8959b6fcc250dd64}{with\+Light}} (const bool \&light\+Enable)
+\begin{DoxyCompactList}\small\item\em Sets whether the light is enabled for the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& \mbox{\hyperlink{classCameraBuilder_a1dbf6be820b17fc9bd9d9a57161aa5bf}{with\+Background\+Color}} (const \mbox{\hyperlink{classColor}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Sets the background color of the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCamera}{Camera}} \mbox{\hyperlink{classCameraBuilder_a1d0019225e559399fe51fdea859ae4f7}{build}} (void)
+\begin{DoxyCompactList}\small\item\em Builds and returns the \doxylink{classCamera}{Camera} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A builder class for constructing \doxylink{classCamera}{Camera} objects. 
+
+The \doxylink{classCameraBuilder}{Camera\+Builder} class provides a convenient way to construct \doxylink{classCamera}{Camera} objects with various configuration options. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCameraBuilder_a1d0019225e559399fe51fdea859ae4f7}\label{classCameraBuilder_a1d0019225e559399fe51fdea859ae4f7} 
+\index{CameraBuilder@{CameraBuilder}!build@{build}}
+\index{build@{build}!CameraBuilder@{CameraBuilder}}
+\doxysubsubsection{\texorpdfstring{build()}{build()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCamera}{Camera}} Camera\+Builder\+::build (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Builds and returns the \doxylink{classCamera}{Camera} object. 
+
+\begin{DoxyReturn}{Returns}
+The built \doxylink{classCamera}{Camera} object. 
+\end{DoxyReturn}
+\Hypertarget{classCameraBuilder_a1dbf6be820b17fc9bd9d9a57161aa5bf}\label{classCameraBuilder_a1dbf6be820b17fc9bd9d9a57161aa5bf} 
+\index{CameraBuilder@{CameraBuilder}!withBackgroundColor@{withBackgroundColor}}
+\index{withBackgroundColor@{withBackgroundColor}!CameraBuilder@{CameraBuilder}}
+\doxysubsubsection{\texorpdfstring{withBackgroundColor()}{withBackgroundColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& Camera\+Builder\+::with\+Background\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the background color of the camera. 
+
+This function sets the background color of the camera to the specified color.
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color to set as the background color. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classCameraBuilder}{Camera\+Builder} object. 
+\end{DoxyReturn}
+\Hypertarget{classCameraBuilder_ad9cdb4138ae5de4d917add4ca16c8f87}\label{classCameraBuilder_ad9cdb4138ae5de4d917add4ca16c8f87} 
+\index{CameraBuilder@{CameraBuilder}!withFieldOfView@{withFieldOfView}}
+\index{withFieldOfView@{withFieldOfView}!CameraBuilder@{CameraBuilder}}
+\doxysubsubsection{\texorpdfstring{withFieldOfView()}{withFieldOfView()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& Camera\+Builder\+::with\+Field\+Of\+View (\begin{DoxyParamCaption}\item[{const float}]{fov }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Sets the field of view for the camera. 
+
+This function sets the vertical field of view (FOV) for the camera. The FOV determines how much of the scene is visible through the camera.
+
+
+\begin{DoxyParams}{Parameters}
+{\em fov} & The field of view in degrees. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classCameraBuilder}{Camera\+Builder} object. 
+\end{DoxyReturn}
+\Hypertarget{classCameraBuilder_a9e97a6148cb7373e8959b6fcc250dd64}\label{classCameraBuilder_a9e97a6148cb7373e8959b6fcc250dd64} 
+\index{CameraBuilder@{CameraBuilder}!withLight@{withLight}}
+\index{withLight@{withLight}!CameraBuilder@{CameraBuilder}}
+\doxysubsubsection{\texorpdfstring{withLight()}{withLight()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& Camera\+Builder\+::with\+Light (\begin{DoxyParamCaption}\item[{const bool \&}]{light\+Enable }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets whether the light is enabled for the camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em light\+Enable} & A boolean indicating whether the light is enabled. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classCameraBuilder}{Camera\+Builder} object. 
+\end{DoxyReturn}
+\Hypertarget{classCameraBuilder_a614245cfad666092d209f9dc6375f4ab}\label{classCameraBuilder_a614245cfad666092d209f9dc6375f4ab} 
+\index{CameraBuilder@{CameraBuilder}!withMaxDepth@{withMaxDepth}}
+\index{withMaxDepth@{withMaxDepth}!CameraBuilder@{CameraBuilder}}
+\doxysubsubsection{\texorpdfstring{withMaxDepth()}{withMaxDepth()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& Camera\+Builder\+::with\+Max\+Depth (\begin{DoxyParamCaption}\item[{const i32}]{max\+Depth }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Sets the maximum depth of the camera. 
+
+This function sets the maximum depth of the camera, which determines the maximum number of recursive ray bounces.
+
+
+\begin{DoxyParams}{Parameters}
+{\em max\+Depth} & The maximum depth value to set. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classCameraBuilder}{Camera\+Builder} object. 
+\end{DoxyReturn}
+\Hypertarget{classCameraBuilder_a3a07a6442cd02a5fd4d75000797c3e08}\label{classCameraBuilder_a3a07a6442cd02a5fd4d75000797c3e08} 
+\index{CameraBuilder@{CameraBuilder}!withPositionAt@{withPositionAt}}
+\index{withPositionAt@{withPositionAt}!CameraBuilder@{CameraBuilder}}
+\doxysubsubsection{\texorpdfstring{withPositionAt()}{withPositionAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& Camera\+Builder\+::with\+Position\+At (\begin{DoxyParamCaption}\item[{const d64 \&}]{x,  }\item[{const d64 \&}]{y,  }\item[{const d64 \&}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the position of the camera at the specified coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the camera position. \\
+\hline
+{\em y} & The y-\/coordinate of the camera position. \\
+\hline
+{\em z} & The z-\/coordinate of the camera position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classCameraBuilder}{Camera\+Builder} object. 
+\end{DoxyReturn}
+\Hypertarget{classCameraBuilder_a5cade1607ab4d0db50f29e8767973056}\label{classCameraBuilder_a5cade1607ab4d0db50f29e8767973056} 
+\index{CameraBuilder@{CameraBuilder}!withPositionFrom@{withPositionFrom}}
+\index{withPositionFrom@{withPositionFrom}!CameraBuilder@{CameraBuilder}}
+\doxysubsubsection{\texorpdfstring{withPositionFrom()}{withPositionFrom()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& Camera\+Builder\+::with\+Position\+From (\begin{DoxyParamCaption}\item[{const d64 \&}]{x,  }\item[{const d64 \&}]{y,  }\item[{const d64 \&}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the position of the camera using the specified coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the camera position. \\
+\hline
+{\em y} & The y-\/coordinate of the camera position. \\
+\hline
+{\em z} & The z-\/coordinate of the camera position. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classCameraBuilder}{Camera\+Builder} object. 
+\end{DoxyReturn}
+\Hypertarget{classCameraBuilder_a1304b5947261b884897efe7808b5a720}\label{classCameraBuilder_a1304b5947261b884897efe7808b5a720} 
+\index{CameraBuilder@{CameraBuilder}!withResolution@{withResolution}}
+\index{withResolution@{withResolution}!CameraBuilder@{CameraBuilder}}
+\doxysubsubsection{\texorpdfstring{withResolution()}{withResolution()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& Camera\+Builder\+::with\+Resolution (\begin{DoxyParamCaption}\item[{const std\+::pair$<$ d64, d64 $>$ \&}]{resolution }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the resolution of the camera. 
+
+This function sets the resolution of the camera by taking a pair of doubles representing the width and height of the image.
+
+
+\begin{DoxyParams}{Parameters}
+{\em resolution} & A pair of doubles representing the width and height of the image. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classCameraBuilder}{Camera\+Builder} object. 
+\end{DoxyReturn}
+\Hypertarget{classCameraBuilder_a3007d68256b4a757ca54240fc410ace7}\label{classCameraBuilder_a3007d68256b4a757ca54240fc410ace7} 
+\index{CameraBuilder@{CameraBuilder}!withRotation@{withRotation}}
+\index{withRotation@{withRotation}!CameraBuilder@{CameraBuilder}}
+\doxysubsubsection{\texorpdfstring{withRotation()}{withRotation()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& Camera\+Builder\+::with\+Rotation (\begin{DoxyParamCaption}\item[{const i32}]{x,  }\item[{const i32}]{y,  }\item[{const i32}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Sets the rotation of the camera. 
+
+This function sets the rotation of the camera using the provided x, y, and z values.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The rotation value along the x-\/axis. \\
+\hline
+{\em y} & The rotation value along the y-\/axis. \\
+\hline
+{\em z} & The rotation value along the z-\/axis. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the \doxylink{classCameraBuilder}{Camera\+Builder} object. 
+\end{DoxyReturn}
+\Hypertarget{classCameraBuilder_ae4202a82643ecfe8798e1a6049ef0db2}\label{classCameraBuilder_ae4202a82643ecfe8798e1a6049ef0db2} 
+\index{CameraBuilder@{CameraBuilder}!withSamplePerPixel@{withSamplePerPixel}}
+\index{withSamplePerPixel@{withSamplePerPixel}!CameraBuilder@{CameraBuilder}}
+\doxysubsubsection{\texorpdfstring{withSamplePerPixel()}{withSamplePerPixel()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classCameraBuilder}{Camera\+Builder}} \& Camera\+Builder\+::with\+Sample\+Per\+Pixel (\begin{DoxyParamCaption}\item[{const i32}]{sample\+Per\+Pixel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Sets the number of samples per pixel for the camera. 
+
+This function sets the number of samples per pixel for the camera. It takes an integer parameter {\ttfamily sample\+Per\+Pixel} which represents the number of samples per pixel. The function updates the camera\textquotesingle{}s samples per pixel value and returns a reference to the {\ttfamily \doxylink{classCameraBuilder}{Camera\+Builder}} object.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+Per\+Pixel} & The number of samples per pixel for the camera. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the {\ttfamily \doxylink{classCameraBuilder}{Camera\+Builder}} object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Parser/Camera\+Builder.\+hpp\end{DoxyCompactItemize}

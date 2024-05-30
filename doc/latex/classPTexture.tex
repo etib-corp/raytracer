@@ -1,0 +1,112 @@
+\doxysection{PTexture Class Reference}
+\hypertarget{classPTexture}{}\label{classPTexture}\index{PTexture@{PTexture}}
+
+
+The \doxylink{classPTexture}{PTexture} class represents a texture used in ray tracing.  
+
+
+
+
+{\ttfamily \#include $<$PMaterial.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classPTexture_a8234efa740747b8e642bba58bf643200}{PTexture}} (const std\+::string \&name)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classPTexture}{PTexture} object with the given name. \end{DoxyCompactList}\item 
+\Hypertarget{classPTexture_a0112b5198a637cb56c5348750e58335b}\label{classPTexture_a0112b5198a637cb56c5348750e58335b} 
+void {\bfseries print} () const
+\begin{DoxyCompactList}\small\item\em Prints information about the texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPTexture_a63805de9d6bbcf7c69d8e8027f259099}{scale\+Set}} (const double \&scale)
+\begin{DoxyCompactList}\small\item\em Sets the scale of the texture. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classPTexture_ab24e425e742e8a239029f6d111c998f3}{scale\+Get}} ()
+\begin{DoxyCompactList}\small\item\em Gets the scale of the texture. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classPTexture_a48fdc467d442cb1f97302bb6f9c949fc}{colors\+Set}} (\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ color)
+\begin{DoxyCompactList}\small\item\em Sets the colors of the texture. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ $>$ \mbox{\hyperlink{classPTexture_a63621a3d3c55f046b2e49dc3407e8b76}{colors\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the colors of the texture. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classPTexture}{PTexture} class represents a texture used in ray tracing. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classPTexture_a8234efa740747b8e642bba58bf643200}\label{classPTexture_a8234efa740747b8e642bba58bf643200} 
+\index{PTexture@{PTexture}!PTexture@{PTexture}}
+\index{PTexture@{PTexture}!PTexture@{PTexture}}
+\doxysubsubsection{\texorpdfstring{PTexture()}{PTexture()}}
+{\footnotesize\ttfamily PTexture\+::\+PTexture (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classPTexture}{PTexture} object with the given name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the texture. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classPTexture_a63621a3d3c55f046b2e49dc3407e8b76}\label{classPTexture_a63621a3d3c55f046b2e49dc3407e8b76} 
+\index{PTexture@{PTexture}!colorsGet@{colorsGet}}
+\index{colorsGet@{colorsGet}!PTexture@{PTexture}}
+\doxysubsubsection{\texorpdfstring{colorsGet()}{colorsGet()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ $>$ PTexture\+::colors\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the colors of the texture. 
+
+\begin{DoxyReturn}{Returns}
+A vector of colors. 
+\end{DoxyReturn}
+\Hypertarget{classPTexture_a48fdc467d442cb1f97302bb6f9c949fc}\label{classPTexture_a48fdc467d442cb1f97302bb6f9c949fc} 
+\index{PTexture@{PTexture}!colorsSet@{colorsSet}}
+\index{colorsSet@{colorsSet}!PTexture@{PTexture}}
+\doxysubsubsection{\texorpdfstring{colorsSet()}{colorsSet()}}
+{\footnotesize\ttfamily void PTexture\+::colors\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the colors of the texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color to add to the texture. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classPTexture_ab24e425e742e8a239029f6d111c998f3}\label{classPTexture_ab24e425e742e8a239029f6d111c998f3} 
+\index{PTexture@{PTexture}!scaleGet@{scaleGet}}
+\index{scaleGet@{scaleGet}!PTexture@{PTexture}}
+\doxysubsubsection{\texorpdfstring{scaleGet()}{scaleGet()}}
+{\footnotesize\ttfamily double PTexture\+::scale\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the scale of the texture. 
+
+\begin{DoxyReturn}{Returns}
+The scale value. 
+\end{DoxyReturn}
+\Hypertarget{classPTexture_a63805de9d6bbcf7c69d8e8027f259099}\label{classPTexture_a63805de9d6bbcf7c69d8e8027f259099} 
+\index{PTexture@{PTexture}!scaleSet@{scaleSet}}
+\index{scaleSet@{scaleSet}!PTexture@{PTexture}}
+\doxysubsubsection{\texorpdfstring{scaleSet()}{scaleSet()}}
+{\footnotesize\ttfamily void PTexture\+::scale\+Set (\begin{DoxyParamCaption}\item[{const double \&}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the scale of the texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em scale} & The scale value to set. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Parser/PMaterial.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,44 @@
+\doxysection{Color.\+hpp}
+\hypertarget{Color_8hpp_source}{}\label{Color_8hpp_source}\index{include/Color.hpp@{include/Color.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ Visual\ Studio\ Live\ Share\ (Workspace)}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Color}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}raytracer.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{Interval_8hpp}{Interval.hpp}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00024\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classColor}{Color}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor_ac2d505b186fb1faf0ce5d3945b1ff5c1}{Color}}(\textcolor{keywordtype}{double}\ r,\ \textcolor{keywordtype}{double}\ g,\ \textcolor{keywordtype}{double}\ b,\ \textcolor{keywordtype}{double}\ a\ =\ 1.0);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor_a7b075d27e3bbdde7cbe648dc3b804261}{Color}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&\ color);}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor_a9a742cbe9f9f4037f5d9f4e81a9b2428}{Color}}()\ :\ \mbox{\hyperlink{classColor_a2337ea72bc849039f73077d00ab42bbb}{red}}(0),\ \mbox{\hyperlink{classColor_a0398a30128909996780fce10e039ac24}{green}}(0),\ \mbox{\hyperlink{classColor_a0a35e5de46315db828b5bd56866d9fea}{blue}}(0),\ \mbox{\hyperlink{classColor_aa14c59ce06c2a70f4683df266e26a261}{alpha}}(1.0)\ \{\};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor_a3cfce6c6821d3bf489e26074c55378c0}{\string~Color}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ write(std::ostream\ \&out);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{double}\ linearToGamma(\textcolor{keywordtype}{double}\ linear);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classColor_a457a855b1394e379aca1c55c1eb9bec1}{operator*}}(\textcolor{keywordtype}{double}\ scalar)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classColor_a457a855b1394e379aca1c55c1eb9bec1}{operator*}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&\ color)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classColor_acd40b26ca2f9217b5cde1e5c1251ef04}{operator+}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&\ color)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classColor_a2337ea72bc849039f73077d00ab42bbb}{red}};\ }
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classColor_a0398a30128909996780fce10e039ac24}{green}};\ }
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classColor_a0a35e5de46315db828b5bd56866d9fea}{blue}};\ }
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classColor_aa14c59ce06c2a70f4683df266e26a261}{alpha}};\ }
+\DoxyCodeLine{00083\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00084\ \};}
+
+\end{DoxyCode}

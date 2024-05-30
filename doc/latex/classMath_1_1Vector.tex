@@ -1,0 +1,559 @@
+\doxysection{Math\+::Vector\texorpdfstring{$<$}{<} N \texorpdfstring{$>$}{>} Class Template Reference}
+\hypertarget{classMath_1_1Vector}{}\label{classMath_1_1Vector}\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classMath_1_1Vector_1_1VectorError}{Vector\+Error}}
+\begin{DoxyCompactList}\small\item\em Custom exception class for \doxylink{classMath_1_1Vector}{Vector} errors. This class is derived from the \doxylink{classError}{Error} class and is used to handle errors specific to \doxylink{classMath_1_1Vector}{Vector} operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10}\label{classMath_1_1Vector_a4d10a5e8efc63809d12161d2e19b5e10} 
+{\bfseries Vector} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes all elements of the vector to 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector_a1245c8a53ab468a8b158c44d168a2e62}{Vector}} (std\+::array$<$ double, N $>$ values)
+\begin{DoxyCompactList}\small\item\em Constructor that initializes the vector with the given values. \end{DoxyCompactList}\item 
+\Hypertarget{classMath_1_1Vector_a1befd7c8ba80776c9b1f938ca5452c91}\label{classMath_1_1Vector_a1befd7c8ba80776c9b1f938ca5452c91} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Vector} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor. Default destructor for the \doxylink{classMath_1_1Vector}{Vector} class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918}{size}} () const
+\begin{DoxyCompactList}\small\item\em Get the size of the vector. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classMath_1_1Vector_af01d920bd83b429cc420c54656a85d82}{length}} () const
+\begin{DoxyCompactList}\small\item\em Calculate the length of the vector. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classMath_1_1Vector_a7a0e58d5e581a1d3d1dbfb76eb8a9aef}{length\+\_\+squared}} () const
+\begin{DoxyCompactList}\small\item\em Calculate the squared length of the vector. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classMath_1_1Vector_ade4ef21b9caa45c3507772e6fcbf6a20}{dot}} (const \mbox{\hyperlink{classMath_1_1Vector}{Vector}} \&vec) const
+\begin{DoxyCompactList}\small\item\em Calculate the dot product with another vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector_aabfeafc61fbdee564a8ffdb2a79afb92}{cross}} (const \mbox{\hyperlink{classMath_1_1Vector}{Vector}} \&vec) const
+\begin{DoxyCompactList}\small\item\em Calculate the cross product with another vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector_a94bbffee6487225d1529bb67620adf63}{unit\+\_\+vector}} () const
+\begin{DoxyCompactList}\small\item\em Get the unit vector of this vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector_a4fa6dee255838d7accb8398780be80d7}{normalize}} () const
+\begin{DoxyCompactList}\small\item\em Normalize the vector. \end{DoxyCompactList}\item 
+\Hypertarget{classMath_1_1Vector_a0e2b810f2a1023e6e0dc96dcba66c810}\label{classMath_1_1Vector_a0e2b810f2a1023e6e0dc96dcba66c810} 
+bool {\bfseries near\+Zero} () const
+\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector_ab680888a538883c778f174381836069a}{operator+}} (const \mbox{\hyperlink{classMath_1_1Vector}{Vector}} \&vec) const
+\begin{DoxyCompactList}\small\item\em Add two vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector_a4fa09fcf23865a6ad64b04bc42e6a842}{operator-\/}} (const \mbox{\hyperlink{classMath_1_1Vector}{Vector}} \&vec) const
+\begin{DoxyCompactList}\small\item\em Subtract a vector from this vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector_afa5b0a4378781103702cbfecf4b4b4fe}{operator\texorpdfstring{$\ast$}{*}}} (const \mbox{\hyperlink{classMath_1_1Vector}{Vector}} \&vec) const
+\begin{DoxyCompactList}\small\item\em Multiply two vectors element-\/wise. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector_a28210d8c0e9646b0b76765818f73ef9f}{operator\texorpdfstring{$\ast$}{*}}} (const double \&val) const
+\begin{DoxyCompactList}\small\item\em Multiply the vector by a scalar value. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector_af625f05ff81db156a4ca69e43cdb956d}{operator/}} (const \mbox{\hyperlink{classMath_1_1Vector}{Vector}} \&vec) const
+\begin{DoxyCompactList}\small\item\em Divide two vectors element-\/wise. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector_ab9ce965daab4505751b3d56eb96a7395}{operator/}} (const double \&val) const
+\begin{DoxyCompactList}\small\item\em Divide the vector by a scalar value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMath_1_1Vector_ae9d33d6649405d60275c084f04785817}{operator+=}} (const \mbox{\hyperlink{classMath_1_1Vector}{Vector}} \&vec)
+\begin{DoxyCompactList}\small\item\em Add a vector to this vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMath_1_1Vector_a9fba0eda035c8d65350b9f393ae92f2f}{operator-\/=}} (const \mbox{\hyperlink{classMath_1_1Vector}{Vector}} \&vec)
+\begin{DoxyCompactList}\small\item\em Subtract a vector from this vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMath_1_1Vector_a18fb1d76e658d9e8e293683fd55b5d0c}{operator\texorpdfstring{$\ast$}{*}=}} (const \mbox{\hyperlink{classMath_1_1Vector}{Vector}} \&vec)
+\begin{DoxyCompactList}\small\item\em Multiply this vector by another vector element-\/wise. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMath_1_1Vector_a1a0dac8edc1a53cd97e80881115e49e6}{operator\texorpdfstring{$\ast$}{*}=}} (const double \&val)
+\begin{DoxyCompactList}\small\item\em Multiply this vector by a scalar value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMath_1_1Vector_ac8cd95692ca336093dd181500590f8b0}{operator/=}} (const \mbox{\hyperlink{classMath_1_1Vector}{Vector}} \&vec)
+\begin{DoxyCompactList}\small\item\em Divide this vector by another vector element-\/wise. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classMath_1_1Vector_a969ccad8d8c4230589e8cbb1eb922d8f}{operator/=}} (const double \&val)
+\begin{DoxyCompactList}\small\item\em Divide this vector by a scalar value. \end{DoxyCompactList}\item 
+double \& \mbox{\hyperlink{classMath_1_1Vector_a6dc9afcd6142ed8775ce94c62db27d5b}{operator\mbox{[}$\,$\mbox{]}}} (int index)
+\begin{DoxyCompactList}\small\item\em Get the reference to the element at the specified index. \end{DoxyCompactList}\item 
+const double \& \mbox{\hyperlink{classMath_1_1Vector_a3bc4dae20952b8e1dd9de4760c4975b6}{operator\mbox{[}$\,$\mbox{]}}} (int index) const
+\begin{DoxyCompactList}\small\item\em Get the const reference to the element at the specified index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classMath_1_1Vector_a7837631ed95b0a0d775dc1d785c5a471}\label{classMath_1_1Vector_a7837631ed95b0a0d775dc1d785c5a471} 
+static \mbox{\hyperlink{classMath_1_1Vector}{Vector}} {\bfseries random} ()
+\item 
+\Hypertarget{classMath_1_1Vector_a546a8159113448ba40c524cda2453f32}\label{classMath_1_1Vector_a546a8159113448ba40c524cda2453f32} 
+static \mbox{\hyperlink{classMath_1_1Vector}{Vector}} {\bfseries random} (double min, double max)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::array$<$ double, N $>$ \mbox{\hyperlink{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}{\+\_\+values}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{classMath_1_1Vector_a513e5f37d15233d5df71ce3cc38c7ff8}{operator$<$$<$}} (std\+::ostream \&os, const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$ \&vec)
+\begin{DoxyCompactList}\small\item\em Output stream operator overload for \doxylink{classMath_1_1Vector}{Vector} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMath_1_1Vector_a1245c8a53ab468a8b158c44d168a2e62}\label{classMath_1_1Vector_a1245c8a53ab468a8b158c44d168a2e62} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::\+Vector (\begin{DoxyParamCaption}\item[{std\+::array$<$ double, N $>$}]{values }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor that initializes the vector with the given values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em values} & An array of double values representing the vector elements. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMath_1_1Vector_aabfeafc61fbdee564a8ffdb2a79afb92}\label{classMath_1_1Vector_aabfeafc61fbdee564a8ffdb2a79afb92} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!cross@{cross}}
+\index{cross@{cross}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{cross()}{cross()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::cross (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ N $>$ \&}]{vec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculate the cross product with another vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to calculate the cross product with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The cross product of the two vectors. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error}} & if the vectors are not 3-\/dimensional. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classMath_1_1Vector_ade4ef21b9caa45c3507772e6fcbf6a20}\label{classMath_1_1Vector_ade4ef21b9caa45c3507772e6fcbf6a20} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!dot@{dot}}
+\index{dot@{dot}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{dot()}{dot()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+double \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::dot (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ N $>$ \&}]{vec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculate the dot product with another vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to calculate the dot product with. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The dot product of the two vectors. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error}} & if the vectors have different sizes. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classMath_1_1Vector_af01d920bd83b429cc420c54656a85d82}\label{classMath_1_1Vector_af01d920bd83b429cc420c54656a85d82} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!length@{length}}
+\index{length@{length}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{length()}{length()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+double \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculate the length of the vector. 
+
+\begin{DoxyReturn}{Returns}
+The length of the vector. 
+\end{DoxyReturn}
+\Hypertarget{classMath_1_1Vector_a7a0e58d5e581a1d3d1dbfb76eb8a9aef}\label{classMath_1_1Vector_a7a0e58d5e581a1d3d1dbfb76eb8a9aef} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!length\_squared@{length\_squared}}
+\index{length\_squared@{length\_squared}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{length\_squared()}{length\_squared()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+double \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::length\+\_\+squared (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculate the squared length of the vector. 
+
+\begin{DoxyReturn}{Returns}
+The squared length of the vector. 
+\end{DoxyReturn}
+\Hypertarget{classMath_1_1Vector_a4fa6dee255838d7accb8398780be80d7}\label{classMath_1_1Vector_a4fa6dee255838d7accb8398780be80d7} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!normalize@{normalize}}
+\index{normalize@{normalize}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{normalize()}{normalize()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::normalize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Normalize the vector. 
+
+\begin{DoxyReturn}{Returns}
+The normalized vector. 
+\end{DoxyReturn}
+\Hypertarget{classMath_1_1Vector_a28210d8c0e9646b0b76765818f73ef9f}\label{classMath_1_1Vector_a28210d8c0e9646b0b76765818f73ef9f} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const double \&}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply the vector by a scalar value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The scalar value to multiply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled vector. 
+\end{DoxyReturn}
+\Hypertarget{classMath_1_1Vector_afa5b0a4378781103702cbfecf4b4b4fe}\label{classMath_1_1Vector_afa5b0a4378781103702cbfecf4b4b4fe} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}}
+\index{operator\texorpdfstring{$\ast$}{*}@{operator\texorpdfstring{$\ast$}{*}}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}()}{operator*()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator\texorpdfstring{$\ast$}{*} (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ N $>$ \&}]{vec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply two vectors element-\/wise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to multiply. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise product of the two vectors. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error}} & if the vectors have different sizes. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classMath_1_1Vector_a1a0dac8edc1a53cd97e80881115e49e6}\label{classMath_1_1Vector_a1a0dac8edc1a53cd97e80881115e49e6} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+void \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const double \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply this vector by a scalar value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The scalar value to multiply. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMath_1_1Vector_a18fb1d76e658d9e8e293683fd55b5d0c}\label{classMath_1_1Vector_a18fb1d76e658d9e8e293683fd55b5d0c} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}}
+\index{operator\texorpdfstring{$\ast$}{*}=@{operator\texorpdfstring{$\ast$}{*}=}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator\texorpdfstring{$\ast$}{*}=()}{operator*=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+void \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator\texorpdfstring{$\ast$}{*}= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ N $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Multiply this vector by another vector element-\/wise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to multiply. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error}} & if the vectors have different sizes. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classMath_1_1Vector_ab680888a538883c778f174381836069a}\label{classMath_1_1Vector_ab680888a538883c778f174381836069a} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator+@{operator+}}
+\index{operator+@{operator+}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator+ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ N $>$ \&}]{vec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add two vectors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to add. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The sum of the two vectors. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error}} & if the vectors have different sizes. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classMath_1_1Vector_ae9d33d6649405d60275c084f04785817}\label{classMath_1_1Vector_ae9d33d6649405d60275c084f04785817} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+void \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator+= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ N $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a vector to this vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to add. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error}} & if the vectors have different sizes. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classMath_1_1Vector_a4fa09fcf23865a6ad64b04bc42e6a842}\label{classMath_1_1Vector_a4fa09fcf23865a6ad64b04bc42e6a842} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ N $>$ \&}]{vec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtract a vector from this vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to subtract. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The difference between the two vectors. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error}} & if the vectors have different sizes. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classMath_1_1Vector_a9fba0eda035c8d65350b9f393ae92f2f}\label{classMath_1_1Vector_a9fba0eda035c8d65350b9f393ae92f2f} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator-\/=()}{operator-=()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+void \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator-\/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ N $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Subtract a vector from this vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to subtract. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error}} & if the vectors have different sizes. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classMath_1_1Vector_ab9ce965daab4505751b3d56eb96a7395}\label{classMath_1_1Vector_ab9ce965daab4505751b3d56eb96a7395} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const double \&}]{val }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Divide the vector by a scalar value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The scalar value to divide. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The scaled vector. 
+\end{DoxyReturn}
+\Hypertarget{classMath_1_1Vector_af625f05ff81db156a4ca69e43cdb956d}\label{classMath_1_1Vector_af625f05ff81db156a4ca69e43cdb956d} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator/@{operator/}}
+\index{operator/@{operator/}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator/()}{operator/()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator/ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ N $>$ \&}]{vec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Divide two vectors element-\/wise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to divide. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element-\/wise division of the two vectors. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error}} & if the vectors have different sizes. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classMath_1_1Vector_a969ccad8d8c4230589e8cbb1eb922d8f}\label{classMath_1_1Vector_a969ccad8d8c4230589e8cbb1eb922d8f} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+void \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const double \&}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Divide this vector by a scalar value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em val} & The scalar value to divide. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classMath_1_1Vector_ac8cd95692ca336093dd181500590f8b0}\label{classMath_1_1Vector_ac8cd95692ca336093dd181500590f8b0} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator/=()}{operator/=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+void \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator/= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Vector}}$<$ N $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Divide this vector by another vector element-\/wise. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & The vector to divide. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error}} & if the vectors have different sizes. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classMath_1_1Vector_a6dc9afcd6142ed8775ce94c62db27d5b}\label{classMath_1_1Vector_a6dc9afcd6142ed8775ce94c62db27d5b} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+double \& \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the reference to the element at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The reference to the element at the specified index. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error}} & if the index is out of bounds. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classMath_1_1Vector_a3bc4dae20952b8e1dd9de4760c4975b6}\label{classMath_1_1Vector_a3bc4dae20952b8e1dd9de4760c4975b6} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+const double \& \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{index }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the const reference to the element at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The const reference to the element at the specified index. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \doxylink{classMath_1_1Vector_1_1VectorError}{Vector\+Error}} & if the index is out of bounds. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918}\label{classMath_1_1Vector_a44212b69d05560fd9cb11c7eb67c1918} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!size@{size}}
+\index{size@{size}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+int \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the size of the vector. 
+
+\begin{DoxyReturn}{Returns}
+The size of the vector. 
+\end{DoxyReturn}
+\Hypertarget{classMath_1_1Vector_a94bbffee6487225d1529bb67620adf63}\label{classMath_1_1Vector_a94bbffee6487225d1529bb67620adf63} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!unit\_vector@{unit\_vector}}
+\index{unit\_vector@{unit\_vector}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{unit\_vector()}{unit\_vector()}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+\mbox{\hyperlink{classMath_1_1Vector}{Vector}} \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::unit\+\_\+vector (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the unit vector of this vector. 
+
+\begin{DoxyReturn}{Returns}
+The unit vector of this vector. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{classMath_1_1Vector_a513e5f37d15233d5df71ce3cc38c7ff8}\label{classMath_1_1Vector_a513e5f37d15233d5df71ce3cc38c7ff8} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Output stream operator overload for \doxylink{classMath_1_1Vector}{Vector} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em os} & The output stream. \\
+\hline
+{\em vec} & The \doxylink{classMath_1_1Vector}{Vector} object to output. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The output stream. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6}\label{classMath_1_1Vector_af5b029b68b94a952fb251b347e77f7c6} 
+\index{Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}!\_values@{\_values}}
+\index{\_values@{\_values}!Math::Vector$<$ N $>$@{Math::Vector$<$ N $>$}}
+\doxysubsubsection{\texorpdfstring{\_values}{\_values}}
+{\footnotesize\ttfamily template$<$int N$>$ \\
+std\+::array$<$double, N$>$ \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ N $>$\+::\+\_\+values}
+
+The array of double values representing the vector elements. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Vector.\+hpp\end{DoxyCompactItemize}

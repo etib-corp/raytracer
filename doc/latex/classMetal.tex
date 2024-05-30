@@ -1,0 +1,148 @@
+\doxysection{Metal Class Reference}
+\hypertarget{classMetal}{}\label{classMetal}\index{Metal@{Metal}}
+
+
+Represents a metal material in the raytracer.  
+
+
+
+
+{\ttfamily \#include $<$Metal.\+hpp$>$}
+
+Inheritance diagram for Metal\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classMetal}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMetal_ad3577454a809122dfded751b933f88f4}{Metal}} (const \mbox{\hyperlink{classColor}{Color}} \&albedo, double fuzz=0.\+0)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classMetal}{Metal} material with the given albedo color and fuzziness. \end{DoxyCompactList}\item 
+\Hypertarget{classMetal_a920bace7a5ac67060ac5b3435c045fe6}\label{classMetal_a920bace7a5ac67060ac5b3435c045fe6} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Metal} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classMetal}{Metal} material. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classMetal_a74fe406f586d8e4d58c7158487eb9d8d}{scatter}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&hit, \mbox{\hyperlink{classColor}{Color}} \&attenuation, \mbox{\hyperlink{classRay}{Ray}} \&scattered) const
+\begin{DoxyCompactList}\small\item\em Calculates the scattered ray and attenuation color when a ray hits a metal surface. \end{DoxyCompactList}\item 
+\Hypertarget{classMetal_a61f51b89f28059a608b6b9a4da64a8b9}\label{classMetal_a61f51b89f28059a608b6b9a4da64a8b9} 
+double {\bfseries get\+Fuzz} () const
+\item 
+\Hypertarget{classMetal_adba522d66a7bdcc133fdc006c5118a7f}\label{classMetal_adba522d66a7bdcc133fdc006c5118a7f} 
+void {\bfseries set\+Fuzz} (double fuzz)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAMaterial}{AMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+AMaterial} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_aabaa0691d092f33ce4827f7c05fc9c6a}{emitted}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&record, double u, double v, const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&point) const override
+\begin{DoxyCompactList}\small\item\em Emit light from the material. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAMaterial_a3952275d5311d2afe98a684aa1659b84}{type\+Set}} (std\+::string type\+\_\+)
+\item 
+std\+::string \mbox{\hyperlink{classAMaterial_a1d471b042cd38e5e8b7579c15150cde8}{type\+Get}} (void)
+\item 
+void \mbox{\hyperlink{classAMaterial_ad00a04b9816304b27d28805a42995eec}{has\+Texture\+Set}} (void)
+\item 
+void \mbox{\hyperlink{classAMaterial_a8c8b19a49bb61a72b625e89e9aa5aa4d}{has\+Color\+Set}} (void)
+\item 
+bool \mbox{\hyperlink{classAMaterial_a8fe6c611f749cc43630ee99ccf22869c}{has\+Texture\+Get}} (void)
+\item 
+bool \mbox{\hyperlink{classAMaterial_a73c401db227fa67baa47823fffc77bb1}{has\+Color\+Get}} (void)
+\item 
+Type \mbox{\hyperlink{classAMaterial_afa565ccecc3e4e49939f40e55e887343}{get\+Type}} () const
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_af5e47705ad75d1d6f9f46193cefd6275}{get\+Albedo}} () const
+\item 
+void \mbox{\hyperlink{classAMaterial_ab09905c92264662aed34138be1c568af}{set\+Albedo}} (const \mbox{\hyperlink{classColor}{Color}} \&color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIMaterial}{IMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+IMaterial} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classIMaterial}{IMaterial}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classIMaterial}{IMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea}\label{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea} 
+enum {\bfseries Type} \{ {\bfseries DIELECTRIC}
+, {\bfseries LAMBERTIAN}
+, {\bfseries METAL}
+, {\bfseries NONE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classAMaterial}{AMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_ae50e64c6c65815089401715bf85ecf81}{\+\_\+albedo}}
+\item 
+std\+::string {\bfseries \+\_\+string\+Type}
+\item 
+bool {\bfseries \+\_\+is\+Texture}
+\item 
+bool {\bfseries \+\_\+is\+Color}
+\item 
+Type \mbox{\hyperlink{classAMaterial_aceefd2a6cc57189f12b6d0d739558da6}{\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a metal material in the raytracer. 
+
+The \doxylink{classMetal}{Metal} class is a derived class of \doxylink{classAMaterial}{AMaterial} and represents a metal material that can be used in the raytracer. It provides a scatter function to calculate the scattered ray and attenuation color when a ray hits a metal surface. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classMetal_ad3577454a809122dfded751b933f88f4}\label{classMetal_ad3577454a809122dfded751b933f88f4} 
+\index{Metal@{Metal}!Metal@{Metal}}
+\index{Metal@{Metal}!Metal@{Metal}}
+\doxysubsubsection{\texorpdfstring{Metal()}{Metal()}}
+{\footnotesize\ttfamily Metal\+::\+Metal (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{albedo,  }\item[{double}]{fuzz = {\ttfamily 0.0} }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classMetal}{Metal} material with the given albedo color and fuzziness. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em albedo} & The color of the metal material. \\
+\hline
+{\em fuzz} & The fuzziness of the metal material (default is 0.\+0). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classMetal_a74fe406f586d8e4d58c7158487eb9d8d}\label{classMetal_a74fe406f586d8e4d58c7158487eb9d8d} 
+\index{Metal@{Metal}!scatter@{scatter}}
+\index{scatter@{scatter}!Metal@{Metal}}
+\doxysubsubsection{\texorpdfstring{scatter()}{scatter()}}
+{\footnotesize\ttfamily bool Metal\+::scatter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&}]{hit,  }\item[{\mbox{\hyperlink{classColor}{Color}} \&}]{attenuation,  }\item[{\mbox{\hyperlink{classRay}{Ray}} \&}]{scattered }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Calculates the scattered ray and attenuation color when a ray hits a metal surface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & The incident ray. \\
+\hline
+{\em hit} & The hit record containing information about the intersection. \\
+\hline
+{\em attenuation} & The attenuation color of the scattered ray. \\
+\hline
+{\em scattered} & The scattered ray. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the ray is scattered, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAMaterial_ae9132628a8b6b720e3b63de5885f5957}{AMaterial}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Material/Metal.\+hpp\end{DoxyCompactItemize}

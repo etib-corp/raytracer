@@ -1,0 +1,35 @@
+\doxysection{Lambertian.\+hpp}
+\hypertarget{Lambertian_8hpp_source}{}\label{Lambertian_8hpp_source}\index{include/Material/Lambertian.hpp@{include/Material/Lambertian.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Lambertian}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}raytracer.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}AMaterial.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Color.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Texture/SolidColor.hpp"{}}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classLambertian}{Lambertian}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classAMaterial}{AMaterial}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLambertian_a3854427b5e02fa3da375dc10057a5acf}{Lambertian}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&\ albedo);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLambertian_ada48831a79f17c23b5e3e7b54d80d34c}{Lambertian}}(std::shared\_ptr<ITexture>\ texture);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classLambertian_ae8ac1f1c9c93e496a88e86b51c286b6f}{\string~Lambertian}}();}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classLambertian_a14d4231cf93060680905cd35f39a0eaf}{scatter}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRay}{Ray}}\&\ ray,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHitRecord}{HitRecord}}\&\ hit,\ \mbox{\hyperlink{classColor}{Color}}\&\ attenuation,\ \mbox{\hyperlink{classRay}{Ray}}\&\ scattered)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::shared\_ptr<ITexture>\ getTexture()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\_texture;\ \}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setTexture(std::shared\_ptr<ITexture>\ texture)\ \{\ this-\/>\_texture\ =\ texture;\ \}}
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ std::shared\_ptr<ITexture>\ \_texture;\ }
+\DoxyCodeLine{00057\ \};}
+
+\end{DoxyCode}

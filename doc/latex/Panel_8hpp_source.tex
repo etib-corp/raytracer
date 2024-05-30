@@ -1,0 +1,38 @@
+\doxysection{Panel.\+hpp}
+\hypertarget{Panel_8hpp_source}{}\label{Panel_8hpp_source}\index{include/GUI/Panel.hpp@{include/GUI/Panel.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Panel}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ PANEL\_HPP\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ PANEL\_HPP\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}GUI/AInteractive.hpp"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }GUI\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGUI_1_1Panel}{Panel}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGUI_1_1AGUI}{AGUI}}\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGUI_1_1Panel_af83989afe6a309a914bd29befbb79a7d}{Panel}}(\textcolor{keyword}{const}\ std::string\ \&title);}
+\DoxyCodeLine{00022\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGUI_1_1Panel}{Panel}}();}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGUI_1_1Panel_ad1c268f0f81f5dd57eca2279291ab1e5}{\string~Panel}}()\ \{\}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1Panel_a7fd41589567a2ebe27c9a43191920a73}{addInteractive}}(\mbox{\hyperlink{classGUI_1_1AInteractive}{AInteractive}}\ \&interactive);}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1Panel_ab6891c27c6c870dc3c5f41387064ebea}{display}}();}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \_title;\ \textcolor{comment}{//\ The\ title\ of\ the\ panel.}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<AInteractive\ *>\ \_children;\ \textcolor{comment}{//\ The\ children\ stored\ in\ the\ panel.}}
+\DoxyCodeLine{00044\ \ \ \ \ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !PANEL\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

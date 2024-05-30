@@ -1,0 +1,41 @@
+\doxysection{Radio\+Button\+List.\+hpp}
+\hypertarget{RadioButtonList_8hpp_source}{}\label{RadioButtonList_8hpp_source}\index{include/GUI/RadioButtonList.hpp@{include/GUI/RadioButtonList.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ RadioButtonList}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ RADIOBUTTONLIST\_HPP\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ RADIOBUTTONLIST\_HPP\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}GUI/RadioButton.hpp"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }GUI\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGUI_1_1RadioButtonList}{RadioButtonList}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGUI_1_1AInteractive}{AInteractive}}\ \{}
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGUI_1_1RadioButtonList_a711148431f043193789514053b5fd476}{RadioButtonList}}(std::string\ title,\ std::vector<std::string>\ titles);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGUI_1_1RadioButtonList_ab4585b5684c37d5c8f1e04a9b9763a15}{\string~RadioButtonList}}()\ \{\}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1RadioButtonList_aced829cea12850a116f6cfba662e1e63}{display}}();}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1RadioButtonList_a0634af5600db916c0046e6086fc26952}{update}}();}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1RadioButtonList_a1cd0499bfee524eee4ef92b06ac3c9d1}{init}}(sf::RenderWindow\ \&window,\ sf::Clock\ \&clock,\ \mbox{\hyperlink{classObjectsList}{ObjectsList}}\ \&world);}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ \mbox{\hyperlink{classGUI_1_1RadioButtonList_a9ad0e1a19fd4998ea2a96c259c6fe72a}{getChecked}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<RadioButton\ *>\ \mbox{\hyperlink{classGUI_1_1RadioButtonList_a22aebcc890b7e6fac77768b2c47f46dc}{\_children}};}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ std::vector<RadioButton\ *>::iterator\ \mbox{\hyperlink{classGUI_1_1RadioButtonList_a2ba2b996e2a2a9c1b661ec021247b41d}{\_lastChecked}}\ =\ \mbox{\hyperlink{classGUI_1_1RadioButtonList_a22aebcc890b7e6fac77768b2c47f46dc}{\_children}}.end();}
+\DoxyCodeLine{00075\ \ \ \ \ \};}
+\DoxyCodeLine{00076\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !RADIOBUTTONLIST\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

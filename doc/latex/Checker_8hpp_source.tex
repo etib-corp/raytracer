@@ -1,0 +1,42 @@
+\doxysection{Checker.\+hpp}
+\hypertarget{Checker_8hpp_source}{}\label{Checker_8hpp_source}\index{include/Texture/Checker.hpp@{include/Texture/Checker.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Checker}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}ATexture.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}Texture/SolidColor.hpp"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classChecker}{Checker}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classATexture}{ATexture}}\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classChecker_afee88a6684701c5643bee17190cb0e7a}{Checker}}(\textcolor{keywordtype}{double}\ scale,\ std::shared\_ptr<ITexture>\ even,\ std::shared\_ptr<ITexture>\ odd);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classChecker_a44131a274f36236359322bd10121b136}{Checker}}(\textcolor{keywordtype}{double}\ scale,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&\ even,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&\ odd);}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classChecker_a1022d23968960d415c4c3c368a6a69bc}{\string~Checker}}();}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classChecker_a9a2ca074c39dc3de2da7cc5641e445d6}{value}}(\textcolor{keywordtype}{double}\ u,\ \textcolor{keywordtype}{double}\ v,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\&\ p)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ std::shared\_ptr<ITexture>\ getOdd()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\_odd;\ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::shared\_ptr<ITexture>\ getEven()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\_even;\ \}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setOdd(std::shared\_ptr<ITexture>\ texture)\ \{\ this-\/>\_odd\ =\ texture;\ \}}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setEven(std::shared\_ptr<ITexture>\ texture)\ \{\ this-\/>\_even\ =\ texture;\ \}}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ getScale()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\_invScale;\ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setScale(\textcolor{keywordtype}{double}\ scale)\ \{\ this-\/>\_invScale\ =\ scale;\ \}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \_invScale;\ }
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ std::shared\_ptr<ITexture>\ \_even;\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ std::shared\_ptr<ITexture>\ \_odd;\ }
+\DoxyCodeLine{00065\ \};}
+
+\end{DoxyCode}

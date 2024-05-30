@@ -1,0 +1,151 @@
+\doxysection{GUI\+::IGUI Class Reference}
+\hypertarget{classGUI_1_1IGUI}{}\label{classGUI_1_1IGUI}\index{GUI::IGUI@{GUI::IGUI}}
+
+
+Interface for the Graphical User Interface (GUI)  
+
+
+
+
+{\ttfamily \#include $<$IGUI.\+hpp$>$}
+
+Inheritance diagram for GUI\+::IGUI\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=6.179310cm]{classGUI_1_1IGUI}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGUI_1_1IGUI_a6da7dffd12006282fe449229e0dd7f0b}{\texorpdfstring{$\sim$}{\string~}\+IGUI}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGUI_1_1IGUI_a0abfc20d7f5848b2aa1c3f212a289a3e}{update}} ()=0
+\begin{DoxyCompactList}\small\item\em Update the GUI. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGUI_1_1IGUI_a456a4253c4adce496d65c746af636971}{display}} ()=0
+\begin{DoxyCompactList}\small\item\em Display the GUI. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classGUI_1_1IGUI_af69a814b56e31211d9f71b7379c2f8e6}{has\+To\+Display}} ()=0
+\begin{DoxyCompactList}\small\item\em Check if the GUI should be displayed. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGUI_1_1IGUI_adafe48d6040b402d02c9bb0a4b277f1c}{init}} (sf\+::\+Render\+Window \&window, sf\+::\+Clock \&clock, \mbox{\hyperlink{classObjectsList}{Objects\+List}} \&world)=0
+\begin{DoxyCompactList}\small\item\em Initializes the GUI. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classGUI_1_1IGUI_aa97221f9417ee99d2da26e7d26199d14}{set\+Display}} (bool \mbox{\hyperlink{classGUI_1_1IGUI_a456a4253c4adce496d65c746af636971}{display}})=0
+\begin{DoxyCompactList}\small\item\em Set whether the GUI should be displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for the Graphical User Interface (GUI) 
+
+This interface provides a basic structure for the GUI, allowing for the implementation of different GUI systems. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classGUI_1_1IGUI_a6da7dffd12006282fe449229e0dd7f0b}\label{classGUI_1_1IGUI_a6da7dffd12006282fe449229e0dd7f0b} 
+\index{GUI::IGUI@{GUI::IGUI}!````~IGUI@{\texorpdfstring{$\sim$}{\string~}IGUI}}
+\index{````~IGUI@{\texorpdfstring{$\sim$}{\string~}IGUI}!GUI::IGUI@{GUI::IGUI}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}IGUI()}{\string~IGUI()}}
+{\footnotesize\ttfamily virtual GUI\+::\+IGUI\+::\texorpdfstring{$\sim$}{\string~}\+IGUI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Virtual destructor. 
+
+This virtual destructor ensures proper memory management when dealing with polymorphic objects. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGUI_1_1IGUI_a456a4253c4adce496d65c746af636971}\label{classGUI_1_1IGUI_a456a4253c4adce496d65c746af636971} 
+\index{GUI::IGUI@{GUI::IGUI}!display@{display}}
+\index{display@{display}!GUI::IGUI@{GUI::IGUI}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily virtual void GUI\+::\+IGUI\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Display the GUI. 
+
+This method should be implemented by derived classes to display the GUI on the screen. 
+
+Implemented in \mbox{\hyperlink{classGUI_1_1ATH_aa859690c9f5d6193677099d38729187f}{GUI\+::\+ATH}}, \mbox{\hyperlink{classGUI_1_1Button_a47a6c68263417c089454460dca8bf5bd}{GUI\+::\+Button}}, \mbox{\hyperlink{classGUI_1_1ChildPanel_a5dfb80c2c24ab2b6eb777f765c14244a}{GUI\+::\+Child\+Panel}}, \mbox{\hyperlink{classGUI_1_1DoubleInput_a560835e2445649465578e33ea3d08a90}{GUI\+::\+Double\+Input}}, \mbox{\hyperlink{classGUI_1_1EditColor_afcc5462c54a151c7bbba35845727e25e}{GUI\+::\+Edit\+Color}}, \mbox{\hyperlink{classGUI_1_1EditPosition_abb92110fee316d7793440ebfe862d331}{GUI\+::\+Edit\+Position}}, \mbox{\hyperlink{classGUI_1_1Panel_ab6891c27c6c870dc3c5f41387064ebea}{GUI\+::\+Panel}}, \mbox{\hyperlink{classGUI_1_1RadioButton_acfb3567efacfdadc4680e614db36441d}{GUI\+::\+Radio\+Button}}, \mbox{\hyperlink{classGUI_1_1RadioButtonList_aced829cea12850a116f6cfba662e1e63}{GUI\+::\+Radio\+Button\+List}}, \mbox{\hyperlink{classGUI_1_1ScrollableChild_aa81fe53bc8438680eef6058d7de6f2ee}{GUI\+::\+Scrollable\+Child}}, \mbox{\hyperlink{classGUI_1_1ToolBar_a1224cad798d7369a577e204205a37416}{GUI\+::\+Tool\+Bar}}, \mbox{\hyperlink{classMaterialPanel_a92380821d0c2f17dde7d2f1bb44a845c}{Material\+Panel}}, \mbox{\hyperlink{classRaytracerATH_a4cdbd634beb19bf2b2633fde7fa79c20}{Raytracer\+ATH}}, \mbox{\hyperlink{classRaytracerConfigPanel_a1ede6966fbb97e8a8cf12086f1e50270}{Raytracer\+Config\+Panel}}, \mbox{\hyperlink{classTexturePanel_a5bf467ab48f650f94f88ff3a4ffdabd7}{Texture\+Panel}}, \mbox{\hyperlink{classTransformPanel_a49aebc60e2ff901ea3b2e751335f0674}{Transform\+Panel}}, \mbox{\hyperlink{classGUI_1_1AGUI_afa7a3534aa4e47edea79c3e8bcfb2115}{GUI\+::\+AGUI}}, and \mbox{\hyperlink{classGUI_1_1AInteractive_a35d969327a1f0cf3898cd6189cff4923}{GUI\+::\+AInteractive}}.
+
+\Hypertarget{classGUI_1_1IGUI_af69a814b56e31211d9f71b7379c2f8e6}\label{classGUI_1_1IGUI_af69a814b56e31211d9f71b7379c2f8e6} 
+\index{GUI::IGUI@{GUI::IGUI}!hasToDisplay@{hasToDisplay}}
+\index{hasToDisplay@{hasToDisplay}!GUI::IGUI@{GUI::IGUI}}
+\doxysubsubsection{\texorpdfstring{hasToDisplay()}{hasToDisplay()}}
+{\footnotesize\ttfamily virtual bool GUI\+::\+IGUI\+::has\+To\+Display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Check if the GUI should be displayed. 
+
+This method should be implemented by derived classes to check if the GUI should be displayed or not.
+
+\begin{DoxyReturn}{Returns}
+True if the GUI should be displayed, false otherwise. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classGUI_1_1AGUI_ae6dc84b25ff036308f7c4757adb11205}{GUI\+::\+AGUI}}.
+
+\Hypertarget{classGUI_1_1IGUI_adafe48d6040b402d02c9bb0a4b277f1c}\label{classGUI_1_1IGUI_adafe48d6040b402d02c9bb0a4b277f1c} 
+\index{GUI::IGUI@{GUI::IGUI}!init@{init}}
+\index{init@{init}!GUI::IGUI@{GUI::IGUI}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily virtual void GUI\+::\+IGUI\+::init (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window,  }\item[{sf\+::\+Clock \&}]{clock,  }\item[{\mbox{\hyperlink{classObjectsList}{Objects\+List}} \&}]{world }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Initializes the GUI. 
+
+This function is responsible for initializing the GUI by setting up the window, clock, and world objects.
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The SFML render window. \\
+\hline
+{\em clock} & The SFML clock. \\
+\hline
+{\em world} & The list of objects in the world. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classGUI_1_1AGUI_a9e180aa601d7f7e0492cd315b122d8b2}{GUI\+::\+AGUI}}, \mbox{\hyperlink{classGUI_1_1RadioButtonList_a1cd0499bfee524eee4ef92b06ac3c9d1}{GUI\+::\+Radio\+Button\+List}}, \mbox{\hyperlink{classMaterialPanel_a2bcce8734fc81abbce8edfffcd4d367f}{Material\+Panel}}, \mbox{\hyperlink{classRaytracerAddPanel_a3702f2ba071cdf159c539774548a1285}{Raytracer\+Add\+Panel}}, \mbox{\hyperlink{classRaytracerATH_a73c1db6da2f741be112e3155e46d726b}{Raytracer\+ATH}}, \mbox{\hyperlink{classRaytracerConfigPanel_a6c49d66f7e004de5eac4f54a6b3ffd5c}{Raytracer\+Config\+Panel}}, \mbox{\hyperlink{classTexturePanel_a6791f03600238211f92ed32ea04cf83d}{Texture\+Panel}}, and \mbox{\hyperlink{classTransformPanel_a9a7f06616b014701016c820a4b1269ed}{Transform\+Panel}}.
+
+\Hypertarget{classGUI_1_1IGUI_aa97221f9417ee99d2da26e7d26199d14}\label{classGUI_1_1IGUI_aa97221f9417ee99d2da26e7d26199d14} 
+\index{GUI::IGUI@{GUI::IGUI}!setDisplay@{setDisplay}}
+\index{setDisplay@{setDisplay}!GUI::IGUI@{GUI::IGUI}}
+\doxysubsubsection{\texorpdfstring{setDisplay()}{setDisplay()}}
+{\footnotesize\ttfamily virtual void GUI\+::\+IGUI\+::set\+Display (\begin{DoxyParamCaption}\item[{bool}]{display }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Set whether the GUI should be displayed. 
+
+This method should be implemented by derived classes to set whether the GUI should be displayed or not.
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & True to display the GUI, false otherwise. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classGUI_1_1AGUI_a99b90f4cffacf82946ae08659a19c35b}{GUI\+::\+AGUI}}.
+
+\Hypertarget{classGUI_1_1IGUI_a0abfc20d7f5848b2aa1c3f212a289a3e}\label{classGUI_1_1IGUI_a0abfc20d7f5848b2aa1c3f212a289a3e} 
+\index{GUI::IGUI@{GUI::IGUI}!update@{update}}
+\index{update@{update}!GUI::IGUI@{GUI::IGUI}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void GUI\+::\+IGUI\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Update the GUI. 
+
+This method should be implemented by derived classes to update the state of the GUI. 
+
+Implemented in \mbox{\hyperlink{classGUI_1_1AGUI_a379e08a1dc1b4751c388c20816d7926e}{GUI\+::\+AGUI}}, \mbox{\hyperlink{classGUI_1_1RadioButtonList_a0634af5600db916c0046e6086fc26952}{GUI\+::\+Radio\+Button\+List}}, and \mbox{\hyperlink{classRaytracerATH_a5bcff03fd8601acd9777036de468fd8b}{Raytracer\+ATH}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+GUI/IGUI.\+hpp\end{DoxyCompactItemize}

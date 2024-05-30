@@ -1,0 +1,1007 @@
+\doxysection{Camera Class Reference}
+\hypertarget{classCamera}{}\label{classCamera}\index{Camera@{Camera}}
+
+
+The \doxylink{classCamera}{Camera} class represents a virtual camera in a 3D scene.  
+
+
+
+
+{\ttfamily \#include $<$Camera.\+hpp$>$}
+
+Inheritance diagram for Camera\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classCamera}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCamera_a47c0f0e7cb74ea13fd4707193057eb76}{Camera}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 2 $>$ \&image\+Dimension)
+\begin{DoxyCompactList}\small\item\em Construct a new \doxylink{classCamera}{Camera} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classCamera_ad1897942d0ccf91052386388a497349f}{\texorpdfstring{$\sim$}{\string~}\+Camera}} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \doxylink{classCamera}{Camera} object. \end{DoxyCompactList}\item 
+\Hypertarget{classCamera_af930ce1f46c9f5af3bd5e5bbff6b5022}\label{classCamera_af930ce1f46c9f5af3bd5e5bbff6b5022} 
+void {\bfseries init} ()
+\item 
+\Hypertarget{classCamera_aeb1c18a1149b0c8b1f592df4536f850d}\label{classCamera_aeb1c18a1149b0c8b1f592df4536f850d} 
+void {\bfseries set\+Camera} (void)
+\item 
+\mbox{\hyperlink{classRay}{Ray}} \mbox{\hyperlink{classCamera_a1330ff539b4aaab5fb6d84e832046448}{ray}} (double x, double y) const
+\begin{DoxyCompactList}\small\item\em Generate a ray from the camera based on the given coordinates. \end{DoxyCompactList}\item 
+std\+::chrono\+::\+\_\+\+V2\+::system\+\_\+clock\+::time\+\_\+point \mbox{\hyperlink{classCamera_a59bb36ab34d5612ede03c705e1980208}{render}} (const \mbox{\hyperlink{classAPrimitive}{APrimitive}} \&world)
+\begin{DoxyCompactList}\small\item\em Render the world from the camera\textquotesingle{}s perspective. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCamera_a943ecfdfccc9a1a0464d39f878656793}{render\+SFML}} (\mbox{\hyperlink{classObjectsList}{Objects\+List}} \&world)
+\begin{DoxyCompactList}\small\item\em Render the world from the camera\textquotesingle{}s perspective. \end{DoxyCompactList}\item 
+\Hypertarget{classCamera_a888032b7fb9451f497b58f6f32c29b7e}\label{classCamera_a888032b7fb9451f497b58f6f32c29b7e} 
+bool {\bfseries check\+Move} (sf\+::\+Event event)
+\item 
+\mbox{\hyperlink{classMath_1_1Rectangle}{Math\+::\+Rectangle}} \mbox{\hyperlink{classCamera_a43807d687f4806bb3653a0c89e27ab3e}{get\+Viewport}} () const
+\begin{DoxyCompactList}\small\item\em Get the viewport of the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 2 $>$ \mbox{\hyperlink{classCamera_a177717a98b6084b93bdc32d5a14e3229}{get\+Image\+Dimension}} () const
+\begin{DoxyCompactList}\small\item\em Get the dimension of the output image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classCamera_a530f6f42e40c9456d3082a4aca2c17e5}{get\+Background\+Color}} () const
+\begin{DoxyCompactList}\small\item\em Get the background color of the camera. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCamera_a2445a72a871ff79ebae83fe98136cba7}{set\+Background\+Color}} (const \mbox{\hyperlink{classColor}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Set the background color of the camera. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCamera_ac3f615fd674977d065592c1635fc40bc}{get\+Fov}} () const
+\begin{DoxyCompactList}\small\item\em Get the field of view of the camera. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCamera_a2885c98c404c8a2975d67c609ac948e3}{get\+Focal\+Length}} () const
+\begin{DoxyCompactList}\small\item\em Get the focal length of the camera. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCamera_ae6cd893d54202367559fb7e6a94afa29}{get\+Viewport\+Width}} () const
+\begin{DoxyCompactList}\small\item\em Get the width of the viewport. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCamera_a6e266fb00fe2bc41884532bc1e0aea2c}{get\+Viewport\+Height}} () const
+\begin{DoxyCompactList}\small\item\em Get the height of the viewport. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_af9c41ed33da45d94becf4bda1738a0f2}{get\+Horizontal\+Pixel\+Delta}} () const
+\begin{DoxyCompactList}\small\item\em Get the horizontal pixel delta. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_a1cb3ec0e9e1d84d3cdf5868001b1ce85}{get\+Vertical\+Pixel\+Delta}} () const
+\begin{DoxyCompactList}\small\item\em Get the vertical pixel delta. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_afe5df72f256d2b424fd5dd1f7e65bf4d}{get\+Viewport\+Upper\+Left}} () const
+\begin{DoxyCompactList}\small\item\em Get the upper left corner of the viewport. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_ab6c9097526e64ea7b6a661e24d65f385}{get\+First\+Pixel\+Position}} () const
+\begin{DoxyCompactList}\small\item\em Get the position of the first pixel. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCamera_a496a779dcb6fa8c3f6590a0d0b0c2cf8}{get\+Samples\+Per\+Pixel}} () const
+\begin{DoxyCompactList}\small\item\em Get the number of samples per pixel. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCamera_ace9682b5d64cd29292b16628842c7694}{get\+Pixel\+Sample\+Scale}} () const
+\begin{DoxyCompactList}\small\item\em Get the value determines the scale of the pixel samples. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCamera_a7c856c350861ec81ee28c7267bdd3b85}{set\+Samples\+Per\+Pixel}} (int samples)
+\begin{DoxyCompactList}\small\item\em Set the number of samples per pixel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCamera_a81a0d3d697591ccc414f95cf90b4d365}{set\+Max\+Depth}} (int depth)
+\begin{DoxyCompactList}\small\item\em Set the maximum depth of the ray. \end{DoxyCompactList}\item 
+\Hypertarget{classCamera_ae145887aab7f3ec4ffed22477f61a8d5}\label{classCamera_ae145887aab7f3ec4ffed22477f61a8d5} 
+void {\bfseries set\+Image\+Dimension} (\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 2 $>$ dimension)
+\item 
+int \mbox{\hyperlink{classCamera_a4ef4eba728d5b51dc66345be01dc78c1}{get\+Max\+Depth}} () const
+\begin{DoxyCompactList}\small\item\em Get the maximum depth of the ray. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCamera_a7eb085087a9270566190e4d23c3aff06}{get\+Vfov}} () const
+\begin{DoxyCompactList}\small\item\em Get the vertical field of view. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCamera_a33e62658cfe1ab2ee38e002d925eb32f}{set\+Vfov}} (double vfov)
+\begin{DoxyCompactList}\small\item\em Set the vertical field of view. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_a841dc9ae6bd14e9dec2e0537ba96b985}{get\+Look\+From}} () const
+\begin{DoxyCompactList}\small\item\em Get the look from vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCamera_a0f17ca835818e0f3054e779671b402f1}{set\+Look\+From}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&lookfrom)
+\begin{DoxyCompactList}\small\item\em Set the look from vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_ae7deeecff1d5e24b8f767d9b76f206b5}{get\+Look\+At}} () const
+\begin{DoxyCompactList}\small\item\em Get the look at vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCamera_afd8abf611cb961d255f5527e96637338}{set\+Look\+At}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&lookat)
+\begin{DoxyCompactList}\small\item\em Set the look at vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_abaf5bcc87b42a30f95d8473734198965}{get\+Vup}} () const
+\begin{DoxyCompactList}\small\item\em Get the view up vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCamera_a7b3b266d4ef9067f2f02e1f4d826b990}{set\+Vup}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&vup)
+\begin{DoxyCompactList}\small\item\em Set the view up vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_a2051e262ecaa0eaf0e43cb58bba40715}{getU}} () const
+\begin{DoxyCompactList}\small\item\em Get the horizontal vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCamera_a65a44a5f6bb6ed8f8b7992235e69a114}{setU}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&u)
+\begin{DoxyCompactList}\small\item\em Set the horizontal vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_a7fc7ba77c40e24da5a2c2b1b2cc64eaa}{getV}} () const
+\begin{DoxyCompactList}\small\item\em Get the vertical vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCamera_ae70b76a44cd209583d31464c01f0289c}{setV}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&v)
+\begin{DoxyCompactList}\small\item\em Set the vertical vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_aca97f7b7890c054ffdc99c32adfcdc40}{getW}} () const
+\begin{DoxyCompactList}\small\item\em Get the width vector. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classCamera_ad8ccb28c6f62efe89d8c3ab9a14d79e2}{setW}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&w)
+\begin{DoxyCompactList}\small\item\em Set the width vector. \end{DoxyCompactList}\item 
+\Hypertarget{classCamera_a41c1493090a05f89faba12cae6363736}\label{classCamera_a41c1493090a05f89faba12cae6363736} 
+double {\bfseries get\+Defocus\+Angle} () const
+\item 
+\Hypertarget{classCamera_ad66d62ad802c9f146d90f73940a2f587}\label{classCamera_ad66d62ad802c9f146d90f73940a2f587} 
+void {\bfseries set\+Defocus\+Angle} (double defocus\+Angle)
+\item 
+\Hypertarget{classCamera_af829d59734ed3c38df79ecc84d110f8d}\label{classCamera_af829d59734ed3c38df79ecc84d110f8d} 
+double {\bfseries get\+Focus\+Dist} () const
+\item 
+\Hypertarget{classCamera_aa222091dab4024b06a90301023801aec}\label{classCamera_aa222091dab4024b06a90301023801aec} 
+void {\bfseries set\+Focus\+Dist} (double focus\+Dist)
+\item 
+\Hypertarget{classCamera_a1992a433de0cff58bb76841c495ce762}\label{classCamera_a1992a433de0cff58bb76841c495ce762} 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ {\bfseries defocus\+Disk\+Sample} () const
+\item 
+void \mbox{\hyperlink{classCamera_a85723b7fbb292739576fe0cbac6402ba}{set\+Filter}} (std\+::function$<$ \mbox{\hyperlink{classColor}{Color}}(\mbox{\hyperlink{classColor}{Color}})$>$ filter)
+\begin{DoxyCompactList}\small\item\em Set the filter function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classCamera_ac371af764a0908d4b9c96b4ca3d6e861}{ray\+Color}} (const \mbox{\hyperlink{classRay}{Ray}} \&\mbox{\hyperlink{classCamera_a1330ff539b4aaab5fb6d84e832046448}{ray}}, int depth, const \mbox{\hyperlink{classAPrimitive}{APrimitive}} \&world) const
+\begin{DoxyCompactList}\small\item\em Generate a ray from the camera based on the given coordinates. \end{DoxyCompactList}\item 
+\Hypertarget{classCamera_af1d88e9690d901d638668008560e7f1b}\label{classCamera_af1d88e9690d901d638668008560e7f1b} 
+\mbox{\hyperlink{classRay}{Ray}} {\bfseries get\+Ray} (int i, int j, int sample) const
+\item 
+\Hypertarget{classCamera_a9498e5e7ad6f6dd4252ece23eeb9c8e7}\label{classCamera_a9498e5e7ad6f6dd4252ece23eeb9c8e7} 
+void {\bfseries print} (void) noexcept
+\item 
+\Hypertarget{classCamera_a88e8f956cd68d61a160c2eb06418ae1a}\label{classCamera_a88e8f956cd68d61a160c2eb06418ae1a} 
+void {\bfseries set\+Light\+Enabled} (bool enabled)
+\item 
+\Hypertarget{classCamera_a4969c774177016067f2773581520c952}\label{classCamera_a4969c774177016067f2773581520c952} 
+bool {\bfseries get\+Light\+Enable} (void)
+\item 
+\Hypertarget{classCamera_ad4e7782947ba7c2b246c12b0df0cabf6}\label{classCamera_ad4e7782947ba7c2b246c12b0df0cabf6} 
+bool {\bfseries is\+Light\+Enabled} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAObject}{AObject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classAObject_a38fdf4de5b6966272b268340ea7c7ffe}{\texorpdfstring{$\sim$}{\string~}\+AObject}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classAObject}{AObject} class. \end{DoxyCompactList}\item 
+virtual \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classAObject_a92975190349260c0d886f081c8f2567c}{get\+Position}} () const override
+\begin{DoxyCompactList}\small\item\em Get the current position of the object. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classAObject_abdd5a2887200cb715f74493fba344188}{set\+Position}} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&position) override
+\begin{DoxyCompactList}\small\item\em Set the position of the object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIObject}{IObject}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classIObject_aade43d43340617257443ca5733669ef9}{\texorpdfstring{$\sim$}{\string~}\+IObject}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classCamera_aa5632b13b68246e6b93c3663c9e47c3f}\label{classCamera_aa5632b13b68246e6b93c3663c9e47c3f} 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ {\bfseries sample\+Square} (int sample) const
+\item 
+\Hypertarget{classCamera_aa0d78aa78a68729bafe983f75a9fbad8}\label{classCamera_aa0d78aa78a68729bafe983f75a9fbad8} 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ {\bfseries random\+In\+Unit\+Sphere} () const
+\item 
+\Hypertarget{classCamera_a9626be782830bb3b6c44ec5766f92112}\label{classCamera_a9626be782830bb3b6c44ec5766f92112} 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ {\bfseries random\+On\+Hemisphere} (const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&normal) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMath_1_1Rectangle}{Math\+::\+Rectangle}} \mbox{\hyperlink{classCamera_af77b0d1ca6302c917bbfa2da41d5a607}{\+\_\+viewport}}
+\begin{DoxyCompactList}\small\item\em The viewport of the camera. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 2 $>$ \mbox{\hyperlink{classCamera_a3bb37794182727f15cb059a3d5c27a7f}{\+\_\+image\+Dimension}}
+\begin{DoxyCompactList}\small\item\em The dimension of the output image. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classCamera_a53a22fe1fc586cfa43c97696d8b1df44}{\+\_\+background\+Color}}
+\begin{DoxyCompactList}\small\item\em The background color of the camera. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCamera_a43e80a9915627123372e21465ac58c9e}{\+\_\+fov}}
+\begin{DoxyCompactList}\small\item\em The field of view of the camera. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCamera_a097bb124d6b5062753114fe79ac1a6fd}{\+\_\+focal\+Length}}
+\begin{DoxyCompactList}\small\item\em The focal length of the camera. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCamera_a0a1d6842f61e39b372f0b3506d27eb13}{\+\_\+viewport\+Width}}
+\begin{DoxyCompactList}\small\item\em The width of the viewport. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCamera_a52329d50e3624bf3105785e7965dcb9b}{\+\_\+viewport\+Height}}
+\begin{DoxyCompactList}\small\item\em The height of the viewport. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_ab5d6833b4be95f4e13dd8b2eefa3525a}{\+\_\+horizontal\+Pixel\+Delta}}
+\begin{DoxyCompactList}\small\item\em The delta between horizontal pixels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_a85647523d5196a7f6e08bbec51fa5fe7}{\+\_\+vertical\+Pixel\+Delta}}
+\begin{DoxyCompactList}\small\item\em The delta between vertical pixels. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_af96201b3161c4ef1b3e649fecd6e6e1d}{\+\_\+viewport\+Upper\+Left}}
+\begin{DoxyCompactList}\small\item\em The upper left corner of the viewport. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_a12a61a764fee66a981907bc9ca3c7a51}{\+\_\+first\+Pixel\+Position}}
+\begin{DoxyCompactList}\small\item\em The position of the upper left pixel. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCamera_afa820cf5f89a097df1771d20ce4dc56e}{\+\_\+samples\+Per\+Pixel}}
+\begin{DoxyCompactList}\small\item\em The number of samples per pixel. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCamera_a52a912bd0f2f08044436fe2a88bea7b6}{\+\_\+pixel\+Samples\+Scale}}
+\begin{DoxyCompactList}\small\item\em The scale of the pixel samples. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classCamera_aec766dd49e71c2fce1625a8445608cf1}{max\+Depth}}
+\begin{DoxyCompactList}\small\item\em The maximum depth of the ray. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classCamera_af1ba847700749c93d41c0e56303e6896}{\+\_\+vfov}}
+\begin{DoxyCompactList}\small\item\em The vertical field of view. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_aa4bdfd2ced2277928189173551cab05b}{\+\_\+lookfrom}} = \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$(\{-\/2, 2, 1\})
+\begin{DoxyCompactList}\small\item\em The look from vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_ab7217fa4e0904c4a9b6505a320b91dbd}{\+\_\+lookat}} = \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$(\{0, 0, -\/1\})
+\begin{DoxyCompactList}\small\item\em The look at vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_a15b6e0d9460ee52c94fbc06476065a8f}{\+\_\+vup}} = \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$(\{0, 1, 0\})
+\begin{DoxyCompactList}\small\item\em The view up vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_a5e66d7f4f62f4c7f497c34ff191c2737}{\+\_\+u}}
+\begin{DoxyCompactList}\small\item\em The horizontal vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_a51f68052bfd88c085b7c1e7574634884}{\+\_\+v}}
+\begin{DoxyCompactList}\small\item\em The vertical vector. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classCamera_a2e061f1d32767c50b9eb1c6d02e5efc0}{\+\_\+w}}
+\begin{DoxyCompactList}\small\item\em The width vector. \end{DoxyCompactList}\item 
+\Hypertarget{classCamera_a9dae8836b27b76a576a37af07d8c57ee}\label{classCamera_a9dae8836b27b76a576a37af07d8c57ee} 
+double {\bfseries \+\_\+defocus\+Angle}
+\item 
+\Hypertarget{classCamera_ae986a69cb7c52b1c026fdaea1de2bdcd}\label{classCamera_ae986a69cb7c52b1c026fdaea1de2bdcd} 
+double {\bfseries \+\_\+focus\+Dist}
+\item 
+\Hypertarget{classCamera_a00fb1df28d1f236004ac4aa690295734}\label{classCamera_a00fb1df28d1f236004ac4aa690295734} 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ {\bfseries defocus\+DiskU}
+\item 
+\Hypertarget{classCamera_a1a832aa4ab07717cb2f6cd89a1035d1a}\label{classCamera_a1a832aa4ab07717cb2f6cd89a1035d1a} 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ {\bfseries defocus\+DiskV}
+\item 
+\Hypertarget{classCamera_a8603f9a2ea27d1eabd9cc4ddc8552d04}\label{classCamera_a8603f9a2ea27d1eabd9cc4ddc8552d04} 
+sf\+::\+Uint8 \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+pixels}
+\item 
+\Hypertarget{classCamera_a8affd4d7bc5a5a46e1207fb4f1f5363c}\label{classCamera_a8affd4d7bc5a5a46e1207fb4f1f5363c} 
+bool {\bfseries \+\_\+rendered}
+\item 
+\Hypertarget{classCamera_a3e12fd36f0b6a035a436e6475243e5e4}\label{classCamera_a3e12fd36f0b6a035a436e6475243e5e4} 
+bool {\bfseries \+\_\+show\+Ath}
+\item 
+\Hypertarget{classCamera_a04d03b2ac78c970c0b3b5853a4c5e413}\label{classCamera_a04d03b2ac78c970c0b3b5853a4c5e413} 
+bool {\bfseries \+\_\+light\+Enabled}
+\item 
+std\+::function$<$ \mbox{\hyperlink{classColor}{Color}}(\mbox{\hyperlink{classColor}{Color}})$>$ \mbox{\hyperlink{classCamera_a288a71327455a721f78d627d722316dc}{\+\_\+filter}}
+\begin{DoxyCompactList}\small\item\em A function that applies a filter to the color of the ray. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classAObject}{AObject}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classAObject_ac5109ec253963d9c6ac184949518444b}{\+\_\+position}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classCamera}{Camera} class represents a virtual camera in a 3D scene. 
+
+It is responsible for generating rays based on the camera\textquotesingle{}s viewport, field of view, and any applied filters. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCamera_a47c0f0e7cb74ea13fd4707193057eb76}\label{classCamera_a47c0f0e7cb74ea13fd4707193057eb76} 
+\index{Camera@{Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{Camera()}{Camera()}}
+{\footnotesize\ttfamily Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 2 $>$ \&}]{image\+Dimension }\end{DoxyParamCaption})}
+
+
+
+Construct a new \doxylink{classCamera}{Camera} object. 
+
+This constructor initializes the camera with a default viewport, field of view, and no filter applied. \Hypertarget{classCamera_ad1897942d0ccf91052386388a497349f}\label{classCamera_ad1897942d0ccf91052386388a497349f} 
+\index{Camera@{Camera}!````~Camera@{\texorpdfstring{$\sim$}{\string~}Camera}}
+\index{````~Camera@{\texorpdfstring{$\sim$}{\string~}Camera}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Camera()}{\string~Camera()}}
+{\footnotesize\ttfamily Camera\+::\texorpdfstring{$\sim$}{\string~}\+Camera (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destroy the \doxylink{classCamera}{Camera} object. 
+
+This destructor cleans up any resources allocated by the camera. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCamera_a530f6f42e40c9456d3082a4aca2c17e5}\label{classCamera_a530f6f42e40c9456d3082a4aca2c17e5} 
+\index{Camera@{Camera}!getBackgroundColor@{getBackgroundColor}}
+\index{getBackgroundColor@{getBackgroundColor}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getBackgroundColor()}{getBackgroundColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Camera\+::get\+Background\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the background color of the camera. 
+
+\begin{DoxyReturn}{Returns}
+The background color of the camera. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_ab6c9097526e64ea7b6a661e24d65f385}\label{classCamera_ab6c9097526e64ea7b6a661e24d65f385} 
+\index{Camera@{Camera}!getFirstPixelPosition@{getFirstPixelPosition}}
+\index{getFirstPixelPosition@{getFirstPixelPosition}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getFirstPixelPosition()}{getFirstPixelPosition()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ Camera\+::get\+First\+Pixel\+Position (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the position of the first pixel. 
+
+\begin{DoxyReturn}{Returns}
+The position of the first pixel. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a2885c98c404c8a2975d67c609ac948e3}\label{classCamera_a2885c98c404c8a2975d67c609ac948e3} 
+\index{Camera@{Camera}!getFocalLength@{getFocalLength}}
+\index{getFocalLength@{getFocalLength}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getFocalLength()}{getFocalLength()}}
+{\footnotesize\ttfamily double Camera\+::get\+Focal\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the focal length of the camera. 
+
+\begin{DoxyReturn}{Returns}
+The focal length of the camera. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_ac3f615fd674977d065592c1635fc40bc}\label{classCamera_ac3f615fd674977d065592c1635fc40bc} 
+\index{Camera@{Camera}!getFov@{getFov}}
+\index{getFov@{getFov}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getFov()}{getFov()}}
+{\footnotesize\ttfamily double Camera\+::get\+Fov (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the field of view of the camera. 
+
+\begin{DoxyReturn}{Returns}
+The field of view of the camera. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_af9c41ed33da45d94becf4bda1738a0f2}\label{classCamera_af9c41ed33da45d94becf4bda1738a0f2} 
+\index{Camera@{Camera}!getHorizontalPixelDelta@{getHorizontalPixelDelta}}
+\index{getHorizontalPixelDelta@{getHorizontalPixelDelta}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getHorizontalPixelDelta()}{getHorizontalPixelDelta()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ Camera\+::get\+Horizontal\+Pixel\+Delta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the horizontal pixel delta. 
+
+\begin{DoxyReturn}{Returns}
+The horizontal pixel delta. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a177717a98b6084b93bdc32d5a14e3229}\label{classCamera_a177717a98b6084b93bdc32d5a14e3229} 
+\index{Camera@{Camera}!getImageDimension@{getImageDimension}}
+\index{getImageDimension@{getImageDimension}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getImageDimension()}{getImageDimension()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 2 $>$ Camera\+::get\+Image\+Dimension (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the dimension of the output image. 
+
+\begin{DoxyReturn}{Returns}
+The dimension of the output image. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_ae7deeecff1d5e24b8f767d9b76f206b5}\label{classCamera_ae7deeecff1d5e24b8f767d9b76f206b5} 
+\index{Camera@{Camera}!getLookAt@{getLookAt}}
+\index{getLookAt@{getLookAt}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getLookAt()}{getLookAt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ Camera\+::get\+Look\+At (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the look at vector. 
+
+\begin{DoxyReturn}{Returns}
+The look at vector. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a841dc9ae6bd14e9dec2e0537ba96b985}\label{classCamera_a841dc9ae6bd14e9dec2e0537ba96b985} 
+\index{Camera@{Camera}!getLookFrom@{getLookFrom}}
+\index{getLookFrom@{getLookFrom}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getLookFrom()}{getLookFrom()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ Camera\+::get\+Look\+From (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the look from vector. 
+
+\begin{DoxyReturn}{Returns}
+The look from vector. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a4ef4eba728d5b51dc66345be01dc78c1}\label{classCamera_a4ef4eba728d5b51dc66345be01dc78c1} 
+\index{Camera@{Camera}!getMaxDepth@{getMaxDepth}}
+\index{getMaxDepth@{getMaxDepth}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getMaxDepth()}{getMaxDepth()}}
+{\footnotesize\ttfamily int Camera\+::get\+Max\+Depth (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the maximum depth of the ray. 
+
+\begin{DoxyReturn}{Returns}
+The maximum depth of the ray. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_ace9682b5d64cd29292b16628842c7694}\label{classCamera_ace9682b5d64cd29292b16628842c7694} 
+\index{Camera@{Camera}!getPixelSampleScale@{getPixelSampleScale}}
+\index{getPixelSampleScale@{getPixelSampleScale}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getPixelSampleScale()}{getPixelSampleScale()}}
+{\footnotesize\ttfamily double Camera\+::get\+Pixel\+Sample\+Scale (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the value determines the scale of the pixel samples. 
+
+\begin{DoxyReturn}{Returns}
+This value determines the scale of the pixel samples. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a496a779dcb6fa8c3f6590a0d0b0c2cf8}\label{classCamera_a496a779dcb6fa8c3f6590a0d0b0c2cf8} 
+\index{Camera@{Camera}!getSamplesPerPixel@{getSamplesPerPixel}}
+\index{getSamplesPerPixel@{getSamplesPerPixel}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getSamplesPerPixel()}{getSamplesPerPixel()}}
+{\footnotesize\ttfamily int Camera\+::get\+Samples\+Per\+Pixel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the number of samples per pixel. 
+
+\begin{DoxyReturn}{Returns}
+The number of samples per pixel. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a2051e262ecaa0eaf0e43cb58bba40715}\label{classCamera_a2051e262ecaa0eaf0e43cb58bba40715} 
+\index{Camera@{Camera}!getU@{getU}}
+\index{getU@{getU}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getU()}{getU()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ Camera\+::getU (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the horizontal vector. 
+
+\begin{DoxyReturn}{Returns}
+The horizontal vector. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a7fc7ba77c40e24da5a2c2b1b2cc64eaa}\label{classCamera_a7fc7ba77c40e24da5a2c2b1b2cc64eaa} 
+\index{Camera@{Camera}!getV@{getV}}
+\index{getV@{getV}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getV()}{getV()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ Camera\+::getV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the vertical vector. 
+
+\begin{DoxyReturn}{Returns}
+The vertical vector. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a1cb3ec0e9e1d84d3cdf5868001b1ce85}\label{classCamera_a1cb3ec0e9e1d84d3cdf5868001b1ce85} 
+\index{Camera@{Camera}!getVerticalPixelDelta@{getVerticalPixelDelta}}
+\index{getVerticalPixelDelta@{getVerticalPixelDelta}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getVerticalPixelDelta()}{getVerticalPixelDelta()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ Camera\+::get\+Vertical\+Pixel\+Delta (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the vertical pixel delta. 
+
+\begin{DoxyReturn}{Returns}
+The vertical pixel delta. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a7eb085087a9270566190e4d23c3aff06}\label{classCamera_a7eb085087a9270566190e4d23c3aff06} 
+\index{Camera@{Camera}!getVfov@{getVfov}}
+\index{getVfov@{getVfov}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getVfov()}{getVfov()}}
+{\footnotesize\ttfamily double Camera\+::get\+Vfov (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the vertical field of view. 
+
+\begin{DoxyReturn}{Returns}
+The vertical field of view. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a43807d687f4806bb3653a0c89e27ab3e}\label{classCamera_a43807d687f4806bb3653a0c89e27ab3e} 
+\index{Camera@{Camera}!getViewport@{getViewport}}
+\index{getViewport@{getViewport}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getViewport()}{getViewport()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Rectangle}{Math\+::\+Rectangle}} Camera\+::get\+Viewport (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the viewport of the camera. 
+
+\begin{DoxyReturn}{Returns}
+The viewport of the camera. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a6e266fb00fe2bc41884532bc1e0aea2c}\label{classCamera_a6e266fb00fe2bc41884532bc1e0aea2c} 
+\index{Camera@{Camera}!getViewportHeight@{getViewportHeight}}
+\index{getViewportHeight@{getViewportHeight}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getViewportHeight()}{getViewportHeight()}}
+{\footnotesize\ttfamily double Camera\+::get\+Viewport\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the height of the viewport. 
+
+\begin{DoxyReturn}{Returns}
+The height of the viewport. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_afe5df72f256d2b424fd5dd1f7e65bf4d}\label{classCamera_afe5df72f256d2b424fd5dd1f7e65bf4d} 
+\index{Camera@{Camera}!getViewportUpperLeft@{getViewportUpperLeft}}
+\index{getViewportUpperLeft@{getViewportUpperLeft}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getViewportUpperLeft()}{getViewportUpperLeft()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ Camera\+::get\+Viewport\+Upper\+Left (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the upper left corner of the viewport. 
+
+\begin{DoxyReturn}{Returns}
+The upper left corner of the viewport. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_ae6cd893d54202367559fb7e6a94afa29}\label{classCamera_ae6cd893d54202367559fb7e6a94afa29} 
+\index{Camera@{Camera}!getViewportWidth@{getViewportWidth}}
+\index{getViewportWidth@{getViewportWidth}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getViewportWidth()}{getViewportWidth()}}
+{\footnotesize\ttfamily double Camera\+::get\+Viewport\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the width of the viewport. 
+
+\begin{DoxyReturn}{Returns}
+The width of the viewport. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_abaf5bcc87b42a30f95d8473734198965}\label{classCamera_abaf5bcc87b42a30f95d8473734198965} 
+\index{Camera@{Camera}!getVup@{getVup}}
+\index{getVup@{getVup}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getVup()}{getVup()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ Camera\+::get\+Vup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the view up vector. 
+
+\begin{DoxyReturn}{Returns}
+The view up vector. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_aca97f7b7890c054ffdc99c32adfcdc40}\label{classCamera_aca97f7b7890c054ffdc99c32adfcdc40} 
+\index{Camera@{Camera}!getW@{getW}}
+\index{getW@{getW}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{getW()}{getW()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ Camera\+::getW (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the width vector. 
+
+\begin{DoxyReturn}{Returns}
+The width vector. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a1330ff539b4aaab5fb6d84e832046448}\label{classCamera_a1330ff539b4aaab5fb6d84e832046448} 
+\index{Camera@{Camera}!ray@{ray}}
+\index{ray@{ray}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{ray()}{ray()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classRay}{Ray}} Camera\+::ray (\begin{DoxyParamCaption}\item[{double}]{x,  }\item[{double}]{y }\end{DoxyParamCaption}) const}
+
+
+
+Generate a ray from the camera based on the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x-\/coordinate of the ray origin. \\
+\hline
+{\em y} & The y-\/coordinate of the ray origin. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{classRay}{Ray} object representing the ray generated from the camera. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_ac371af764a0908d4b9c96b4ca3d6e861}\label{classCamera_ac371af764a0908d4b9c96b4ca3d6e861} 
+\index{Camera@{Camera}!rayColor@{rayColor}}
+\index{rayColor@{rayColor}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{rayColor()}{rayColor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Camera\+::ray\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray,  }\item[{int}]{depth,  }\item[{const \mbox{\hyperlink{classAPrimitive}{APrimitive}} \&}]{world }\end{DoxyParamCaption}) const}
+
+
+
+Generate a ray from the camera based on the given coordinates. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & The ray to generate. \\
+\hline
+{\em world} & The world to render. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The color of the ray. 
+\end{DoxyReturn}
+\Hypertarget{classCamera_a59bb36ab34d5612ede03c705e1980208}\label{classCamera_a59bb36ab34d5612ede03c705e1980208} 
+\index{Camera@{Camera}!render@{render}}
+\index{render@{render}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily std\+::chrono\+::\+\_\+\+V2\+::system\+\_\+clock\+::time\+\_\+point Camera\+::render (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classAPrimitive}{APrimitive}} \&}]{world }\end{DoxyParamCaption})}
+
+
+
+Render the world from the camera\textquotesingle{}s perspective. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & The world to render. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCamera_a943ecfdfccc9a1a0464d39f878656793}\label{classCamera_a943ecfdfccc9a1a0464d39f878656793} 
+\index{Camera@{Camera}!renderSFML@{renderSFML}}
+\index{renderSFML@{renderSFML}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{renderSFML()}{renderSFML()}}
+{\footnotesize\ttfamily void Camera\+::render\+SFML (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classObjectsList}{Objects\+List}} \&}]{world }\end{DoxyParamCaption})}
+
+
+
+Render the world from the camera\textquotesingle{}s perspective. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world} & The world to render. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCamera_a2445a72a871ff79ebae83fe98136cba7}\label{classCamera_a2445a72a871ff79ebae83fe98136cba7} 
+\index{Camera@{Camera}!setBackgroundColor@{setBackgroundColor}}
+\index{setBackgroundColor@{setBackgroundColor}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setBackgroundColor()}{setBackgroundColor()}}
+{\footnotesize\ttfamily void Camera\+::set\+Background\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Set the background color of the camera. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The background color of the camera. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCamera_a85723b7fbb292739576fe0cbac6402ba}\label{classCamera_a85723b7fbb292739576fe0cbac6402ba} 
+\index{Camera@{Camera}!setFilter@{setFilter}}
+\index{setFilter@{setFilter}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setFilter()}{setFilter()}}
+{\footnotesize\ttfamily void Camera\+::set\+Filter (\begin{DoxyParamCaption}\item[{std\+::function$<$ \mbox{\hyperlink{classColor}{Color}}(\mbox{\hyperlink{classColor}{Color}})$>$}]{filter }\end{DoxyParamCaption})}
+
+
+
+Set the filter function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filter} & The filter function. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCamera_afd8abf611cb961d255f5527e96637338}\label{classCamera_afd8abf611cb961d255f5527e96637338} 
+\index{Camera@{Camera}!setLookAt@{setLookAt}}
+\index{setLookAt@{setLookAt}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setLookAt()}{setLookAt()}}
+{\footnotesize\ttfamily void Camera\+::set\+Look\+At (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{lookat }\end{DoxyParamCaption})}
+
+
+
+Set the look at vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lookat} & The look at vector. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCamera_a0f17ca835818e0f3054e779671b402f1}\label{classCamera_a0f17ca835818e0f3054e779671b402f1} 
+\index{Camera@{Camera}!setLookFrom@{setLookFrom}}
+\index{setLookFrom@{setLookFrom}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setLookFrom()}{setLookFrom()}}
+{\footnotesize\ttfamily void Camera\+::set\+Look\+From (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{lookfrom }\end{DoxyParamCaption})}
+
+
+
+Set the look from vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lookfrom} & The look from vector. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCamera_a81a0d3d697591ccc414f95cf90b4d365}\label{classCamera_a81a0d3d697591ccc414f95cf90b4d365} 
+\index{Camera@{Camera}!setMaxDepth@{setMaxDepth}}
+\index{setMaxDepth@{setMaxDepth}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setMaxDepth()}{setMaxDepth()}}
+{\footnotesize\ttfamily void Camera\+::set\+Max\+Depth (\begin{DoxyParamCaption}\item[{int}]{depth }\end{DoxyParamCaption})}
+
+
+
+Set the maximum depth of the ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em depth} & The maximum depth of the ray. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCamera_a7c856c350861ec81ee28c7267bdd3b85}\label{classCamera_a7c856c350861ec81ee28c7267bdd3b85} 
+\index{Camera@{Camera}!setSamplesPerPixel@{setSamplesPerPixel}}
+\index{setSamplesPerPixel@{setSamplesPerPixel}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setSamplesPerPixel()}{setSamplesPerPixel()}}
+{\footnotesize\ttfamily void Camera\+::set\+Samples\+Per\+Pixel (\begin{DoxyParamCaption}\item[{int}]{samples }\end{DoxyParamCaption})}
+
+
+
+Set the number of samples per pixel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em samples} & The number of samples per pixel. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCamera_a65a44a5f6bb6ed8f8b7992235e69a114}\label{classCamera_a65a44a5f6bb6ed8f8b7992235e69a114} 
+\index{Camera@{Camera}!setU@{setU}}
+\index{setU@{setU}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setU()}{setU()}}
+{\footnotesize\ttfamily void Camera\+::setU (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{u }\end{DoxyParamCaption})}
+
+
+
+Set the horizontal vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & The horizontal vector. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCamera_ae70b76a44cd209583d31464c01f0289c}\label{classCamera_ae70b76a44cd209583d31464c01f0289c} 
+\index{Camera@{Camera}!setV@{setV}}
+\index{setV@{setV}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setV()}{setV()}}
+{\footnotesize\ttfamily void Camera\+::setV (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{v }\end{DoxyParamCaption})}
+
+
+
+Set the vertical vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & The vertical vector. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCamera_a33e62658cfe1ab2ee38e002d925eb32f}\label{classCamera_a33e62658cfe1ab2ee38e002d925eb32f} 
+\index{Camera@{Camera}!setVfov@{setVfov}}
+\index{setVfov@{setVfov}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setVfov()}{setVfov()}}
+{\footnotesize\ttfamily void Camera\+::set\+Vfov (\begin{DoxyParamCaption}\item[{double}]{vfov }\end{DoxyParamCaption})}
+
+
+
+Set the vertical field of view. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vfov} & The vertical field of view. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCamera_a7b3b266d4ef9067f2f02e1f4d826b990}\label{classCamera_a7b3b266d4ef9067f2f02e1f4d826b990} 
+\index{Camera@{Camera}!setVup@{setVup}}
+\index{setVup@{setVup}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setVup()}{setVup()}}
+{\footnotesize\ttfamily void Camera\+::set\+Vup (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{vup }\end{DoxyParamCaption})}
+
+
+
+Set the view up vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vup} & The view up vector. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classCamera_ad8ccb28c6f62efe89d8c3ab9a14d79e2}\label{classCamera_ad8ccb28c6f62efe89d8c3ab9a14d79e2} 
+\index{Camera@{Camera}!setW@{setW}}
+\index{setW@{setW}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{setW()}{setW()}}
+{\footnotesize\ttfamily void Camera\+::setW (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{w }\end{DoxyParamCaption})}
+
+
+
+Set the width vector. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em w} & The width vector. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classCamera_a53a22fe1fc586cfa43c97696d8b1df44}\label{classCamera_a53a22fe1fc586cfa43c97696d8b1df44} 
+\index{Camera@{Camera}!\_backgroundColor@{\_backgroundColor}}
+\index{\_backgroundColor@{\_backgroundColor}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_backgroundColor}{\_backgroundColor}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Camera\+::\+\_\+background\+Color\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The background color of the camera. 
+
+This value determines the color of the background when no object is hit by the ray. \Hypertarget{classCamera_a288a71327455a721f78d627d722316dc}\label{classCamera_a288a71327455a721f78d627d722316dc} 
+\index{Camera@{Camera}!\_filter@{\_filter}}
+\index{\_filter@{\_filter}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_filter}{\_filter}}
+{\footnotesize\ttfamily std\+::function$<$\mbox{\hyperlink{classColor}{Color}}(\mbox{\hyperlink{classColor}{Color}})$>$ Camera\+::\+\_\+filter\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+A function that applies a filter to the color of the ray. 
+
+This function is used to modify the color of the ray before it is returned. \Hypertarget{classCamera_a12a61a764fee66a981907bc9ca3c7a51}\label{classCamera_a12a61a764fee66a981907bc9ca3c7a51} 
+\index{Camera@{Camera}!\_firstPixelPosition@{\_firstPixelPosition}}
+\index{\_firstPixelPosition@{\_firstPixelPosition}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_firstPixelPosition}{\_firstPixelPosition}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$ Camera\+::\+\_\+first\+Pixel\+Position\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The position of the upper left pixel. 
+
+This value determines the position of the upper left pixel. \Hypertarget{classCamera_a097bb124d6b5062753114fe79ac1a6fd}\label{classCamera_a097bb124d6b5062753114fe79ac1a6fd} 
+\index{Camera@{Camera}!\_focalLength@{\_focalLength}}
+\index{\_focalLength@{\_focalLength}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_focalLength}{\_focalLength}}
+{\footnotesize\ttfamily double Camera\+::\+\_\+focal\+Length\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The focal length of the camera. 
+
+This value determines the distance between the camera and the focal point. \Hypertarget{classCamera_a43e80a9915627123372e21465ac58c9e}\label{classCamera_a43e80a9915627123372e21465ac58c9e} 
+\index{Camera@{Camera}!\_fov@{\_fov}}
+\index{\_fov@{\_fov}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_fov}{\_fov}}
+{\footnotesize\ttfamily double Camera\+::\+\_\+fov\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The field of view of the camera. 
+
+This value determines the angle of the camera\textquotesingle{}s view cone. \Hypertarget{classCamera_ab5d6833b4be95f4e13dd8b2eefa3525a}\label{classCamera_ab5d6833b4be95f4e13dd8b2eefa3525a} 
+\index{Camera@{Camera}!\_horizontalPixelDelta@{\_horizontalPixelDelta}}
+\index{\_horizontalPixelDelta@{\_horizontalPixelDelta}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_horizontalPixelDelta}{\_horizontalPixelDelta}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$ Camera\+::\+\_\+horizontal\+Pixel\+Delta\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The delta between horizontal pixels. 
+
+This value determines the horizontal distance between each pixel. \Hypertarget{classCamera_a3bb37794182727f15cb059a3d5c27a7f}\label{classCamera_a3bb37794182727f15cb059a3d5c27a7f} 
+\index{Camera@{Camera}!\_imageDimension@{\_imageDimension}}
+\index{\_imageDimension@{\_imageDimension}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_imageDimension}{\_imageDimension}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$2$>$ Camera\+::\+\_\+image\+Dimension\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The dimension of the output image. 
+
+This value determines the width and height of the image. \Hypertarget{classCamera_ab7217fa4e0904c4a9b6505a320b91dbd}\label{classCamera_ab7217fa4e0904c4a9b6505a320b91dbd} 
+\index{Camera@{Camera}!\_lookat@{\_lookat}}
+\index{\_lookat@{\_lookat}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_lookat}{\_lookat}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$ Camera\+::\+\_\+lookat = \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$(\{0, 0, -\/1\})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The look at vector. 
+
+This value determines the look at vector. \Hypertarget{classCamera_aa4bdfd2ced2277928189173551cab05b}\label{classCamera_aa4bdfd2ced2277928189173551cab05b} 
+\index{Camera@{Camera}!\_lookfrom@{\_lookfrom}}
+\index{\_lookfrom@{\_lookfrom}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_lookfrom}{\_lookfrom}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$ Camera\+::\+\_\+lookfrom = \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$(\{-\/2, 2, 1\})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The look from vector. 
+
+This value determines the look from vector. \Hypertarget{classCamera_a52a912bd0f2f08044436fe2a88bea7b6}\label{classCamera_a52a912bd0f2f08044436fe2a88bea7b6} 
+\index{Camera@{Camera}!\_pixelSamplesScale@{\_pixelSamplesScale}}
+\index{\_pixelSamplesScale@{\_pixelSamplesScale}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_pixelSamplesScale}{\_pixelSamplesScale}}
+{\footnotesize\ttfamily double Camera\+::\+\_\+pixel\+Samples\+Scale\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The scale of the pixel samples. 
+
+This value determines the scale of the pixel samples. \Hypertarget{classCamera_afa820cf5f89a097df1771d20ce4dc56e}\label{classCamera_afa820cf5f89a097df1771d20ce4dc56e} 
+\index{Camera@{Camera}!\_samplesPerPixel@{\_samplesPerPixel}}
+\index{\_samplesPerPixel@{\_samplesPerPixel}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_samplesPerPixel}{\_samplesPerPixel}}
+{\footnotesize\ttfamily int Camera\+::\+\_\+samples\+Per\+Pixel\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The number of samples per pixel. 
+
+This value determines the number of samples to take per pixel. \Hypertarget{classCamera_a5e66d7f4f62f4c7f497c34ff191c2737}\label{classCamera_a5e66d7f4f62f4c7f497c34ff191c2737} 
+\index{Camera@{Camera}!\_u@{\_u}}
+\index{\_u@{\_u}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_u}{\_u}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$ Camera\+::\+\_\+u\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The horizontal vector. 
+
+This value determines the horizontal vector. \Hypertarget{classCamera_a51f68052bfd88c085b7c1e7574634884}\label{classCamera_a51f68052bfd88c085b7c1e7574634884} 
+\index{Camera@{Camera}!\_v@{\_v}}
+\index{\_v@{\_v}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_v}{\_v}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$ Camera\+::\+\_\+v\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The vertical vector. 
+
+This value determines the vertical vector. \Hypertarget{classCamera_a85647523d5196a7f6e08bbec51fa5fe7}\label{classCamera_a85647523d5196a7f6e08bbec51fa5fe7} 
+\index{Camera@{Camera}!\_verticalPixelDelta@{\_verticalPixelDelta}}
+\index{\_verticalPixelDelta@{\_verticalPixelDelta}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_verticalPixelDelta}{\_verticalPixelDelta}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$ Camera\+::\+\_\+vertical\+Pixel\+Delta\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The delta between vertical pixels. 
+
+This value determines the vertical distance between each pixel. \Hypertarget{classCamera_af1ba847700749c93d41c0e56303e6896}\label{classCamera_af1ba847700749c93d41c0e56303e6896} 
+\index{Camera@{Camera}!\_vfov@{\_vfov}}
+\index{\_vfov@{\_vfov}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_vfov}{\_vfov}}
+{\footnotesize\ttfamily double Camera\+::\+\_\+vfov\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The vertical field of view. 
+
+This value determines the vertical field of view. \Hypertarget{classCamera_af77b0d1ca6302c917bbfa2da41d5a607}\label{classCamera_af77b0d1ca6302c917bbfa2da41d5a607} 
+\index{Camera@{Camera}!\_viewport@{\_viewport}}
+\index{\_viewport@{\_viewport}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_viewport}{\_viewport}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Rectangle}{Math\+::\+Rectangle}} Camera\+::\+\_\+viewport\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The viewport of the camera. 
+
+This rectangle defines the area of the 3D scene that the camera can see. \Hypertarget{classCamera_a52329d50e3624bf3105785e7965dcb9b}\label{classCamera_a52329d50e3624bf3105785e7965dcb9b} 
+\index{Camera@{Camera}!\_viewportHeight@{\_viewportHeight}}
+\index{\_viewportHeight@{\_viewportHeight}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_viewportHeight}{\_viewportHeight}}
+{\footnotesize\ttfamily double Camera\+::\+\_\+viewport\+Height\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The height of the viewport. 
+
+This value determines the height of the camera\textquotesingle{}s view. \Hypertarget{classCamera_af96201b3161c4ef1b3e649fecd6e6e1d}\label{classCamera_af96201b3161c4ef1b3e649fecd6e6e1d} 
+\index{Camera@{Camera}!\_viewportUpperLeft@{\_viewportUpperLeft}}
+\index{\_viewportUpperLeft@{\_viewportUpperLeft}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_viewportUpperLeft}{\_viewportUpperLeft}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$ Camera\+::\+\_\+viewport\+Upper\+Left\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The upper left corner of the viewport. 
+
+This value determines the position of the upper left corner of the viewport. \Hypertarget{classCamera_a0a1d6842f61e39b372f0b3506d27eb13}\label{classCamera_a0a1d6842f61e39b372f0b3506d27eb13} 
+\index{Camera@{Camera}!\_viewportWidth@{\_viewportWidth}}
+\index{\_viewportWidth@{\_viewportWidth}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_viewportWidth}{\_viewportWidth}}
+{\footnotesize\ttfamily double Camera\+::\+\_\+viewport\+Width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The width of the viewport. 
+
+This value determines the width of the camera\textquotesingle{}s view. \Hypertarget{classCamera_a15b6e0d9460ee52c94fbc06476065a8f}\label{classCamera_a15b6e0d9460ee52c94fbc06476065a8f} 
+\index{Camera@{Camera}!\_vup@{\_vup}}
+\index{\_vup@{\_vup}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_vup}{\_vup}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$ Camera\+::\+\_\+vup = \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$(\{0, 1, 0\})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The view up vector. 
+
+This value determines the view up vector. \Hypertarget{classCamera_a2e061f1d32767c50b9eb1c6d02e5efc0}\label{classCamera_a2e061f1d32767c50b9eb1c6d02e5efc0} 
+\index{Camera@{Camera}!\_w@{\_w}}
+\index{\_w@{\_w}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{\_w}{\_w}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$ Camera\+::\+\_\+w\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The width vector. 
+
+This value determines the width vector. \Hypertarget{classCamera_aec766dd49e71c2fce1625a8445608cf1}\label{classCamera_aec766dd49e71c2fce1625a8445608cf1} 
+\index{Camera@{Camera}!maxDepth@{maxDepth}}
+\index{maxDepth@{maxDepth}!Camera@{Camera}}
+\doxysubsubsection{\texorpdfstring{maxDepth}{maxDepth}}
+{\footnotesize\ttfamily int Camera\+::max\+Depth\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The maximum depth of the ray. 
+
+This value determines the maximum depth of the ray. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Camera.\+hpp\end{DoxyCompactItemize}

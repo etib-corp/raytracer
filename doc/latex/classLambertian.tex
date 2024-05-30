@@ -1,0 +1,163 @@
+\doxysection{Lambertian Class Reference}
+\hypertarget{classLambertian}{}\label{classLambertian}\index{Lambertian@{Lambertian}}
+
+
+The \doxylink{classLambertian}{Lambertian} class represents a \doxylink{classLambertian}{Lambertian} material in a ray tracer.  
+
+
+
+
+{\ttfamily \#include $<$Lambertian.\+hpp$>$}
+
+Inheritance diagram for Lambertian\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classLambertian}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classLambertian_a3854427b5e02fa3da375dc10057a5acf}{Lambertian}} (const \mbox{\hyperlink{classColor}{Color}} \&albedo)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classLambertian}{Lambertian} material with the given albedo. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classLambertian_ada48831a79f17c23b5e3e7b54d80d34c}{Lambertian}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$ texture)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classLambertian}{Lambertian} material with the given texture. \end{DoxyCompactList}\item 
+\Hypertarget{classLambertian_ae8ac1f1c9c93e496a88e86b51c286b6f}\label{classLambertian_ae8ac1f1c9c93e496a88e86b51c286b6f} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Lambertian} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classLambertian}{Lambertian} material. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classLambertian_a14d4231cf93060680905cd35f39a0eaf}{scatter}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&hit, \mbox{\hyperlink{classColor}{Color}} \&attenuation, \mbox{\hyperlink{classRay}{Ray}} \&scattered) const override
+\begin{DoxyCompactList}\small\item\em Calculates the scattered ray after a ray hits the material. \end{DoxyCompactList}\item 
+\Hypertarget{classLambertian_afc8548f5e5ab8b0ee8a209c1d0ca777b}\label{classLambertian_afc8548f5e5ab8b0ee8a209c1d0ca777b} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$ {\bfseries get\+Texture} () const
+\item 
+\Hypertarget{classLambertian_ac61f7a89b54eddf67dbb8476d0f5853a}\label{classLambertian_ac61f7a89b54eddf67dbb8476d0f5853a} 
+void {\bfseries set\+Texture} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$ texture)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAMaterial}{AMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+AMaterial} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_aabaa0691d092f33ce4827f7c05fc9c6a}{emitted}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&record, double u, double v, const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&point) const override
+\begin{DoxyCompactList}\small\item\em Emit light from the material. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAMaterial_a3952275d5311d2afe98a684aa1659b84}{type\+Set}} (std\+::string type\+\_\+)
+\item 
+std\+::string \mbox{\hyperlink{classAMaterial_a1d471b042cd38e5e8b7579c15150cde8}{type\+Get}} (void)
+\item 
+void \mbox{\hyperlink{classAMaterial_ad00a04b9816304b27d28805a42995eec}{has\+Texture\+Set}} (void)
+\item 
+void \mbox{\hyperlink{classAMaterial_a8c8b19a49bb61a72b625e89e9aa5aa4d}{has\+Color\+Set}} (void)
+\item 
+bool \mbox{\hyperlink{classAMaterial_a8fe6c611f749cc43630ee99ccf22869c}{has\+Texture\+Get}} (void)
+\item 
+bool \mbox{\hyperlink{classAMaterial_a73c401db227fa67baa47823fffc77bb1}{has\+Color\+Get}} (void)
+\item 
+Type \mbox{\hyperlink{classAMaterial_afa565ccecc3e4e49939f40e55e887343}{get\+Type}} () const
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_af5e47705ad75d1d6f9f46193cefd6275}{get\+Albedo}} () const
+\item 
+void \mbox{\hyperlink{classAMaterial_ab09905c92264662aed34138be1c568af}{set\+Albedo}} (const \mbox{\hyperlink{classColor}{Color}} \&color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIMaterial}{IMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+IMaterial} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classIMaterial}{IMaterial}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classIMaterial}{IMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea}\label{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea} 
+enum {\bfseries Type} \{ {\bfseries DIELECTRIC}
+, {\bfseries LAMBERTIAN}
+, {\bfseries METAL}
+, {\bfseries NONE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classAMaterial}{AMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_ae50e64c6c65815089401715bf85ecf81}{\+\_\+albedo}}
+\item 
+std\+::string {\bfseries \+\_\+string\+Type}
+\item 
+bool {\bfseries \+\_\+is\+Texture}
+\item 
+bool {\bfseries \+\_\+is\+Color}
+\item 
+Type \mbox{\hyperlink{classAMaterial_aceefd2a6cc57189f12b6d0d739558da6}{\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classLambertian}{Lambertian} class represents a \doxylink{classLambertian}{Lambertian} material in a ray tracer. 
+
+\doxylink{classLambertian}{Lambertian} materials are diffuse materials that scatter light in all directions. They have a constant albedo, which determines the color of the material. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classLambertian_a3854427b5e02fa3da375dc10057a5acf}\label{classLambertian_a3854427b5e02fa3da375dc10057a5acf} 
+\index{Lambertian@{Lambertian}!Lambertian@{Lambertian}}
+\index{Lambertian@{Lambertian}!Lambertian@{Lambertian}}
+\doxysubsubsection{\texorpdfstring{Lambertian()}{Lambertian()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Lambertian\+::\+Lambertian (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{albedo }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classLambertian}{Lambertian} material with the given albedo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em albedo} & The color of the material. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classLambertian_ada48831a79f17c23b5e3e7b54d80d34c}\label{classLambertian_ada48831a79f17c23b5e3e7b54d80d34c} 
+\index{Lambertian@{Lambertian}!Lambertian@{Lambertian}}
+\index{Lambertian@{Lambertian}!Lambertian@{Lambertian}}
+\doxysubsubsection{\texorpdfstring{Lambertian()}{Lambertian()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Lambertian\+::\+Lambertian (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$}]{texture }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classLambertian}{Lambertian} material with the given texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & The texture of the material. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classLambertian_a14d4231cf93060680905cd35f39a0eaf}\label{classLambertian_a14d4231cf93060680905cd35f39a0eaf} 
+\index{Lambertian@{Lambertian}!scatter@{scatter}}
+\index{scatter@{scatter}!Lambertian@{Lambertian}}
+\doxysubsubsection{\texorpdfstring{scatter()}{scatter()}}
+{\footnotesize\ttfamily bool Lambertian\+::scatter (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&}]{hit,  }\item[{\mbox{\hyperlink{classColor}{Color}} \&}]{attenuation,  }\item[{\mbox{\hyperlink{classRay}{Ray}} \&}]{scattered }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the scattered ray after a ray hits the material. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & The incident ray. \\
+\hline
+{\em hit} & The hit record containing information about the intersection. \\
+\hline
+{\em attenuation} & The color attenuation of the scattered ray. \\
+\hline
+{\em scattered} & The scattered ray. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the ray is scattered, false otherwise. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAMaterial_ae9132628a8b6b720e3b63de5885f5957}{AMaterial}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Material/Lambertian.\+hpp\end{DoxyCompactItemize}

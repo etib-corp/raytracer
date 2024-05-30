@@ -1,0 +1,109 @@
+\doxysection{GUI\+::ATH Class Reference}
+\hypertarget{classGUI_1_1ATH}{}\label{classGUI_1_1ATH}\index{GUI::ATH@{GUI::ATH}}
+
+
+The \doxylink{classGUI_1_1ATH}{ATH} class is an abstract class that serves as the base class for all Athena GUI elements.  
+
+
+
+
+{\ttfamily \#include $<$Ath.\+hpp$>$}
+
+Inheritance diagram for GUI\+::ATH\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classGUI_1_1ATH}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGUI_1_1ATH_a3612e2d51c23b01808985e399f9d4f79}\label{classGUI_1_1ATH_a3612e2d51c23b01808985e399f9d4f79} 
+{\bfseries ATH} ()
+\begin{DoxyCompactList}\small\item\em The default constructor for the \doxylink{classGUI_1_1ATH}{ATH} class. \end{DoxyCompactList}\item 
+\Hypertarget{classGUI_1_1ATH_afe58ecf2bb5c0187cbc8c9b0cfe03100}\label{classGUI_1_1ATH_afe58ecf2bb5c0187cbc8c9b0cfe03100} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+ATH} ()
+\begin{DoxyCompactList}\small\item\em The default destructor for the \doxylink{classGUI_1_1ATH}{ATH} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1ATH_aa859690c9f5d6193677099d38729187f}{display}} ()
+\begin{DoxyCompactList}\small\item\em This method is responsible for drawing all of the GUI elements on the screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1AGUI}{GUI\+::\+AGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGUI_1_1AGUI_a391f1bf6b6db1ae0fed4293c7e94a16e}{\texorpdfstring{$\sim$}{\string~}\+AGUI}} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classGUI_1_1AGUI}{AGUI} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AGUI_a379e08a1dc1b4751c388c20816d7926e}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the GUI. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AGUI_a9e180aa601d7f7e0492cd315b122d8b2}{init}} (sf\+::\+Render\+Window \&window, sf\+::\+Clock \&clock, \mbox{\hyperlink{classObjectsList}{Objects\+List}} \&world)
+\begin{DoxyCompactList}\small\item\em Initializes the GUI. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classGUI_1_1AGUI_ae6dc84b25ff036308f7c4757adb11205}{has\+To\+Display}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the GUI should be displayed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGUI_1_1AGUI_a99b90f4cffacf82946ae08659a19c35b}{set\+Display}} (bool \mbox{\hyperlink{classGUI_1_1AGUI_afa7a3534aa4e47edea79c3e8bcfb2115}{display}})
+\begin{DoxyCompactList}\small\item\em Sets whether the GUI should be displayed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classGUI_1_1IGUI}{GUI\+::\+IGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \mbox{\hyperlink{classGUI_1_1IGUI_a6da7dffd12006282fe449229e0dd7f0b}{\texorpdfstring{$\sim$}{\string~}\+IGUI}} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classGUI_1_1ATH_adaa36cbc5b13f34aad8c1dd1fb7ae023}\label{classGUI_1_1ATH_adaa36cbc5b13f34aad8c1dd1fb7ae023} 
+\mbox{\hyperlink{classGUI_1_1IGUI}{IGUI}} \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+main\+Panel}
+\begin{DoxyCompactList}\small\item\em A pointer to the main panel of the GUI. \end{DoxyCompactList}\item 
+\Hypertarget{classGUI_1_1ATH_ae302724bcf3d46c372b5ae6b922b3550}\label{classGUI_1_1ATH_ae302724bcf3d46c372b5ae6b922b3550} 
+\mbox{\hyperlink{classGUI_1_1ToolBar}{Tool\+Bar}} \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+tool\+Bar}
+\begin{DoxyCompactList}\small\item\em A pointer to the tool bar of the GUI. \end{DoxyCompactList}\item 
+\Hypertarget{classGUI_1_1ATH_ab8e0fcfb0d82dba2a3faa4109f3dc65b}\label{classGUI_1_1ATH_ab8e0fcfb0d82dba2a3faa4109f3dc65b} 
+\mbox{\hyperlink{classGUI_1_1IGUI}{IGUI}} \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+control\+Panel}
+\begin{DoxyCompactList}\small\item\em A pointer to the control panel of the GUI. \end{DoxyCompactList}\item 
+\Hypertarget{classGUI_1_1ATH_a31b020dc5a4fa51d50a468df30bf5861}\label{classGUI_1_1ATH_a31b020dc5a4fa51d50a468df30bf5861} 
+\mbox{\hyperlink{classGUI_1_1IGUI}{IGUI}} \texorpdfstring{$\ast$}{*} {\bfseries \+\_\+temp\+Panel}
+\begin{DoxyCompactList}\small\item\em A pointer to a temporary panel used for holding GUI elements temporarily. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classGUI_1_1AGUI}{GUI\+::\+AGUI}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classGUI_1_1AGUI_ab87e6df8e4b3079e8ba8b039cc730138}{\+\_\+display}} = false
+\begin{DoxyCompactList}\small\item\em Flag indicating whether the GUI should be displayed. \end{DoxyCompactList}\item 
+sf\+::\+Render\+Window \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGUI_1_1AGUI_adc6c12e2e09870719ecfd580bae605e8}{\+\_\+window}}
+\begin{DoxyCompactList}\small\item\em Pointer to the window on which the GUI will be displayed. \end{DoxyCompactList}\item 
+sf\+::\+Clock \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGUI_1_1AGUI_a84fd5365623b5830fd80677000f779e0}{\+\_\+clock}}
+\begin{DoxyCompactList}\small\item\em Pointer to the clock used to track time for animations and updates. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classObjectsList}{Objects\+List}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classGUI_1_1AGUI_af365422bad4d8f84316e362a77425544}{\+\_\+world}}
+\begin{DoxyCompactList}\small\item\em Pointer to the world object containing all the objects in the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classGUI_1_1ATH}{ATH} class is an abstract class that serves as the base class for all Athena GUI elements. 
+
+It provides the basic functionality for creating and managing GUI elements, such as panels, toolbars, and controls. The \doxylink{classGUI_1_1ATH}{ATH} class is designed to be inherited by other GUI classes, allowing for a hierarchical structure of GUI elements.
+
+The \doxylink{classGUI_1_1ATH}{ATH} class provides a number of methods for creating and managing GUI elements, such as add\+Panel(), add\+Tool\+Bar(), and add\+Control(). These methods allow developers to easily create complex GUI interfaces by simply calling a series of methods.
+
+In addition, the \doxylink{classGUI_1_1ATH}{ATH} class provides a \doxylink{classGUI_1_1ATH_aa859690c9f5d6193677099d38729187f}{display()} method, which is responsible for drawing all of the GUI elements on the screen. This method is called automatically by the Athena engine, ensuring that the GUI elements are always up to date.
+
+Overall, the \doxylink{classGUI_1_1ATH}{ATH} class provides a powerful and flexible framework for creating GUI elements in Athena, making it an essential component of any GUI-\/based application. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classGUI_1_1ATH_aa859690c9f5d6193677099d38729187f}\label{classGUI_1_1ATH_aa859690c9f5d6193677099d38729187f} 
+\index{GUI::ATH@{GUI::ATH}!display@{display}}
+\index{display@{display}!GUI::ATH@{GUI::ATH}}
+\doxysubsubsection{\texorpdfstring{display()}{display()}}
+{\footnotesize\ttfamily void GUI\+::\+ATH\+::display (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+This method is responsible for drawing all of the GUI elements on the screen. 
+
+It is called automatically by the Athena engine, ensuring that the GUI elements are always up to date. 
+
+Implements \mbox{\hyperlink{classGUI_1_1AGUI_afa7a3534aa4e47edea79c3e8bcfb2115}{GUI\+::\+AGUI}}.
+
+
+
+Reimplemented in \mbox{\hyperlink{classRaytracerATH_a4cdbd634beb19bf2b2633fde7fa79c20}{Raytracer\+ATH}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+GUI/Ath.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,159 @@
+\doxysection{Ray Class Reference}
+\hypertarget{classRay}{}\label{classRay}\index{Ray@{Ray}}
+
+
+Represents a ray in 3D space.  
+
+
+
+
+{\ttfamily \#include $<$Ray.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classRay_a2e3d2c29f2df4ab3da10da79d4acb852}\label{classRay_a2e3d2c29f2df4ab3da10da79d4acb852} 
+{\bfseries Ray} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. Initializes the ray with a point and direction of zero vectors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classRay_a26bee1c5a79a5e49dc27143a810f01cb}{Ray}} (\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ point, \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ direction)
+\begin{DoxyCompactList}\small\item\em Constructor. Initializes the ray with the given point and direction. \end{DoxyCompactList}\item 
+\Hypertarget{classRay_af6c537b442c79b6831e607aa384c2089}\label{classRay_af6c537b442c79b6831e607aa384c2089} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+Ray} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classRay_a3d7051384c670b2c179da61fe9996307}{get\+Point}} () const
+\begin{DoxyCompactList}\small\item\em Get the starting point of the ray. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classRay_aafc5bd0c9b0f6a5a78518b10044d5555}{get\+Direction}} () const
+\begin{DoxyCompactList}\small\item\em Get the direction of the ray. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRay_a389cfee85dcaab09d2b74e07478c9a1a}{set\+Point}} (\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ point)
+\begin{DoxyCompactList}\small\item\em Set the starting point of the ray. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classRay_a15fe31b7098a4b110d58350cd4bba19a}{set\+Direction}} (\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ direction)
+\begin{DoxyCompactList}\small\item\em Set the direction of the ray. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classRay_a28be1a92d69b1779c91c3be3cf08b374}{at}} (double t) const
+\begin{DoxyCompactList}\small\item\em Get the point at a given distance along the ray. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classRay_a4016bb3444acda57ec38a94d211a75c2}{\+\_\+point}}
+\item 
+\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \mbox{\hyperlink{classRay_a6efd7507661d10ae5306f8e4ab723d25}{\+\_\+direction}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a ray in 3D space. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classRay_a26bee1c5a79a5e49dc27143a810f01cb}\label{classRay_a26bee1c5a79a5e49dc27143a810f01cb} 
+\index{Ray@{Ray}!Ray@{Ray}}
+\index{Ray@{Ray}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{Ray()}{Ray()}}
+{\footnotesize\ttfamily Ray\+::\+Ray (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$}]{point,  }\item[{\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$}]{direction }\end{DoxyParamCaption})}
+
+
+
+Constructor. Initializes the ray with the given point and direction. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The starting point of the ray. \\
+\hline
+{\em direction} & The direction of the ray. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classRay_a28be1a92d69b1779c91c3be3cf08b374}\label{classRay_a28be1a92d69b1779c91c3be3cf08b374} 
+\index{Ray@{Ray}!at@{at}}
+\index{at@{at}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{at()}{at()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ Ray\+::at (\begin{DoxyParamCaption}\item[{double}]{t }\end{DoxyParamCaption}) const}
+
+
+
+Get the point at a given distance along the ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The distance along the ray. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The point at the given distance along the ray. 
+\end{DoxyReturn}
+\Hypertarget{classRay_aafc5bd0c9b0f6a5a78518b10044d5555}\label{classRay_aafc5bd0c9b0f6a5a78518b10044d5555} 
+\index{Ray@{Ray}!getDirection@{getDirection}}
+\index{getDirection@{getDirection}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{getDirection()}{getDirection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ Ray\+::get\+Direction (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the direction of the ray. 
+
+\begin{DoxyReturn}{Returns}
+The direction of the ray. 
+\end{DoxyReturn}
+\Hypertarget{classRay_a3d7051384c670b2c179da61fe9996307}\label{classRay_a3d7051384c670b2c179da61fe9996307} 
+\index{Ray@{Ray}!getPoint@{getPoint}}
+\index{getPoint@{getPoint}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{getPoint()}{getPoint()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ Ray\+::get\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the starting point of the ray. 
+
+\begin{DoxyReturn}{Returns}
+The starting point of the ray. 
+\end{DoxyReturn}
+\Hypertarget{classRay_a15fe31b7098a4b110d58350cd4bba19a}\label{classRay_a15fe31b7098a4b110d58350cd4bba19a} 
+\index{Ray@{Ray}!setDirection@{setDirection}}
+\index{setDirection@{setDirection}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{setDirection()}{setDirection()}}
+{\footnotesize\ttfamily void Ray\+::set\+Direction (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$}]{direction }\end{DoxyParamCaption})}
+
+
+
+Set the direction of the ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em direction} & The new direction of the ray. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classRay_a389cfee85dcaab09d2b74e07478c9a1a}\label{classRay_a389cfee85dcaab09d2b74e07478c9a1a} 
+\index{Ray@{Ray}!setPoint@{setPoint}}
+\index{setPoint@{setPoint}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{setPoint()}{setPoint()}}
+{\footnotesize\ttfamily void Ray\+::set\+Point (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$}]{point }\end{DoxyParamCaption})}
+
+
+
+Set the starting point of the ray. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em point} & The new starting point of the ray. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classRay_a6efd7507661d10ae5306f8e4ab723d25}\label{classRay_a6efd7507661d10ae5306f8e4ab723d25} 
+\index{Ray@{Ray}!\_direction@{\_direction}}
+\index{\_direction@{\_direction}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{\_direction}{\_direction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$ Ray\+::\+\_\+direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+The direction of the ray. \Hypertarget{classRay_a4016bb3444acda57ec38a94d211a75c2}\label{classRay_a4016bb3444acda57ec38a94d211a75c2} 
+\index{Ray@{Ray}!\_point@{\_point}}
+\index{\_point@{\_point}!Ray@{Ray}}
+\doxysubsubsection{\texorpdfstring{\_point}{\_point}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$3$>$ Ray\+::\+\_\+point\hspace{0.3cm}{\ttfamily [protected]}}
+
+The starting point of the ray. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/Ray.\+hpp\end{DoxyCompactItemize}

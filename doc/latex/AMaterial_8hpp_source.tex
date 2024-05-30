@@ -1,0 +1,64 @@
+\doxysection{AMaterial.\+hpp}
+\hypertarget{AMaterial_8hpp_source}{}\label{AMaterial_8hpp_source}\index{include/AMaterial.hpp@{include/AMaterial.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ AMaterial}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}raytracer.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}IMaterial.hpp"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAMaterial}{AMaterial}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classIMaterial}{IMaterial}}\ \{}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAMaterial_a35aa35d365184b2851b091e6e375d13f}{\string~AMaterial}}()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classAMaterial_aabaa0691d092f33ce4827f7c05fc9c6a}{emitted}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRay}{Ray}}\&\ ray,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHitRecord}{HitRecord}}\&\ record,\ \textcolor{keywordtype}{double}\ u,\ \textcolor{keywordtype}{double}\ v,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\&\ point)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAMaterial_ae9132628a8b6b720e3b63de5885f5957}{scatter}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRay}{Ray}}\&\ ray,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHitRecord}{HitRecord}}\&\ hit,\ \mbox{\hyperlink{classColor}{Color}}\&\ attenuation,\ \mbox{\hyperlink{classRay}{Ray}}\&\ scattered)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ typeSet(std::string\ type\_)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \_stringType\ =\ type\_;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ std::string\ typeGet(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_stringType;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ hasTextureSet(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \_isTexture\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \_isColor\ =\ !\_isTexture;}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ hasColorSet(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \_isColor\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \_isTexture\ =\ !\_isColor;}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasTextureGet(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_isTexture;}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ hasColorGet(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \_isColor;}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00075\ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ Type\ getType()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classAMaterial_aceefd2a6cc57189f12b6d0d739558da6}{\_type}};\ \}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ getAlbedo()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ this-\/>\mbox{\hyperlink{classAMaterial_ae50e64c6c65815089401715bf85ecf81}{\_albedo}};\ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ setAlbedo(\textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\ \&color)\ \{\ this-\/>\mbox{\hyperlink{classAMaterial_ae50e64c6c65815089401715bf85ecf81}{\_albedo}}\ =\ color;\ \}}
+\DoxyCodeLine{00080\ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classAMaterial_ae50e64c6c65815089401715bf85ecf81}{\_albedo}};\ }
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ std::string\ \_stringType;}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_isTexture;}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \_isColor;}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ Type\ \mbox{\hyperlink{classAMaterial_aceefd2a6cc57189f12b6d0d739558da6}{\_type}};\ }
+\DoxyCodeLine{00086\ \};}
+
+\end{DoxyCode}

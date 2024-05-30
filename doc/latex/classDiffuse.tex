@@ -1,0 +1,163 @@
+\doxysection{Diffuse Class Reference}
+\hypertarget{classDiffuse}{}\label{classDiffuse}\index{Diffuse@{Diffuse}}
+
+
+The \doxylink{classDiffuse}{Diffuse} class represents a material with diffuse properties.  
+
+
+
+
+{\ttfamily \#include $<$Diffuse.\+hpp$>$}
+
+Inheritance diagram for Diffuse\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classDiffuse}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDiffuse_afab00754136c92fa2765f8ba576c1abb}{Diffuse}} (const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$ \&texture)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classDiffuse}{Diffuse} material with the given texture. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classDiffuse_a3ec2c1d7d285d250f8ac5f92cc5cb624}{Diffuse}} (const \mbox{\hyperlink{classColor}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classDiffuse}{Diffuse} material with the given color. \end{DoxyCompactList}\item 
+\Hypertarget{classDiffuse_a5a79a6e9b77410f09a0715d1ca1e3747}\label{classDiffuse_a5a79a6e9b77410f09a0715d1ca1e3747} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Diffuse} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classDiffuse}{Diffuse} material. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classDiffuse_aef3ba3c8c6ee9d3de0b3b07f9043d490}{emitted}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&record, double u, double v, const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&point) const override
+\begin{DoxyCompactList}\small\item\em Calculates the emitted color of the material. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classAMaterial}{AMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+AMaterial} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classAMaterial_ae9132628a8b6b720e3b63de5885f5957}{scatter}} (const \mbox{\hyperlink{classRay}{Ray}} \&ray, const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&hit, \mbox{\hyperlink{classColor}{Color}} \&attenuation, \mbox{\hyperlink{classRay}{Ray}} \&scattered) const override
+\begin{DoxyCompactList}\small\item\em Scatter a ray off the material\textquotesingle{}s surface. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAMaterial_a3952275d5311d2afe98a684aa1659b84}{type\+Set}} (std\+::string type\+\_\+)
+\item 
+std\+::string \mbox{\hyperlink{classAMaterial_a1d471b042cd38e5e8b7579c15150cde8}{type\+Get}} (void)
+\item 
+void \mbox{\hyperlink{classAMaterial_ad00a04b9816304b27d28805a42995eec}{has\+Texture\+Set}} (void)
+\item 
+void \mbox{\hyperlink{classAMaterial_a8c8b19a49bb61a72b625e89e9aa5aa4d}{has\+Color\+Set}} (void)
+\item 
+bool \mbox{\hyperlink{classAMaterial_a8fe6c611f749cc43630ee99ccf22869c}{has\+Texture\+Get}} (void)
+\item 
+bool \mbox{\hyperlink{classAMaterial_a73c401db227fa67baa47823fffc77bb1}{has\+Color\+Get}} (void)
+\item 
+Type \mbox{\hyperlink{classAMaterial_afa565ccecc3e4e49939f40e55e887343}{get\+Type}} () const
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_af5e47705ad75d1d6f9f46193cefd6275}{get\+Albedo}} () const
+\item 
+void \mbox{\hyperlink{classAMaterial_ab09905c92264662aed34138be1c568af}{set\+Albedo}} (const \mbox{\hyperlink{classColor}{Color}} \&color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classIMaterial}{IMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+IMaterial} ()=default
+\begin{DoxyCompactList}\small\item\em Virtual destructor for \doxylink{classIMaterial}{IMaterial}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classIMaterial}{IMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea}\label{classIMaterial_af45ebaf46dfa65b33da08d099c8122ea} 
+enum {\bfseries Type} \{ {\bfseries DIELECTRIC}
+, {\bfseries LAMBERTIAN}
+, {\bfseries METAL}
+, {\bfseries NONE}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classAMaterial}{AMaterial}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classAMaterial_ae50e64c6c65815089401715bf85ecf81}{\+\_\+albedo}}
+\item 
+std\+::string {\bfseries \+\_\+string\+Type}
+\item 
+bool {\bfseries \+\_\+is\+Texture}
+\item 
+bool {\bfseries \+\_\+is\+Color}
+\item 
+Type \mbox{\hyperlink{classAMaterial_aceefd2a6cc57189f12b6d0d739558da6}{\+\_\+type}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classDiffuse}{Diffuse} class represents a material with diffuse properties. 
+
+The \doxylink{classDiffuse}{Diffuse} class is a subclass of \doxylink{classAMaterial}{AMaterial} and represents a diffuse material. A diffuse material is a material that scatters light in all directions.
+
+This class inherits from the \doxylink{classAMaterial}{AMaterial} class and provides an implementation for the \doxylink{classDiffuse_aef3ba3c8c6ee9d3de0b3b07f9043d490}{emitted()} function, which calculates the emitted color of the material based on the given ray, hit record, texture coordinates, and point in 3D space. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classDiffuse_afab00754136c92fa2765f8ba576c1abb}\label{classDiffuse_afab00754136c92fa2765f8ba576c1abb} 
+\index{Diffuse@{Diffuse}!Diffuse@{Diffuse}}
+\index{Diffuse@{Diffuse}!Diffuse@{Diffuse}}
+\doxysubsubsection{\texorpdfstring{Diffuse()}{Diffuse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Diffuse\+::\+Diffuse (\begin{DoxyParamCaption}\item[{const std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classITexture}{ITexture}} $>$ \&}]{texture }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classDiffuse}{Diffuse} material with the given texture. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em texture} & The texture to be used for the material. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classDiffuse_a3ec2c1d7d285d250f8ac5f92cc5cb624}\label{classDiffuse_a3ec2c1d7d285d250f8ac5f92cc5cb624} 
+\index{Diffuse@{Diffuse}!Diffuse@{Diffuse}}
+\index{Diffuse@{Diffuse}!Diffuse@{Diffuse}}
+\doxysubsubsection{\texorpdfstring{Diffuse()}{Diffuse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Diffuse\+::\+Diffuse (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{color }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classDiffuse}{Diffuse} material with the given color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em color} & The color to be used for the material. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDiffuse_aef3ba3c8c6ee9d3de0b3b07f9043d490}\label{classDiffuse_aef3ba3c8c6ee9d3de0b3b07f9043d490} 
+\index{Diffuse@{Diffuse}!emitted@{emitted}}
+\index{emitted@{emitted}!Diffuse@{Diffuse}}
+\doxysubsubsection{\texorpdfstring{emitted()}{emitted()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Diffuse\+::emitted (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classRay}{Ray}} \&}]{ray,  }\item[{const \mbox{\hyperlink{classHitRecord}{Hit\+Record}} \&}]{record,  }\item[{double}]{u,  }\item[{double}]{v,  }\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{point }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calculates the emitted color of the material. 
+
+This function calculates the emitted color of the material based on the given ray, hit record, texture coordinates, and point in 3D space.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ray} & The ray that hit the material. \\
+\hline
+{\em record} & The hit record containing information about the intersection. \\
+\hline
+{\em u} & The texture coordinate along the U axis. \\
+\hline
+{\em v} & The texture coordinate along the V axis. \\
+\hline
+{\em point} & The point in 3D space where the ray hit the material. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The emitted color of the material. 
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{classAMaterial_aabaa0691d092f33ce4827f7c05fc9c6a}{AMaterial}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Light/Diffuse.\+hpp\end{DoxyCompactItemize}

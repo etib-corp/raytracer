@@ -1,0 +1,135 @@
+\doxysection{Solid\+Color Class Reference}
+\hypertarget{classSolidColor}{}\label{classSolidColor}\index{SolidColor@{SolidColor}}
+
+
+The \doxylink{classSolidColor}{Solid\+Color} class represents a solid color texture.  
+
+
+
+
+{\ttfamily \#include $<$Solid\+Color.\+hpp$>$}
+
+Inheritance diagram for Solid\+Color\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classSolidColor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSolidColor_a6efa6c3233d1790904bfab3b25fcdb40}{Solid\+Color}} (const \mbox{\hyperlink{classColor}{Color}} \&albedo)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classSolidColor}{Solid\+Color} object with the specified albedo color. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classSolidColor_ae33003e4a61218655590ee0b6dda75bc}{Solid\+Color}} (double r, double g, double b)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classSolidColor}{Solid\+Color} object with the specified RGB values. \end{DoxyCompactList}\item 
+\Hypertarget{classSolidColor_aaad12c5476814f694fcc47e574a01d6c}\label{classSolidColor_aaad12c5476814f694fcc47e574a01d6c} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Solid\+Color} ()
+\begin{DoxyCompactList}\small\item\em Destroys the \doxylink{classSolidColor}{Solid\+Color} object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classSolidColor_af52a6658b0e038f68e1da2149a1fae75}{value}} (double u, double v, const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&p) const override
+\begin{DoxyCompactList}\small\item\em Returns the color value of the solid color texture for the given UV coordinate and point. \end{DoxyCompactList}\item 
+\Hypertarget{classSolidColor_a9f080a3a8be3eac8d70c935afb76f29e}\label{classSolidColor_a9f080a3a8be3eac8d70c935afb76f29e} 
+void {\bfseries set\+Albedo} (\mbox{\hyperlink{classColor}{Color}} albedo)
+\item 
+\Hypertarget{classSolidColor_a92d70dd0639fae3812ad9354081f2920}\label{classSolidColor_a92d70dd0639fae3812ad9354081f2920} 
+\mbox{\hyperlink{classColor}{Color}} {\bfseries get\+Albedo} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classATexture}{ATexture}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual Type \mbox{\hyperlink{classATexture_a6ab734307064f67f7c411e7dc5289794}{get\+Type}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classITexture}{ITexture}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+ITexture} ()=default
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classITexture}{ITexture} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Types inherited from \mbox{\hyperlink{classITexture}{ITexture}}}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classITexture_a1baf6cf8c57300b8d05540921e7a014c}\label{classITexture_a1baf6cf8c57300b8d05540921e7a014c} 
+enum {\bfseries Type} \{ {\bfseries CHECKER}
+, {\bfseries SOLIDCOLOR}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{classATexture}{ATexture}}}
+\begin{DoxyCompactItemize}
+\item 
+Type {\bfseries \+\_\+type}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The \doxylink{classSolidColor}{Solid\+Color} class represents a solid color texture. 
+
+This class inherits from the \doxylink{classATexture}{ATexture} base class and provides a solid color value for a given UV coordinate and point. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classSolidColor_a6efa6c3233d1790904bfab3b25fcdb40}\label{classSolidColor_a6efa6c3233d1790904bfab3b25fcdb40} 
+\index{SolidColor@{SolidColor}!SolidColor@{SolidColor}}
+\index{SolidColor@{SolidColor}!SolidColor@{SolidColor}}
+\doxysubsubsection{\texorpdfstring{SolidColor()}{SolidColor()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Solid\+Color\+::\+Solid\+Color (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classColor}{Color}} \&}]{albedo }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classSolidColor}{Solid\+Color} object with the specified albedo color. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em albedo} & The albedo color of the solid color texture. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classSolidColor_ae33003e4a61218655590ee0b6dda75bc}\label{classSolidColor_ae33003e4a61218655590ee0b6dda75bc} 
+\index{SolidColor@{SolidColor}!SolidColor@{SolidColor}}
+\index{SolidColor@{SolidColor}!SolidColor@{SolidColor}}
+\doxysubsubsection{\texorpdfstring{SolidColor()}{SolidColor()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Solid\+Color\+::\+Solid\+Color (\begin{DoxyParamCaption}\item[{double}]{r,  }\item[{double}]{g,  }\item[{double}]{b }\end{DoxyParamCaption})}
+
+
+
+Constructs a \doxylink{classSolidColor}{Solid\+Color} object with the specified RGB values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em r} & The red component of the albedo color. \\
+\hline
+{\em g} & The green component of the albedo color. \\
+\hline
+{\em b} & The blue component of the albedo color. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classSolidColor_af52a6658b0e038f68e1da2149a1fae75}\label{classSolidColor_af52a6658b0e038f68e1da2149a1fae75} 
+\index{SolidColor@{SolidColor}!value@{value}}
+\index{value@{value}!SolidColor@{SolidColor}}
+\doxysubsubsection{\texorpdfstring{value()}{value()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} Solid\+Color\+::value (\begin{DoxyParamCaption}\item[{double}]{u,  }\item[{double}]{v,  }\item[{const \mbox{\hyperlink{classMath_1_1Vector}{Math\+::\+Vector}}$<$ 3 $>$ \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Returns the color value of the solid color texture for the given UV coordinate and point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em u} & The U coordinate. \\
+\hline
+{\em v} & The V coordinate. \\
+\hline
+{\em p} & The point in 3D space. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The color value of the solid color texture. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classATexture_a8521af7718fd997e6989f0f05f70fb66}{ATexture}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Texture/Solid\+Color.\+hpp\end{DoxyCompactItemize}

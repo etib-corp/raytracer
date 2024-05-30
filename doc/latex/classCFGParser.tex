@@ -1,0 +1,664 @@
+\doxysection{CFGParser Class Reference}
+\hypertarget{classCFGParser}{}\label{classCFGParser}\index{CFGParser@{CFGParser}}
+
+
+A class for parsing configuration files and extracting camera and primitive information.  
+
+
+
+
+{\ttfamily \#include $<$CFGParser.\+hpp$>$}
+
+Inheritance diagram for CFGParser\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCFGParser}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCFGParser_ad5b070b18f243a4fc5c6ca6c3acaf922}{CFGParser}} (const std\+::string \&filename)
+\begin{DoxyCompactList}\small\item\em Constructs a \doxylink{classCFGParser}{CFGParser} object. \end{DoxyCompactList}\item 
+std\+::pair$<$ d64, d64 $>$ \mbox{\hyperlink{classCFGParser_a3967da15e5d13157fb3f558dc66813cb}{camera\+Resolution\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the camera resolution from the configuration file. \end{DoxyCompactList}\item 
+std\+::tuple$<$ d64, d64, d64 $>$ \mbox{\hyperlink{classCFGParser_aded48e9a30bbba7f2afa67c823a38962}{camera\+Position\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the camera position from the configuration file. \end{DoxyCompactList}\item 
+std\+::tuple$<$ d64, d64, d64 $>$ \mbox{\hyperlink{classCFGParser_a5983c25ca931e0114610a3a319a21eaf}{camera\+Position\+At\+Get}} (void) const
+\begin{DoxyCompactList}\small\item\em Retrieves the camera position at from the configuration file. \end{DoxyCompactList}\item 
+std\+::tuple$<$ i32, i32, i32 $>$ \mbox{\hyperlink{classCFGParser_a82f6bdb47226e052cef5bc3b39d89266}{camera\+Rotation\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the camera rotation from the configuration file. \end{DoxyCompactList}\item 
+d64 \mbox{\hyperlink{classCFGParser_a608b0d777725806c6c21e60a4a29b973}{field\+Of\+View\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the field of view from the configuration file. \end{DoxyCompactList}\item 
+i32 \mbox{\hyperlink{classCFGParser_ae3453e61d626b889225ad0a72c5a00de}{camera\+Max\+Depth\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the maximum depth of the camera from the configuration file. \end{DoxyCompactList}\item 
+i32 \mbox{\hyperlink{classCFGParser_a1d91f381b44df38a755a16bb28226e60}{camera\+Sample\+Per\+Pixel\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the sample per pixel value from the configuration file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCFGParser_a0e9862d2f54a8ff41086b0f2b20b826c}{camera\+Light\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the light value from the configuration file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classCFGParser_acd6a09d7f65a899b42a6f38d94fb3987}{camera\+Background\+Color\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the background color of the camera from the configuration file. \end{DoxyCompactList}\item 
+const Setting \& \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{get\+Root}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the root setting of the configuration file. \end{DoxyCompactList}\item 
+const Setting \& \mbox{\hyperlink{classCFGParser_a8ac3f02c9399d452e5a56c19dcb5d118}{plane\+Get\+Root}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the root setting of the plane section in the configuration file. \end{DoxyCompactList}\item 
+ui32 \mbox{\hyperlink{classCFGParser_a3fc198b71d699c1b22e3682f9ed1d301}{nb\+Sphere\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the number of spheres in the configuration file. \end{DoxyCompactList}\item 
+ui32 \mbox{\hyperlink{classCFGParser_a64c259b9debd7627321d443ee6809973}{nb\+Cylindre\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the number of cylinders in the configuration file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPosition}{Position}} \mbox{\hyperlink{classCFGParser_a203d157fb212693bd79c44be92950e68}{with\+Cylindre\+Position\+Get}} (const ui32 index)
+\begin{DoxyCompactList}\small\item\em Retrieves the position of a specific cylinder from the configuration file. \end{DoxyCompactList}\item 
+d64 \mbox{\hyperlink{classCFGParser_a1977d957b7d2f1bb08abd910c2daa87c}{with\+Cylindre\+Radius\+Get}} (const ui32 index)
+\begin{DoxyCompactList}\small\item\em Retrieves the radius of a specific cylinder from the configuration file. \end{DoxyCompactList}\item 
+d64 \mbox{\hyperlink{classCFGParser_a3b5e7a1bbcd538b6d72f65edff4eb9bb}{with\+Cylindre\+Depth\+Get}} (const ui32 index)
+\begin{DoxyCompactList}\small\item\em Retrieves the depth of a specific cylinder from the configuration file. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPMaterial}{PMaterial}} \mbox{\hyperlink{classCFGParser_aa6a9b4facc36e0a05e1852044060b03a}{with\+Cylindre\+Material\+Get}} (const ui32 index)
+\begin{DoxyCompactList}\small\item\em Retrieves the material of a specific cylinder from the configuration file. \end{DoxyCompactList}\item 
+ui32 \mbox{\hyperlink{classCFGParser_a12a6d596cf7e55ffd949a583a9ca8d5c}{nb\+Lights\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Get the number of point lights in the configuration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPosition}{Position}} \mbox{\hyperlink{classCFGParser_afc706d458b7b920b5b009d80356337c7}{with\+Sphere\+Position\+Get}} (const ui32 index)
+\begin{DoxyCompactList}\small\item\em Retrieves the position of a sphere at the specified index. \end{DoxyCompactList}\item 
+i32 \mbox{\hyperlink{classCFGParser_aef2d0ccc20655d5df9463f1bcba3b539}{with\+Sphere\+Radius\+Get}} (const ui32 index)
+\begin{DoxyCompactList}\small\item\em Retrieves the radius of a sphere at the specified index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classCFGParser_ad7ed82f30dfaf8b797b888645f90996a}{with\+Sphere\+Color\+Get}} (const ui32 index)
+\begin{DoxyCompactList}\small\item\em Retrieves the color of a sphere at the specified index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRotation}{Rotation}} \mbox{\hyperlink{classCFGParser_a09163d698fa7d78caf25a15e76b5a866}{with\+Sphere\+Rotation\+Get}} (const ui32 index)
+\begin{DoxyCompactList}\small\item\em Retrieves the rotation values for a sphere at the specified index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structTranslation}{Translation}} \mbox{\hyperlink{classCFGParser_a82b6f94d3ffdd7a5101af6cc45c8a69a}{with\+Sphere\+Translation\+Get}} (const ui32 index)
+\begin{DoxyCompactList}\small\item\em Retrieves the translation values for a sphere at the specified index. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classPMaterial}{PMaterial}} \mbox{\hyperlink{classCFGParser_a50aabe78a47a75dfaa8839805c71ad38}{with\+Sphere\+Material\+Get}} (const ui32 index)
+\begin{DoxyCompactList}\small\item\em Retrieves the material information for a sphere at the specified index. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classCFGParser_a5e3614739f1e972639833207064902e8}{plane\+Axis\+Get}} (const ui32 index)
+\begin{DoxyCompactList}\small\item\em Retrieves the axis of a plane at the specified index. \end{DoxyCompactList}\item 
+i32 \mbox{\hyperlink{classCFGParser_a115aa1143e13ff6b50bce7c87b3987cf}{plane\+Position\+Get}} (const ui32 index)
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classCFGParser_af889e1a6eeaf8cb5932758f82f8180e4}{plane\+Color\+Get}} (const ui32 index)
+\item 
+ui32 \mbox{\hyperlink{classCFGParser_ac4dcd28629c39386f3c03a9b269ac38a}{nb\+Plane\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Get the number of planes in the configuration file. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCFGParser_ab2ff345c4bab71f39b2e6d4ce92982bc}{lights\+Ambient\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Retrieves the ambient light value from the configuration file. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classCFGParser_a3a885920276ed4dc2cfb46ef6a47a3f8}{lights\+Diffuse\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the value of the diffuse property for lights. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structPoint}{Point}} \mbox{\hyperlink{classCFGParser_a4c4c7cf12cf1ace21be92813c6548fca}{lights\+Point\+Get}} (const ui32 index)
+\begin{DoxyCompactList}\small\item\em Retrieves the coordinates of a point light source at the specified index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{classColor}{Color}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classColor_ac2d505b186fb1faf0ce5d3945b1ff5c1}{Color}} (double r, double g, double b, double a=1.\+0)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classColor}{Color} object with the specified red, green, and blue values, along with an optional alpha value. If the alpha value is not provided, it defaults to 1.\+0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor_a7b075d27e3bbdde7cbe648dc3b804261}{Color}} (const \mbox{\hyperlink{classColor}{Color}} \&color)
+\begin{DoxyCompactList}\small\item\em Constructs a new \doxylink{classColor}{Color} object from an existing one. \end{DoxyCompactList}\item 
+{\bfseries Color} ()
+\begin{DoxyCompactList}\small\item\em Default constructor that initializes the color with red, green, and blue components set to 0, and the alpha component set to 1.\+0. \end{DoxyCompactList}\item 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Color} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \doxylink{classColor}{Color} class. \end{DoxyCompactList}\item 
+void {\bfseries write} (std\+::ostream \&out)
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classColor_a457a855b1394e379aca1c55c1eb9bec1}{operator\texorpdfstring{$\ast$}{*}}} (double scalar) const
+\begin{DoxyCompactList}\small\item\em Overloaded assignment operator that assigns the values of one \doxylink{classColor}{Color} object to another. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classColor}{Color}} {\bfseries operator\texorpdfstring{$\ast$}{*}} (const \mbox{\hyperlink{classColor}{Color}} \&color) const
+\item 
+\mbox{\hyperlink{classColor}{Color}} \mbox{\hyperlink{classColor_acd40b26ca2f9217b5cde1e5c1251ef04}{operator+}} (const \mbox{\hyperlink{classColor}{Color}} \&color) const
+\begin{DoxyCompactList}\small\item\em Overloaded addition operator that adds the values of one \doxylink{classColor}{Color} object to another. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{classColor}{Color}}}
+\begin{DoxyCompactItemize}
+\item 
+static double {\bfseries linear\+To\+Gamma} (double linear)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{classColor}{Color}}}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classColor_a2337ea72bc849039f73077d00ab42bbb}{red}}
+\item 
+double \mbox{\hyperlink{classColor_a0398a30128909996780fce10e039ac24}{green}}
+\item 
+double \mbox{\hyperlink{classColor_a0a35e5de46315db828b5bd56866d9fea}{blue}}
+\item 
+double \mbox{\hyperlink{classColor_aa14c59ce06c2a70f4683df266e26a261}{alpha}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structPosition}{Position}}}
+\begin{DoxyCompactItemize}
+\item 
+d64 \mbox{\hyperlink{structPosition_a4abaff849118a63d594482deff011a5b}{x}}
+\item 
+d64 \mbox{\hyperlink{structPosition_a002952392fd6c69db51ecbc5b7ba6465}{y}}
+\item 
+d64 \mbox{\hyperlink{structPosition_a69729b934adf2d14433bec4f481dec97}{z}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structRotation}{Rotation}}}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structRotation_a95137bb73362a8c5b1ffa2b8dfe3f547}{x}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structRotation_a3114808e870cb0702ae44a52114b2919}{y}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structRotation_a7b3f3d338fabff3bba61dcc27cdd2eb9}{z}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structTranslation}{Translation}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{structTranslation_afdc69d92469473347f36142a60350418}{x}}
+\item 
+int \mbox{\hyperlink{structTranslation_a0c95afe232432383be888ac10cf377cf}{y}}
+\item 
+int \mbox{\hyperlink{structTranslation_a54b3ffca815f61893265f616106b5f5b}{z}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{structPoint}{Point}}}
+\begin{DoxyCompactItemize}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}}
+\item 
+int32\+\_\+t \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for parsing configuration files and extracting camera and primitive information. 
+
+The \doxylink{classCFGParser}{CFGParser} class is responsible for reading a configuration file and extracting various camera and primitive properties. It provides methods to retrieve camera resolution, position, rotation, field of view, and other camera settings. It also provides methods to retrieve information about spheres, cylinders, lights, and other primitives defined in the configuration file. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCFGParser_ad5b070b18f243a4fc5c6ca6c3acaf922}\label{classCFGParser_ad5b070b18f243a4fc5c6ca6c3acaf922} 
+\index{CFGParser@{CFGParser}!CFGParser@{CFGParser}}
+\index{CFGParser@{CFGParser}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{CFGParser()}{CFGParser()}}
+{\footnotesize\ttfamily CFGParser\+::\+CFGParser (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructs a \doxylink{classCFGParser}{CFGParser} object. 
+
+This constructor reads the contents of the specified file and checks if it is a valid file. If the file is empty, it throws an exception and prints an error message to the standard error stream.
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The name of the file to be parsed. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCFGParser_acd6a09d7f65a899b42a6f38d94fb3987}\label{classCFGParser_acd6a09d7f65a899b42a6f38d94fb3987} 
+\index{CFGParser@{CFGParser}!cameraBackgroundColorGet@{cameraBackgroundColorGet}}
+\index{cameraBackgroundColorGet@{cameraBackgroundColorGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{cameraBackgroundColorGet()}{cameraBackgroundColorGet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} CFGParser\+::camera\+Background\+Color\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the background color of the camera from the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+The background color as a \doxylink{classColor}{Color} object. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a0e9862d2f54a8ff41086b0f2b20b826c}\label{classCFGParser_a0e9862d2f54a8ff41086b0f2b20b826c} 
+\index{CFGParser@{CFGParser}!cameraLightGet@{cameraLightGet}}
+\index{cameraLightGet@{cameraLightGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{cameraLightGet()}{cameraLightGet()}}
+{\footnotesize\ttfamily bool CFGParser\+::camera\+Light\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the light value from the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+true if the light is enabled, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_ae3453e61d626b889225ad0a72c5a00de}\label{classCFGParser_ae3453e61d626b889225ad0a72c5a00de} 
+\index{CFGParser@{CFGParser}!cameraMaxDepthGet@{cameraMaxDepthGet}}
+\index{cameraMaxDepthGet@{cameraMaxDepthGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{cameraMaxDepthGet()}{cameraMaxDepthGet()}}
+{\footnotesize\ttfamily i32 CFGParser\+::camera\+Max\+Depth\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the maximum depth of the camera from the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+The maximum depth value as an integer. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a5983c25ca931e0114610a3a319a21eaf}\label{classCFGParser_a5983c25ca931e0114610a3a319a21eaf} 
+\index{CFGParser@{CFGParser}!cameraPositionAtGet@{cameraPositionAtGet}}
+\index{cameraPositionAtGet@{cameraPositionAtGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{cameraPositionAtGet()}{cameraPositionAtGet()}}
+{\footnotesize\ttfamily std\+::tuple$<$ d64, d64, d64 $>$ CFGParser\+::camera\+Position\+At\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the camera position at from the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+A tuple of doubles representing the x, y, and z coordinates of the camera position at. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_aded48e9a30bbba7f2afa67c823a38962}\label{classCFGParser_aded48e9a30bbba7f2afa67c823a38962} 
+\index{CFGParser@{CFGParser}!cameraPositionGet@{cameraPositionGet}}
+\index{cameraPositionGet@{cameraPositionGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{cameraPositionGet()}{cameraPositionGet()}}
+{\footnotesize\ttfamily std\+::tuple$<$ d64, d64, d64 $>$ CFGParser\+::camera\+Position\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the camera position from the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+A tuple of doubles representing the x, y, and z coordinates of the camera position. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a3967da15e5d13157fb3f558dc66813cb}\label{classCFGParser_a3967da15e5d13157fb3f558dc66813cb} 
+\index{CFGParser@{CFGParser}!cameraResolutionGet@{cameraResolutionGet}}
+\index{cameraResolutionGet@{cameraResolutionGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{cameraResolutionGet()}{cameraResolutionGet()}}
+{\footnotesize\ttfamily std\+::pair$<$ d64, d64 $>$ CFGParser\+::camera\+Resolution\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the camera resolution from the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+A pair of doubles representing the width and height of the camera resolution. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a82f6bdb47226e052cef5bc3b39d89266}\label{classCFGParser_a82f6bdb47226e052cef5bc3b39d89266} 
+\index{CFGParser@{CFGParser}!cameraRotationGet@{cameraRotationGet}}
+\index{cameraRotationGet@{cameraRotationGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{cameraRotationGet()}{cameraRotationGet()}}
+{\footnotesize\ttfamily std\+::tuple$<$ i32, i32, i32 $>$ CFGParser\+::camera\+Rotation\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the camera rotation from the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+A tuple of integers representing the x, y, and z rotation angles of the camera. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a1d91f381b44df38a755a16bb28226e60}\label{classCFGParser_a1d91f381b44df38a755a16bb28226e60} 
+\index{CFGParser@{CFGParser}!cameraSamplePerPixelGet@{cameraSamplePerPixelGet}}
+\index{cameraSamplePerPixelGet@{cameraSamplePerPixelGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{cameraSamplePerPixelGet()}{cameraSamplePerPixelGet()}}
+{\footnotesize\ttfamily i32 CFGParser\+::camera\+Sample\+Per\+Pixel\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the sample per pixel value from the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+The sample per pixel value as an integer. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a608b0d777725806c6c21e60a4a29b973}\label{classCFGParser_a608b0d777725806c6c21e60a4a29b973} 
+\index{CFGParser@{CFGParser}!fieldOfViewGet@{fieldOfViewGet}}
+\index{fieldOfViewGet@{fieldOfViewGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{fieldOfViewGet()}{fieldOfViewGet()}}
+{\footnotesize\ttfamily d64 CFGParser\+::field\+Of\+View\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the field of view from the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+The field of view value as a double. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}\label{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de} 
+\index{CFGParser@{CFGParser}!getRoot@{getRoot}}
+\index{getRoot@{getRoot}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{getRoot()}{getRoot()}}
+{\footnotesize\ttfamily const Setting \& CFGParser\+::get\+Root (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the root setting of the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+The root setting as a const reference. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_ab2ff345c4bab71f39b2e6d4ce92982bc}\label{classCFGParser_ab2ff345c4bab71f39b2e6d4ce92982bc} 
+\index{CFGParser@{CFGParser}!lightsAmbientGet@{lightsAmbientGet}}
+\index{lightsAmbientGet@{lightsAmbientGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{lightsAmbientGet()}{lightsAmbientGet()}}
+{\footnotesize\ttfamily float CFGParser\+::lights\+Ambient\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the ambient light value from the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+The ambient light value as a float. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a3a885920276ed4dc2cfb46ef6a47a3f8}\label{classCFGParser_a3a885920276ed4dc2cfb46ef6a47a3f8} 
+\index{CFGParser@{CFGParser}!lightsDiffuseGet@{lightsDiffuseGet}}
+\index{lightsDiffuseGet@{lightsDiffuseGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{lightsDiffuseGet()}{lightsDiffuseGet()}}
+{\footnotesize\ttfamily float CFGParser\+::lights\+Diffuse\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the value of the diffuse property for lights. 
+
+\begin{DoxyReturn}{Returns}
+The value of the diffuse property for lights. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a4c4c7cf12cf1ace21be92813c6548fca}\label{classCFGParser_a4c4c7cf12cf1ace21be92813c6548fca} 
+\index{CFGParser@{CFGParser}!lightsPointGet@{lightsPointGet}}
+\index{lightsPointGet@{lightsPointGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{lightsPointGet()}{lightsPointGet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPoint}{Point}} CFGParser\+::lights\+Point\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the coordinates of a point light source at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the point light source. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The coordinates of the point light source as a \doxylink{structPoint}{Point} object. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a64c259b9debd7627321d443ee6809973}\label{classCFGParser_a64c259b9debd7627321d443ee6809973} 
+\index{CFGParser@{CFGParser}!nbCylindreGet@{nbCylindreGet}}
+\index{nbCylindreGet@{nbCylindreGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{nbCylindreGet()}{nbCylindreGet()}}
+{\footnotesize\ttfamily ui32 CFGParser\+::nb\+Cylindre\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the number of cylinders in the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+The number of cylinders as an unsigned integer. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a12a6d596cf7e55ffd949a583a9ca8d5c}\label{classCFGParser_a12a6d596cf7e55ffd949a583a9ca8d5c} 
+\index{CFGParser@{CFGParser}!nbLightsGet@{nbLightsGet}}
+\index{nbLightsGet@{nbLightsGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{nbLightsGet()}{nbLightsGet()}}
+{\footnotesize\ttfamily ui32 CFGParser\+::nb\+Lights\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of point lights in the configuration. 
+
+\begin{DoxyReturn}{Returns}
+The number of point lights. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_ac4dcd28629c39386f3c03a9b269ac38a}\label{classCFGParser_ac4dcd28629c39386f3c03a9b269ac38a} 
+\index{CFGParser@{CFGParser}!nbPlaneGet@{nbPlaneGet}}
+\index{nbPlaneGet@{nbPlaneGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{nbPlaneGet()}{nbPlaneGet()}}
+{\footnotesize\ttfamily ui32 CFGParser\+::nb\+Plane\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the number of planes in the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+The number of planes. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a3fc198b71d699c1b22e3682f9ed1d301}\label{classCFGParser_a3fc198b71d699c1b22e3682f9ed1d301} 
+\index{CFGParser@{CFGParser}!nbSphereGet@{nbSphereGet}}
+\index{nbSphereGet@{nbSphereGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{nbSphereGet()}{nbSphereGet()}}
+{\footnotesize\ttfamily ui32 CFGParser\+::nb\+Sphere\+Get (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the number of spheres in the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+The number of spheres as an unsigned integer. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a5e3614739f1e972639833207064902e8}\label{classCFGParser_a5e3614739f1e972639833207064902e8} 
+\index{CFGParser@{CFGParser}!planeAxisGet@{planeAxisGet}}
+\index{planeAxisGet@{planeAxisGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{planeAxisGet()}{planeAxisGet()}}
+{\footnotesize\ttfamily char CFGParser\+::plane\+Axis\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the axis of a plane at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the plane. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The axis of the plane as a character. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_af889e1a6eeaf8cb5932758f82f8180e4}\label{classCFGParser_af889e1a6eeaf8cb5932758f82f8180e4} 
+\index{CFGParser@{CFGParser}!planeColorGet@{planeColorGet}}
+\index{planeColorGet@{planeColorGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{planeColorGet()}{planeColorGet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} CFGParser\+::plane\+Color\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the color of a plane at the specified index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the plane. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The color of the plane as a \doxylink{classColor}{Color} object. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a8ac3f02c9399d452e5a56c19dcb5d118}\label{classCFGParser_a8ac3f02c9399d452e5a56c19dcb5d118} 
+\index{CFGParser@{CFGParser}!planeGetRoot@{planeGetRoot}}
+\index{planeGetRoot@{planeGetRoot}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{planeGetRoot()}{planeGetRoot()}}
+{\footnotesize\ttfamily const Setting \& CFGParser\+::plane\+Get\+Root (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the root setting of the plane section in the configuration file. 
+
+\begin{DoxyReturn}{Returns}
+The root setting of the plane section as a const reference. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a115aa1143e13ff6b50bce7c87b3987cf}\label{classCFGParser_a115aa1143e13ff6b50bce7c87b3987cf} 
+\index{CFGParser@{CFGParser}!planePositionGet@{planePositionGet}}
+\index{planePositionGet@{planePositionGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{planePositionGet()}{planePositionGet()}}
+{\footnotesize\ttfamily i32 CFGParser\+::plane\+Position\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Retrieves the position of a plane at the specified index.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the plane. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The position of the plane. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a3b5e7a1bbcd538b6d72f65edff4eb9bb}\label{classCFGParser_a3b5e7a1bbcd538b6d72f65edff4eb9bb} 
+\index{CFGParser@{CFGParser}!withCylindreDepthGet@{withCylindreDepthGet}}
+\index{withCylindreDepthGet@{withCylindreDepthGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{withCylindreDepthGet()}{withCylindreDepthGet()}}
+{\footnotesize\ttfamily d64 CFGParser\+::with\+Cylindre\+Depth\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the depth of a specific cylinder from the configuration file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the cylinder. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The depth of the cylinder as a double. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_aa6a9b4facc36e0a05e1852044060b03a}\label{classCFGParser_aa6a9b4facc36e0a05e1852044060b03a} 
+\index{CFGParser@{CFGParser}!withCylindreMaterialGet@{withCylindreMaterialGet}}
+\index{withCylindreMaterialGet@{withCylindreMaterialGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{withCylindreMaterialGet()}{withCylindreMaterialGet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPMaterial}{PMaterial}} CFGParser\+::with\+Cylindre\+Material\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the material of a specific cylinder from the configuration file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the cylinder. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The material of the cylinder as a \doxylink{classPMaterial}{PMaterial} object. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a203d157fb212693bd79c44be92950e68}\label{classCFGParser_a203d157fb212693bd79c44be92950e68} 
+\index{CFGParser@{CFGParser}!withCylindrePositionGet@{withCylindrePositionGet}}
+\index{withCylindrePositionGet@{withCylindrePositionGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{withCylindrePositionGet()}{withCylindrePositionGet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPosition}{Position}} CFGParser\+::with\+Cylindre\+Position\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the position of a specific cylinder from the configuration file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the cylinder. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The position of the cylinder as a \doxylink{structPosition}{Position} object. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a1977d957b7d2f1bb08abd910c2daa87c}\label{classCFGParser_a1977d957b7d2f1bb08abd910c2daa87c} 
+\index{CFGParser@{CFGParser}!withCylindreRadiusGet@{withCylindreRadiusGet}}
+\index{withCylindreRadiusGet@{withCylindreRadiusGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{withCylindreRadiusGet()}{withCylindreRadiusGet()}}
+{\footnotesize\ttfamily d64 CFGParser\+::with\+Cylindre\+Radius\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the radius of a specific cylinder from the configuration file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the cylinder. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The radius of the cylinder as a double. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_ad7ed82f30dfaf8b797b888645f90996a}\label{classCFGParser_ad7ed82f30dfaf8b797b888645f90996a} 
+\index{CFGParser@{CFGParser}!withSphereColorGet@{withSphereColorGet}}
+\index{withSphereColorGet@{withSphereColorGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{withSphereColorGet()}{withSphereColorGet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classColor}{Color}} CFGParser\+::with\+Sphere\+Color\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the color of a sphere at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the sphere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The color of the sphere as a \doxylink{classColor}{Color} object. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a50aabe78a47a75dfaa8839805c71ad38}\label{classCFGParser_a50aabe78a47a75dfaa8839805c71ad38} 
+\index{CFGParser@{CFGParser}!withSphereMaterialGet@{withSphereMaterialGet}}
+\index{withSphereMaterialGet@{withSphereMaterialGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{withSphereMaterialGet()}{withSphereMaterialGet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classPMaterial}{PMaterial}} CFGParser\+::with\+Sphere\+Material\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the material information for a sphere at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the sphere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The material information for the sphere. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_afc706d458b7b920b5b009d80356337c7}\label{classCFGParser_afc706d458b7b920b5b009d80356337c7} 
+\index{CFGParser@{CFGParser}!withSpherePositionGet@{withSpherePositionGet}}
+\index{withSpherePositionGet@{withSpherePositionGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{withSpherePositionGet()}{withSpherePositionGet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structPosition}{Position}} CFGParser\+::with\+Sphere\+Position\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the position of a sphere at the specified index. 
+
+This function retrieves the x, y, and z coordinates of a sphere at the specified index from the configuration file. It uses the \doxylink{classCFGParser}{CFGParser} object to access the configuration settings and lookup the values for the sphere\textquotesingle{}s position.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the sphere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The position of the sphere as a \doxylink{structPosition}{Position} object. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_aef2d0ccc20655d5df9463f1bcba3b539}\label{classCFGParser_aef2d0ccc20655d5df9463f1bcba3b539} 
+\index{CFGParser@{CFGParser}!withSphereRadiusGet@{withSphereRadiusGet}}
+\index{withSphereRadiusGet@{withSphereRadiusGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{withSphereRadiusGet()}{withSphereRadiusGet()}}
+{\footnotesize\ttfamily i32 CFGParser\+::with\+Sphere\+Radius\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the radius of a sphere at the specified index. 
+
+This function retrieves the radius of a sphere at the specified index from the configuration file. The radius can be either an integer or a floating-\/point value.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the sphere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The radius of the sphere at the specified index. If the radius is a floating-\/point value, it is returned as a double. If the radius is an integer value, it is returned as an integer. If the sphere or the radius is not found, 0 is returned. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a09163d698fa7d78caf25a15e76b5a866}\label{classCFGParser_a09163d698fa7d78caf25a15e76b5a866} 
+\index{CFGParser@{CFGParser}!withSphereRotationGet@{withSphereRotationGet}}
+\index{withSphereRotationGet@{withSphereRotationGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{withSphereRotationGet()}{withSphereRotationGet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRotation}{Rotation}} CFGParser\+::with\+Sphere\+Rotation\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the rotation values for a sphere at the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the sphere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rotation values as a {\ttfamily \doxylink{structRotation}{Rotation}} object. If the sphere does not have a rotation, the default rotation \{0, 0, 0\} is returned. 
+\end{DoxyReturn}
+\Hypertarget{classCFGParser_a82b6f94d3ffdd7a5101af6cc45c8a69a}\label{classCFGParser_a82b6f94d3ffdd7a5101af6cc45c8a69a} 
+\index{CFGParser@{CFGParser}!withSphereTranslationGet@{withSphereTranslationGet}}
+\index{withSphereTranslationGet@{withSphereTranslationGet}!CFGParser@{CFGParser}}
+\doxysubsubsection{\texorpdfstring{withSphereTranslationGet()}{withSphereTranslationGet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structTranslation}{Translation}} CFGParser\+::with\+Sphere\+Translation\+Get (\begin{DoxyParamCaption}\item[{const ui32}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the translation values for a sphere at the specified index. 
+
+This function returns a \doxylink{structTranslation}{Translation} object that contains the x, y, and z translation values for the sphere at the given index. If the sphere does not have a translation defined, a \doxylink{structTranslation}{Translation} object with all values set to 0 is returned.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index of the sphere. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The \doxylink{structTranslation}{Translation} object containing the x, y, and z translation values. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\+Parser/CFGParser.\+hpp\end{DoxyCompactItemize}

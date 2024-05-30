@@ -1,0 +1,32 @@
+\doxysection{Diffuse.\+hpp}
+\hypertarget{Diffuse_8hpp_source}{}\label{Diffuse_8hpp_source}\index{include/Light/Diffuse.hpp@{include/Light/Diffuse.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ Diffuse}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}AMaterial.hpp"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}ITexture.hpp"{}}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Texture/SolidColor.hpp"{}}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classDiffuse}{Diffuse}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classAMaterial}{AMaterial}}\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDiffuse_afab00754136c92fa2765f8ba576c1abb}{Diffuse}}(\textcolor{keyword}{const}\ std::shared\_ptr<ITexture>\&\ texture);}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDiffuse_a3ec2c1d7d285d250f8ac5f92cc5cb624}{Diffuse}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&\ color);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classDiffuse_a5a79a6e9b77410f09a0715d1ca1e3747}{\string~Diffuse}}();}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classDiffuse_aef3ba3c8c6ee9d3de0b3b07f9043d490}{emitted}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{classRay}{Ray}}\&\ ray,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classHitRecord}{HitRecord}}\&\ record,\ \textcolor{keywordtype}{double}\ u,\ \textcolor{keywordtype}{double}\ v,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}\&\ point)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ std::shared\_ptr<ITexture>\ \_texture;\ }
+\DoxyCodeLine{00063\ \};}
+
+\end{DoxyCode}

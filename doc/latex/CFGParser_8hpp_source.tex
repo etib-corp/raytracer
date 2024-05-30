@@ -1,0 +1,518 @@
+\doxysection{CFGParser.\+hpp}
+\hypertarget{CFGParser_8hpp_source}{}\label{CFGParser_8hpp_source}\index{include/Parser/CFGParser.hpp@{include/Parser/CFGParser.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ CFGParser}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ CFGPARSER\_HPP\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ CFGPARSER\_HPP\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <libconfig.h++>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Color.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}Position.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}Rotation.hpp"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}Translation.hpp"{}}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ "{}Point.hpp"{}}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ "{}ATexture.hpp"{}}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#include\ "{}Vector.hpp"{}}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#include\ "{}PMaterial.hpp"{}}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{keyword}{using\ namespace\ }libconfig;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classCFGParser}{CFGParser}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classColor}{Color}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structPosition}{Position}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structRotation}{Rotation}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structTranslation}{Translation}},\ \textcolor{keyword}{public}\ \mbox{\hyperlink{structPoint}{Point}}\ \{}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keyword}{using\ }i32\ =\ int32\_t;}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{using\ }i64\ =\ int64\_t;}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keyword}{using\ }ui32\ =\ uint32\_t;}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keyword}{using\ }d64\ =\ double;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00046\ \ \ \ \ Config\ \_cfg;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00054\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ isValidFile(\textcolor{keyword}{const}\ std::string\&\ filename)}
+\DoxyCodeLine{00055\ \ \ \ \ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ std::ifstream\ file(filename);}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ (file.peek()\ ==\ std::ifstream::traits\_type::eof());}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00061\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00070\ \ \ \ \ \mbox{\hyperlink{classCFGParser_ad5b070b18f243a4fc5c6ca6c3acaf922}{CFGParser}}(\textcolor{keyword}{const}\ std::string\ \&filename)}
+\DoxyCodeLine{00071\ \ \ \ \ \{}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \_cfg.readFile(filename);}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isValidFile(filename))}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ std::cerr\ <<\ \textcolor{stringliteral}{"{}throw\ Empty\ file"{}}\ <<\ \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \ \ \ \ [[nodiscard]]\ std::pair<d64,\ d64>\ \mbox{\hyperlink{classCFGParser_a3967da15e5d13157fb3f558dc66813cb}{cameraResolutionGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \_cfg.getRoot();}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ camera\ =\ \_cfg.lookup(\textcolor{stringliteral}{"{}camera"{}});}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ resolution\ =\ camera.lookup(\textcolor{stringliteral}{"{}resolution"{}});}
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ d64\ width\ =\ 0,\ height\ =\ 0;}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}width"{}},\ width);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}height"{}},\ height);}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_pair(width,\ height);}
+\DoxyCodeLine{00092\ \ \ \ \ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00099\ \ \ \ \ [[nodiscard]]\ std::tuple<d64,\ d64,\ d64>\ \mbox{\hyperlink{classCFGParser_aded48e9a30bbba7f2afa67c823a38962}{cameraPositionGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00100\ \ \ \ \ \{}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \_cfg.getRoot();}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ camera\ =\ \_cfg.lookup(\textcolor{stringliteral}{"{}camera"{}});}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ resolution\ =\ camera.lookup(\textcolor{stringliteral}{"{}position"{}});}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ d64\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}}\ =\ 0,\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}}\ =\ 0,\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}}\ =\ 0;}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}x"{}},\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}});}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}y"{}},\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}});}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}z"{}},\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}});}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_tuple(\mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}},\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}},\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}});}
+\DoxyCodeLine{00110\ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00117\ \ \ \ \ [[nodiscard]]\ std::tuple<d64,\ d64,\ d64>\ \mbox{\hyperlink{classCFGParser_a5983c25ca931e0114610a3a319a21eaf}{cameraPositionAtGet}}(\textcolor{keywordtype}{void})\textcolor{keyword}{\ const}}
+\DoxyCodeLine{00118\ \textcolor{keyword}{\ \ \ \ }\{}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ d64\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}}\ =\ 0,\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}}\ =\ 0,\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}}\ =\ 0;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \_cfg.getRoot();}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ camera\ =\ \_cfg.lookup(\textcolor{stringliteral}{"{}camera"{}});}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!camera.exists(\textcolor{stringliteral}{"{}positionAt"{}}))}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_tuple(0,\ 0,\ 0);}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ resolution\ =\ camera.lookup(\textcolor{stringliteral}{"{}positionAt"{}});}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}x"{}},\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}});}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}y"{}},\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}});}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}z"{}},\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}});}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_tuple(\mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}},\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}},\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}});}
+\DoxyCodeLine{00130\ \ \ \ \ \}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00137\ \ \ \ \ [[nodiscard]]\ std::tuple<i32,\ i32,\ i32>\ \mbox{\hyperlink{classCFGParser_a82f6bdb47226e052cef5bc3b39d89266}{cameraRotationGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00138\ \ \ \ \ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \_cfg.getRoot();}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ camera\ =\ \_cfg.lookup(\textcolor{stringliteral}{"{}camera"{}});}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ resolution\ =\ camera.lookup(\textcolor{stringliteral}{"{}rotation"{}});}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ i32\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}}\ =\ 0,\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}}\ =\ 0,\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}}\ =\ 0;}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}x"{}},\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}});}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}y"{}},\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}});}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}z"{}},\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}});}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::make\_tuple(\mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}},\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}},\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}});}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00155\ \ \ \ \ [[nodiscard]]\ d64\ \mbox{\hyperlink{classCFGParser_a608b0d777725806c6c21e60a4a29b973}{fieldOfViewGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00156\ \ \ \ \ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \_cfg.getRoot();}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ camera\ =\ \_cfg.lookup(\textcolor{stringliteral}{"{}camera"{}});}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ d64\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}}\ =\ 0;}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ camera.lookupValue(\textcolor{stringliteral}{"{}fieldOfView"{}},\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}});}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}};}
+\DoxyCodeLine{00163\ \ \ \ \ \}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00170\ \ \ \ \ [[nodiscard]]\ i32\ \mbox{\hyperlink{classCFGParser_ae3453e61d626b889225ad0a72c5a00de}{cameraMaxDepthGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00171\ \ \ \ \ \{}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \_cfg.getRoot();}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ camera\ =\ \_cfg.lookup(\textcolor{stringliteral}{"{}camera"{}});}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ i32\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}}\ =\ 50;}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \ \ \ \ \ \ \ \ camera.lookupValue(\textcolor{stringliteral}{"{}maxDepth"{}},\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}});}
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}};}
+\DoxyCodeLine{00178\ \ \ \ \ \}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00185\ \ \ \ \ [[nodiscard]]\ i32\ \mbox{\hyperlink{classCFGParser_a1d91f381b44df38a755a16bb28226e60}{cameraSamplePerPixelGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00186\ \ \ \ \ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ i32\ samplePerPixel\ =\ 32;}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \_cfg.getRoot();}
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ camera\ =\ \_cfg.lookup(\textcolor{stringliteral}{"{}camera"{}});}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ camera.lookupValue(\textcolor{stringliteral}{"{}samplePerPixel"{}},\ samplePerPixel);}
+\DoxyCodeLine{00192\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ samplePerPixel;}
+\DoxyCodeLine{00193\ \ \ \ \ \}}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00200\ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCFGParser_a0e9862d2f54a8ff41086b0f2b20b826c}{cameraLightGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00201\ \ \ \ \ \{}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ isLight\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \_cfg.getRoot();}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ camera\ =\ \_cfg.lookup(\textcolor{stringliteral}{"{}camera"{}});}
+\DoxyCodeLine{00205\ }
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ camera.lookupValue(\textcolor{stringliteral}{"{}light"{}},\ isLight);}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ isLight;}
+\DoxyCodeLine{00208\ \ \ \ \ \}}
+\DoxyCodeLine{00209\ }
+\DoxyCodeLine{00215\ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classCFGParser_acd6a09d7f65a899b42a6f38d94fb3987}{cameraBackgroundColorGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00216\ \ \ \ \ \{}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ d64\ r\ =\ 0,\ g\ =\ 0,\ b\ =\ 0;}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \_cfg.getRoot();}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ camera\ =\ \_cfg.lookup(\textcolor{stringliteral}{"{}camera"{}});}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!camera.exists(\textcolor{stringliteral}{"{}backgroundColor"{}}))}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{0,\ 0,\ 0\};}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ resolution\ =\ camera.lookup(\textcolor{stringliteral}{"{}backgroundColor"{}});}
+\DoxyCodeLine{00223\ }
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}r"{}},\ r);}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}g"{}},\ g);}
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ resolution.lookupValue(\textcolor{stringliteral}{"{}b"{}},\ b);}
+\DoxyCodeLine{00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{r,\ g,\ b\};}
+\DoxyCodeLine{00228\ \ \ \ \ \}}
+\DoxyCodeLine{00229\ }
+\DoxyCodeLine{00235\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ Setting\&\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00236\ \ \ \ \ \{}
+\DoxyCodeLine{00237\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \_cfg.getRoot();}
+\DoxyCodeLine{00238\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ root;}
+\DoxyCodeLine{00239\ \ \ \ \ \}}
+\DoxyCodeLine{00240\ }
+\DoxyCodeLine{00246\ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ Setting\&\ \mbox{\hyperlink{classCFGParser_a8ac3f02c9399d452e5a56c19dcb5d118}{planeGetRoot}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00247\ \ \ \ \ \{}
+\DoxyCodeLine{00248\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \_cfg.getRoot();}
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ planes\ =\ primitives[\textcolor{stringliteral}{"{}planes"{}}];}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ root;}
+\DoxyCodeLine{00252\ \ \ \ \ \}}
+\DoxyCodeLine{00253\ }
+\DoxyCodeLine{00254\ \ \ \ \ \textcolor{comment}{/*\ \ \ \ \ \ Sphere\ section\ \ \ */}}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00261\ \ \ \ \ [[nodiscard]]\ ui32\ \mbox{\hyperlink{classCFGParser_a3fc198b71d699c1b22e3682f9ed1d301}{nbSphereGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00262\ \ \ \ \ \{}
+\DoxyCodeLine{00263\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}()[\textcolor{stringliteral}{"{}primitives"{}}][\textcolor{stringliteral}{"{}spheres"{}}].getLength();}
+\DoxyCodeLine{00264\ \ \ \ \ \}}
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00271\ \ \ \ \ [[nodiscard]]\ ui32\ \mbox{\hyperlink{classCFGParser_a64c259b9debd7627321d443ee6809973}{nbCylindreGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00272\ \ \ \ \ \{}
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}()[\textcolor{stringliteral}{"{}primitives"{}}][\textcolor{stringliteral}{"{}cylindres"{}}].getLength();}
+\DoxyCodeLine{00274\ \ \ \ \ \}}
+\DoxyCodeLine{00275\ }
+\DoxyCodeLine{00282\ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{structPosition}{Position}}\ \mbox{\hyperlink{classCFGParser_a203d157fb212693bd79c44be92950e68}{withCylindrePositionGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00283\ \ \ \ \ \{}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ d64\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}}\ =\ 0,\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}}\ =\ 0,\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}}\ =\ 0;}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ cylindres\ =\ primitives[\textcolor{stringliteral}{"{}cylindres"{}}];}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ cylindre\ =\ cylindres[index];}
+\DoxyCodeLine{00289\ }
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ cylindre.lookupValue(\textcolor{stringliteral}{"{}x"{}},\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}});}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ cylindre.lookupValue(\textcolor{stringliteral}{"{}y"{}},\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}});}
+\DoxyCodeLine{00292\ \ \ \ \ \ \ \ \ cylindre.lookupValue(\textcolor{stringliteral}{"{}z"{}},\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}});}
+\DoxyCodeLine{00293\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}},\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}},\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}}\};}
+\DoxyCodeLine{00294\ \ \ \ \ \}}
+\DoxyCodeLine{00295\ }
+\DoxyCodeLine{00302\ \ \ \ \ [[nodiscard]]\ d64\ \mbox{\hyperlink{classCFGParser_a1977d957b7d2f1bb08abd910c2daa87c}{withCylindreRadiusGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00303\ \ \ \ \ \{}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ d64\ radius\ =\ 0;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00307\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ cylindres\ =\ primitives[\textcolor{stringliteral}{"{}cylindres"{}}];}
+\DoxyCodeLine{00308\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ cylindre\ =\ cylindres[index];}
+\DoxyCodeLine{00309\ }
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ cylindre.lookupValue(\textcolor{stringliteral}{"{}r"{}},\ radius);}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ radius;}
+\DoxyCodeLine{00312\ \ \ \ \ \}}
+\DoxyCodeLine{00313\ }
+\DoxyCodeLine{00320\ \ \ \ \ [[nodiscard]]\ d64\ \mbox{\hyperlink{classCFGParser_a3b5e7a1bbcd538b6d72f65edff4eb9bb}{withCylindreDepthGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00321\ \ \ \ \ \{}
+\DoxyCodeLine{00322\ \ \ \ \ \ \ \ \ d64\ depth\ =\ 0;}
+\DoxyCodeLine{00323\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00324\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00325\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ cylindres\ =\ primitives[\textcolor{stringliteral}{"{}cylindres"{}}];}
+\DoxyCodeLine{00326\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ cylindre\ =\ cylindres[index];}
+\DoxyCodeLine{00327\ }
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ cylindre.lookupValue(\textcolor{stringliteral}{"{}depth"{}},\ depth);}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ depth;}
+\DoxyCodeLine{00330\ \ \ \ \ \}}
+\DoxyCodeLine{00331\ }
+\DoxyCodeLine{00338\ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classPMaterial}{PMaterial}}\ \mbox{\hyperlink{classCFGParser_aa6a9b4facc36e0a05e1852044060b03a}{withCylindreMaterialGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00339\ \ \ \ \ \{}
+\DoxyCodeLine{00340\ \ \ \ \ \ \ \ \ std::string\ sType;}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPMaterial}{PMaterial}}\ pcylindre;}
+\DoxyCodeLine{00342\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00343\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00344\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ cylindres\ =\ primitives[\textcolor{stringliteral}{"{}cylindres"{}}];}
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ cylindre\ =\ cylindres[index];}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ material\ =\ cylindre.lookup(\textcolor{stringliteral}{"{}material"{}});}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ material.lookupValue(\textcolor{stringliteral}{"{}type"{}},\ sType);}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ pcylindre.\mbox{\hyperlink{classPMaterial_abd41b22b7dd15dcfe0543e4187c251b9}{nameSet}}(sType);}
+\DoxyCodeLine{00350\ }
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (material.exists(\textcolor{stringliteral}{"{}textures"{}}))}
+\DoxyCodeLine{00352\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00353\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPTexture}{PTexture}}\ ptexture(sType);}
+\DoxyCodeLine{00354\ \ \ \ \ \ \ \ \ \ \ \ \ d64\ scale\ =\ 0.0;}
+\DoxyCodeLine{00355\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ textures\ =\ material.lookup(\textcolor{stringliteral}{"{}textures"{}});}
+\DoxyCodeLine{00356\ }
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ pcylindre.\mbox{\hyperlink{classPMaterial_a0ad44e4494cb3a1111574b528442000b}{istextureSet}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00358\ \ \ \ \ \ \ \ \ \ \ \ \ textures.lookupValue(\textcolor{stringliteral}{"{}scale"{}},\ scale);}
+\DoxyCodeLine{00359\ \ \ \ \ \ \ \ \ \ \ \ \ ptexture.\mbox{\hyperlink{classPTexture_a63805de9d6bbcf7c69d8e8027f259099}{scaleSet}}(scale);}
+\DoxyCodeLine{00360\ }
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ colors\ =\ textures.lookup(\textcolor{stringliteral}{"{}colors"{}});}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (ui32\ i\ =\ 0;\ i\ !=\ colors.getLength();\ ++i)\ \{}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d64\ rgb[3]\ =\ \{0\};}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colors[i].lookupValue(\textcolor{stringliteral}{"{}r"{}},\ rgb[0]);}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colors[i].lookupValue(\textcolor{stringliteral}{"{}g"{}},\ rgb[1]);}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colors[i].lookupValue(\textcolor{stringliteral}{"{}b"{}},\ rgb[2]);}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptexture.\mbox{\hyperlink{classPTexture_a48fdc467d442cb1f97302bb6f9c949fc}{colorsSet}}((\mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}(\{rgb[0],\ rgb[1],\ rgb[2]\})));}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00369\ \ \ \ \ \ \ \ \ \ \ \ \ pcylindre.\mbox{\hyperlink{classPMaterial_a95bf8e70a65dd8af55d60535850d1b6d}{addTexture}}(ptexture);}
+\DoxyCodeLine{00370\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00371\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (material.exists(\textcolor{stringliteral}{"{}color"{}}))}
+\DoxyCodeLine{00372\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00373\ \ \ \ \ \ \ \ \ \ \ \ \ d64\ rgb[3]\ =\ \{0.0\};}
+\DoxyCodeLine{00374\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ color\ =\ material.lookup(\textcolor{stringliteral}{"{}color"{}});}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ pcylindre.\mbox{\hyperlink{classPMaterial_ac0dc7f08aab6d63b3f00b69327cdb698}{isColorSet}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00376\ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}r"{}},\ rgb[0]);}
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}g"{}},\ rgb[1]);}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}b"{}},\ rgb[2]);}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \ \ \ \ pcylindre.\mbox{\hyperlink{classPMaterial_afcb9af397946c6be7516c962460b8edc}{addColor}}(\mbox{\hyperlink{classPColor}{PColor}}(sType,\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}(\{rgb[0],\ rgb[1],\ rgb[2]\})));}
+\DoxyCodeLine{00380\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (material.exists(\textcolor{stringliteral}{"{}refractive"{}}))}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00383\ \ \ \ \ \ \ \ \ \ \ \ \ pcylindre.\mbox{\hyperlink{classPMaterial_a2b74e4a676b4cb88d4dde5d11bd3e592}{isRefractiveSet}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00384\ \ \ \ \ \ \ \ \ \ \ \ \ d64\ refractive\_index\ =\ 0.0;}
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ color\ =\ material.lookup(\textcolor{stringliteral}{"{}refractive"{}});}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}refractive\_index"{}},\ refractive\_index);}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pcylindre.\mbox{\hyperlink{classPMaterial_ae4285ec421d1c6ae52e179cda2c3d34f}{addRefractive}}(\mbox{\hyperlink{classPRefractive}{PRefractive}}(sType,\ refractive\_index));}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(pcylindre);}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00391\ }
+\DoxyCodeLine{00397\ \ \ \ \ \ \ \ \ [[nodiscard]]\ ui32\ \mbox{\hyperlink{classCFGParser_a12a6d596cf7e55ffd949a583a9ca8d5c}{nbLightsGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00398\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00399\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}()[\textcolor{stringliteral}{"{}lights"{}}][\textcolor{stringliteral}{"{}point"{}}].getLength();}
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00412\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{structPosition}{Position}}\ \mbox{\hyperlink{classCFGParser_afc706d458b7b920b5b009d80356337c7}{withSpherePositionGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00413\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00414\ \ \ \ \ \ \ \ \ \ \ \ \ d64\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}}\ =\ 0,\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}}\ =\ 0,\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}}\ =\ 0;}
+\DoxyCodeLine{00415\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00416\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00417\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ spheres\ =\ primitives[\textcolor{stringliteral}{"{}spheres"{}}];}
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ sphere\ =\ spheres[index];}
+\DoxyCodeLine{00419\ }
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \ \ \ \ sphere.lookupValue(\textcolor{stringliteral}{"{}x"{}},\ \mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}});}
+\DoxyCodeLine{00421\ \ \ \ \ \ \ \ \ \ \ \ \ sphere.lookupValue(\textcolor{stringliteral}{"{}y"{}},\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}});}
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ \ \ \ \ sphere.lookupValue(\textcolor{stringliteral}{"{}z"{}},\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}});}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\mbox{\hyperlink{structPoint_a33418bc779331596134162c0b704286f}{x}},\ \mbox{\hyperlink{structPoint_a0777befa09d1494ee7da71989fa011fe}{y}},\ \mbox{\hyperlink{structPoint_a2c0ab7a7f2f4effbf9f99373b80e06f7}{z}}\};}
+\DoxyCodeLine{00424\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ [[nodiscard]]\ i32\ \mbox{\hyperlink{classCFGParser_aef2d0ccc20655d5df9463f1bcba3b539}{withSphereRadiusGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ \ \ \ \ i32\ iradius\ =\ 0;}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \ \ \ \ d64\ dradius\ =\ 0;}
+\DoxyCodeLine{00441\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ spheres\ =\ primitives[\textcolor{stringliteral}{"{}spheres"{}}];}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ sphere\ =\ spheres[index];}
+\DoxyCodeLine{00445\ }
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sphere[\textcolor{stringliteral}{"{}r"{}}].getType()\ ==\ libconfig::Setting::TypeFloat)}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sphere.lookupValue(\textcolor{stringliteral}{"{}r"{}},\ dradius);}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dradius;}
+\DoxyCodeLine{00450\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00451\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (sphere[\textcolor{stringliteral}{"{}r"{}}].getType()\ ==\ libconfig::Setting::TypeInt)}
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sphere.lookupValue(\textcolor{stringliteral}{"{}r"{}},\ iradius);}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ iradius;}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00456\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00457\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classCFGParser_ad7ed82f30dfaf8b797b888645f90996a}{withSphereColorGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \ \ \ \ i32\ rgb[3]\ =\ \{0\};}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00468\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ spheres\ =\ primitives[\textcolor{stringliteral}{"{}spheres"{}}];}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ sphere\ =\ spheres[index];}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!sphere.exists(\textcolor{stringliteral}{"{}color"{}}))}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{0,\ 0,\ 0\};}
+\DoxyCodeLine{00473\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ color\ =\ sphere.lookup(\textcolor{stringliteral}{"{}color"{}});}
+\DoxyCodeLine{00474\ }
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}r"{}},\ rgb[0]);}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}g"{}},\ rgb[1]);}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}b"{}},\ rgb[2]);}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\textcolor{keyword}{static\_cast<}d64\textcolor{keyword}{>}(rgb[0]),\ \textcolor{keyword}{static\_cast<}d64\textcolor{keyword}{>}(rgb[1]),\ \textcolor{keyword}{static\_cast<}d64\textcolor{keyword}{>}(rgb[2])\};}
+\DoxyCodeLine{00479\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{structRotation}{Rotation}}\ \mbox{\hyperlink{classCFGParser_a09163d698fa7d78caf25a15e76b5a866}{withSphereRotationGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00489\ \ \ \ \ \ \ \ \ \ \ \ \ i32\ lRotation[3]\ =\ \{0\};}
+\DoxyCodeLine{00490\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00491\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00492\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ spheres\ =\ primitives[\textcolor{stringliteral}{"{}spheres"{}}];}
+\DoxyCodeLine{00493\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ sphere\ =\ spheres[index];}
+\DoxyCodeLine{00494\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!sphere.exists(\textcolor{stringliteral}{"{}rotation"{}}))}
+\DoxyCodeLine{00495\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{0,\ 0,\ 0\};}
+\DoxyCodeLine{00496\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ rotation\ =\ sphere.lookup(\textcolor{stringliteral}{"{}rotation"{}});}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00498\ \ \ \ \ \ \ \ \ \ \ \ \ rotation.lookupValue(\textcolor{stringliteral}{"{}x"{}},\ lRotation[0]);}
+\DoxyCodeLine{00499\ \ \ \ \ \ \ \ \ \ \ \ \ rotation.lookupValue(\textcolor{stringliteral}{"{}y"{}},\ lRotation[1]);}
+\DoxyCodeLine{00500\ \ \ \ \ \ \ \ \ \ \ \ \ rotation.lookupValue(\textcolor{stringliteral}{"{}z"{}},\ lRotation[2]);}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00502\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{lRotation[0],\ lRotation[1],\ lRotation[2]\};}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00514\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{structTranslation}{Translation}}\ \mbox{\hyperlink{classCFGParser_a82b6f94d3ffdd7a5101af6cc45c8a69a}{withSphereTranslationGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00515\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00516\ \ \ \ \ \ \ \ \ \ \ \ \ i32\ lTranslation[3]\ =\ \{0\};}
+\DoxyCodeLine{00517\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00518\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00519\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ spheres\ =\ primitives[\textcolor{stringliteral}{"{}spheres"{}}];}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ sphere\ =\ spheres[index];}
+\DoxyCodeLine{00521\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!sphere.exists(\textcolor{stringliteral}{"{}translation"{}}))}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{0,\ 0,\ 0\};}
+\DoxyCodeLine{00523\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ rotation\ =\ sphere.lookup(\textcolor{stringliteral}{"{}translation"{}});}
+\DoxyCodeLine{00524\ }
+\DoxyCodeLine{00525\ \ \ \ \ \ \ \ \ \ \ \ \ rotation.lookupValue(\textcolor{stringliteral}{"{}x"{}},\ lTranslation[0]);}
+\DoxyCodeLine{00526\ \ \ \ \ \ \ \ \ \ \ \ \ rotation.lookupValue(\textcolor{stringliteral}{"{}y"{}},\ lTranslation[1]);}
+\DoxyCodeLine{00527\ \ \ \ \ \ \ \ \ \ \ \ \ rotation.lookupValue(\textcolor{stringliteral}{"{}z"{}},\ lTranslation[2]);}
+\DoxyCodeLine{00528\ }
+\DoxyCodeLine{00529\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{lTranslation[0],\ lTranslation[1],\ lTranslation[2]\};}
+\DoxyCodeLine{00530\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classPMaterial}{PMaterial}}\ \mbox{\hyperlink{classCFGParser_a50aabe78a47a75dfaa8839805c71ad38}{withSphereMaterialGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ sType;}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPMaterial}{PMaterial}}\ pshere;}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00543\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ spheres\ =\ primitives[\textcolor{stringliteral}{"{}spheres"{}}];}
+\DoxyCodeLine{00544\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ sphere\ =\ spheres[index];}
+\DoxyCodeLine{00545\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ material\ =\ sphere.lookup(\textcolor{stringliteral}{"{}material"{}});}
+\DoxyCodeLine{00546\ }
+\DoxyCodeLine{00547\ \ \ \ \ \ \ \ \ \ \ \ \ material.lookupValue(\textcolor{stringliteral}{"{}type"{}},\ sType);}
+\DoxyCodeLine{00548\ \ \ \ \ \ \ \ \ \ \ \ \ pshere.\mbox{\hyperlink{classPMaterial_abd41b22b7dd15dcfe0543e4187c251b9}{nameSet}}(sType);}
+\DoxyCodeLine{00549\ }
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00551\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (material.exists(\textcolor{stringliteral}{"{}textures"{}}))}
+\DoxyCodeLine{00552\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00553\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPTexture}{PTexture}}\ ptexture(sType);}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d64\ scale\ =\ 0.0;}
+\DoxyCodeLine{00555\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ textures\ =\ material.lookup(\textcolor{stringliteral}{"{}textures"{}});}
+\DoxyCodeLine{00556\ }
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pshere.\mbox{\hyperlink{classPMaterial_a0ad44e4494cb3a1111574b528442000b}{istextureSet}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ textures.lookupValue(\textcolor{stringliteral}{"{}scale"{}},\ scale);}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptexture.\mbox{\hyperlink{classPTexture_a63805de9d6bbcf7c69d8e8027f259099}{scaleSet}}(scale);}
+\DoxyCodeLine{00560\ }
+\DoxyCodeLine{00561\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ colors\ =\ textures.lookup(\textcolor{stringliteral}{"{}colors"{}});}
+\DoxyCodeLine{00562\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (ui32\ i\ =\ 0;\ i\ !=\ colors.getLength();\ ++i)\ \{}
+\DoxyCodeLine{00563\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d64\ rgb[3]\ =\ \{0\};}
+\DoxyCodeLine{00564\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colors[i].lookupValue(\textcolor{stringliteral}{"{}r"{}},\ rgb[0]);}
+\DoxyCodeLine{00565\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colors[i].lookupValue(\textcolor{stringliteral}{"{}g"{}},\ rgb[1]);}
+\DoxyCodeLine{00566\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ colors[i].lookupValue(\textcolor{stringliteral}{"{}b"{}},\ rgb[2]);}
+\DoxyCodeLine{00567\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ptexture.\mbox{\hyperlink{classPTexture_a48fdc467d442cb1f97302bb6f9c949fc}{colorsSet}}((\mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}(\{rgb[0],\ rgb[1],\ rgb[2]\})));}
+\DoxyCodeLine{00568\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00569\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pshere.\mbox{\hyperlink{classPMaterial_a95bf8e70a65dd8af55d60535850d1b6d}{addTexture}}(ptexture);}
+\DoxyCodeLine{00570\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (material.exists(\textcolor{stringliteral}{"{}color"{}}))}
+\DoxyCodeLine{00572\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00573\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d64\ rgb[3]\ =\ \{0.0\};}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ color\ =\ material.lookup(\textcolor{stringliteral}{"{}color"{}});}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pshere.\mbox{\hyperlink{classPMaterial_ac0dc7f08aab6d63b3f00b69327cdb698}{isColorSet}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}r"{}},\ rgb[0]);}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}g"{}},\ rgb[1]);}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}b"{}},\ rgb[2]);}
+\DoxyCodeLine{00579\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pshere.\mbox{\hyperlink{classPMaterial_afcb9af397946c6be7516c962460b8edc}{addColor}}(\mbox{\hyperlink{classPColor}{PColor}}(sType,\ \mbox{\hyperlink{classMath_1_1Vector}{Math::Vector<3>}}(\{rgb[0],\ rgb[1],\ rgb[2]\})));}
+\DoxyCodeLine{00580\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00581\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (material.exists(\textcolor{stringliteral}{"{}refractive"{}}))}
+\DoxyCodeLine{00582\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00583\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pshere.\mbox{\hyperlink{classPMaterial_a2b74e4a676b4cb88d4dde5d11bd3e592}{isRefractiveSet}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00584\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ d64\ refractive\_index\ =\ 0.0;}
+\DoxyCodeLine{00585\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ color\ =\ material.lookup(\textcolor{stringliteral}{"{}refractive"{}});}
+\DoxyCodeLine{00586\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}refractive\_index"{}},\ refractive\_index);}
+\DoxyCodeLine{00587\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ pshere.\mbox{\hyperlink{classPMaterial_ae4285ec421d1c6ae52e179cda2c3d34f}{addRefractive}}(\mbox{\hyperlink{classPRefractive}{PRefractive}}(sType,\ refractive\_index));}
+\DoxyCodeLine{00588\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00589\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(pshere);}
+\DoxyCodeLine{00590\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00591\ }
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ \ \ \ \ \ Plane\ section\ \ \ */}}
+\DoxyCodeLine{00593\ }
+\DoxyCodeLine{00600\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{classCFGParser_a5e3614739f1e972639833207064902e8}{planeAxisGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00601\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00602\ \ \ \ \ \ \ \ \ \ \ \ \ std::string\ c\_axis;}
+\DoxyCodeLine{00603\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00604\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00605\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (primitives.exists(\textcolor{stringliteral}{"{}planes"{}}))}
+\DoxyCodeLine{00606\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00607\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ planes\ =\ primitives[\textcolor{stringliteral}{"{}planes"{}}];}
+\DoxyCodeLine{00608\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ plane\ =\ planes[index];}
+\DoxyCodeLine{00609\ }
+\DoxyCodeLine{00610\ \ \ \ \ \ \ \ \ \ \ \ \ plane.lookupValue(\textcolor{stringliteral}{"{}axis"{}},\ c\_axis);}
+\DoxyCodeLine{00611\ }
+\DoxyCodeLine{00612\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ c\_axis.c\_str()[0];}
+\DoxyCodeLine{00613\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ [[nodiscard]]\ i32\ \mbox{\hyperlink{classCFGParser_a115aa1143e13ff6b50bce7c87b3987cf}{planePositionGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00622\ \ \ \ \ \ \ \ \ \ \ \ \ i32\ l\_position\ =\ 0;}
+\DoxyCodeLine{00623\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00624\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00625\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (primitives.exists(\textcolor{stringliteral}{"{}planes"{}}))}
+\DoxyCodeLine{00626\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00627\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ planes\ =\ primitives[\textcolor{stringliteral}{"{}planes"{}}];}
+\DoxyCodeLine{00628\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ plane\ =\ planes[index];}
+\DoxyCodeLine{00629\ }
+\DoxyCodeLine{00630\ \ \ \ \ \ \ \ \ \ \ \ \ plane.lookupValue(\textcolor{stringliteral}{"{}position"{}},\ l\_position);}
+\DoxyCodeLine{00631\ }
+\DoxyCodeLine{00632\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ l\_position;}
+\DoxyCodeLine{00633\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classColor}{Color}}\ \mbox{\hyperlink{classCFGParser_af889e1a6eeaf8cb5932758f82f8180e4}{planeColorGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ rgb[3]\ =\ \{0\};}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00644\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ primitives\ =\ root[\textcolor{stringliteral}{"{}primitives"{}}];}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (primitives.exists(\textcolor{stringliteral}{"{}planes"{}}))}
+\DoxyCodeLine{00646\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{0,\ 0,\ 0\};}
+\DoxyCodeLine{00647\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ planes\ =\ primitives[\textcolor{stringliteral}{"{}planes"{}}];}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ plane\ =\ planes[index];}
+\DoxyCodeLine{00649\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ color\ =\ plane.lookup(\textcolor{stringliteral}{"{}color"{}});}
+\DoxyCodeLine{00650\ }
+\DoxyCodeLine{00651\ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}r"{}},\ rgb[0]);}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}g"{}},\ rgb[1]);}
+\DoxyCodeLine{00653\ \ \ \ \ \ \ \ \ \ \ \ \ color.lookupValue(\textcolor{stringliteral}{"{}b"{}},\ rgb[2]);}
+\DoxyCodeLine{00654\ }
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{\textcolor{keyword}{static\_cast<}d64\textcolor{keyword}{>}(rgb[0]),\ \textcolor{keyword}{static\_cast<}d64\textcolor{keyword}{>}(rgb[1]),\ \textcolor{keyword}{static\_cast<}d64\textcolor{keyword}{>}(rgb[2])\};}
+\DoxyCodeLine{00656\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ [[nodiscard]]\ ui32\ \mbox{\hyperlink{classCFGParser_ac4dcd28629c39386f3c03a9b269ac38a}{nbPlaneGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!\mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}()[\textcolor{stringliteral}{"{}primitives"{}}].exists(\textcolor{stringliteral}{"{}planes"{}}))}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}()[\textcolor{stringliteral}{"{}primitives"{}}][\textcolor{stringliteral}{"{}planes"{}}].getLength();}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00668\ }
+\DoxyCodeLine{00669\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ \ \ \ \ \ Lights\ section\ \ \ */}}
+\DoxyCodeLine{00670\ }
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classCFGParser_ab2ff345c4bab71f39b2e6d4ce92982bc}{lightsAmbientGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00677\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00678\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ l\_ambient\ =\ 0.0;}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ lights\ =\ root[\textcolor{stringliteral}{"{}lights"{}}];}
+\DoxyCodeLine{00681\ }
+\DoxyCodeLine{00682\ \ \ \ \ \ \ \ \ \ \ \ \ lights.lookupValue(\textcolor{stringliteral}{"{}ambient"{}},\ l\_ambient);}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ l\_ambient;}
+\DoxyCodeLine{00684\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00690\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{classCFGParser_a3a885920276ed4dc2cfb46ef6a47a3f8}{lightsDiffuseGet}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00692\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{float}\ l\_diffuse\ =\ 0.0;}
+\DoxyCodeLine{00693\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00694\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ lights\ =\ root[\textcolor{stringliteral}{"{}lights"{}}];}
+\DoxyCodeLine{00695\ }
+\DoxyCodeLine{00696\ \ \ \ \ \ \ \ \ \ \ \ \ lights.lookupValue(\textcolor{stringliteral}{"{}diffuse"{}},\ l\_diffuse);}
+\DoxyCodeLine{00697\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ l\_diffuse;}
+\DoxyCodeLine{00698\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00705\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{structPoint}{Point}}\ \mbox{\hyperlink{classCFGParser_a4c4c7cf12cf1ace21be92813c6548fca}{lightsPointGet}}(\textcolor{keyword}{const}\ ui32\ index)}
+\DoxyCodeLine{00706\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00707\ \ \ \ \ \ \ \ \ \ \ \ \ i32\ l\_point[3]\ =\ \{0\};}
+\DoxyCodeLine{00708\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ root\ =\ \mbox{\hyperlink{classCFGParser_a76f7896fc3d34f4ee7b166d8166f19de}{getRoot}}();}
+\DoxyCodeLine{00709\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ lights\ =\ root[\textcolor{stringliteral}{"{}lights"{}}];}
+\DoxyCodeLine{00710\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ points\ =\ lights[\textcolor{stringliteral}{"{}point"{}}];}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ Setting\&\ point\ =\ points[index];}
+\DoxyCodeLine{00712\ }
+\DoxyCodeLine{00713\ \ \ \ \ \ \ \ \ \ \ \ \ point.lookupValue(\textcolor{stringliteral}{"{}x"{}},\ l\_point[0]);}
+\DoxyCodeLine{00714\ \ \ \ \ \ \ \ \ \ \ \ \ point.lookupValue(\textcolor{stringliteral}{"{}y"{}},\ l\_point[1]);}
+\DoxyCodeLine{00715\ \ \ \ \ \ \ \ \ \ \ \ \ point.lookupValue(\textcolor{stringliteral}{"{}z"{}},\ l\_point[2]);}
+\DoxyCodeLine{00716\ }
+\DoxyCodeLine{00717\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \{l\_point[0],\ l\_point[1],\ l\_point[2]\};}
+\DoxyCodeLine{00718\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00719\ \};}
+\DoxyCodeLine{00720\ }
+\DoxyCodeLine{00721\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !CFGPARSER\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

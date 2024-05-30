@@ -1,0 +1,48 @@
+\doxysection{Primitives\+Builder.\+hpp}
+\hypertarget{PrimitivesBuilder_8hpp_source}{}\label{PrimitivesBuilder_8hpp_source}\index{include/Parser/PrimitivesBuilder.hpp@{include/Parser/PrimitivesBuilder.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ PrimitivesBuilder}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ PRIMITIVESBUILDER\_HPP\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ PRIMITIVESBUILDER\_HPP\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <bits/stdc++.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ "{}Plane.hpp"{}}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ "{}Position.hpp"{}}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}../Primitive/Sphere.hpp"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}Rotation.hpp"{}}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ "{}Translation.hpp"{}}}
+\DoxyCodeLine{00017\ \textcolor{preprocessor}{\#include\ "{}../Primitive/ObjectsList.hpp"{}}}
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ "{}../Primitive/Cylindre.hpp"{}}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ "{}../Parser/PMaterial.hpp"{}}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classPrimitivesBuilder}{PrimitivesBuilder}}\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{using\ }i32\ =\ int32\_t;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{using\ }d64\ =\ double;}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPrimitivesBuilder}{PrimitivesBuilder}}\&\ \mbox{\hyperlink{classPrimitivesBuilder_aa5b153a912f7a94fb5adc3b83ac457fa}{addSphere}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structPosition}{Position}}\&\ position,\ d64\ radius,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&\ color,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structRotation}{Rotation}}\&\ rotation,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structTranslation}{Translation}}\&\ translation,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPMaterial}{PMaterial}}\&\ material);}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPrimitivesBuilder}{PrimitivesBuilder}}\&\ \mbox{\hyperlink{classPrimitivesBuilder_ac2daee1753784c2dbdc7ec7f783f002d}{addPlane}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ axis,\ i32\ position,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classColor}{Color}}\&\ color);}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classPrimitivesBuilder}{PrimitivesBuilder}}\&\ \mbox{\hyperlink{classPrimitivesBuilder_aa823230e1ca298914198543839c6eb6b}{addCylindre}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structPosition}{Position}}\&\ position,\ \textcolor{keyword}{const}\ d64\&\ radius,\ \textcolor{keyword}{const}\ d64\&\ depth,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{classPMaterial}{PMaterial}}\&\ material);}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \mbox{\hyperlink{classObjectsList}{ObjectsList}}\&\&\ \mbox{\hyperlink{classPrimitivesBuilder_af1c3017d37f2fb223b70c549e29d4ce9}{build}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ std::move(\_objList);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classPrimitivesBuilder_a94d054b44a8a5b7608633cf4a9fc4831}{print}}(\textcolor{keywordtype}{void})\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ std::vector<Sphere>\ \_spheres;}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ std::vector<Plane>\ \_planes;}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ std::vector<Cylindre>\ \_cylindre;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classObjectsList}{ObjectsList}}\ \_objList;}
+\DoxyCodeLine{00118\ \};}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !PRIMITIVESBUILDER\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

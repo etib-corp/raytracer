@@ -1,0 +1,41 @@
+\doxysection{Tool\+Bar.\+hpp}
+\hypertarget{ToolBar_8hpp_source}{}\label{ToolBar_8hpp_source}\index{include/GUI/ToolBar.hpp@{include/GUI/ToolBar.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{00002\ \textcolor{comment}{**\ EPITECH\ PROJECT,\ 2024}}
+\DoxyCodeLine{00003\ \textcolor{comment}{**\ B-\/OOP-\/400-\/RUN-\/4-\/1-\/raytracer-\/julien.ferdinand}}
+\DoxyCodeLine{00004\ \textcolor{comment}{**\ File\ description:}}
+\DoxyCodeLine{00005\ \textcolor{comment}{**\ ToolBar}}
+\DoxyCodeLine{00006\ \textcolor{comment}{*/}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#ifndef\ TOOLBAR\_HPP\_}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ TOOLBAR\_HPP\_}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}GUI/AGUI.hpp"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{namespace\ }GUI\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classGUI_1_1ToolBar}{ToolBar}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classGUI_1_1AGUI}{AGUI}}\ \{}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGUI_1_1ToolBar_a443ff08cce68375869ea472291f343fe}{ToolBar}}();}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classGUI_1_1ToolBar_a925ac42f329ae6895da1c5e6526643be}{\string~ToolBar}}();}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1ToolBar_a1224cad798d7369a577e204205a37416}{display}}();}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1ToolBar_acdfb036b73e233d509da5136f4f74e93}{setFileFunctions}}(std::map<std::string,\ std::function<\textcolor{keywordtype}{void}()>>\ fileFunctions);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1ToolBar_a8abe07307dadb4e6c538913963024410}{setEditFunctions}}(std::map<std::string,\ std::function<\textcolor{keywordtype}{void}()>>\ editFunctions);}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classGUI_1_1ToolBar_aa7b968e1934b18c4d7bf46714cd22c7c}{setHelpFunctions}}(std::map<std::string,\ std::function<\textcolor{keywordtype}{void}()>>\ helpFunctions);}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ std::function<void()>>\ \mbox{\hyperlink{classGUI_1_1ToolBar_ab1ea571702efdccf6ee9ee505d167cd7}{\_fileFunctions}};\ }
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ std::function<void()>>\ \mbox{\hyperlink{classGUI_1_1ToolBar_ab0692e6522bd3c2651c67b3754ef1945}{\_editFunctions}};\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ std::map<std::string,\ std::function<void()>>\ \mbox{\hyperlink{classGUI_1_1ToolBar_afbfd7b501711dfe3aeb2927496e0a890}{\_helpFunctions}};\ }
+\DoxyCodeLine{00070\ \ \ \ \ \};}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !TOOLBAR\_HPP\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
